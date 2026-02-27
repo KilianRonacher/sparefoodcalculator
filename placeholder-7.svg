@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'>
+  <rect width='100%' height='100%' fill='#ffdbe6'/>
+  <g fill='#4ecdc4'>
+    <rect x='80' y='80' width='200' height='200' rx='20'/>
+    <circle cx='540' cy='170' r='100'/>
+  </g>
+  <text x='50%' y='90%' font-size='28' text-anchor='middle' fill='#fff' font-family='Arial'>Hähnchen / Fleisch</text>
+</svg>
