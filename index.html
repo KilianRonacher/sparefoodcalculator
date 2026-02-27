@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SpareFoodCalculator — Recipes from Surplus</title>
+  <meta name="description" content="Find simple, inspiring recipes made from surplus ingredients — from home-style classics to refined dishes." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="index.html">SpareFoodCalculator</a></h1>
+      <div class="nav-wrap">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menu">☰</button>
+        <!-- Categories button removed (kept in background for admin usage) -->
+        <nav class="main-nav mobile-hidden" id="main-nav">
+          <a href="index.html" data-i18n="startseite">Home</a>
+          <a href="pages/search.html" class="cta" data-i18n="calculator">Calculator</a>
+          <a href="pages/contact.html" data-i18n="kontakt">Contact</a>
+          <a href="pages/impressum.html" data-i18n="impressum">Legal Notice</a>
+        </nav>
+      </div>
+      <div class="theme-lang-controls">
+        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="lang-toggle-btn" data-i18n="lang-toggle">English</button>
+      </div>
+          <a href="pages/search.html" class="btn primary header-cta" data-i18n="calculator">Calculator</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2 data-i18n="rezepte_aus_dem">Recipes from whatever is in your fridge</h2>
+        <p data-i18n="einfach_hausgemacht">Simple. Home-cooked. A touch elevated — for anyone who likes to try something new.</p>
+        <div class="hero-ctas">
+          <a href="pages/search.html" class="btn primary" data-i18n="calculator">Calculator</a>
+        </div>
+      </div>
+        <div class="hero-art">
+        <img src="images/placeholder-hero.svg" data-i18n-alt="hero_art_alt" alt="Colorful plates with ingredients (placeholder)" />
+      </div>
+    </section>
+
+    <!-- 'Alle Seiten' section removed per user request -->
+    <section class="how-it-works">
+      <h3 data-i18n="so_funktioniert">How the calculator works</h3>
+      <ol>
+        <li data-i18n="gib_zutaten_ein">Enter the ingredients you have (e.g., "tomato, bread, lettuce").</li>
+        <li data-i18n="generator_schlaegt_vor">The generator suggests matching recipes — ranked by overlap.</li>
+        <li data-i18n="klicke_rezept">Open a recipe to see details and shopping tips.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="copyright">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
+      <p><a href="pages/impressum.html" data-i18n="impressum">Legal Notice</a> • <a href="pages/contact.html" data-i18n="kontakt">Contact</a></p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

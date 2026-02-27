@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'>
+  <rect width='100%' height='100%' fill='#ffe66d'/>
+  <g fill='#ff6b6b'>
+    <ellipse cx='220' cy='250' rx='140' ry='80'/>
+    <rect x='420' y='140' width='300' height='200' rx='24'/>
+  </g>
+  <text x='50%' y='90%' font-size='28' text-anchor='middle' fill='#fff' font-family='Arial'>Suppen-Platzhalter</text>
+</svg>

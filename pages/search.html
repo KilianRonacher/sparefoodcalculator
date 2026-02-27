@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rezept-Generator — SpareFoodCalculator</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
+      <div class="nav-wrap">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
+        <nav class="main-nav mobile-hidden" id="main-nav">
+          <a href="../index.html" data-i18n="startseite">Startseite</a>
+          <a href="search.html" data-i18n="calculator">Rezept Generator</a>
+          <a href="ingredients-generator.html">Zutaten Generator</a>
+          <a href="contact.html" data-i18n="kontakt">Kontakt</a>
+          <a href="impressum.html" data-i18n="impressum">Impressum</a>
+        </nav>
+      </div>
+      <div class="theme-lang-controls">
+        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="lang-toggle-btn">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="generator-hero">
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        <h1 data-i18n="recipe_generator_title">🍳 Rezept-Generator</h1>
+        <a href="ingredients-generator.html" class="btn primary" style="font-size: 1rem;" data-i18n="ing_generator_title">🥗 Zutaten-Generator</a>
+      </div>
+      <p data-i18n="recipe_generator_desc">Gib deine Zutaten ein und der Generator erstellt dir passende Rezepte!</p>
+    </section>
+
+    <!-- INPUT SECTION -->
+    <section class="generator-input-box">
+      <h2 data-i18n="my_ingredients">Meine Zutaten</h2>
+      <form id="search-form" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <input 
+          id="search-input" 
+          type="text"
+          placeholder="z.B. Tomate, Salat, Öl..." 
+          data-i18n-placeholder="ingredient_placeholder"
+          style="flex: 1; padding: 0.8rem; border-radius: 8px; border: 2px solid var(--color-accent-teal); font-size: 1rem;"
+        />
+        <button 
+          class="btn primary" 
+          type="submit"
+          style="padding: 0.8rem 1.5rem; font-size: 1rem; white-space: nowrap;"
+          data-i18n="add_ingredient"
+        >+ Hinzufügen</button>
+      </form>
+
+      <!-- ZUTAT TAGS (grün/rot) -->
+      <div id="ingredients-display" class="ingredients-container"></div>
+
+      <div class="veg-toggle-wrap" aria-live="polite">
+        <div class="veg-toggle-copy">
+          <div class="veg-toggle-title" data-i18n="vegetarian_mode">Vegetarisch</div>
+          <div class="veg-toggle-subtitle" data-i18n="vegetarian_subtitle">Nur vegetarische Rezepte anzeigen</div>
+        </div>
+        <button id="veg-toggle" class="btn primary veg-toggle-btn" aria-pressed="false" type="button" data-i18n="vegetarian_mode">
+          🌿 Vegetarisch
+        </button>
+        <div class="veg-toggle-deco" aria-hidden="true">
+          <span class="veg-leaf"></span>
+          <span class="veg-leaf"></span>
+          <span class="veg-grain"></span>
+          <span class="veg-grain"></span>
+          <span class="veg-veggie"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUGGESTION BOX entfernt -->
+
+    <!-- RESULTS SECTION -->
+    <section id="compose-results" class="generator-results" style="margin-top: 2rem;"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav>
+        <a href="../index.html" data-i18n="startseite">Startseite</a> •
+        <a href="contact.html" data-i18n="kontakt">Kontakt</a> •
+        <a href="impressum.html" data-i18n="impressum">Impressum</a>
+      </nav>
+      <p data-i18n="copyright">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="../i18n.js"></script>
+  <script src="../app.js"></script>
+  <script>
+    // Translation helper
+    const t = (k, fallback) => { 
+      const lang = getLang(); 
+      return (i18n[lang] && i18n[lang][k]) || i18n['de'][k] || fallback || k; 
+    };
+
+    // Non-vegetarian keywords for filtering
+    const nonVegKeywords = [
+      'fleisch','rind','rindfleisch','schwein','schweinefleisch','hähnchen','haehnchen','huhn',
+      'lamm','kalb','wild','fisch','lachs','thunfisch','kabeljau','forelle','speck','schinken','wurst'
+    ];
+
+    // Check if ingredient matches
+    function isIngredientMatch(userIng, recipeIng) {
+      const u = userIng.toLowerCase().trim();
+      const r = recipeIng.toLowerCase().trim();
+      return u === r || r.includes(u) || u.includes(r);
+    }
+
+    // Check if recipe is vegetarian
+    function isVegetarianRecipe(recipe) {
+      return !recipe.ingredients.some(ing => 
+        nonVegKeywords.some(k => ing.toLowerCase().includes(k))
+      );
+    }
+
+    let userIngredients = [];
+    let vegMode = false;
+
+    // Render user ingredients as tags
+    function renderIngredientsDisplay() {
+      const container = document.getElementById('ingredients-display');
+      const lang = getLang();
+      container.innerHTML = '';
+
+      if (userIngredients.length === 0) {
+        container.innerHTML = `<p style="color: var(--color-text-muted);">${i18n[lang]['no_ingredients_added']}</p>`;
+        return;
+      }
+
+      const tagContainer = document.createElement('div');
+      tagContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;';
+
+      userIngredients.forEach((ing, idx) => {
+        const tag = document.createElement('div');
+        tag.className = 'ingredient-tag';
+        tag.style.cssText = `
+          background-color: #4ecdc4;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
+        `;
+        tag.innerHTML = `
+          <span>${ing}</span>
+          <button class="btn-remove" data-idx="${idx}" style="
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0;
+            line-height: 1;
+          ">×</button>
+        `;
+        tagContainer.appendChild(tag);
+      });
+
+      container.appendChild(tagContainer);
+
+      // Attach remove handlers
+      container.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          userIngredients.splice(Number(btn.dataset.idx), 1);
+          renderIngredientsDisplay();
+          generateRecipes();
+        });
+      });
+
+      // Clear all button
+      if (userIngredients.length > 0) {
+        const clearBtn = document.createElement('button');
+        clearBtn.className = 'btn secondary';
+        clearBtn.textContent = i18n[lang]['ing_clear_btn'];
+        clearBtn.style.marginTop = '0.5rem';
+        clearBtn.addEventListener('click', () => {
+          userIngredients = [];
+          renderIngredientsDisplay();
+          generateRecipes();
+        });
+        container.appendChild(clearBtn);
+      }
+    }
+
+    // Generate and display matching recipes
+    function generateRecipes() {
+      const results = document.getElementById('compose-results');
+      const lang = getLang();
+      
+      if (userIngredients.length === 0) {
+        results.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['no_ingredients_added']}</p>`;
+        return;
+      }
+
+      // Filter recipes based on vegetarian mode
+      let allRecipes = vegMode ? recipes.filter(isVegetarianRecipe) : recipes;
+
+      // Find exact matches (recipes with ALL user ingredients)
+      const exactMatches = allRecipes.filter(recipe => 
+        userIngredients.every(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
+      );
+
+      // Find partial matches (recipes with SOME user ingredients)
+      const partialMatches = allRecipes
+        .filter(recipe => !exactMatches.includes(recipe) && 
+          userIngredients.some(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
+        )
+        .slice(0, 5);
+
+      const allMatches = [...exactMatches, ...partialMatches];
+
+      if (allMatches.length === 0) {
+        results.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['no_recipes_found']}</p>`;
+        return;
+      }
+
+      const recipeWord = allMatches.length === 1 ? i18n[lang]['recipe'] : i18n[lang]['recipes'];
+      results.innerHTML = `<h2>🍽️ ${allMatches.length} ${recipeWord} ${i18n[lang]['recipes_for_you']}</h2>`;
+
+      // Display exact matches
+      if (exactMatches.length > 0) {
+        const section = createRecipeSection(`✅ ${i18n[lang]['perfect_matches']}`, '#4ecdc4');
+        exactMatches.forEach(recipe => section.appendChild(createRecipeCard(recipe, true)));
+        results.appendChild(section);
+      }
+
+      // Display partial matches
+      if (partialMatches.length > 0) {
+        const section = createRecipeSection(`💡 ${i18n[lang]['more_suggestions']}`, '#ffe066');
+        partialMatches.forEach(recipe => section.appendChild(createRecipeCard(recipe, false)));
+        results.appendChild(section);
+      }
+    }
+
+    // Create recipe section with title bar
+    function createRecipeSection(title, color) {
+      const section = document.createElement('div');
+      section.style.marginTop = '2rem';
+      
+      const bar = document.createElement('div');
+      bar.textContent = title;
+      bar.style.cssText = `
+        background: linear-gradient(90deg, ${color} 0%, #fff0 100%);
+        color: #222;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(78,205,196,0.1);
+      `;
+      section.appendChild(bar);
+      
+      const grid = document.createElement('div');
+      grid.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;';
+      section.appendChild(grid);
+      
+      return grid;
+    }
+
+    // Create recipe card with ingredients
+    function createRecipeCard(recipe, isExact) {
+      const lang = getLang();
+      const card = document.createElement('div');
+      card.style.cssText = `
+        background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
+        border: 2px solid var(--color-accent-teal);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      `;
+
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-4px)';
+        card.style.boxShadow = '0 8px 24px rgba(78, 205, 196, 0.2)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'none';
+      });
+
+      // Click handler to show recipe details with instructions
+      card.addEventListener('click', () => {
+        displayRecipeDetails(recipe);
+      });
+
+      // Title with translation support
+      const recipeTitle = lang === 'en' && recipe.title_en 
+        ? recipe.title_en 
+        : lang === 'en' && typeof autoTranslateGermanText === 'function'
+          ? autoTranslateGermanText(recipe.title)
+          : recipe.title;
+      
+      const title = document.createElement('h3');
+      title.textContent = recipeTitle;
+      title.style.margin = '0 0 0.5rem 0';
+      card.appendChild(title);
+
+      // Match badge
+      const badge = document.createElement('span');
+      badge.textContent = isExact ? `✅ ${i18n[lang]['perfect_badge']}` : `💡 ${i18n[lang]['partial_badge']}`;
+      badge.style.cssText = `
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        background-color: ${isExact ? '#4ecdc4' : '#ffe066'};
+        color: ${isExact ? 'white' : '#222'};
+        margin-bottom: 0.8rem;
+      `;
+      card.appendChild(badge);
+
+      // Ingredients with color coding
+      const ingSection = document.createElement('div');
+      
+      const ingTitle = document.createElement('p');
+      ingTitle.textContent = i18n[lang]['ingredients_colon'];
+      ingTitle.style.cssText = 'font-weight: bold; margin: 0 0 0.5rem 0; font-size: 0.9rem;';
+      ingSection.appendChild(ingTitle);
+
+      const ingTags = document.createElement('div');
+      ingTags.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.4rem;';
+
+      recipe.ingredients.forEach(ing => {
+        const hasIt = userIngredients.some(u => isIngredientMatch(u, ing));
+        const tag = document.createElement('span');
+        tag.textContent = translateIngredient(ing, lang);
+        tag.style.cssText = `
+          padding: 0.3rem 0.7rem;
+          border-radius: 12px;
+          font-size: 0.85rem;
+          background-color: ${hasIt ? '#90EE90' : '#FFB6B6'};
+          color: ${hasIt ? '#006600' : '#990000'};
+          font-weight: 500;
+        `;
+        ingTags.appendChild(tag);
+      });
+
+      ingSection.appendChild(ingTags);
+      card.appendChild(ingSection);
+
+      return card;
+    }
+
+    // Event listeners
+    document.getElementById('search-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = document.getElementById('search-input');
+      const newIngredients = input.value.trim().split(',').map(s => s.trim()).filter(Boolean);
+      
+      newIngredients.forEach(ing => {
+        if (!userIngredients.includes(ing)) userIngredients.push(ing);
+      });
+
+      input.value = '';
+      renderIngredientsDisplay();
+      generateRecipes();
+    });
+
+    // Vegetarian toggle
+    const vegToggle = document.getElementById('veg-toggle');
+    vegToggle.addEventListener('click', () => {
+      const lang = getLang();
+      vegMode = !vegMode;
+      vegToggle.textContent = vegMode ? `🥬 ${i18n[lang]['vegetarian_on']}` : `🌿 ${i18n[lang]['vegetarian_mode']}`;
+      vegToggle.setAttribute('aria-pressed', String(vegMode));
+      document.querySelector('.veg-toggle-wrap').classList.toggle('veg-active', vegMode);
+      generateRecipes();
+    });
+
+    // Initialize
+    renderIngredientsDisplay();
+
+    // Listen for language changes to update dynamic content
+    window.addEventListener('languageChanged', (e) => {
+      renderIngredientsDisplay();
+      generateRecipes();
+    });
+  </script>
+</body>
+</html>
+
+
