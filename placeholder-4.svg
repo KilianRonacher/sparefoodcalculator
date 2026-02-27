@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500' preserveAspectRatio='xMidYMid slice'>
+  <rect width='100%' height='100%' fill='#4ecdc4'/>
+  <g fill='#ffe66d' opacity='0.95'>
+    <rect x='60' y='80' width='200' height='200' rx='16'/>
+    <circle cx='520' cy='160' r='100'/>
+  </g>
+  <text x='50%' y='90%' font-size='36' text-anchor='middle' fill='#ffffff' font-family='Arial' font-weight='700'>Hauptgericht</text>
+</svg>

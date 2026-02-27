@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakt — SpareFoodCalculator</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
+      <div class="nav-wrap">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
+        <!-- Kategorien button removed (kept in background for admin usage) -->
+        <nav class="main-nav mobile-hidden" id="main-nav">
+          <a href="../index.html" data-i18n="startseite">Startseite</a>
+          <a href="search.html" data-i18n="calculator">Calculator</a>
+          <a href="contact.html" data-i18n="kontakt">Kontakt</a>
+          <a href="impressum.html" data-i18n="impressum">Impressum</a>
+        </nav>
+      </div>
+      <div class="theme-lang-controls">
+        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="lang-toggle-btn">English</button>
+      </div>
+      <a href="search.html" class="btn primary small header-cta" data-i18n="calculator">Calculator</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Kontakt</h2>
+    <p>Du kannst mich per E-Mail oder Telefon erreichen.</p>
+    <ul>
+      <li>E-Mail: <a href="mailto:kilianfelbertal@gmail.com">kilianfelbertal@gmail.com</a></li>
+      <li>Telefon: +43 650 6965227</li>
+    </ul>
+
+    <h3>Feedback / Anfragen</h3>
+    <p>Nutze das Formular oder schreibe direkt eine Mail.</p>
+    <form action="mailto:kilianfelbertal@gmail.com" method="post" enctype="text/plain">
+      <input name="name" placeholder="Dein Name" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd" />
+      <input name="email" placeholder="Deine E-Mail" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd" />
+      <textarea name="message" placeholder="Nachricht" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd;min-height:120px"></textarea>
+      <button class="btn primary" type="submit">E-Mail senden</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav>
+        <a href="../index.html" data-i18n="startseite">Startseite</a> •
+        <a href="contact.html" data-i18n="kontakt">Kontakt</a> •
+        <a href="impressum.html" data-i18n="impressum">Impressum</a>
+      </nav>
+      <p data-i18n="copyright">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- duplicate footer removed -->
+
+  <script src="../i18n.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
+
