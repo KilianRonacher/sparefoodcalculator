@@ -233,13 +233,31 @@ h3 {
 }
 
 /* ========================================
+ * 3D-Schichten-Effekt für Startseite
+ * ======================================== */
+
+/* Vordergrund-Ebene: 3D-Früchte mit Maus-Tracking */
+.vordergrund-früchte {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/hero-image.png");
+  background-size: contain;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.1s ease-out;
+}
+
+/* ========================================
  * Hero section - Image beside text
  * ======================================== */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 2rem;
-  align-items: center;
+  display: block;
+  text-align: center;
   padding: 3rem 0;
   border-radius: 20px;
   margin: 1rem 0;
@@ -270,6 +288,7 @@ body.dark-mode .hero p {
 }
 
 .hero-art {
+  display: none;
   display: block;
 }
 
