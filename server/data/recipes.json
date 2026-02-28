@@ -1,0 +1,2291 @@
+[
+  {
+    "id": 1,
+    "title": "Reste-Salat mit Tomate & Brot",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "tomate",
+      "brot",
+      "salat",
+      "olivenöl",
+      "essig",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Leftover Salad with Tomato & Bread",
+    "steps_en": [
+      "Cut stale bread into 1 cm cubes and fry in hot oil for about 3 minutes until crispy and golden brown",
+      "Core tomatoes and dice small, pick out basil leaves",
+      "Wash lettuce, spin dry and tear into larger pieces",
+      "Whisk together olive oil, vinegar, salt and pepper to make a vinaigrette",
+      "Mix the still-warm bread cubes with tomatoes",
+      "Just before serving, toss lettuce with vinaigrette and mix in the bread cubes",
+      "Serve with fresh basil and optional Parmesan shavings"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Warmer Brotsalat mit Kräutern",
+    "category": "salat",
+    "difficulty": "mittel",
+    "ingredients": [
+      "brot",
+      "knoblauch",
+      "olivenöl",
+      "zitronensaft",
+      "kräuter",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Warm Bread Salad with Herbs",
+    "steps_en": [
+      "Cut stale bread into medium cubes and set aside",
+      "Finely chop garlic and slowly brown in olive oil for about 2 minutes",
+      "Bring lemon juice and salt to a boil in the garlic oil",
+      "Place bread cubes in a bowl and pour the hot marinade over",
+      "Add chopped fresh herbs (parsley, chives, optional basil) and mix well",
+      "Let soak for 10-15 minutes so bread absorbs liquid",
+      "Season with salt and pepper and serve warm or lukewarm"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Cremige Tomatensuppe (Reste-Edition)",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "tomate",
+      "zwiebel",
+      "knoblauch",
+      "brühe",
+      "sahne",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Creamy Tomato Soup (Leftover Edition)",
+    "steps_en": [
+      "Finely chop onion and garlic, sauté in hot oil for about 2 minutes without coloring",
+      "Add tomato puree or chopped fresh tomatoes and cook briefly",
+      "Cover vegetables with stock and bring to a boil",
+      "Simmer gently for about 15 minutes until flavors have melded",
+      "Puree to a creamy consistency using an immersion or stand blender",
+      "Stir in cream and heat briefly - do not boil",
+      "Season with salt and pepper, optionally garnish with fresh basil"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Feines Pilz-Risotto (inspiriert)",
+    "category": "hauptgericht",
+    "difficulty": "gehoben",
+    "ingredients": [
+      "reis",
+      "pilze",
+      "zwiebel",
+      "brühe",
+      "parmesan",
+      "butter"
+    ],
+    "steps": [],
+    "title_en": "Fine Mushroom Risotto (inspired)",
+    "steps_en": [
+      "Clean mushrooms, halve if necessary and brown in hot oil for 5 minutes, set aside",
+      "Finely chop onion and sauté in butter until soft for 2 minutes",
+      "Add rice (about 300g for 4 people) and toast for 2 minutes while stirring",
+      "Gradually add stock bit by bit as rice absorbs it, about 15 minutes",
+      "Stir constantly so starch releases for creaminess",
+      "After about 18-20 minutes total, rice should be al dente with some bite",
+      "Return mushrooms, stir in butter and Parmesan, season with salt and pepper and serve"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Herzhafte Rinderragout",
+    "category": "rind",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rindfleisch",
+      "zwiebel",
+      "karotte",
+      "rotwein",
+      "brühe",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Hearty Beef Ragout",
+    "steps_en": [
+      "Cut beef into 3-4 cm cubes, pat dry, and season with salt and pepper",
+      "Working in batches, sear meat on all sides in hot oil until deeply browned (~3 min per batch). Set aside",
+      "Chop onions and slice carrots. sauté in the same pot for 3 minutes",
+      "Return beef to pot, deglaze with red wine, and simmer for 1 minute to reduce alcohol",
+      "Cover meat completely with stock, bring to a boil, then reduce to low heat",
+      "Simmer covered for 1.5-2 hours until meat is very tender",
+      "Season to taste with salt and pepper. Serve with broccoli or potatoes"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Rindersteak mit Fleur de Sel",
+    "category": "rind",
+    "difficulty": "einfach",
+    "ingredients": [
+      "rindfleisch",
+      "fleur de sel",
+      "schwarzer pfeffer",
+      "olivenöl"
+    ],
+    "steps": [],
+    "title_en": "Beef Steak with Fleur de Sel",
+    "steps_en": [
+      "Remove steak from refrigerator 20 minutes before cooking for even results",
+      "Pat dry and lightly coat with olive oil",
+      "Heat a cast iron skillet until it's smoking hot",
+      "Sear steak for 3-5 minutes per side depending on thickness and desired doneness",
+      "Season immediately after cooking with fleur de sel and freshly cracked pepper",
+      "Let rest on a wooden board for 5 minutes to redistribute meat juices",
+      "Serve with optional herb butter"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Rinder-Gulasch",
+    "category": "rind",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rindfleisch",
+      "paprikapulver",
+      "zwiebel",
+      "karotte",
+      "brühe",
+      "salz",
+      "essig"
+    ],
+    "steps": [],
+    "title_en": "Beef Goulash",
+    "steps_en": [
+      "Cut beef into 3 cm cubes and season with salt",
+      "Cut onions into half rings, slice carrots",
+      "Brown meat on all sides in hot oil in batches, remove",
+      "sauté onions in the same pot for 2 minutes until golden",
+      "Generously distribute paprika powder (about 3-4 tbsp) and stir immediately - max 30 seconds to avoid bitterness",
+      "Return meat, deglaze with red wine or vinegar and stir well",
+      "Add stock to cover everything, bring to boil and reduce to low heat",
+      "Simmer covered for about 1.5-2 hours until meat is very tender, cook uncovered at end to thicken",
+      "Season finally with salt and vinegar splash and serve with dumplings or potatoes"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Rinderfilet mit Knoblauch und Thymian",
+    "category": "rind",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rindfleisch",
+      "knoblauch",
+      "thymian",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Greek Salad",
+    "steps_en": [
+      "Peel and dice cucumber into bite-sized pieces.",
+      "Halve cherry tomatoes and deseed regular tomatoes if using, then cut into chunks.",
+      "Slice red onion into thin half-rings and separate the layers.",
+      "Cut bell pepper into strips and remove seeds.",
+      "Place all vegetables in a large bowl.",
+      "Crumble feta cheese over the top and add pitted olives.",
+      "Drizzle generously with olive oil and season with salt, pepper, and dried oregano.",
+      "Toss gently to combine all ingredients and let rest for 5 minutes before serving."
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Gegrilltes Rindersteak mit Paprika",
+    "category": "rind",
+    "difficulty": "einfach",
+    "ingredients": [
+      "rindfleisch",
+      "paprika",
+      "rosmarin",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Tomato Soup",
+    "steps_en": [
+      "Peel and finely chop the onion.",
+      "Heat olive oil in a large pot over medium heat and sauté the onion for about 3-4 minutes until translucent.",
+      "Add diced canned or fresh tomatoes and stir well.",
+      "Pour in vegetable broth (about 500ml) and bring to a boil.",
+      "Reduce heat and simmer for about 15-20 minutes to allow flavors to develop.",
+      "Use an immersion blender to puree the soup until smooth and creamy.",
+      "Season with salt, pepper, and a pinch of sugar if needed to balance acidity.",
+      "Serve hot, garnished with fresh basil leaves or a swirl of cream."
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Rindfleisch-Eintopf",
+    "category": "rind",
+    "difficulty": "einfach",
+    "ingredients": [
+      "rindfleisch",
+      "kartoffeln",
+      "karotte",
+      "zwiebel",
+      "brühe",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Beef Stew",
+    "steps_en": [
+      "Cut beef into bite-sized cubes, also dice potatoes and carrots",
+      "Chop onion and briefly sauté in hot oil",
+      "Add meat and brown for 2-3 minutes at high heat until brown outside",
+      "Add stock to barely cover everything",
+      "Add potatoes and carrots, bring to boil",
+      "Reduce heat to low and simmer covered for about 45-60 minutes until potatoes are tender and meat is done",
+      "Season with salt and optional pepper before serving"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Schweineschnitzel klassisch",
+    "category": "schwein",
+    "difficulty": "einfach",
+    "ingredients": [
+      "schweineschnitzel",
+      "paniermehl",
+      "eier",
+      "salz",
+      "pfeffer",
+      "öl"
+    ],
+    "steps": [],
+    "title_en": "Classic Pork Schnitzel",
+    "steps_en": [
+      "Pound pork schnitzel between two layers of plastic wrap with meat mallet until about 5mm thin",
+      "Beat eggs and pour into deep plate",
+      "Mix breadcrumbs with 1 tsp salt and pepper in another plate",
+      "First turn schnitzel completely in egg, shake off excess egg",
+      "Then immediately turn in breadcrumbs and press lightly to adhere",
+      "Deep fry in sufficient hot oil (about 3-4 cm deep) for about 3 minutes per side until golden brown",
+      "Let finished cutlet drain on paper towels",
+      "Serve with lemon slice and cooled red cabbage or fresh salad"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Schweinefilet mit Rosmarin",
+    "category": "schwein",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schweinefilet",
+      "rosmarin",
+      "knoblauch",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Pork Fillet with Rosemary",
+    "steps_en": [
+      "Remove pork fillet from any attached sinews with small knife",
+      "Season with salt and pepper, rub in fresh rosemary sprigs and chopped garlic",
+      "Add fillet to hot oil and brown for 2-3 minutes per side until brown outside",
+      "Place in oven preheated to 160°C on middle rack for about 15-20 minutes until core temperature reaches about 63-65°C",
+      "Remove fillet to board and let rest for 5 minutes so juice distributes",
+      "Cut into 1.5 cm thick slices with sharp knife",
+      "Serve with rosemary jus and seasonal vegetables"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Schweinefleisch-Eintopf",
+    "category": "schwein",
+    "difficulty": "einfach",
+    "ingredients": [
+      "schweinefleisch",
+      "kartoffeln",
+      "karotte",
+      "zwiebel",
+      "brühe",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Minestrone",
+    "steps_en": [
+      "Peel and dice onion, carrots, and celery into small pieces.",
+      "Heat olive oil in a large pot and sauté the diced vegetables for about 5 minutes until softened.",
+      "Add diced tomatoes and stir to combine well.",
+      "Pour in vegetable broth (about 1 liter) and bring to a boil.",
+      "Add uncooked pasta (like small shells or ditalini) and cook for about 8-10 minutes.",
+      "Drain canned beans and add them to the pot, stirring gently.",
+      "Simmer for an additional 5 minutes until pasta is tender and beans are heated through.",
+      "Season with salt, pepper, and dried Italian herbs.",
+      "Serve hot with grated Parmesan cheese and crusty bread."
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Schweinefleisch-Ragout",
+    "category": "schwein",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schweinefleisch",
+      "rotwein",
+      "zwiebel",
+      "knoblauch",
+      "brühe",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Pork Ragout",
+    "steps_en": [
+      "Cut pork into 3 cm cubes and pat dry",
+      "Brown meat in hot oil in batches until dark brown outside, remove",
+      "sauté chopped onions and garlic in same pot for 2 minutes",
+      "Return meat, deglaze with red wine and simmer for about 1 minute to reduce alcohol",
+      "Add stock to cover meat, bring to boil and reduce heat to low",
+      "Simmer covered for about 1-1.5 hours at barely moving simmer until meat is tender",
+      "Season finally with black pepper and optional mustard, serve with potatoes or noodles"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Gegrillte Schweinerippen",
+    "category": "schwein",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schweinefleisch",
+      "paprikapulver",
+      "honig",
+      "essig",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Grilled Pork Ribs",
+    "steps_en": [
+      "Mix paprika powder, honey, vinegar and pinch of salt to paste",
+      "Generously rub pork ribs with this on both sides",
+      "Marinate wrapped in foil in refrigerator for at least 4 hours (or overnight)",
+      "Cook indirectly at medium height on grill or in oven at 180°C for about 40-50 minutes",
+      "Brush more glaze mixture every 10-15 minutes with brush until shiny dark brown",
+      "Cut into individual ribs with sharp knife or meat cutter",
+      "Serve as finger food with salt shaker and fresh parsley"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Schweinehack-Pfanne mit Paprika",
+    "category": "schwein",
+    "difficulty": "einfach",
+    "ingredients": [
+      "schweinehack",
+      "paprika",
+      "zwiebel",
+      "tomaten",
+      "salz",
+      "pfeffer",
+      "öl"
+    ],
+    "steps": [],
+    "title_en": "Ground Pork Pan with Bell Peppers",
+    "steps_en": [
+      "sauté chopped onion in hot oil for 2 minutes until pale golden",
+      "Brown ground pork in batches while stirring for about 4-5 minutes until no pink visible",
+      "Add bell pepper strips and cook for 2 minutes",
+      "Add tomato pieces or tomato puree and mix well",
+      "Simmer for about 8-10 minutes at medium heat so flavors blend",
+      "Season generously with salt and black pepper",
+      "Serve with pasta, rice or fresh bread"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Knoblauch-Hähnchen mit Zitrone",
+    "category": "haendl",
+    "difficulty": "einfach",
+    "ingredients": [
+      "hähnchen",
+      "knoblauch",
+      "zitrone",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Garlic Chicken with Lemon",
+    "steps_en": [
+      "Cut chicken fillets into bite-sized pieces and season with salt and pepper",
+      "Mince garlic and combine with olive oil and lemon juice",
+      "Marinate chicken for 15-20 minutes in this mixture",
+      "Heat oil in a skillet and pan-fry chicken for 3 minutes per side until golden",
+      "Transfer to a 180°C oven and bake another 10-12 minutes until fully cooked",
+      "Garnish with lemon slices and fresh herbs",
+      "Serve hot with salad, rice, or potatoes"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Hähnchen-Curry",
+    "category": "haendl",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchen",
+      "curry",
+      "kokosmilch",
+      "zwiebel",
+      "knoblauch",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Chicken Curry",
+    "steps_en": [
+      "sauté chopped onions in hot oil for 2 minutes",
+      "Add 2-3 tablespoons curry powder and toast for about 1 minute until fragrant",
+      "Add diced chicken and sear for 3 minutes over high heat",
+      "Pour in coconut milk and stir well to combine",
+      "Add minced garlic, bring to a boil, then reduce heat to low",
+      "Simmer gently for about 20 minutes until chicken is cooked through",
+      "Adjust seasoning with salt and additional curry powder to taste",
+      "Serve over basmati rice with naan bread"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Gegrillte Hähnchenkeule",
+    "category": "haendl",
+    "difficulty": "einfach",
+    "ingredients": [
+      "hähnchen",
+      "paprika",
+      "thymian",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Grilled Chicken Drumstick",
+    "steps_en": [
+      "Pat chicken drumstick dry (dry surface is important)",
+      "Season generously with olive oil, paprika, fresh thyme, salt and pepper on all sides",
+      "Cook at medium grill height or in oven at 200°C on rack for about 35-45 minutes depending on size",
+      "Turn every 10 minutes so it browns evenly and doesn't burn",
+      "Make cut with sharp knife into thickest part - juice must run clear when done",
+      "Let rest for 5 minutes so juices distribute",
+      "Serve with garlic aioli, boiled potatoes and green salad"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Hähnchen mit Pilzen",
+    "category": "haendl",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchen",
+      "pilze",
+      "zwiebel",
+      "sahne",
+      "salz",
+      "pfeffer",
+      "butter"
+    ],
+    "steps": [],
+    "title_en": "Chicken with Mushrooms",
+    "steps_en": [
+      "Cut chicken fillet into bite-sized pieces, season with salt and pepper",
+      "Clean mushrooms and cut into thick slices or quarters, chop onion",
+      "Brown chicken in hot oil for 3 minutes per side, remove",
+      "In same pan with butter, brown mushrooms for 3 minutes golden, add onion",
+      "Stir in cream, return chicken, season with salt and pepper",
+      "Simmer gently at low heat for about 12-15 minutes so sauce thickens",
+      "Garnish with fresh parsley or chives, serve with Spätzle or rice"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Hähnchen-Pfanne mit Paprika",
+    "category": "haendl",
+    "difficulty": "einfach",
+    "ingredients": [
+      "hähnchen",
+      "rote paprika",
+      "gelbe paprika",
+      "zwiebel",
+      "tomaten",
+      "salz",
+      "pfeffer",
+      "öl"
+    ],
+    "steps": [],
+    "title_en": "Chicken Pan with Bell Peppers",
+    "steps_en": [
+      "Cut chicken fillet into bite-sized pieces, core both types of bell peppers and cut into wide rings",
+      "Chop onion, dice tomatoes",
+      "Sear chicken in hot oil for 2 minutes on each side over high heat, then remove",
+      "sauté onion and bell pepper rings in the same pan for 2 minutes",
+      "Add diced tomatoes and return the chicken",
+      "Cook for about 10-12 minutes over medium heat until vegetables are soft and chicken is cooked through",
+      "Season with salt and black pepper, serve with rice or wide noodles"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Hähnchen-Eintopf",
+    "category": "haendl",
+    "difficulty": "einfach",
+    "ingredients": [
+      "hähnchen",
+      "kartoffeln",
+      "karotte",
+      "zwiebel",
+      "brühe",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Chicken Stew",
+    "steps_en": [
+      "Cut chicken fillet into bite-sized, even pieces",
+      "Cut potatoes and carrots into not too small cubes, chop onion",
+      "Briefly brown chicken in hot oil for about 2-3 minutes, remove",
+      "sauté onion, add potatoes and carrots and steam for 2 minutes",
+      "Add stock to barely cover vegetables",
+      "Return chicken, bring to boil and reduce to low heat",
+      "Simmer covered for about 35-40 minutes until potatoes are soft and chicken is done",
+      "Season with salt and pepper and serve as warming stew"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Fisch aus der Pfanne mit Kräuterkruste",
+    "category": "fisch",
+    "difficulty": "mittel",
+    "ingredients": [
+      "fisch",
+      "paniermehl",
+      "kräuter",
+      "butter",
+      "zitrone",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Pan-Fried Fish with Herb Crust",
+    "steps_en": [
+      "Season fish fillets with salt and pepper",
+      "Mix breadcrumbs with finely chopped fresh herbs",
+      "Coat fillets in the herb breadcrumb mixture, pressing gently",
+      "Heat butter in a large skillet over medium-high heat",
+      "Pan-fry fillets for 3-4 minutes per side until golden brown and cooked through",
+      "Finish with fresh lemon juice and serve"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Citrus-Mariniertes Lachsfilet",
+    "category": "fisch",
+    "difficulty": "gehoben",
+    "ingredients": [
+      "lachs",
+      "zitrone",
+      "honig",
+      "sojasauce",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Citrus-Marinated Salmon Fillet",
+    "steps_en": [
+      "Mix lemon juice, honey, and soy sauce in a bowl",
+      "Place salmon fillets in a baking dish and pour marinade over them",
+      "Refrigerate for at least 30 minutes",
+      "Preheat oven to 180°C and bake salmon for 12-15 minutes until just cooked",
+      "Season with freshly cracked black pepper and serve hot"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Lachs mit Dill und Zitrone",
+    "category": "fisch",
+    "difficulty": "einfach",
+    "ingredients": [
+      "lachs",
+      "dill",
+      "zitrone",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Chicken Caesar Salad",
+    "steps_en": [
+      "Cut chicken breast into thin strips or bite-sized pieces.",
+      "Season chicken with salt and pepper.",
+      "Heat olive oil in a skillet over medium-high heat.",
+      "Sear chicken strips for about 5-6 minutes until golden brown and cooked through (internal temperature 165üf/74°C).",
+      "Tear romaine lettuce into bite-sized pieces and place in a large bowl.",
+      "Add diced tomatoes and shaved Parmesan cheese.",
+      "Drizzle with Caesar dressing and toss gently to coat all ingredients.",
+      "Top with cooked chicken strips and serve immediately while chicken is still warm."
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Gebratener Lachs mit Knoblauch",
+    "category": "fisch",
+    "difficulty": "einfach",
+    "ingredients": [
+      "lachsfilet",
+      "knoblauch",
+      "olivenöl",
+      "salz",
+      "pfeffer",
+      "essig"
+    ],
+    "steps": [],
+    "title_en": "Fried Salmon with Garlic",
+    "steps_en": [
+      "Finely chop or press garlic",
+      "Heat olive oil in pan",
+      "Place salmon fillets skin side down in pan, cook for 4 minutes",
+      "Turn to other side, add chopped garlic",
+      "Fry for another 3-4 minutes until salmon is cooked through",
+      "Season with vinegar, salt and pepper and serve"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Lachs im Ofen mit Gemüse",
+    "category": "fisch",
+    "difficulty": "mittel",
+    "ingredients": [
+      "lachs",
+      "zucchini",
+      "paprika",
+      "tomate",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Potato Salad with Herbs",
+    "steps_en": [
+      "Wash and peel potatoes, then cut into 2cm cubes.",
+      "Boil potatoes in salted water for about 15-20 minutes until tender but not mushy.",
+      "Drain and let cool completely.",
+      "Finely chop fresh herbs (parsley, dill, and chives work well).",
+      "Peel and finely dice onion.",
+      "Mix cooled potatoes with herbs and onion in a large bowl.",
+      "Whisk together olive oil, vinegar or lemon juice, salt, and pepper to make dressing.",
+      "Pour dressing over potato mixture and toss gently to combine.",
+      "Let marinate in the refrigerator for at least 30 minutes before serving to allow flavors to meld."
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Lachsfilet mit Basilikum-Pesto",
+    "category": "fisch",
+    "difficulty": "mittel",
+    "ingredients": [
+      "lachs",
+      "basilikum",
+      "pinienkerne",
+      "parmesan",
+      "olivenöl",
+      "zitrone",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Salmon Fillet with Basil Pesto",
+    "steps_en": [
+      "Process basil, pine nuts, Parmesan and about 100ml olive oil in blender to pesto",
+      "Season with lemon and salt",
+      "Place salmon fillets on baking sheets",
+      "Spread generously with pesto",
+      "Bake at 180°C for about 12 minutes",
+      "Serve warm"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Forelle mit Mandelblättchen",
+    "category": "fisch",
+    "difficulty": "mittel",
+    "ingredients": [
+      "forelle",
+      "mandeln",
+      "butter",
+      "zitrone",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Pasta Salad",
+    "steps_en": [
+      "Cook pasta (penne, fusilli, or farfalle work well) in salted boiling water according to package directions until al dente.",
+      "Drain pasta and rinse under cold water to stop cooking, then let cool completely.",
+      "Dice bell peppers, removing seeds and white membranes.",
+      "Halve cherry tomatoes or dice regular tomatoes.",
+      "Drain mozzarella balls (bocconcini) if using, or cube fresh mozzarella.",
+      "Combine cooled pasta with all vegetables and cheese in a large bowl.",
+      "Drizzle generously with olive oil and add a splash of balsamic vinegar if desired.",
+      "Season with salt, pepper, and dried basil or oregano.",
+      "Toss everything together thoroughly and refrigerate for at least 15 minutes before serving."
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Kabeljau mit Sojasauce",
+    "category": "fisch",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kabeljau",
+      "sojasauce",
+      "knoblauch",
+      "sesamöl",
+      "zitronensaft",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Cod with Soy Sauce",
+    "steps_en": [
+      "Mix soy sauce, lemon juice and chopped garlic in bowl",
+      "Season cod fillets and place in baking dish",
+      "Spread soy sauce mixture over",
+      "Bake at 180°C for about 15 minutes until fish becomes opaque",
+      "Drizzle with sesame oil and serve"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Tomaten-Pasta",
+    "category": "pasta",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "tomaten",
+      "knoblauch",
+      "basilikum",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Tomato Pasta",
+    "steps_en": [
+      "Bring water with plenty of salt to a boil and cook spaghetti according to package instructions",
+      "Meanwhile, dice fresh tomatoes or use canned tomatoes",
+      "Press garlic and toast in olive oil for about 1 minute until golden without burning",
+      "Add tomatoes and simmer gently for about 10 minutes to blend flavors",
+      "Finely chop fresh basil and stir in at the very end",
+      "Drain spaghetti al dente and toss with tomato sauce",
+      "Serve with salt, pepper and optional grated Parmesan"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Pasta Aglio e Olio",
+    "category": "pasta",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "knoblauch",
+      "olivenöl",
+      "roter pfeffer",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Pasta Aglio e Olio",
+    "steps_en": [
+      "Bring water with salt to boil, cook spaghetti according to package",
+      "Finely chop garlic or slice",
+      "Heat olive oil in wide pot and add garlic - gently toast for about 1-2 minutes",
+      "Add red pepper or chili flakes to taste",
+      "Drain spaghetti al dente - save some cooking water",
+      "Add pasta directly to garlic-oil mixture and mix well",
+      "Smooth with some pasta water if needed, season with salt and pepper"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Carbonara-Pasta",
+    "category": "pasta",
+    "difficulty": "mittel",
+    "ingredients": [
+      "pasta",
+      "speck",
+      "eier",
+      "parmesan",
+      "schwarzer pfeffer",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Carbonara Pasta",
+    "steps_en": [
+      "Cut bacon into 1 cm wide strips and fry in dry pan for 3-4 minutes crispy",
+      "Beat eggs in bowl with chopped Parmesan and pepper",
+      "Boil water with salt and cook spaghetti according to package",
+      "Add still hot pasta to pan with bacon - heat off!",
+      "Immediately add egg-Parmesan mixture and stir quickly so heat cooks eggs",
+      "Add some pasta cooking water for creamy consistency",
+      "Season with salt and coarsely ground black pepper and serve"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Käse-Pasta mit Paprika",
+    "category": "pasta",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "käse",
+      "paprika",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Cheese Pasta with Bell Peppers",
+    "steps_en": [
+      "Bring water with salt to boil and cook penne according to package",
+      "Core bell peppers and cut into wide rings",
+      "In separate pan melt butter and sauté bell peppers for about 4 minutes",
+      "Add grated cheese to bell peppers and stir at low heat until creamy melted",
+      "Drain penne al dente - save some cooking water",
+      "Add pasta to cheese-bell pepper sauce and mix well",
+      "Thin with some cooking water if needed, season with pepper"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Kartoffel-Suppe",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "zwiebel",
+      "brühe",
+      "sahne",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Basil Pesto Spaghetti",
+    "steps_en": [
+      "Toast pine nuts in dry pan for about 2 minutes lightly and set aside",
+      "Wash fresh basil, pluck leaves - remove stems",
+      "In mortar or food processor, crush garlic + pine nuts + basil + some salt",
+      "Slowly add olive oil while stirring until thick paste forms",
+      "Finally finely grate Parmesan and stir in",
+      "Boil water, cook spaghetti according to package",
+      "Mix still-hot pasta with pesto - use some cooking water to thin"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Gemüsesuppe mit Brokkoli",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brokkoli",
+      "karotte",
+      "zwiebel",
+      "brühe",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Potato Soup",
+    "steps_en": [
+      "Peel and dice potatoes and onions",
+      "sauté onion in hot oil for 2 minutes",
+      "Add potatoes and cover with stock",
+      "Bring to a boil and simmer for about 20 minutes until potatoes are very soft",
+      "Puree smooth to a creamy consistency using an immersion blender",
+      "Stir in cream and heat without boiling",
+      "Season with salt and pepper, optionally garnish with fresh chives"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Hochzeitssuppe",
+    "category": "suppen",
+    "difficulty": "mittel",
+    "ingredients": [
+      "brühe",
+      "fleischbällchen",
+      "pasta",
+      "gemüse",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Beef Curry",
+    "steps_en": [
+      "Cut beef into 3-4cm cubes, trimming away excess fat.",
+      "Heat oil in a large pot over medium-high heat.",
+      "Season beef cubes with salt and sear on all sides for about 5-7 minutes until well browned.",
+      "Remove beef and set aside temporarily.",
+      "In the same pot, sauté finely chopped onion for about 3 minutes until softened.",
+      "Add curry powder (2-3 tablespoons) and cook for 1 minute while stirring to release the aromas.",
+      "Pour in coconut milk (400ml) and stir to combine with the curry powder.",
+      "Return the beef to the pot and bring to a simmer.",
+      "Cover and cook on low heat for about 45-60 minutes, stirring occasionally, until beef is very tender.",
+      "Season with salt and serve hot over steamed rice, garnished with fresh cilantro if desired."
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Karotten-Ingwer-Suppe",
+    "category": "suppen",
+    "difficulty": "mittel",
+    "ingredients": [
+      "karotte",
+      "ingwer",
+      "kokosmilch",
+      "brühe",
+      "salz",
+      "zitrone"
+    ],
+    "steps": [],
+    "title_en": "Wedding Soup",
+    "steps_en": [
+      "Form meatballs according to basic recipe (ground meat+egg+breadcrumbs) and fry in oil for 5 minutes",
+      "First mix stock with water and bring to boil",
+      "Add cut vegetables (carrot, zucchini, parsnip)",
+      "Add meatballs to soup and simmer for about 10 minutes",
+      "Cook penne in separate water, salt according to package",
+      "Drain al dente, distribute in soup",
+      "Garnish with salt, pepper and fresh herbs before serving"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Zwiebelsuppe",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "zwiebel",
+      "brühe",
+      "butter",
+      "brot",
+      "käse",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Carrot-Ginger Soup",
+    "steps_en": [
+      "Peel carrots and cut into about 2 cm pieces",
+      "Finely chop fresh ginger about 1 tbsp",
+      "Briefly sauté carrots with ginger in oil for 1 minute",
+      "Add stock and bring to boil",
+      "Simmer for about 20 minutes until carrots are very soft",
+      "Puree completely smooth with immersion blender",
+      "Stir in coconut milk and heat again",
+      "Season with lemon juice, salt and optional chili before serving"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Brokkoli-Käse-Auflauf",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "brokkoli",
+      "käse",
+      "eier",
+      "sahne",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Onion Soup",
+    "steps_en": [
+      "Peel onions and cut thin loops about 2 cm wide",
+      "Steam in butter at medium heat for about 20 minutes until dark brown and sweet",
+      "Add stock and bring to boil",
+      "Simmer for about 15 minutes",
+      "Toast medium-thick bread pieces until golden",
+      "Pour soup into oven-safe bowl, distribute bread on top",
+      "Distribute plenty of grated cheese over and gratinate at 200°C for about 5 minutes until golden"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Zucchini-Puffer",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "zucchini",
+      "eier",
+      "paniermehl",
+      "käse",
+      "salz",
+      "pfeffer",
+      "öl"
+    ],
+    "steps": [],
+    "title_en": "Broccoli-Cheese Casserole",
+    "steps_en": [
+      "Wash broccoli and divide into small florets",
+      "Blanch in boiling salt water for about 4 minutes half-done, then cool in ice water",
+      "Butter a casserole dish",
+      "Beat eggs with cream, stir in grated cheese (3/4 of it) with salt and pepper",
+      "Put broccoli in dish, distribute egg sauce over",
+      "Distribute remaining cheese on surface",
+      "Bake in oven preheated to 180°C for about 25-30 minutes until golden brown on top"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Spinat-Quark-Auflauf",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "spinat",
+      "quark",
+      "eier",
+      "käse",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Zucchini Fritters",
+    "steps_en": [
+      "Wash zucchini and grate coarsely on fine grater",
+      "Sprinkle with salt and let stand for 10 minutes, then squeeze dry in kitchen towel",
+      "Beat eggs with grated cheese and mix with breadcrumbs",
+      "Stir in zucchini mixture, season with salt and pepper",
+      "Fry flat fritters in sufficient hot oil for 3 minutes per side until golden",
+      "Drain on paper towels",
+      "Serve with yogurt dip or sour cream"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Gemüse-Frittata",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "eier",
+      "zucchini",
+      "paprika",
+      "zwiebel",
+      "käse",
+      "salz",
+      "pfeffer",
+      "öl"
+    ],
+    "steps": [],
+    "title_en": "Spinach-Quark/Topfen Casserole",
+    "steps_en": [
+      "Thaw fresh or frozen spinach and squeeze out excess liquid",
+      "Mix quark/topfen with eggs and blend with 2/3 of grated cheese",
+      "Fold in spinach, season with salt, pepper and nutmeg",
+      "Grease casserole dish with butter",
+      "Pour in spinach-quark/topfen mixture, smooth surface",
+      "Sprinkle remaining cheese on top",
+      "Bake in oven preheated to 180°C for about 30-35 minutes until golden"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Kartoffelauflauf mit Käse",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "kartoffeln",
+      "käse",
+      "sahne",
+      "butter",
+      "salz",
+      "pfeffer",
+      "muskatnuss"
+    ],
+    "steps": [],
+    "title_en": "Vegetable Frittata",
+    "steps_en": [
+      "Finely dice zucchini and bell peppers, chop onion",
+      "sauté all vegetables in hot oil for about 4 minutes until starting to soften",
+      "Beat eggs with milk, add grated cheese, season with salt and pepper",
+      "Pour egg mixture over vegetables and distribute well",
+      "Let set at medium to low heat for about 5-6 minutes until underside is firm",
+      "Loosen with spatula from pan",
+      "Finish in oven at 180°C for about 5-7 minutes"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Pilzpfanne mit Knoblauch",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pilze",
+      "knoblauch",
+      "petersilie",
+      "butter",
+      "salz",
+      "pfeffer",
+      "zitrone"
+    ],
+    "steps": [],
+    "title_en": "Potato Casserole with Cheese",
+    "steps_en": [
+      "Peel potatoes and slice into about 3mm thin slices",
+      "Grease casserole dish with butter",
+      "Layer potato slices",
+      "Mix cream with salt, pepper and freshly grated nutmeg and pour half over potatoes",
+      "Distribute finely grated cheese (2/3) over potatoes",
+      "Pour remaining cream over",
+      "Sprinkle remaining cheese on top",
+      "Bake in oven preheated to 180°C for about 45-50 minutes until golden"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Mushroom Risotto",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "reis",
+      "pilze",
+      "zwiebel",
+      "weißwein",
+      "brühe",
+      "parmesan",
+      "butter",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Mushroom Pan with Garlic",
+    "steps_en": [
+      "Clean mushrooms (don't wash!) and dice small or quarter depending on size",
+      "Finely chop garlic",
+      "Fry mushrooms in hot oil and butter for 4-5 minutes until golden and water evaporates",
+      "Add chopped garlic and stir for another 1-2 minutes",
+      "Sprinkle with fresh parsley and drizzle with lemon juice",
+      "Season with salt and freshly ground pepper"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Paprika-Gemüse-Pfanne",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "paprika",
+      "zucchini",
+      "zwiebel",
+      "tomaten",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Potato Pancakes",
+    "steps_en": [
+      "Peel potatoes and grate them coarsely using a box grater or food processor.",
+      "Place grated potatoes in a clean kitchen towel and squeeze firmly to remove as much liquid as possible.",
+      "Transfer squeezed potatoes to a mixing bowl.",
+      "Add eggs, flour, finely chopped onion, salt, and pepper to the bowl.",
+      "Mix everything together thoroughly until well combined into a thick batter.",
+      "Heat generous amount of oil in a large skillet over medium-high heat.",
+      "Spoon portions of the potato mixture into the hot oil and flatten into pancakes about 1cm thick.",
+      "Fry for about 4-5 minutes on each side until golden brown and crispy.",
+      "Remove and drain on paper towels to absorb excess oil.",
+      "Serve hot with sour cream, applesauce, or your preferred topping."
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Basilikum-Pesto Spaghetti",
+    "category": "pasta",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "basilikum",
+      "pinienkerne",
+      "parmesan",
+      "knoblauch",
+      "olivenöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Bell Pepper-Vegetable Pan",
+    "steps_en": [
+      "Core bell peppers and cut into wide rings, slice zucchini",
+      "Chop onion, dice tomatoes",
+      "Briefly sauté onion in hot oil for about 1 minute",
+      "Add bell peppers and zucchini, cook for 3 minutes at medium heat",
+      "Add tomatoes and simmer for another 5-7 minutes",
+      "Season with salt and pepper, optional fresh herbs"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Spinat-Ricotta-Ravioli",
+    "category": "pasta",
+    "difficulty": "mittel",
+    "ingredients": [
+      "pasta",
+      "spinat",
+      "ricotta",
+      "parmesan",
+      "eier",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Chicken Soup with Noodles",
+    "steps_en": [
+      "Cut chicken breast into bite-sized cubes.",
+      "Peel and dice carrots, celery, and onion into small pieces.",
+      "Heat oil in a large pot over medium heat and sauté the diced vegetables for about 5 minutes.",
+      "Add chicken cubes and cook for an additional 5 minutes, stirring occasionally.",
+      "Pour in chicken broth (about 1.5 liters) and bring to a boil.",
+      "Add uncooked noodles (egg noodles work best) and cook according to package directions, usually 8-10 minutes.",
+      "Season with salt, pepper, and fresh or dried herbs like parsley or thyme.",
+      "Simmer for a few more minutes until noodles are tender and chicken is fully cooked.",
+      "Serve hot, garnished with fresh parsley if desired."
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Pasta mit Würziger Tomatensauce",
+    "category": "pasta",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "tomaten",
+      "chili",
+      "knoblauch",
+      "olivenöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Coconut Milk Vegetable Curry",
+    "steps_en": [
+      "Peel and finely dice onion",
+      "Core bell peppers and cut into wide strips",
+      "Cut zucchini and carrot into about 1 cm cubes",
+      "Heat oil in sufficiently large pot and steam onion for about 2 minutes",
+      "Add curry powder generously (about 2 tbsp) and toast for about 1 minute",
+      "Add all vegetable pieces and briefly stir",
+      "Pour in coconut milk and bring to boil",
+      "Simmer for about 15-20 minutes until vegetables are tender",
+      "Season with salt and lemon juice, serve with rice"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Salat mit Parmesan und Croutons",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "salat",
+      "parmesan",
+      "brot",
+      "olivenöl",
+      "essig",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Salad with Parmesan and Croutons",
+    "steps_en": [
+      "Remove crust from bread slices and cut into 1-2 cm cubes. Toast in pan with olive oil at medium heat for about 5-7 minutes with regular stirring until golden and crispy. Season with salt and drain on paper towels",
+      "Thoroughly wash fresh lettuce, spin dry and tear into bite-sized pieces. Place in large bowl",
+      "Whisk olive oil, vinegar, salt and pepper to vinaigrette. Pour over salad and toss well",
+      "Distribute warm croutons over salad",
+      "Shave Parmesan over with vegetable peeler",
+      "Serve immediately so croutons stay crispy"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Caprese Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "tomate",
+      "mozzarella",
+      "basilikum",
+      "olivenöl",
+      "essig",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Caprese Salad",
+    "steps_en": [
+      "Wash fresh, ripe tomatoes and cut with sharp knife into about 8-10 mm thick slices. Also slice mozzarella evenly",
+      "Arrange tomato and mozzarella slices alternating on plate or overlapping",
+      "Place fresh basil leaves between slices or on top. Season with coarse sea salt and freshly ground pepper",
+      "Drizzle generously with high-quality olive oil",
+      "Optionally add splash of balsamic vinegar",
+      "Serve immediately - best at room temperature"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Kartoffelsalat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "zwiebel",
+      "essig",
+      "olivenöl",
+      "senf",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Potato Salad",
+    "steps_en": [
+      "Wash starchy potatoes and cook in salt water for about 15-20 minutes until done. Drain and cool slightly",
+      "Peel still warm potatoes and cut into about 5-7 mm thick slices. Place in large bowl",
+      "Finely chop onion and mix with vinegar, some water, mustard, olive oil, salt and pepper. Pour this marinade over still warm potatoes and carefully mix",
+      "Let draw for at least 30 minutes at room temperature so flavors meld",
+      "Season again with salt and pepper before serving",
+      "Serve lukewarm or cold"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Rote-Beete-Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "rote beete",
+      "zwiebel",
+      "essig",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Beet Salad",
+    "steps_en": [
+      "Thoroughly brush beets under running water to remove dirt. Cook with skin in salt water for about 45-60 minutes until done",
+      "Let cool, then peel skin with fingers or knife. Wear protective gloves to avoid staining",
+      "Cut cooked beets into about 5 mm thick slices or dice",
+      "Finely chop onion and add",
+      "Whisk olive oil, vinegar, salt and pepper to dressing. Pour over beets and carefully mix",
+      "Optionally add fresh herbs like dill or parsley",
+      "Let draw for at least 30 minutes",
+      "Can be garnished with feta or goat cheese"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Hähnchen-Salat mit Walnüssen",
+    "category": "salat",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchen",
+      "salat",
+      "walnüsse",
+      "apfel",
+      "roquefort käse",
+      "olivenöl",
+      "essig",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Chicken Salad with Walnuts",
+    "steps_en": [
+      "Cut chicken fillet into about 2-3 cm wide strips. Fry in pan with some olive oil at medium-high heat for about 8-12 minutes until meat is cooked through and yellowish-brown. Season with salt and let cool",
+      "Thoroughly wash fresh lettuce, spin dry and tear into bite-sized pieces. Peel and slice apples. Coarsely chop walnuts and toast in dry pan until fragrant",
+      "Crumble Roquefort cheese into small pieces",
+      "Arrange lettuce, apple slices, cooled chicken, walnuts and cheese on plates",
+      "Drizzle with olive oil-vinegar dressing",
+      "Serve immediately"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Bunter Sommersalat mit Käse",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "salat",
+      "tomate",
+      "gurke",
+      "paprika",
+      "käse",
+      "olivenöl",
+      "essig",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Colorful Summer Salad with Cheese",
+    "steps_en": [
+      "Wash fresh lettuce and spin dry. Tear into bite-sized pieces and place in large salad bowl",
+      "Wash tomatoes, remove core and cut into cubes of about 1-2 cm. Wash cucumber and also dice. Core bell pepper and cut into about 1 cm wide strips. Cut cheese into about 1 cm cubes",
+      "Add all prepared vegetables and cheese to lettuce",
+      "Prepare dressing from olive oil, vinegar, salt, pepper and optional herbs. Pour over salad",
+      "Toss well and serve immediately"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Fenchel-Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "fenchel",
+      "zitrone",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Fennel Salad",
+    "steps_en": [
+      "Wash fresh fennel bulbs and set aside green fronds for garnish. Slice fennel bulbs very thinly (about 2-3 mm) with very sharp knife or mandoline. Inner tender leaves are especially delicate",
+      "Halve lemon and squeeze. Mix lemon juice with olive oil, salt and freshly ground pepper to vinaigrette",
+      "Pour dressing over sliced fennel and carefully toss",
+      "Let draw for 10-15 minutes at room temperature",
+      "Garnish with fennel fronds before serving",
+      "Optionally add shaved Parmesan"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Kohlsalat mit Limette",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "weißkohl",
+      "limettensaft",
+      "olivenöl",
+      "senf",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Coleslaw with Lime",
+    "steps_en": [
+      "Wash white cabbage, cut out core and slice very thinly into threads with very sharp knife or mandoline. Place in large bowl",
+      "Squeeze limes. Mix vigorously with mustard, olive oil, salt and pepper",
+      "Pour lime dressing over cabbage and intensively knead and massage with hands for about 5-7 minutes. This breaks down cell structure and cabbage becomes more digestible",
+      "Let draw in refrigerator for at least 1 hour",
+      "Season again and serve cold"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Apfelkuchen einfach",
+    "category": "kuchen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "apfel",
+      "mehl",
+      "eier",
+      "zucker",
+      "butter",
+      "backpulver"
+    ],
+    "steps": [],
+    "title_en": "Tuna Salad",
+    "steps_en": [
+      "Drain canned tuna well and fluff piece by piece with fork. Place in bowl",
+      "Also drain kidney beans and corn. Peel and finely chop onion and add. Mix everything lightly",
+      "For dressing: Thoroughly mix vinegar and olive oil with salt and pepper and pour over tuna-vegetable mix",
+      "Carefully toss so everything is combined",
+      "Let draw in refrigerator for at least 30 minutes",
+      "Optionally garnish with fresh herbs before serving"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Zitronenkuchen",
+    "category": "kuchen",
+    "difficulty": "mittel",
+    "ingredients": [
+      "zitrone",
+      "mehl",
+      "eier",
+      "zucker",
+      "butter",
+      "backpulver",
+      "puderzucker"
+    ],
+    "steps": [],
+    "title_en": "Shrimp Salad with Lime",
+    "steps_en": [
+      "Fry shrimp in pan with some olive oil at high heat for about 2-3 minutes per side until pink and opaque. Season with salt and let cool",
+      "Wash fresh lettuce and spin dry. Tear into bite-sized pieces. Core bell pepper and cut into strips. Wash cucumber and slice thinly",
+      "Arrange all ingredients in bowl",
+      "Squeeze lime and mix juice with olive oil, salt and pepper to dressing",
+      "Pour dressing over and toss well",
+      "Serve immediately while shrimp are still lukewarm"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Schokoladen-Mousse",
+    "category": "dessert",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schokolade",
+      "sahne",
+      "eier",
+      "zucker"
+    ],
+    "steps": [],
+    "title_en": "Apple-Walnut Salad",
+    "steps_en": [
+      "Wash fresh, crisp lettuce and spin dry. Tear into bite-sized pieces",
+      "Peel apples with vegetable peeler, quarter and remove core. Slice thinly and drizzle with some vinegar to prevent browning",
+      "Coarsely chop walnuts and toast in dry pan for about 2-3 minutes until fragrant",
+      "Cut cheese (e.g. Gouda or Cheddar) into small cubes",
+      "Arrange lettuce, apple slices, walnuts and cheese in bowl",
+      "Prepare dressing from olive oil, vinegar, honey, salt and pepper",
+      "Pour over and serve immediately"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Vanille-Pannacotta",
+    "category": "dessert",
+    "difficulty": "mittel",
+    "ingredients": [
+      "sahne",
+      "milch",
+      "vanille",
+      "zucker",
+      "gelatine",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Beet-Bread Salad",
+    "steps_en": [
+      "Brush beets under water and cook with skin in salt water for about 50-60 minutes until done. Cool in water, then peel and cut into about 1 cm cubes",
+      "Cut bread slices into about 1-2 cm cubes and toast in pan with some olive oil at medium heat for about 5-7 minutes until golden. Season with salt",
+      "Crumble or dice feta cheese",
+      "Mix everything in bowl",
+      "Prepare dressing from olive oil, vinegar, salt and pepper and pour over",
+      "Optionally add fresh herbs",
+      "Serve immediately while bread is still crispy"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Erdbeer-Kompott",
+    "category": "dessert",
+    "difficulty": "einfach",
+    "ingredients": [
+      "erdbeeren",
+      "zucker",
+      "zitronensaft"
+    ],
+    "steps": [],
+    "title_en": "Simple Apple Cake",
+    "steps_en": [
+      "Preheat oven to 180°C and line cake pan with parchment",
+      "Peel apples, quarter, remove core and slice into about 5mm slices",
+      "Beat butter and sugar creamy for about 2-3 minutes until light and fluffy",
+      "Mix in eggs one at a time, making sure each egg is incorporated before next comes",
+      "Mix flour with baking powder and fold in alternating with some milk",
+      "Spread 2/3 of batter in pan, arrange apple slices on top",
+      "Spread remaining batter over apples",
+      "Bake at 180°C for about 40-45 minutes until golden",
+      "Let cool slightly and serve warm or cold"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Knoblauch-Olivenöl-Brot",
+    "category": "vorspeisen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "knoblauch",
+      "olivenöl",
+      "petersilie",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Lemon Cake",
+    "steps_en": [
+      "Preheat oven to 180°C, grease loaf pan and dust with flour",
+      "Wash lemon hot, grate to take zest, squeeze to get juice",
+      "Beat butter and sugar creamy until light, then mix in eggs one at a time",
+      "Stir in lemon zest + 2-3 tbsp lemon juice, fold in flour and baking powder",
+      "Pour batter into pan and bake at 180°C for about 35-40 minutes",
+      "Mix powdered sugar with lemon juice to glaze",
+      "Pour glaze over still slightly warm cake",
+      "Let cool completely before slicing"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Käse-Brot-Häppchen",
+    "category": "vorspeisen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "käse",
+      "tomate",
+      "basilikum",
+      "olivenöl"
+    ],
+    "steps": [],
+    "title_en": "Chocolate Mousse",
+    "steps_en": [
+      "Finely chop high-quality chocolate (min. 70%) and place in bowl",
+      "Separate egg whites from yolks very carefully - no yolk in whites!",
+      "Beat cream (100ml) stiff and set aside",
+      "Beat egg whites with 1 tbsp sugar stiff",
+      "Beat yolks with remaining sugar foamy",
+      "Pour liquid yolk mixture over liquid chocolate and stir",
+      "Carefully fold in beaten egg whites",
+      "Finally fold in whipped cream",
+      "Fill into glasses and refrigerate for at least 4 hours",
+      "Serve cold with optional berries"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Bruschetta mit Tomaten",
+    "category": "vorspeisen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "tomate",
+      "knoblauch",
+      "basilikum",
+      "olivenöl",
+      "essig",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Vanilla Pannacotta",
+    "steps_en": [
+      "Let gelatin soak in cold water for 5 minutes according to package",
+      "Heat cream and milk together with sugar until just steaming",
+      "Split vanilla pod lengthwise, scrape out seeds and stir into hot cream",
+      "Add soaked gelatin and dissolve while stirring",
+      "Carefully strain through sieve into bowl",
+      "Pour into glasses or molds",
+      "Refrigerate for at least 4 hours until set",
+      "Turn out or serve in glasses with berry sauce"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Kartoffel-Gnocchi",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "kartoffeln",
+      "mehl",
+      "eier",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Strawberry Compote",
+    "steps_en": [
+      "Wash strawberries, remove stems and leave whole or halve if very large",
+      "Place in pot, sprinkle with sugar about 2-3 tbsp per 500g strawberries",
+      "Let stand for 5-10 minutes so strawberries release juice",
+      "Heat slowly until just starting to simmer - then immediately reduce heat",
+      "Simmer gently for about 3-5 minutes",
+      "Add lemon juice for seasoning",
+      "Fill into jars and let cool",
+      "Serve with vanilla ice cream or whipped cream"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Kichererbsen-Curry",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kichererbsen",
+      "curry",
+      "kokosmilch",
+      "zwiebel",
+      "knoblauch",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Garlic-Olive Oil Bread",
+    "steps_en": [
+      "Cut bread into about 1cm thick slices",
+      "Grate garlic very finely or grate garlic on grater over bread",
+      "Drizzle generously with good olive oil",
+      "Sprinkle finely chopped fresh parsley on top",
+      "Season with salt shaker",
+      "Toast in oven at 200°C for about 5-8 minutes until lightly golden-crispy",
+      "Serve still warm - quickly becomes soggy"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Linsen-Eintopf",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "linsen",
+      "karotte",
+      "zwiebel",
+      "knoblauch",
+      "brühe",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Cheese-Bread Canapßs",
+    "steps_en": [
+      "Cut bread into about 1cm thick slices and halve diagonally to get triangles",
+      "Briefly toast in oven at 200°C until slightly hard - not dry!",
+      "Core tomato and dice small, season with pinch of salt",
+      "Slice cheese (e.g. mozzarella) thinly or dice",
+      "Layer tomato on still lukewarm bread, place cheese on top",
+      "Drizzle with fresh basil and olive oil",
+      "Serve as appetizer or snack"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Rote-Beete-Suppe (Borschtsch)",
+    "category": "suppen",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rote beete",
+      "rinderbrühe",
+      "essig",
+      "zucker",
+      "zwiebel",
+      "salz",
+      "sour cream"
+    ],
+    "steps": [],
+    "title_en": "Bruschetta with Tomatoes",
+    "steps_en": [
+      "Cut bread into about 1cm thick slices",
+      "Brush with some olive oil and toast in oven at 200°C for about 5-8 minutes until golden",
+      "While still hot, rub with halved garlic clove",
+      "Core tomatoes and dice small, place in bowl",
+      "Season with vinegar, olive oil, salt and grated basil",
+      "Marinate for 10-15 minutes so flavors blend",
+      "Distribute tomato mixture on toasted bread",
+      "Serve immediately"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Kürbissuppe",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kürbis",
+      "zwiebel",
+      "brühe",
+      "sahne",
+      "salz",
+      "muskatnuss"
+    ],
+    "steps": [],
+    "title_en": "Potato Gnocchi",
+    "steps_en": [
+      "Cook starchy potatoes in salt water for about 20 minutes until done. Drain and press through potato ricer while still warm or peel and mash. Let cool slightly",
+      "Mix potato mass with flour, eggs and salt and knead to smooth dough for about 2-3 minutes. Dough should not be sticky but not dry",
+      "Form dough into long rolls and cut into about 2cm pieces",
+      "Roll each piece over fork to create grooves",
+      "Cook gnocchi in boiling salt water for about 2-3 minutes until they float",
+      "Lift out with slotted spoon, drain well",
+      "Toss in melted butter and serve with sauce"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Spargel-Suppe",
+    "category": "suppen",
+    "difficulty": "mittel",
+    "ingredients": [
+      "spargel",
+      "kartoffeln",
+      "brühe",
+      "sahne",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Chickpea Curry",
+    "steps_en": [
+      "Peel and finely dice onion. Steam in large pot with 2 tbsp olive oil at medium heat for about 5-7 minutes until translucent. Finely chop garlic, add and fry for about 1 minute",
+      "Add curry powder and toast under stirring for about 30 seconds until fragrant. Pour in coconut milk and mix well",
+      "Add chickpeas (from can, drained) or cooked chickpeas",
+      "Simmer for about 15-20 minutes at low heat",
+      "Season with salt, pepper and optional lemon juice",
+      "Serve with rice or naan bread"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Feta-Spinat-Pfanne",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "spinat",
+      "feta",
+      "zwiebel",
+      "knoblauch",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Lentil Stew",
+    "steps_en": [
+      "Peel and dice carrots and onion (about 1 cm). Steam in large pot with some olive oil at medium heat for about 7-10 minutes",
+      "Finely chop garlic and add, fry for about 1 minute. Add red or brown lentils and briefly stir",
+      "Pour in broth or water (about 1 liter for 250 g lentils). Bring to boil, then reduce heat",
+      "Simmer for about 20-30 minutes until lentils are soft",
+      "Season with salt, cumin and optional chili",
+      "Serve with fresh bread or rice"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Mozzarella-Tomaten-Risotto",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "reis",
+      "tomate",
+      "mozzarella",
+      "zwiebel",
+      "brühe",
+      "weißwein",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Beet Soup (Borscht)",
+    "steps_en": [
+      "Thoroughly brush beets under water. Cook with skin in salt water for about 50-60 minutes until done. Remove from water, cool, then peel and dice",
+      "Peel and dice onion and steam in large pot with some olive oil at medium heat for about 5-7 minutes. Add beet cubes",
+      "Pour in beef broth and bring to boil. Simmer for about 20-25 minutes",
+      "Season with vinegar, sugar, salt and pepper",
+      "Optionally puree part of soup for creamier texture",
+      "Serve with sour cream dollop and fresh dill"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "Broccolini mit Knoblauch",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brokkoli",
+      "knoblauch",
+      "olivenöl",
+      "zitrone",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Pumpkin Soup",
+    "steps_en": [
+      "Peel Hokkaido or butternut pumpkin (or use with skin) and cut into about 2-3 cm cubes. Peel and dice onion",
+      "Steam onion in large pot with some butter at medium heat for about 5 minutes. Add pumpkin and briefly stir",
+      "Pour in broth (about 1 liter) and bring to boil. Simmer gently for about 20-25 minutes until pumpkin is very soft",
+      "Puree with immersion blender until creamy",
+      "Stir in cream, season with salt, pepper and nutmeg",
+      "Optionally garnish with roasted pumpkin seeds",
+      "Serve hot"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Thunfisch-Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "thunfisch",
+      "kidneybohnen",
+      "mais",
+      "zwiebel",
+      "salz",
+      "pfeffer",
+      "olivenöl",
+      "essig"
+    ],
+    "steps": [],
+    "title_en": "Asparagus Soup",
+    "steps_en": [
+      "Wash fresh white or green asparagus. Peel lower 3-4 cm. Cut off woody ends about 2 cm. Cut asparagus into about 3-4 cm long pieces. For green asparagus only peel lower third",
+      "Peel and dice potatoes and cook together with onion and asparagus in plenty of broth at medium heat for about 15-20 minutes until potatoes are very soft",
+      "Puree with immersion blender until creamy",
+      "Stir in cream and butter, season with salt, pepper and nutmeg",
+      "Optionally set aside some asparagus tips and add at end for garnish",
+      "Serve hot"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Shrimps-Salat mit Limette",
+    "category": "salat",
+    "difficulty": "mittel",
+    "ingredients": [
+      "shrimps",
+      "salat",
+      "paprika",
+      "gurke",
+      "limettensaft",
+      "olivenöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Dill-Potato Stew",
+    "steps_en": [
+      "Peel and dice potatoes (about 2 cm). Peel and dice onion",
+      "Steam onion in large pot with some butter at medium heat for about 5 minutes. Add potatoes and briefly stir",
+      "Pour in broth and bring to boil. Simmer for about 15-20 minutes until potatoes are very soft. Add finely chopped fresh dill",
+      "For creamier texture, puree part of soup or mash with potato masher",
+      "Stir in cream and season with salt and pepper",
+      "Serve with fresh dill"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Hähnchen-Piccata mit Zitrone",
+    "category": "haendl",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchenbrust",
+      "zitrone",
+      "kapern",
+      "butter",
+      "mehl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Quick Minestrone",
+    "steps_en": [
+      "Wash and dice vegetables (zucchini, carrot, bell pepper) (about 1 cm). Peel and chop onion",
+      "Steam onion in large pot with some olive oil at medium heat for about 5 minutes. Add vegetables and briefly stir",
+      "Add canned tomatoes, broth, drained beans (e.g. kidney beans or white beans) and pasta. Bring to boil and simmer for about 15-20 minutes until pasta is al dente",
+      "Season with salt, pepper and Italian herbs",
+      "Optionally add fresh basil",
+      "Serve with grated Parmesan"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Hähnchen-Teriyaki",
+    "category": "haendl",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchen",
+      "teriyaki sauce",
+      "ingwer",
+      "knoblauch",
+      "sesamöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Mozzarella-Tomato Risotto",
+    "steps_en": [
+      "Peel and finely dice onion. Steam in large pot with some butter at medium heat for about 5-7 minutes until translucent. Add rice and toast under stirring for about 2-3 minutes (translucent but not brown)",
+      "Deglaze with white wine and let reduce under stirring for about 2 minutes. Slowly add broth (about 750 ml total) bit by bit",
+      "Stir constantly and keep adding stock as rice absorbs it for about 18-20 minutes",
+      "Dice tomatoes and mozzarella, add to risotto at end and stir",
+      "Season with salt, pepper and fresh basil",
+      "Serve immediately while still creamy"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Auberginen-Auflauf",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "aubergine",
+      "tomaten",
+      "käse",
+      "zwiebel",
+      "knoblauch",
+      "olive",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Broccolini with Garlic",
+    "steps_en": [
+      "Wash fresh broccolini and cut off lower 2 cm of stems. Halve stems lengthwise for even cooking",
+      "Bring large pot of salt water to boil. Blanch broccolini for about 3-4 minutes until bright green and crisp-tender. Drain",
+      "Heat olive oil in large pan. Finely chop garlic and lightly toast for about 1 minute until fragrant but not brown",
+      "Add blanched broccolini and toss in garlic oil for about 2 minutes",
+      "Season with salt, pepper and lemon zest",
+      "Serve hot as side dish"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Sellerie-Suppe mit Apfel",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "staudensellerie",
+      "apfel",
+      "zwiebel",
+      "brühe",
+      "sahne",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Eggplant Casserole",
+    "steps_en": [
+      "Wash eggplants and slice lengthwise into about 1 cm thick slices. Sprinkle with salt and let stand for about 30 minutes so water comes out. Then pat dry briefly",
+      "Fry eggplant slices in pan with olive oil at medium-high heat for about 3-4 minutes per side until golden. Layer on paper towels",
+      "Dice tomatoes and onion, chop garlic. Pit olives",
+      "sauté onion and garlic in oil until translucent",
+      "Add tomatoes and simmer for about 10 minutes. Season with salt, pepper and oregano",
+      "Layer half eggplant in greased casserole dish, spread tomato sauce over, sprinkle with cheese. Repeat",
+      "Bake in preheated 180°C oven for about 30-35 minutes until golden"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Kokosmilch-Gemüse-Curry",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kokosmilch",
+      "paprika",
+      "zucchini",
+      "karotte",
+      "curry",
+      "salz",
+      "zitrone"
+    ],
+    "steps": [],
+    "title_en": "Celery Soup with Apple",
+    "steps_en": [
+      "Clean and wash celery and cut into about 2 cm segments. Peel and dice onion. Peel, quarter and dice apples",
+      "Steam onion in large pot with some butter at medium heat for about 5 minutes. Add celery and apples and briefly stir",
+      "Pour in broth and bring to boil. Simmer for about 20-25 minutes until everything is soft",
+      "Puree with immersion blender until creamy",
+      "Stir in cream, season with salt, pepper and optional nutmeg",
+      "Serve hot, optionally garnish with apple pieces"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Dill-Kartoffel-Eintopf",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "dill",
+      "zwiebel",
+      "brühe",
+      "sahne",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Beef Stir-Fry",
+    "steps_en": [
+      "Cut beef into about 5 mm thick strips against grain. Core bell pepper and cut into wide strips. Peel onion and cut into wide strips. Finely chop garlic and ginger",
+      "Heat sesame oil in wok or large pan at very high heat. Fry beef in batches for about 2-3 minutes per side until browned. Set aside",
+      "Add vegetables to same wok and stir-fry for about 3-4 minutes",
+      "Return beef, add garlic and ginger, drizzle with soy sauce",
+      "Toss everything for about 1-2 minutes",
+      "Serve immediately over rice"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Rindfleisch-Stir-Fry",
+    "category": "rind",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rindfleisch",
+      "paprika",
+      "zwiebel",
+      "sojasauce",
+      "knoblauch",
+      "sesamöl",
+      "ingwer"
+    ],
+    "steps": [],
+    "title_en": "Beef Kebab with Yogurt",
+    "steps_en": [
+      "Cut beef into about 4-5 cm cubes. Peel and dice onion. Squeeze lemon",
+      "Mix yogurt with lemon juice, cumin, paprika powder, salt and pepper. Add beef and onion to marinade and mix well. Marinate in refrigerator for at least 4 hours or overnight",
+      "Thread meat and onion onto skewers",
+      "Grill or fry in hot pan for about 10-12 minutes turning regularly",
+      "Serve with rice, salad and optional yogurt sauce"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Rinder-Kebab mit Yoghurt",
+    "category": "rind",
+    "difficulty": "mittel",
+    "ingredients": [
+      "rindfleisch",
+      "joghurt",
+      "paprika",
+      "zwiebel",
+      "zitrone",
+      "salz",
+      "kreuzkümmel"
+    ],
+    "steps": [],
+    "title_en": "Pork Asian-Style with Broccoli",
+    "steps_en": [
+      "Cut pork into about 5 mm thick strips against grain. Divide broccoli into small florets. Finely chop garlic and ginger",
+      "Heat sesame oil in wok or large pan at very high heat. Fry pork in batches for about 2-3 minutes per side until browned. Set aside",
+      "Add broccoli to same wok and stir-fry for about 3-4 minutes",
+      "Return pork, add garlic and ginger, drizzle with soy sauce",
+      "Toss everything for about 2-3 minutes",
+      "Serve immediately over rice or noodles"
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Schwein-Asiatisch mit Brokkoli",
+    "category": "schwein",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schweinefleisch",
+      "brokkoli",
+      "sojasauce",
+      "knoblauch",
+      "ingwer",
+      "sesamöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Pork Fillet Mustard Sauce",
+    "steps_en": [
+      "Season pork fillet with salt and pepper. Fry in pan with some butter and olive oil at medium-high heat for about 4-5 minutes per side until surface is golden and internal temperature about 63°C (pink). Set aside and keep warm",
+      "Deglaze same pan with some broth or water. Add mustard and stir",
+      "Add cream and let thicken for about 3-5 minutes",
+      "Season with salt and pepper",
+      "Slice pork and arrange on plates",
+      "Pour mustard sauce over",
+      "Garnish with fresh parsley"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Schweinefilet-Senf-Sauce",
+    "category": "schwein",
+    "difficulty": "mittel",
+    "ingredients": [
+      "schweinefilet",
+      "senf",
+      "sahne",
+      "butter",
+      "salz",
+      "pfeffer",
+      "petersilie"
+    ],
+    "steps": [],
+    "title_en": "Chicken Piccata with Lemon",
+    "steps_en": [
+      "Halve chicken breast lengthwise and pound to about 1 cm thick schnitzels. Season with salt and pepper and lightly dredge in flour, tapping off excess",
+      "Heat butter and olive oil in pan at medium-high heat. Fry schnitzels for about 3-4 minutes per side until golden and cooked through. Set aside",
+      "Deglaze same pan with white wine and lemon juice. Add capers",
+      "Let reduce for about 2-3 minutes",
+      "Return chicken briefly to sauce",
+      "Serve with sauce and lemon slices"
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Apfel-Walnut-Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "salat",
+      "apfel",
+      "walnüsse",
+      "käse",
+      "essig",
+      "olivenöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Chicken Teriyaki",
+    "steps_en": [
+      "Cut chicken fillet into about 2 cm wide strips. Finely chop ginger, mince garlic",
+      "Heat sesame oil in large pan or wok at high heat. Fry chicken for about 3-4 minutes per side until golden. Season with salt and set aside",
+      "Fry ginger and garlic in same wok for about 1 minute. Add teriyaki sauce and bring to boil",
+      "Return chicken and toss in sauce for about 2-3 minutes",
+      "Optionally sprinkle with sesame seeds",
+      "Serve over rice or noodles"
+    ]
+  },
+  {
+    "id": 89,
+    "title": "Bete-Brot-Salat",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "rote beete",
+      "brot",
+      "fetakäse",
+      "essig",
+      "olivenöl",
+      "salz"
+    ],
+    "steps": [],
+    "title_en": "Spinach-Ricotta Ravioli",
+    "steps_en": [
+      "Thoroughly wash fresh spinach and simmer in salt water for about 3-4 minutes. Drain and finely chop",
+      "Mix ricotta with Parmesan, eggs, spinach, salt and pepper until creamy filling forms",
+      "If ravioli not filled: Roll out dough, distribute filling in small portions on half of dough sheet, brush with water and fold over",
+      "Press edges firmly and cut out ravioli",
+      "Cook in boiling salt water for about 3-4 minutes until they float",
+      "Serve with butter-sage sauce or tomato sauce"
+    ]
+  },
+  {
+    "id": 90,
+    "title": "Schnelle Minestrone",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "pasta",
+      "gemüse",
+      "tomaten",
+      "brühe",
+      "bohnen",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [],
+    "title_en": "Pasta with Spicy Tomato Sauce",
+    "steps_en": [
+      "Heat canned tomatoes in pan. Finely chop garlic and fry in olive oil at medium heat for about 2-3 minutes until fragrant but not brown",
+      "Add tomatoes and bring to boil. Add fresh or dried chili threads. Simmer for about 15-20 minutes to thicken sauce",
+      "Meanwhile cook pasta in plenty of salt water until al dente according to package",
+      "Drain pasta and toss with spicy tomato sauce",
+      "Optionally add fresh basil",
+      "Serve with grated Parmesan"
+    ]
+  }
+]
