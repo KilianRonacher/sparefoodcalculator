@@ -6,9 +6,158 @@
   <title>SpareFoodCalculator — Recipes from Surplus</title>
   <meta name="description" content="Find simple, inspiring recipes made from surplus ingredients — from home-style classics to refined dishes." />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Animierte Sterne-Hintergrund */
+    @keyframes starsFloat {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    body {
+      background-image: url("images/star-trails.Background.png");
+      background-size: 120% 120%;
+      background-position: 0 0;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      overflow-x: hidden;
+      animation: starsFloat 120s linear infinite;
+    }
+
+    /* Rahmen mit 300% Skalierung */
+    .rahmen {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(3);
+      width: 46vw;
+      height: 46vh;
+      max-width: 560px;
+      max-height: 560px;
+      background-image: url("images/frucht-rahmen.png");
+      background-size: cover;
+      background-position: center 58%;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Text-Container mit schwarzer Box und 50% Transparenz */
+    .hero-text-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 5;
+      pointer-events: all;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 3rem 4rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-text-container h1 {
+      color: #ffffff;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+      margin: 0 0 0.5rem 0;
+      line-height: 1.1;
+    }
+
+    .hero-text-container .subtitle {
+      color: #ffffff;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      font-weight: 600;
+      margin: 1rem 0 2rem 0;
+    }
+
+    .hero-text-container .hero-copy {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin: 0 0 1.5rem 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+      opacity: 0.95;
+    }
+
+    .hero-text-container .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .hero-text-container .hero-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 0.1rem;
+    }
+
+    .hero-text-container .hero-links a:hover {
+      color: #ffd166;
+      border-bottom-color: #ffd166;
+    }
+
+    .hero-text-container .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #ffd166;
+      color: #2d2d2d;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
+    }
+
+    .hero-text-container .cta-button:hover {
+      background-color: #ffc84d;
+      box-shadow: 0 6px 20px rgba(255, 209, 102, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-text-container {
+        padding: 2rem 2.5rem;
+      }
+      .hero-text-container h1 {
+        font-size: 2.2rem;
+      }
+      .hero-text-container .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <!-- Rahmen-Element mit Animation -->
+  <div class="rahmen" id="parallax-rahmen"></div>
+
+  <!-- Zentraler Text-Container -->
+  <div class="hero-text-container">
+    <h1 id="hero-title">Kulinarisches Recycling</h1>
+    <span class="subtitle" id="hero-subtitle">SPARE FOOD CALCULATOR</span>
+    <p class="hero-copy">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
+    <div class="hero-links">
+      <a href="pages/impressum.html" data-i18n="impressum">Impressum</a>
+      <a href="pages/contact.html" data-i18n="kontakt">Kontakt</a>
+    </div>
+    <a href="pages/search.html" class="cta-button">🍳 Jetzt Starten</a>
+  </div>
+
+  <header class="site-header" style="position: relative; z-index: 10;">
     <div class="container header-inner">
       <h1 class="logo"><a href="index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
@@ -22,42 +171,14 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
         <button id="lang-toggle-btn" data-i18n="lang-toggle">English</button>
       </div>
           <a href="pages/search.html" class="btn primary header-cta" data-i18n="calculator">Calculator</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h2 data-i18n="rezepte_aus_dem">Recipes from whatever is in your fridge</h2>
-        <p data-i18n="einfach_hausgemacht">Simple. Home-cooked. A touch elevated — for anyone who likes to try something new.</p>
-        <div class="hero-ctas">
-          <a href="pages/search.html" class="btn primary" data-i18n="calculator">Calculator</a>
-        </div>
-      </div>
-        <div class="hero-art">
-        <img src="images/hero-image.png" data-i18n-alt="hero_art_alt" alt="Kulinarisches Recycling - Spare Food Calculator" />
-      </div>
-    </section>
-
-    <!-- 'Alle Seiten' section removed per user request -->
-    <section class="how-it-works glass-card">
-      <h3 data-i18n="so_funktioniert">How the calculator works</h3>
-      <ol>
-        <li data-i18n="gib_zutaten_ein">Enter the ingredients you have (e.g., "tomato, bread, lettuce").</li>
-        <li data-i18n="generator_schlaegt_vor">The generator suggests matching recipes — ranked by overlap.</li>
-        <li data-i18n="klicke_rezept">Open a recipe to see details and shopping tips.</li>
-      </ol>
-    </section>
-  </main>
-
   <footer class="site-footer">
     <div class="container">
-      <p data-i18n="copyright">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
-      <p><a href="pages/impressum.html" data-i18n="impressum">Legal Notice</a> • <a href="pages/contact.html" data-i18n="kontakt">Contact</a></p>
     </div>
   </footer>
 
@@ -70,5 +191,85 @@
 
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+
+  <script>
+    // I18n Translations für Startseite
+    const heroTranslations = {
+      de: {
+        title: 'Kulinarisches Recycling',
+        subtitle: 'SPARE FOOD CALCULATOR'
+      },
+      en: {
+        title: 'Culinary Recycling',
+        subtitle: 'SPARE FOOD CALCULATOR'
+      }
+    };
+
+    // Funktion zum Aktualisieren der Helden-Texte
+    function updateHeroText(lang) {
+      const titleEl = document.getElementById('hero-title');
+      const subtitleEl = document.getElementById('hero-subtitle');
+      
+      if (titleEl) {
+        titleEl.textContent = heroTranslations[lang].title;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent = heroTranslations[lang].subtitle;
+      }
+    }
+
+    // Initiale Sprache setzen
+    window.addEventListener('DOMContentLoaded', () => {
+      const lang = localStorage.getItem('lang') || 'de';
+      updateHeroText(lang);
+
+      // Sprachenwechsel überwachen
+      window.addEventListener('languageChanged', (e) => {
+        const newLang = localStorage.getItem('lang') || 'de';
+        updateHeroText(newLang);
+      });
+    });
+
+    // Direkten Button-Listener für sofortigen Wechsel
+    window.addEventListener('load', () => {
+      const langBtn = document.getElementById('lang-toggle-btn');
+      if (langBtn && !langBtn._heroListenerAdded) {
+        langBtn.addEventListener('click', () => {
+          const lang = localStorage.getItem('lang') || 'de';
+          updateHeroText(lang);
+        });
+        langBtn._heroListenerAdded = true;
+      }
+    });
+
+    // Startseite dauerhaft im hellen Modus halten
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    });
+
+    (() => {
+      const rahmen = document.getElementById('parallax-rahmen');
+      if (!rahmen) return;
+
+      document.addEventListener('mousemove', (e) => {
+        // Berechne Mausposition relativ zur Mitte
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        
+        // Rahmen bewegt sich ENTGEGENGESETZT zur Maus (negative Werte)
+        const depth = (e.clientX - centerX) * 0.02;
+        const depthY = (e.clientY - centerY) * 0.02;
+        
+        // Inverse Bewegung für Tiefeneffekt (Skalierung beibehalten)
+        rahmen.style.transform = `translate(calc(-50% - ${depth}px), calc(-50% - ${depthY}px)) scale(3)`;
+      });
+
+      // Reset auf Maus-Leave
+      document.addEventListener('mouseleave', () => {
+        rahmen.style.transform = 'translate(-50%, -50%) scale(3)';
+      });
+    })();
+  </script>
 </body>
 </html>
