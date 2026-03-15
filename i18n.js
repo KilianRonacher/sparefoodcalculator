@@ -73,7 +73,7 @@ i18n['de'] = {
   'gib_zutaten_ein_desc': 'Gib die Zutaten ein, die du vorrätig hast (Komma-separiert). Der Generator schlägt Rezepte vor.',
   'zutaten_label': 'Zutaten',
   'zutaten_placeholder': 'Tomate, Brot, Salat',
-  'rezepte_finden': 'Rezepte finden',
+  'rezepte_finden': 'Rezpte Finden',
 
   // Search & Compose
   'search_compose_title': 'Generator',
@@ -125,7 +125,7 @@ i18n['de'] = {
   'ing_no_recipe_match': 'Keine passenden Rezepte gefunden. Versuche andere Zutaten!',
   'ing_select_first': 'Bitte wähle zuerst Zutaten aus!',
   'ing_not_for_recipe': 'Nicht für dieses Rezept gedacht',
-  'ing_find_recipes_btn': '🍳 Rezepte finden',
+  'ing_find_recipes_btn': 'Rezpte Finden',
 
   // Recipe Generator
   'recipe_generator_title': 'Rezept-Generator',
@@ -189,7 +189,7 @@ i18n['en'] = {
   'gib_zutaten_ein_desc': 'Enter the ingredients you have on hand (comma-separated). The generator will suggest recipes.',
   'zutaten_label': 'Ingredients',
   'zutaten_placeholder': 'tomato, bread, salad',
-  'rezepte_finden': 'Find recipes',
+  'rezepte_finden': 'Rezpte Finden',
 
   // Search & Compose
   'search_compose_title': 'Generator',
@@ -241,7 +241,7 @@ i18n['en'] = {
   'ing_no_recipe_match': 'No matching recipes found. Try different ingredients!',
   'ing_select_first': 'Please select ingredients first!',
   'ing_not_for_recipe': 'Not intended for this recipe',
-  'ing_find_recipes_btn': '🍳 Find Recipes',
+  'ing_find_recipes_btn': 'Rezpte Finden',
 
   // Recipe Generator
   'recipe_generator_title': 'Recipe Generator',
