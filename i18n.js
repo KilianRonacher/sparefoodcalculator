@@ -117,6 +117,15 @@ i18n['de'] = {
   'ing_empty_suggestions': 'Wähle zuerst Zutaten aus, um Vorschläge zu erhalten',
   'ing_empty_selected': 'Noch keine Zutaten ausgewählt',
   'ing_no_suggestions': 'Keine weiteren Vorschläge verfügbar',
+  'ing_results_title': '🍽️ Passende Rezepte',
+  'ing_found_label': 'Gefunden',
+  'ing_match_word': 'Übereinstimmung',
+  'ing_ingredients_short': 'Zutaten',
+  'ing_prep_steps': 'Zubereitungsschritte',
+  'ing_no_recipe_match': 'Keine passenden Rezepte gefunden. Versuche andere Zutaten!',
+  'ing_select_first': 'Bitte wähle zuerst Zutaten aus!',
+  'ing_not_for_recipe': 'Nicht für dieses Rezept gedacht',
+  'ing_find_recipes_btn': '🍳 Rezepte finden',
 
   // Recipe Generator
   'recipe_generator_title': 'Rezept-Generator',
@@ -224,6 +233,15 @@ i18n['en'] = {
   'ing_empty_suggestions': 'Select ingredients first to get suggestions',
   'ing_empty_selected': 'No ingredients selected yet',
   'ing_no_suggestions': 'No more suggestions available',
+  'ing_results_title': '🍽️ Matching Recipes',
+  'ing_found_label': 'Found',
+  'ing_match_word': 'match',
+  'ing_ingredients_short': 'ingredients',
+  'ing_prep_steps': 'preparation steps',
+  'ing_no_recipe_match': 'No matching recipes found. Try different ingredients!',
+  'ing_select_first': 'Please select ingredients first!',
+  'ing_not_for_recipe': 'Not intended for this recipe',
+  'ing_find_recipes_btn': '🍳 Find Recipes',
 
   // Recipe Generator
   'recipe_generator_title': 'Recipe Generator',
