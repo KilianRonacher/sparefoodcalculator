@@ -419,6 +419,14 @@
     const recipeResultsSection = document.getElementById('recipe-results-section');
     const recipeResultsContainer = document.getElementById('recipe-results-container');
 
+    function syncFindRecipesButtonLabel() {
+      if (findRecipesBtn) {
+        findRecipesBtn.textContent = 'Rezpte Finden';
+      }
+    }
+
+    syncFindRecipesButtonLabel();
+
     // Module-level state so recipe cards can be re-rendered on language change
     let lastMatchingRecipes = null;
     let lastSelectedArray = [];
@@ -613,6 +621,7 @@
 
     // Listen for language changes to update dynamic content
     window.addEventListener('languageChanged', (e) => {
+      syncFindRecipesButtonLabel();
       renderAllIngredients(); // Re-render ingredient blocks with translation
       updateUI();             // Re-render suggestions, selected bar, category summary
       // Re-render recipe result cards with the new language (no scroll jump)
