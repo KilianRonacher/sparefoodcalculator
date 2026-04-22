@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Impressum — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -15,16 +15,16 @@
         <!-- Kategorien button removed (kept in background for admin usage) -->
         <nav class="main-nav mobile-hidden" id="main-nav">
           <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="calculator.html" data-i18n="calculator">Calculator</a>
+          <a href="search.html" data-i18n="calculator">Calculator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
           <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="theme-toggle-btn">🌙</button>
         <button id="lang-toggle-btn">English</button>
       </div>
-      <a href="calculator.html" class="btn primary small header-cta" data-i18n="calculator">Calculator</a>
+      <a href="search.html" class="btn primary small header-cta" data-i18n="calculator">Calculator</a>
     </div>
   </header>
 
@@ -175,6 +175,8 @@
   </div>
 
   <!-- duplicate footer removed -->
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
   <script src="../app.js"></script>

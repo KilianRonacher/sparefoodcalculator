@@ -332,10 +332,79 @@ const recipes = [
   { id:397, title:'Gemuese-Lasagne', title_en:'Vegetable Soup with Noodles', category:'hauptgericht', difficulty:'mittel', ingredients:['lasagne','tomate','zucchini','aubergine','Käse','salz'], steps:["Lasagne-Blßtter nach Packung abkochen, Bechamelsoße vorbereiten.","Zucchini und Aubergine Würfeln, Tomaten Würfeln.","Gemüse in heißem öl ca. 5-7 Minuten garen.","Schichtenweise in Auflaufform: Sauce, Gemüse, Käse, Pasta.","Mit Käse oben abschließen.","Im auf 180 Grad C vorgeheizten Ofen ca. 25-30 Minuten backen."], steps_en:['Bring stock to boil in large pot', 'Add diced vegetables to stock', 'Cook 10 minutes until vegetables tender', 'Break noodles and add to broth', 'Cook 3-4 minutes per package directions', 'Add fresh herbs and optional soy sauce', 'Season and serve hot in bowls']},
   { id:429, title:'Gemuese-Pizza', title_en:'Vegetable Pizza', category:'hauptgericht', difficulty:'mittel', ingredients:['pizza','tomate','Gemüse','Käse','salz'], steps:["Pizza-Belag vorbereiten: Tomaten, Gemüse klein schneiden.","Auf Pizza-Teig oder gekauftem Boden verteilen.","Mit Käse oben garnieren.","Im auf 200-220 Grad C vorgeheizten Ofen ca. 12-15 Minuten backen bis Käse schmilzt und randseits goldbraun wird.","Mit frischen Kräutern garnieren.","Sofort servieren."], steps_en:['Prepare pizza toppings: dice tomatoes and cut vegetables into bite-sized pieces.', 'Spread toppings evenly on pizza dough or store-bought base.', 'Scatter grated cheese generously over the vegetables.', 'Bake in a preheated 200-220 Grad C oven for about 12-15 minutes until cheese melts and edges are golden brown.', 'Garnish with fresh herbs like basil or oregano.', 'Cut into slices and serve immediately while hot.']},
   { id:430, title:'Spargel mit Sauce Hollandaise', title_en:'Asparagus with Hollandaise Sauce', category:'hauptgericht', difficulty:'mittel', ingredients:['spargel','butter','eigelb','zitrone','salz','pfeffer'], steps:["Spargel schälen (bei weißem Spargel komplett, bei grünem nur das untere Drittel) und holzige Enden abschneiden.","In einem großen Topf Salzwasser mit einer Prise Zucker zum Kochen bringen.","Spargel ins kochende Wasser geben und ca. 12-15 Minuten köcheln lassen bis er gar aber noch bissfest ist.","für die Sauce Hollandaise Eigelb mit etwas Wasser im Wasserbad schaumig aufschlagen.","Zerlassene Butter langsam einrühren, dabei ständig rühren bis eine cremige Konsistenz entsteht.","Mit Zitronensaft, Salz und Pfeffer abschmecken und sofort zum abgetropften Spargel servieren."], steps_en:['Peel asparagus (completely if white variety, only lower third if green) and trim woody ends.', 'Bring salted water with a pinch of sugar to boil in large pot.', 'Add asparagus and simmer for about 12-15 minutes until tender but still firm.', 'For Hollandaise sauce: whisk egg yolk with water in double boiler until fluffy.', 'Slowly whisk in melted butter while stirring constantly until creamy consistency forms.', 'Season with lemon juice, salt and pepper. Serve immediately with drained asparagus.']}, 
-  { id:431, title:'Spargel-Risotto', title_en:'Asparagus Risotto', category:'hauptgericht', difficulty:'mittel', ingredients:['spargel','risottoreis','zwiebel','weißwein','parmesan','butter','salz'], steps:["Spargel schälen und in ca. 2 cm große Stücke schneiden. Spargelspitzen beiseite legen.","Zwiebel fein Würfeln und in Butter ca. 2 Minuten glasig anschwitzen.","Risottoreis zugeben und ca. 1 Minute unter rühren anrösten bis er leicht glasig wird.","Mit Weißwein ablöschen und einkochen lassen.","Spargel-Stücke (ohne Spitzen) zugeben und nach und nach heiße Gemüsebrühe kelle für Kelle hinzufügen, dabei ständig rühren.","Nach ca. 15 Minuten Spargelspitzen zugeben und weitere 5-7 Minuten garen bis Reis cremig und al dente ist.","Vom Herd nehmen, Parmesan und Butter unterrühren, mit Salz abschmecken und sofort servieren."], steps_en:['Peel asparagus and cut into about 2 cm pieces. Set aside asparagus tips.', 'Finely dice onion and sauté in butter for about 2 minutes until translucent.', 'Add risotto rice and toast for about 1 minute stirring until slightly translucent.', 'Deglaze with white wine and reduce.', 'Add asparagus pieces (without tips) and gradually add hot vegetable broth ladle by ladle, stirring constantly.', 'After about 15 minutes add asparagus tips and cook for another 5-7 minutes until rice is creamy and al dente.', 'Remove from heat, stir in Parmesan and butter, season with salt and serve immediately.']},
-  { id:432, title:'Gruener Spargel vom Grill', title_en:'Grilled Green Asparagus', category:'hauptgericht', difficulty:'einfach', ingredients:['grüner spargel','olivenöl','knoblauch','zitrone','parmesan','salz','pfeffer'], steps:["grünen Spargel waschen, nur das untere Drittel schälen und holzige Enden abschneiden.","Spargel mit olivenöl beträufeln und mit Salz und Pfeffer würzen.","Auf vorgeheiztem Grill oder in einer Grillpfanne bei mittlerer bis hoher Hitze ca. 8-10 Minuten grillen und dabei gelegentlich wenden bis er leichte Rßstspuren bekommt.","Knoblauch fein hacken oder pressen und in etwas olivenöl erhitzen.","Gegrillten Spargel auf Teller anrichten, mit Knoblauch-öl beträufeln.","Zitronensaft darüber trßufeln, frisch gehobelten Parmesan darüber streuen und warm servieren."], steps_en:['Wash green asparagus and trim woody ends. Peel only lower third if thick.', 'Drizzle asparagus with olive oil and season with salt and pepper.', 'Place on preheated grill or grill pan over medium-high heat. Grill 8-10 minutes, turning occasionally, until lightly charred.', 'Finely mince or press garlic and warm gently in olive oil.', 'Arrange grilled asparagus on serving plate and drizzle with garlic oil.', 'Squeeze fresh lemon juice over top, scatter with freshly shaved Parmesan, and serve warm.']},
-  { id:433, title:'Spargel-Schinken-Roellchen', title_en:'Asparagus and Ham Rolls', category:'vorspeisen', difficulty:'einfach', ingredients:['spargel','schinken','frischKäse','schnittlauch','salz','pfeffer'], steps:["Spargel schälen, holzige Enden abschneiden und in Salzwasser ca. 12-15 Minuten köcheln bis er gar ist.","Spargel abtropfen lassen und vollständig abkühlen lassen.","FrischKäse mit fein geschnittenem Schnittlauch, Salz und Pfeffer vermengen.","Schinkenscheiben ausbreiten und dünn mit der FrischKäse-Mischung bestreichenen.","Je 2-3 Spargelstangen auf eine Schinkenscheibe legen und fest einrollen.","Rüllchen kalt servieren als elegante Vorspeise oder Fingerfood."], steps_en:['Peel asparagus, trim woody ends, and simmer in salted water until tender, about 12-15 minutes.', 'Drain asparagus and let cool completely.', 'Mix cream cheese with finely chopped chives, salt and pepper.', 'Lay out ham slices and spread thinly with cream cheese mixture.', 'Place 2-3 asparagus spears on each ham slice and roll up tightly.', 'Serve rolls cold as an elegant appetizer or finger food.']}, 
-  { id:434, title:'Spargel-Kartoffel-Auflauf', title_en:'Asparagus and Potato Gratin', category:'hauptgericht', difficulty:'mittel', ingredients:['spargel','kartoffeln','sahne','Käse','knoblauch','muskatnuss','salz','pfeffer'], steps:["Spargel schälen, in ca. 3 cm lange Stücke schneiden. Kartoffeln schälen und in dünne Scheiben schneiden.","Auflaufform mit Butter ausfetten und mit einer Knoblauchzehe ausreiben.","Kartoffelscheiben und SpargelStücke schichtweise in die Form legen, dabei jede Schicht leicht salzen und pfeffern.","Sahne mit geriebenem Käse, einer Prise Muskatnuss, Salz und Pfeffer vermengen.","Sahne-Käse-Mischung gleichmäßig über Kartoffeln und Spargel gießen.","Im auf 180 Grad C vorgeheizten Ofen ca. 40-45 Minuten backen bis die Oberfläche goldbraun ist und Kartoffeln gar sind.","Kurz ruhen lassen und warm als herzhaftes Hauptgericht servieren."], steps_en:['Peel asparagus and cut into 3 cm pieces. Peel potatoes and slice thinly.', 'Butter a baking dish and rub with a garlic clove.', 'Layer potato and asparagus pieces in the dish, lightly seasoning each layer with salt and pepper.', 'Mix cream with grated cheese, nutmeg, salt and pepper.', 'Pour cream cheese mixture evenly over potatoes and asparagus.', 'Bake in a 180 Grad C oven for about 40-45 minutes until golden on top and potatoes are tender.', 'Let rest briefly and serve warm as a hearty main course.']}
+  { id:467, title:'Spargel-Risotto', title_en:'Asparagus Risotto', category:'hauptgericht', difficulty:'mittel', ingredients:['spargel','risottoreis','zwiebel','weißwein','parmesan','butter','salz'], steps:["Spargel schälen und in ca. 2 cm große Stücke schneiden. Spargelspitzen beiseite legen.","Zwiebel fein Würfeln und in Butter ca. 2 Minuten glasig anschwitzen.","Risottoreis zugeben und ca. 1 Minute unter rühren anrösten bis er leicht glasig wird.","Mit Weißwein ablöschen und einkochen lassen.","Spargel-Stücke (ohne Spitzen) zugeben und nach und nach heiße Gemüsebrühe kelle für Kelle hinzufügen, dabei ständig rühren.","Nach ca. 15 Minuten Spargelspitzen zugeben und weitere 5-7 Minuten garen bis Reis cremig und al dente ist.","Vom Herd nehmen, Parmesan und Butter unterrühren, mit Salz abschmecken und sofort servieren."], steps_en:['Peel asparagus and cut into about 2 cm pieces. Set aside asparagus tips.', 'Finely dice onion and sauté in butter for about 2 minutes until translucent.', 'Add risotto rice and toast for about 1 minute stirring until slightly translucent.', 'Deglaze with white wine and reduce.', 'Add asparagus pieces (without tips) and gradually add hot vegetable broth ladle by ladle, stirring constantly.', 'After about 15 minutes add asparagus tips and cook for another 5-7 minutes until rice is creamy and al dente.', 'Remove from heat, stir in Parmesan and butter, season with salt and serve immediately.']},
+  { id:468, title:'Gruener Spargel vom Grill', title_en:'Grilled Green Asparagus', category:'hauptgericht', difficulty:'einfach', ingredients:['grüner spargel','olivenöl','knoblauch','zitrone','parmesan','salz','pfeffer'], steps:["grünen Spargel waschen, nur das untere Drittel schälen und holzige Enden abschneiden.","Spargel mit olivenöl beträufeln und mit Salz und Pfeffer würzen.","Auf vorgeheiztem Grill oder in einer Grillpfanne bei mittlerer bis hoher Hitze ca. 8-10 Minuten grillen und dabei gelegentlich wenden bis er leichte Rßstspuren bekommt.","Knoblauch fein hacken oder pressen und in etwas olivenöl erhitzen.","Gegrillten Spargel auf Teller anrichten, mit Knoblauch-öl beträufeln.","Zitronensaft darüber trßufeln, frisch gehobelten Parmesan darüber streuen und warm servieren."], steps_en:['Wash green asparagus and trim woody ends. Peel only lower third if thick.', 'Drizzle asparagus with olive oil and season with salt and pepper.', 'Place on preheated grill or grill pan over medium-high heat. Grill 8-10 minutes, turning occasionally, until lightly charred.', 'Finely mince or press garlic and warm gently in olive oil.', 'Arrange grilled asparagus on serving plate and drizzle with garlic oil.', 'Squeeze fresh lemon juice over top, scatter with freshly shaved Parmesan, and serve warm.']},
+  { id:469, title:'Spargel-Schinken-Roellchen', title_en:'Asparagus and Ham Rolls', category:'vorspeisen', difficulty:'einfach', ingredients:['spargel','schinken','frischKäse','schnittlauch','salz','pfeffer'], steps:["Spargel schälen, holzige Enden abschneiden und in Salzwasser ca. 12-15 Minuten köcheln bis er gar ist.","Spargel abtropfen lassen und vollständig abkühlen lassen.","FrischKäse mit fein geschnittenem Schnittlauch, Salz und Pfeffer vermengen.","Schinkenscheiben ausbreiten und dünn mit der FrischKäse-Mischung bestreichenen.","Je 2-3 Spargelstangen auf eine Schinkenscheibe legen und fest einrollen.","Rüllchen kalt servieren als elegante Vorspeise oder Fingerfood."], steps_en:['Peel asparagus, trim woody ends, and simmer in salted water until tender, about 12-15 minutes.', 'Drain asparagus and let cool completely.', 'Mix cream cheese with finely chopped chives, salt and pepper.', 'Lay out ham slices and spread thinly with cream cheese mixture.', 'Place 2-3 asparagus spears on each ham slice and roll up tightly.', 'Serve rolls cold as an elegant appetizer or finger food.']}, 
+  { id:470, title:'Spargel-Kartoffel-Auflauf', title_en:'Asparagus and Potato Gratin', category:'hauptgericht', difficulty:'mittel', ingredients:['spargel','kartoffeln','sahne','Käse','knoblauch','muskatnuss','salz','pfeffer'], steps:["Spargel schälen, in ca. 3 cm lange Stücke schneiden. Kartoffeln schälen und in dünne Scheiben schneiden.","Auflaufform mit Butter ausfetten und mit einer Knoblauchzehe ausreiben.","Kartoffelscheiben und SpargelStücke schichtweise in die Form legen, dabei jede Schicht leicht salzen und pfeffern.","Sahne mit geriebenem Käse, einer Prise Muskatnuss, Salz und Pfeffer vermengen.","Sahne-Käse-Mischung gleichmäßig über Kartoffeln und Spargel gießen.","Im auf 180 Grad C vorgeheizten Ofen ca. 40-45 Minuten backen bis die Oberfläche goldbraun ist und Kartoffeln gar sind.","Kurz ruhen lassen und warm als herzhaftes Hauptgericht servieren."], steps_en:['Peel asparagus and cut into 3 cm pieces. Peel potatoes and slice thinly.', 'Butter a baking dish and rub with a garlic clove.', 'Layer potato and asparagus pieces in the dish, lightly seasoning each layer with salt and pepper.', 'Mix cream with grated cheese, nutmeg, salt and pepper.', 'Pour cream cheese mixture evenly over potatoes and asparagus.', 'Bake in a 180 Grad C oven for about 40-45 minutes until golden on top and potatoes are tender.', 'Let rest briefly and serve warm as a hearty main course.']},
+
+  // === NEU HINZUGEFÜGT (Chefkoch-Klassiker, April 2026) ===
+  { id:471, title:'Käsespätzle', title_en:'Cheese Spaetzle', category:'hauptgericht', difficulty:'einfach', ingredients:['spätzle','zwiebel','sahne','emmentaler','butter','petersilie','salz','pfeffer'], steps:['Gewürfelte Zwiebel in etwas Butter glasig anbraten.','Mit Sahne ablöschen, gehackte Petersilie zugeben und mit Salz und Pfeffer abschmecken.','Kurz aufkochen lassen, dann die Hälfte des geriebenen Emmentalers zugeben und gut verrühren.','Spätzle unterheben.','Mischung in eine gefettete Auflaufform füllen und mit dem restlichen Emmentaler bestreuen.','Im auf 200 Grad C vorgeheizten Ofen ca. 20 Minuten überbacken bis die Oberfläche goldbraun ist.'], steps_en:['Sauté diced onion in a little butter until translucent.','Deglaze with cream, add chopped parsley and season with salt and pepper.','Bring briefly to a boil, then add half the grated Emmental and stir well.','Fold in spaetzle.','Transfer to a greased baking dish and scatter the remaining Emmental on top.','Bake in preheated oven at 200 Grad C for about 20 minutes until golden.']},
+  { id:472, title:'Knusprige Bratkartoffeln', title_en:'Crispy Fried Potatoes', category:'hauptgericht', difficulty:'einfach', ingredients:['kartoffeln','zwiebel','öl','salz','pfeffer'], steps:['Kartoffeln schälen, in gleichmäßige Stücke schneiden und kurz in kaltes Wasser legen damit die Stärke austreten kann.','Öl in einer Pfanne auf höchster Stufe erhitzen.','Kartoffeln abgießen und in die heiße Pfanne geben, sofort mit einem Deckel verschließen.','Nach ca. 5 Minuten das erste Mal wenden, dann regelmäßig wenden, dabei Deckel nach jedem Wenden wieder aufsetzen. Insgesamt ca. 35 Minuten braten.','Ca. 10 Minuten vor Ende gewürfelte Zwiebeln auf die Kartoffeln geben, zugedeckt 5 Minuten dünsten, dann untermischen.','Weitere 5 Minuten offen braten. Mit Salz und Pfeffer abschmecken.'], steps_en:['Peel potatoes, cut into even pieces and briefly soak in cold water to release starch.','Heat oil in a pan on the highest setting.','Drain potatoes and add to the hot pan, immediately cover with a lid.','Turn after about 5 minutes, then turn regularly, covering again each time. Fry for about 35 minutes total.','About 10 minutes before the end, add diced onion on top, steam covered for 5 minutes, then stir in.','Fry uncovered for another 5 minutes. Season with salt and pepper.']},
+  { id:473, title:'Chili con Carne', title_en:'Chili con Carne', category:'hauptgericht', difficulty:'mittel', ingredients:['rinderhack','zwiebel','knoblauch','paprika','tomatenmark','tomate','kidneybohnen','mais','fond','paprikapulver','chiliflocken','zucker','salz','pfeffer'], steps:['Zwiebeln schälen und würfeln, Knoblauch fein hacken, Paprika würfeln.','Öl in einem tiefen Topf erhitzen und Zwiebeln goldgelb anbraten.','Rinderhack zugeben, kräftig anbraten und dabei zerkleinern.','Paprikawürfel und Tomatenmark zugeben und 1 Minute mitrösten.','Dosentomaten, Knoblauch, Paprikapulver, Chiliflocken, Zucker, Salz und Pfeffer zugeben. Mit Brühe aufgießen.','Bei mittlerer Hitze 30–45 Minuten einkochen lassen, bei Bedarf Brühe nachgießen.','Kurz vor Ende Kidneybohnen und Mais aus der Dose abgießen, abspülen und zugeben. Nur wenige Minuten mitgaren.','Noch einmal abschmecken und mit Baguette oder Nachos servieren.'], steps_en:['Peel and dice onions, finely chop garlic, dice bell pepper.','Heat oil in a deep pot and fry onions until golden.','Add minced beef and brown well, breaking it up as you go.','Add diced bell pepper and tomato paste and toast for 1 minute.','Add canned tomatoes, garlic, paprika powder, chilli flakes, sugar, salt and pepper. Pour in stock.','Simmer over medium heat for 30–45 minutes, adding more stock as needed.','Shortly before the end, drain and rinse kidney beans and corn and add them. Cook for only a few minutes.','Season once more and serve with baguette or nachos.']},
+  { id:474, title:'Lasagne', title_en:'Lasagne', category:'pasta', difficulty:'mittel', ingredients:['hackfleisch','zwiebel','knoblauch','petersilie','tomatenmark','tomate','rotwein','milch','butter','mehl','lasagneplatten','parmesan','muskatnuss','zitronensaft','salz','pfeffer'], steps:['Olivenöl erhitzen, Hackfleisch anbraten bis es Farbe hat, fein gehackte Zwiebeln und Petersilie zugeben.','Knoblauch in feinen Scheiben und Tomatenmark einrühren und kurz mitbraten.','Dosentomaten und Rotwein zugeben, salzen und pfeffern. Bei offenem Topf mindestens 30 Minuten einköcheln lassen.','Für die Béchamelsauce: Butter schmelzen, Mehl einrühren und hellgelb anschwitzen.','Milch zugießen, glatt rühren und bei kleiner Flamme ca. 30 Minuten köcheln lassen. Mit Salz, Pfeffer, Zitronensaft und Muskatnuss abschmecken.','Ofen auf 180 Grad C Umluft vorheizen. Auflaufform buttern.','Schichtweise Bolognese, Lasagneplatten und Béchamel in die Form füllen. Die letzte Schicht ist Béchamel.','Dick mit geriebenem Parmesan bestreuen und Butterflöckchen aufsetzen.','Ca. 30–40 Minuten backen bis die Oberfläche goldbraun ist.'], steps_en:['Heat olive oil, brown minced meat until coloured, add finely chopped onions and parsley.','Stir in sliced garlic and tomato paste and fry briefly.','Add canned tomatoes and red wine, season with salt and pepper. Simmer uncovered for at least 30 minutes.','For the béchamel: melt butter, whisk in flour and cook until pale golden.','Pour in milk and stir smooth. Simmer over low heat for about 30 minutes. Season with salt, pepper, lemon juice and nutmeg.','Preheat oven to 180 Grad C fan. Butter a baking dish.','Layer Bolognese, lasagne sheets and béchamel in the dish. Finish with a béchamel layer.','Scatter generously with grated Parmesan and dot with butter.','Bake for about 30–40 minutes until the surface is golden brown.']},
+  { id:475, title:'Erbseneintopf', title_en:'Split Pea Soup', category:'suppen', difficulty:'mittel', ingredients:['erbsen','karotte','sellerie','porree','zwiebel','kartoffeln','speck','majoran','petersilie','fond','salz','pfeffer'], steps:['Speck fein würfeln und in einem großen Topf bei niedriger Hitze auslassen.','Fein gehackte Zwiebeln zugeben und glasig dünsten.','Gewürfelte Karotten, Sellerie und in Ringe geschnittenen Lauch zugeben und kurz andünsten.','Schälerbsen und 2 Liter Brühe oder Wasser zugeben. Aufkochen.','Majoran zugeben und bei niedriger Hitze ca. 20 Minuten köcheln lassen.','Gewürfelte Kartoffeln zugeben und weitere ca. 40 Minuten köcheln lassen, dabei regelmäßig rühren damit nichts anbrennt.','Mit Salz und weißem Pfeffer abschmecken, gehackte Petersilie einrühren.'], steps_en:['Finely dice bacon and render in a large pot over low heat.','Add finely chopped onions and sauté until translucent.','Add diced carrots, celery and sliced leek and briefly sauté.','Add split peas and 2 litres of stock or water. Bring to a boil.','Add marjoram and simmer over low heat for about 20 minutes.','Add diced potatoes and simmer for another 40 minutes, stirring regularly so nothing sticks.','Season with salt and white pepper, stir in chopped parsley.']},
+  { id:476, title:'Königsberger Klopse', title_en:'Königsberger Meatballs in Caper Sauce', category:'hauptgericht', difficulty:'gehoben', ingredients:['hackfleisch','brötchen','zwiebel','eier','paniermehl','kapern','sahne','mehl','butter','fond','zitronensaft','zucker','eigelb','lorbeer','salz','pfeffer','petersilie'], steps:['Hackfleisch, ausgedrückte eingeweichte Brötchen, fein gehackte Zwiebel, Eier, Salz, Pfeffer und Paniermehl zu einem geschmeidigen Fleischteig kneten.','Aus der Masse gleichmäßige Klopse formen.','Für die Brühe: Zwiebel, Lorbeerblatt und Pfefferkörner in den Fond geben und erhitzen.','Klopse in die heiße Brühe legen und ca. 10 Minuten köcheln lassen, dann weitere 10 Minuten bei niedriger Hitze gar ziehen lassen. Herausnehmen und warm stellen.','Für die Kapernsauce: Butter in einem Topf erhitzen, Mehl anschwitzen und mit der Kochbrühe ablöschen.','Abgetropfte Kapern und Sahne zugeben. Die Sauce nicht mehr kochen lassen.','Mit Zitronensaft, Zucker, Salz und Pfeffer süßsauer abschmecken.','Eigelb in die Sauce rühren ohne sie nochmals aufzukochen. Klopse hineingeben und mit Petersilie garniert servieren.'], steps_en:['Knead minced meat, soaked and squeezed-out bread rolls, finely chopped onion, eggs, salt, pepper and breadcrumbs into a smooth mixture.','Shape into even meatballs.','For the broth: add onion, bay leaf and peppercorns to the stock and heat to a simmer.','Place meatballs in the hot broth and simmer for about 10 minutes, then let rest off the boil for another 10 minutes. Remove and keep warm.','For the caper sauce: heat butter in a saucepan, cook the flour briefly, then deglaze with the cooking broth.','Add drained capers and cream. Do not let the sauce boil again.','Season sweet-and-sour with lemon juice, sugar, salt and pepper.','Stir egg yolk into the sauce without reboiling. Add meatballs and serve garnished with parsley.']},
+
+  // === KUCHEN (neu hinzugefügt – Chefkoch-Klassiker) ===
+  { id:436, title:'Käsekuchen klassisch', title_en:'Classic German Cheesecake', category:'kuchen', difficulty:'mittel', ingredients:['quark/topfen','eier','zucker','butter','vanille','sahne','zitrone','mehl'], steps:['Ofen auf 160 Grad C vorheizen. Springform (26 cm) buttern und mit Mehl ausstäuben.','Weiche Butter mit Zucker und Vanillezucker ca. 3 Minuten schaumig schlagen bis die Masse hell wird.','Eier einzeln einrühren – jedes vollständig einarbeiten bevor das nächste kommt.','Quark/Topfen, Sahne, Zitronensaft und Zitronenabrieb unterrühren bis eine glatte Masse entsteht.','Mehl und Backpulver darüber sieben und locker unterheben.','Masse in die Form füllen, Oberfläche glattstreichen.','Im vorgeheizten Ofen 60–70 Minuten backen bis die Oberfläche leicht goldbraun ist.','Im ausgeschalteten Ofen mit leicht geöffneter Tür 30 Minuten abkühlen lassen – so entstehen keine Risse.'], steps_en:['Preheat oven to 160 Grad C. Butter a 26 cm springform pan and dust with flour.','Beat soft butter with sugar and vanilla sugar for about 3 minutes until pale and fluffy.','Add eggs one at a time, making sure each is fully incorporated before adding the next.','Stir in quark/topfen, cream, lemon juice and zest until smooth.','Sift in flour and baking powder and fold in gently.','Pour into the pan and smooth the surface.','Bake 60–70 minutes until the surface is lightly golden.','Cool in the switched-off oven with the door slightly ajar for 30 minutes to prevent cracking.']},
+  { id:437, title:'Marmorkuchen', title_en:'Marble Cake', category:'kuchen', difficulty:'einfach', ingredients:['mehl','eier','zucker','butter','milch','kakaopulver','backpulver','vanille'], steps:['Ofen auf 175 Grad C vorheizen. Kastenform (30 cm) buttern und mit Mehl ausstäuben.','Weiche Butter mit Zucker und Vanillezucker schaumig schlagen ca. 4 Minuten.','Eier einzeln einrühren.','Mehl mit Backpulver abwechselnd mit Milch unterrühren bis ein glatter Teig entsteht.','Die Hälfte des Teiges in die Form füllen.','Kakao und 2 EL Milch unter die zweite Hälfte rühren.','Dunklen Teig über den hellen geben und mit einer Gabel in S-förmigen Bewegungen marmorieren – nicht zu viel rühren.','Bei 175 Grad C ca. 55–65 Minuten backen. Stäbchentest: muss trocken herauskommen.'], steps_en:['Preheat oven to 175 Grad C. Butter a 30 cm loaf pan and dust with flour.','Beat soft butter with sugar and vanilla sugar until fluffy, about 4 minutes.','Add eggs one at a time, stirring well after each.','Fold in flour and baking powder alternately with milk until a smooth batter forms.','Pour half the batter into the pan.','Stir cocoa powder and 2 tbsp milk into the remaining batter.','Pour dark batter over light batter. Use a fork to swirl in S-shapes – do not overmix.','Bake at 175 Grad C for 55–65 minutes. Test with skewer – must come out dry.']},
+  { id:438, title:'Saftiger Schokokuchen', title_en:'Moist Chocolate Cake', category:'kuchen', difficulty:'mittel', ingredients:['zartbitterschokolade','butter','eier','zucker','mehl','kakaopulver','backpulver'], steps:['Ofen auf 180 Grad C vorheizen. Springform (24 cm) buttern und mit Kakaopulver ausstäuben.','Schokolade und Butter zusammen im Wasserbad schmelzen und leicht abkühlen lassen.','Eier mit Zucker ca. 5 Minuten hell und cremig aufschlagen.','Schokoladen-Butter-Mischung unter die Eier-Zucker-Masse heben.','Mehl, Kakaopulver und Backpulver darüber sieben und behutsam unterheben – nicht zu viel rühren.','Teig in die Form füllen.','Bei 180 Grad C ca. 30–35 Minuten backen – der Kuchen soll innen noch leicht feucht sein.','Vollständig abkühlen lassen vor dem Anschneiden.'], steps_en:['Preheat oven to 180 Grad C. Butter a 24 cm springform and dust with cocoa powder.','Melt dark chocolate and butter together in a double boiler. Let cool slightly.','Beat eggs with sugar for about 5 minutes until pale and creamy.','Fold the chocolate-butter mixture into the egg mixture.','Sift in flour, cocoa powder and baking powder and gently fold in – do not overmix.','Pour batter into the pan.','Bake at 180 Grad C for about 30–35 minutes – the centre should still be slightly moist.','Let cool completely before slicing.']},
+  { id:439, title:'Bananenbrot', title_en:'Banana Bread', category:'kuchen', difficulty:'einfach', ingredients:['banane','mehl','eier','zucker','butter','backpulver','natron','zimt'], steps:['Ofen auf 175 Grad C vorheizen. Kastenform buttern und mit Mehl ausstäuben.','Sehr reife Bananen mit einer Gabel zu einem glatten Brei zerdrücken.','Geschmolzene Butter mit Zucker verrühren, Eier einrühren.','Bananenbrei untermischen.','Mehl, Backpulver, Natron und Zimt darüber sieben und kurz unterheben – Klumpen sind in Ordnung.','Teig in die Kastenform füllen.','Bei 175 Grad C ca. 55–60 Minuten backen bis Stäbchentest trocken ist.','10 Minuten in der Form abkühlen, dann herausstürzen und vollständig auskühlen.'], steps_en:['Preheat oven to 175 Grad C. Butter and flour a loaf pan.','Mash very ripe bananas with a fork until smooth.','Mix melted butter with sugar, then stir in eggs.','Stir in the mashed bananas.','Sift in flour, baking powder, baking soda and cinnamon. Fold briefly – lumps are fine.','Pour into the loaf pan.','Bake at 175 Grad C for 55–60 minutes until a skewer comes out dry.','Cool in pan for 10 minutes, then turn out and cool completely.']},
+  { id:440, title:'Streuselkuchen', title_en:'German Crumble Cake', category:'kuchen', difficulty:'mittel', ingredients:['mehl','butter','zucker','hefe','milch','eier','vanille'], steps:['Hefe in lauwarmer Milch auflösen und 10 Minuten stehen lassen.','Mehl, Zucker, Ei, weiche Butter und Hefemilch zu einem glatten Teig verkneten ca. 8 Minuten.','Teig abgedeckt an warmem Ort 1 Stunde gehen lassen bis er sich verdoppelt hat.','Für die Streusel: kalte Butter in Würfel schneiden und mit Mehl, Zucker und Vanillezucker mit den Fingern zu groben Streuseln verreiben.','Teig auf einem gefetteten Backblech ausrollen oder flachdrücken.','Streusel gleichmäßig auf dem Teig verteilen, nochmals 20 Minuten gehen lassen.','Im auf 200 Grad C vorgeheizten Ofen ca. 20–25 Minuten backen bis Streusel goldbraun sind.'], steps_en:['Dissolve yeast in lukewarm milk and leave for 10 minutes.','Knead flour, sugar, egg, soft butter and yeast milk into a smooth dough for about 8 minutes.','Cover dough and leave in a warm place for 1 hour until doubled.','For the crumble: cut cold butter into cubes and rub with flour, sugar and vanilla sugar to form coarse crumbs.','Roll or press dough onto a greased baking sheet.','Distribute crumble evenly over dough and leave to rise for another 20 minutes.','Bake in preheated oven at 200 Grad C for about 20–25 minutes until crumble is golden brown.']},
+
+  // === DESSERT (neu hinzugefügt – Chefkoch-Klassiker) ===
+  { id:441, title:'Tiramisu', title_en:'Tiramisu', category:'dessert', difficulty:'mittel', ingredients:['löffelbiskuits','mascarpone','eier','zucker','espresso','amaretto','kakaopulver'], steps:['Espresso stark aufbrühen und abkühlen lassen, Amaretto unterrühren.','Eigelbe mit Zucker im Wasserbad ca. 5 Minuten cremig aufschlagen bis die Masse dicklich wird.','Mascarpone glatt rühren und unter die Eigelb-Masse heben.','Eiweiß steif schlagen und behutsam unter die Mascarpone-Creme heben.','Löffelbiskuits kurz (nur 1–2 Sekunden) in die Espresso-Amaretto-Mischung tauchen – sie dürfen nicht durchweichen.','Eingetauchte Biskuits nebeneinander in eine flache Form legen.','Hälfte der Creme gleichmäßig auf den Biskuits verteilen.','Zweite Schicht Biskuits auflegen, restliche Creme darüber glattstreichen.','Mit Kakao bestäuben, abdecken und mindestens 4 Stunden, besser über Nacht, kalt stellen.'], steps_en:['Brew strong espresso and let cool, then stir in amaretto.','Whisk egg yolks with sugar in a double boiler for about 5 minutes until thick and creamy.','Stir mascarpone smooth and fold into the egg yolk mixture.','Beat egg whites to stiff peaks and gently fold into the mascarpone cream.','Briefly dip ladyfingers (only 1–2 seconds) into the espresso-amaretto mixture – they must not become soggy.','Arrange dipped biscuits side by side in a flat dish.','Spread half the cream evenly over the biscuits.','Add a second layer of biscuits and spread the remaining cream on top.','Dust with cocoa powder, cover and refrigerate for at least 4 hours, preferably overnight.']},
+  { id:442, title:'Rote Grütze', title_en:'Red Berry Compote', category:'dessert', difficulty:'einfach', ingredients:['erdbeeren','himbeeren','johannisbeeren','zucker','speisestärke','zitronensaft'], steps:['Erdbeeren waschen, Stiel entfernen und halbieren. Himbeeren und Johannisbeeren verlesen.','2/3 der Früchte mit Zucker und 200 ml Wasser in einem Topf aufkochen.','Ca. 5 Minuten bei mittlerer Hitze köcheln lassen bis der Zucker aufgelöst ist.','Speisestärke mit 3 EL kaltem Wasser und Zitronensaft glatt rühren.','Stärke-Mischung unter ständigem Rühren in die heiße Fruchtmasse geben.','Kurz aufkochen bis die Grütze andickt und klar wird.','Restliche rohe Früchte unterrühren für frische Textur.','In Schüsseln füllen und mindestens 2 Stunden kalt stellen. Mit Vanillesoße oder Sahne servieren.'], steps_en:['Wash strawberries, remove stems and halve. Pick over raspberries and currants.','Bring 2/3 of the fruit to a boil with sugar and 200 ml water in a saucepan.','Simmer for about 5 minutes over medium heat until sugar dissolves.','Mix cornstarch with 3 tbsp cold water and lemon juice until smooth.','Pour starch mixture into hot fruit while stirring constantly.','Bring briefly to a boil until the compote thickens and turns glossy.','Stir in remaining raw fruit for fresh texture.','Pour into bowls and refrigerate for at least 2 hours. Serve with vanilla sauce or cream.']},
+  { id:443, title:'Apfelstrudel', title_en:'Apple Strudel', category:'dessert', difficulty:'gehoben', ingredients:['apfel','mehl','butter','zucker','zimt','rosinen','semmelbrösel'], steps:['Für den Teig: Mehl mit einer Prise Salz, lauwarmem Wasser und zerlassener Butter zu einem glatten, elastischen Teig kneten ca. 10 Minuten. In Folie gewickelt 30 Minuten ruhen lassen.','Äpfel schälen, entkernen und in dünne Scheiben hobeln. Mit Zucker, Zimt und Rosinen mischen.','Semmelbrösel in Butter goldbraun rösten.','Teig auf einem bemehlten Tuch so dünn wie möglich ausziehen bis er fast durchsichtig ist.','Geröstete Semmelbrösel auf dem Teig verteilen, Apfelmasse darauf schichten.','Den Strudel mithilfe des Tuchs aufrollen und die Seiten einschlagen.','Auf ein mit Backpapier belegtes Blech legen und mit Butter bestreichen.','Bei 190 Grad C ca. 30–35 Minuten backen bis der Strudel goldbraun ist.','Warm mit Puderzucker bestäubt und Vanillesoße servieren.'], steps_en:['For the dough: knead flour with a pinch of salt, lukewarm water and melted butter into a smooth elastic dough for about 10 minutes. Rest wrapped in foil for 30 minutes.','Peel, core and thinly slice apples. Mix with sugar, cinnamon and raisins.','Toast breadcrumbs in butter until golden brown.','Roll and stretch the dough on a floured cloth as thin as possible, almost translucent.','Spread toasted breadcrumbs over the dough and layer apple mixture on top.','Roll up the strudel using the cloth and fold in the sides.','Place on a parchment-lined baking sheet and brush with butter.','Bake at 190 Grad C for about 30–35 minutes until golden brown.','Serve warm, dusted with powdered sugar and with vanilla sauce.']},
+  { id:444, title:'Kaiserschmarrn', title_en:'Kaiserschmarrn (Austrian Shredded Pancake)', category:'dessert', difficulty:'einfach', ingredients:['mehl','eier','milch','zucker','butter','rosinen','puderzucker'], steps:['Eiweiß von Eigelb trennen. Eigelb mit Milch, Mehl und einer Prise Salz zu einem glatten Teig rühren. Rosinen zugeben.','Eiweiß mit einer Prise Zucker steif schlagen.','Eischnee in zwei Portionen locker unter den Teig heben.','Butter in einer großen Pfanne bei mittlerer Hitze zerlassen.','Teig einfüllen und zugedeckt ca. 3–4 Minuten garen bis die Unterseite goldbraun ist.','Mit zwei Gabeln oder Pfannenwender in grobe Stücke zerreißen.','Zucker darüber streuen, weitere 2–3 Minuten rühren bis alle Stücke karamellisiert sind.','Mit reichlich Puderzucker bestäuben und sofort mit Zwetschgenröster oder Apfelmus servieren.'], steps_en:['Separate eggs. Mix egg yolks with milk, flour and a pinch of salt into a smooth batter. Add raisins.','Beat egg whites with a pinch of sugar until stiff.','Fold egg whites into the batter in two portions, keeping it light.','Melt butter in a large pan over medium heat.','Pour in batter and cook covered for about 3–4 minutes until the underside is golden.','Tear the pancake into rough chunks using two forks or a spatula.','Sprinkle sugar over pieces and cook for another 2–3 minutes, stirring until caramelised.','Dust generously with powdered sugar and serve immediately with plum compote or apple sauce.']},
+
+  // === VORSPEISEN (neu hinzugefügt – Chefkoch-Klassiker) ===
+  { id:445, title:'Gefüllte Champignons', title_en:'Stuffed Mushrooms', category:'vorspeisen', difficulty:'einfach', ingredients:['champignons','frischkäse','knoblauch','petersilie','parmesan','salz','pfeffer'], steps:['Ofen auf 200 Grad C vorheizen.','Champignons putzen, Stiele herausdrehen und fein hacken.','Gehackte Stiele mit Frischkäse, gepresstem Knoblauch, fein gehackter Petersilie und geriebenem Parmesan gut verrühren.','Mit Salz und Pfeffer kräftig abschmecken.','Champignon-Köpfe mit der Füllung großzügig befüllen und auf ein mit Backpapier belegtes Blech setzen.','Im vorgeheizten Ofen ca. 15–18 Minuten backen bis die Füllung goldbraun wird und die Pilze weich sind.','Mit frischer Petersilie garniert servieren.'], steps_en:['Preheat oven to 200 Grad C.','Clean mushrooms and twist out stems. Finely chop stems.','Mix chopped stems with cream cheese, pressed garlic, finely chopped parsley and grated Parmesan.','Season well with salt and pepper.','Generously fill mushroom caps and place on a parchment-lined baking sheet.','Bake in preheated oven for about 15–18 minutes until the filling is golden and mushrooms are tender.','Garnish with fresh parsley and serve.']},
+  { id:446, title:'Avocado-Toast mit Ei', title_en:'Avocado Toast with Egg', category:'vorspeisen', difficulty:'einfach', ingredients:['avocado','brot','eier','zitronensaft','salz','pfeffer','chiliflocken'], steps:['Brotscheiben im Toaster oder in der Pfanne kross toasten.','Avocado halbieren, Kern entfernen und Fruchtfleisch mit einer Gabel grob zerdrücken.','Zitronensaft, Salz und Pfeffer unterrühren.','Eier pochieren: Wasser mit etwas Essig erhitzen ohne zu kochen. Ei in eine Tasse geben und behutsam eingleiten lassen. Ca. 3 Minuten garen bis Eiweiß fest, Eigelb noch weich ist.','Avocado-Creme auf dem warmen Toast verstreichen.','Pochiertes Ei daraufsetzen, mit Salz, Pfeffer und Chiliflocken würzen.','Sofort servieren.'], steps_en:['Toast bread slices in toaster or pan until crispy.','Halve avocado, remove stone and roughly mash flesh with a fork.','Stir in lemon juice, salt and pepper.','Poach eggs: heat water with a splash of vinegar without boiling. Slide egg from a cup gently into water. Cook about 3 minutes until white is set but yolk is still runny.','Spread avocado mixture on warm toast.','Place poached egg on top, season with salt, pepper and chilli flakes.','Serve immediately.']},
+  { id:447, title:'Hummus mit Fladenbrot', title_en:'Hummus with Flatbread', category:'vorspeisen', difficulty:'einfach', ingredients:['kichererbsen','sesamöl','zitronensaft','knoblauch','olivenöl','salz','paprikapulver'], steps:['Kichererbsen aus der Dose abtropfen, Flüssigkeit aufbewahren.','Kichererbsen, Sesamöl, Zitronensaft, Knoblauch und eine Prise Salz in einen Mixer geben.','Erst langsam, dann auf hoher Stufe ca. 2 Minuten mixen.','Bei Bedarf etwas Kichererbsen-Flüssigkeit zugeben bis eine glatte, cremige Konsistenz entsteht.','Abschmecken und ggf. mehr Salz, Zitrone oder Knoblauch zugeben.','Hummus in eine Schüssel füllen, eine Mulde in die Mitte drücken.','Olivenöl in die Mulde gießen und mit Paprikapulver bestäuben.','Mit warmem Fladenbrot oder Gemüsesticks servieren.'], steps_en:['Drain canned chickpeas and save the liquid.','Add chickpeas, sesame oil, lemon juice, garlic and a pinch of salt to a blender.','Blend on low then high speed for about 2 minutes.','Add a little chickpea liquid as needed until smooth and creamy.','Taste: add more salt, lemon or garlic as needed.','Spoon hummus into a bowl and make a well in the centre.','Pour olive oil into the well and dust with paprika powder.','Serve with warm flatbread or vegetable sticks.']},
+  { id:448, title:'Zucchini-Röllchen mit Frischkäse', title_en:'Zucchini Rolls with Cream Cheese', category:'vorspeisen', difficulty:'einfach', ingredients:['zucchini','frischkäse','basilikum','knoblauch','salz','pfeffer','olivenöl'], steps:['Zucchini mit einem Sparschäler oder Mandoline in ca. 3–4 mm dünne Längsscheiben schneiden.','Zucchinistreifen beidseitig mit Olivenöl bepinseln, salzen und pfeffern.','In einer Grillpfanne bei hoher Hitze von jeder Seite ca. 2 Minuten grillen bis Grillstreifen entstehen und der Streifen biegsam wird. Auf einem Gitter abkühlen lassen.','Frischkäse mit fein gehacktem Basilikum, gepresstem Knoblauch, Salz und Pfeffer verrühren.','Jeden abgekühlten Zucchinistreifen dünn mit der Frischkäse-Creme bestreichen.','Fest aufrollen und mit einem Zahnstocher fixieren.','Auf einer Platte anrichten und kalt servieren.'], steps_en:['Slice zucchini lengthwise into strips about 3–4 mm thick using a peeler or mandoline.','Brush strips with olive oil on both sides, season with salt and pepper.','Grill in a ridged pan on high heat for about 2 minutes per side until grill marks form and strips become pliable. Cool on a rack.','Mix cream cheese with finely chopped basil, pressed garlic, salt and pepper.','Spread each cooled zucchini strip thinly with the cream cheese mixture.','Roll up firmly and secure with a toothpick.','Arrange on a platter and serve cold.']},
+  { id:449, title:'Schwarzwälder Kirschtorte', title_en:'Black Forest Cake', category:'kuchen', difficulty:'gehoben', ingredients:['mehl','eier','zucker','butter','kakaopulver','backpulver','kirschen','kirschwasser','schlagsahne'], steps:['Ofen auf 180 Grad C vorheizen. Springform (26 cm) buttern und mit Mehl ausstäuben.','Eier mit Zucker ca. 8 Minuten hell und cremig aufschlagen.','Mehl, Backpulver und Kakaopulver darüber sieben und behutsam unterheben.','Zerlassene, abgekühlte Butter in dünnem Strahl einrühren.','Teig in die Form füllen und ca. 30 Minuten backen. Stäbchentest. Vollständig auskühlen lassen, dann dreimal waagerecht durchschneiden.','Kirschen abtropfen, Saft mit Kirschwasser mischen. Böden damit tränken.','Schlagsahne steif schlagen. Untere zwei Böden mit Sahne und Kirschen belegen, zusammensetzen.','Torte außen mit Sahne einstreichen, Oberfläche mit Sahnetupfen, Kirschen und Schokoraspeln dekorieren.','Mindestens 2 Stunden kalt stellen vor dem Servieren.'], steps_en:['Preheat oven to 180 Grad C. Butter a 26 cm springform and dust with flour.','Beat eggs with sugar for about 8 minutes until pale and creamy.','Sift in flour, baking powder and cocoa powder and fold in gently.','Stir in melted, cooled butter in a thin stream.','Pour into pan and bake about 30 minutes. Test with skewer. Cool completely, then slice horizontally into three layers.','Drain cherries, mix juice with Kirschwasser. Soak each layer.','Whip cream to stiff peaks. Fill two lower layers with cream and cherries, reassemble.','Coat outside with cream. Decorate top with cream rosettes, cherries and chocolate shavings.','Refrigerate for at least 2 hours before serving.']},
+  { id:450, title:'Gulaschsuppe', title_en:'Goulash Soup', category:'suppen', difficulty:'mittel', ingredients:['rindfleisch','zwiebel','paprika','kartoffeln','paprikapulver','fond','tomate','knoblauch','salz','pfeffer'], steps:['Rindfleisch in ca. 1,5 cm große Würfel schneiden. Zwiebeln grob hacken, Paprika und Kartoffeln würfeln.','Fleisch in heißem Öl scharf anbraten bis braun, herausnehmen.','Zwiebeln im selben Topf bei mittlerer Hitze ca. 5 Minuten goldbraun dünsten.','Knoblauch und 3 EL Paprikapulver (edelsüß) zugeben, 30 Sekunden unter Rühren rösten.','Tomaten und Fleisch zurückgeben, mit Fond aufgießen bis alles bedeckt ist.','Aufkochen, Hitze reduzieren und zugedeckt ca. 45 Minuten köcheln lassen.','Kartoffel- und Paprikawürfel zugeben und weitere 20 Minuten garen bis weich.','Mit Salz, Pfeffer und einem Spritzer Essig abschmecken.'], steps_en:['Cut beef into roughly 1.5 cm cubes. Coarsely chop onions; dice bell pepper and potatoes.','Sear meat in hot oil until browned on all sides, then remove.','Sauté onions in the same pot over medium heat for about 5 minutes until golden.','Add garlic and 3 tbsp sweet paprika powder, toast while stirring for 30 seconds.','Return tomatoes and meat, pour in stock to cover.','Bring to boil, reduce heat and simmer covered for about 45 minutes.','Add diced potato and bell pepper and cook for another 20 minutes until tender.','Season with salt, pepper and a splash of vinegar.']},
+  { id:451, title:'Waffeln', title_en:'German Waffles', category:'dessert', difficulty:'einfach', ingredients:['mehl','eier','milch','butter','zucker','backpulver','vanille'], steps:['Waffeleisen vorheizen und leicht fetten.','Weiche Butter mit Zucker und Vanillezucker schaumig rühren ca. 3 Minuten.','Eier einzeln unterrühren.','Mehl und Backpulver abwechselnd mit Milch einrühren bis ein glatter, zähflüssiger Teig entsteht.','Teig ca. 5 Minuten ruhen lassen.','Je ca. 3 EL Teig ins vorgeheizte Eisen geben und 3–4 Minuten backen bis die Waffel goldbraun und knusprig ist.','Sofort mit Puderzucker, frischen Früchten oder Sahne servieren.'], steps_en:['Preheat waffle iron and grease lightly.','Beat soft butter with sugar and vanilla sugar until fluffy, about 3 minutes.','Add eggs one at a time, mixing well after each.','Stir in flour and baking powder alternately with milk until a smooth, slightly thick batter forms.','Rest the batter for about 5 minutes.','Pour about 3 tbsp batter into the iron and bake for 3–4 minutes until golden and crispy.','Serve immediately with powdered sugar, fresh fruit or whipped cream.']},
+  { id:452, title:'Gefüllte Paprika', title_en:'Stuffed Bell Peppers', category:'hauptgericht', difficulty:'mittel', ingredients:['paprika','hackfleisch','reis','zwiebel','tomatenmark','fond','salz','pfeffer'], steps:['Reis in leicht gesalzenem Wasser nach Packungsanweisung knapp gar kochen, abtropfen.','Paprikaschoten waschen, Deckel abschneiden und Kerne entfernen.','Zwiebel fein hacken und in Öl ca. 2 Minuten anschwitzen.','Hackfleisch zugeben und unter Rühren krümelig braten bis braun.','Tomatenmark, Reis, Salz und Pfeffer untermengen und abschmecken.','Paprikaschoten großzügig mit der Füllung befüllen und die Deckel auflegen.','Paprika in eine Auflaufform stellen, Fond angießen (ca. 1 cm hoch).','Im auf 180 Grad C vorgeheizten Ofen ca. 35–40 Minuten garen bis die Paprika weich ist.'], steps_en:['Cook rice in lightly salted water until just done according to package, drain.','Wash bell peppers, cut off lids and remove seeds.','Finely chop onion and sauté in oil for about 2 minutes.','Add minced meat and fry while stirring until crumbly and brown.','Mix in tomato paste, rice, salt and pepper, season to taste.','Fill peppers generously and place the lids on top.','Stand peppers in a casserole dish and add stock to about 1 cm depth.','Bake in preheated oven at 180 Grad C for about 35–40 minutes until peppers are soft.']},
+  { id:453, title:'Rinderrouladen', title_en:'Beef Roulades', category:'rind', difficulty:'gehoben', ingredients:['rindfleisch','speck','senf','zwiebel','gewürzgurken','fond','salz','pfeffer','butter'], steps:['Rindfleischscheiben (ca. 5 mm dünn) flachklopfen, salzen und pfeffern.','Jede Scheibe dünn mit Senf bestreichen.','Speckscheiben, fein gehackte Zwiebel und in Streifen geschnittene Gewürzgurken gleichmäßig auf dem Fleisch verteilen.','Fleisch straff aufrollen und mit Küchengarn oder Rouladenklammern fixieren.','Rouladen in heißem Fett von allen Seiten kräftig braun anbraten, herausnehmen.','Restliche Zwiebeln im Bratensatz anschwitzen, mit Fond aufgießen.','Rouladen zurücksetzen, aufkochen und zugedeckt bei schwacher Hitze ca. 1,5 Stunden schmoren bis das Fleisch sehr zart ist.','Rouladen herausnehmen, Soße nach Wunsch durch ein Sieb passieren und abschmecken.'], steps_en:['Pound beef slices (about 5 mm thin), season with salt and pepper.','Spread each slice thinly with mustard.','Distribute bacon slices, finely chopped onion and pickle strips evenly on the meat.','Roll the meat up tightly and secure with kitchen twine or roulade clips.','Brown roulades well on all sides in hot fat, then remove.','Sauté remaining onions in the drippings, deglaze with stock.','Return roulades, bring to a boil and braise covered over low heat for about 1.5 hours until very tender.','Remove roulades, strain sauce if desired and season to taste.']},
+  { id:455, title:'Spaghetti Bolognese', title_en:'Spaghetti Bolognese', category:'pasta', difficulty:'mittel', ingredients:['spaghetti','rinderhack','zwiebel','knoblauch','tomate','tomatenmark','rotwein','olivenöl','karotte','parmesan','oregano','salz','pfeffer'], steps:['Zwiebel und Knoblauch fein hacken, Karotte in kleine Würfel schneiden.','Olivenöl in einem großen Topf erhitzen, Zwiebel und Karotte ca. 3 Minuten anschwitzen.','Rinderhack zugeben und unter Rühren krümelig anbraten bis braun, ca. 5 Minuten.','Tomatenmark einrühren und 1 Minute mitrösten.','Mit Rotwein ablöschen und kurz einköcheln lassen.','Dosentomaten zugeben, zerdrücken, mit Salz, Pfeffer und Oregano würzen.','Bei niedriger Hitze ohne Deckel ca. 30 Minuten einköcheln lassen bis die Sauce dick ist.','Spaghetti nach Packungsanweisung al dente kochen, abgießen.','Spaghetti mit der Bolognese-Sauce vermengen und mit geriebenem Parmesan servieren.'], steps_en:['Finely chop onion and garlic, dice carrot small.','Heat olive oil in a large pot, sauté onion and carrot for about 3 minutes.','Add minced beef and cook while stirring until crumbly and browned, about 5 minutes.','Stir in tomato paste and toast for 1 minute.','Deglaze with red wine and let simmer briefly.','Add canned tomatoes, crush them, season with salt, pepper and oregano.','Simmer uncovered over low heat for about 30 minutes until sauce thickens.','Cook spaghetti al dente according to package, drain.','Toss spaghetti with the Bolognese sauce and serve with grated Parmesan.']},
+  { id:456, title:'Zwetschgenkuchen', title_en:'German Plum Cake', category:'kuchen', difficulty:'einfach', ingredients:['zwetschgen','mehl','butter','zucker','eier','backpulver','vanille','zimt','puderzucker'], steps:['Ofen auf 180 Grad C vorheizen. Springform (26 cm) buttern und mit Mehl ausstäuben.','Weiche Butter mit Zucker und Vanillezucker schaumig schlagen ca. 3 Minuten.','Eier einzeln einrühren.','Mehl mit Backpulver und Zimt abwechselnd mit etwas Milch unterrühren bis ein glatter Teig entsteht.','Teig in die Form füllen und glattstreichen.','Zwetschgen waschen, entkernen und halbieren.','Zwetschgenhälften dicht mit der Schnittfläche nach oben auf dem Teig verteilen.','Bei 180 Grad C ca. 40–45 Minuten backen bis Teig goldbraun ist und Stäbchentest trocken ergibt.','Abkühlen lassen und mit Puderzucker bestäuben.'], steps_en:['Preheat oven to 180 Grad C. Butter and dust a 26 cm springform pan with flour.','Beat soft butter with sugar and vanilla sugar until pale and fluffy, about 3 minutes.','Add eggs one at a time, stirring well after each.','Stir in flour, baking powder and cinnamon alternately with a little milk until a smooth batter forms.','Pour into the pan and smooth the surface.','Wash plums, remove pits and halve.','Arrange plum halves closely, cut side up, on the batter.','Bake at 180 Grad C for about 40–45 minutes until golden and a skewer comes out dry.','Let cool and dust with powdered sugar.']},
+  { id:457, title:'Palatschinken', title_en:'Austrian Crepes (Palatschinken)', category:'dessert', difficulty:'einfach', ingredients:['mehl','eier','milch','butter','zucker','marmelade','puderzucker'], steps:['Mehl, Eier, Milch, Zucker und eine Prise Salz zu einem glatten, flüssigen Teig verrühren.','Den Teig ca. 15 Minuten ruhen lassen.','Butter in einer beschichteten Pfanne bei mittlerer Hitze zerlassen.','Eine kleine Kelle Teig in die Pfanne geben und durch Schwenken dünn verteilen.','Ca. 1–2 Minuten backen bis die Unterseite goldbraun ist, dann wenden.','Weitere 30–60 Sekunden von der anderen Seite backen.','Fertige Palatschinke auf einem Teller warmhalten und mit dem restlichen Teig fortfahren.','Marmelade dünn auf jede Palatschinke streichen und fest aufrollen.','Mit Puderzucker bestäuben und warm servieren.'], steps_en:['Whisk flour, eggs, milk, sugar and a pinch of salt into a smooth, runny batter.','Rest the batter for about 15 minutes.','Melt butter in a non-stick pan over medium heat.','Add a small ladle of batter and swirl to spread thinly.','Cook for about 1–2 minutes until the underside is golden, then flip.','Cook for another 30–60 seconds on the other side.','Keep each finished crepe warm on a plate and continue with remaining batter.','Spread a thin layer of jam on each crepe and roll up firmly.','Dust with powdered sugar and serve warm.']},
+  { id:458, title:'Flammkuchen', title_en:'Flammkuchen (Tarte Flambée)', category:'vorspeisen', difficulty:'mittel', ingredients:['mehl','hefe','crème fraîche','speck','zwiebel','salz','olivenöl'], steps:['Mehl mit Hefe, einer Prise Salz, Olivenöl und lauwarmem Wasser zu einem glatten Teig kneten ca. 8 Minuten.','Teig abgedeckt an warmem Ort 45 Minuten gehen lassen.','Ofen auf 250 Grad C vorheizen – so heiß wie möglich.','Zwiebel in dünne Ringe schneiden, Speck in dünne Streifen.','Teig auf einer bemehlten Fläche sehr dünn ausrollen (ca. 3 mm).','Crème fraîche mit Salz und einer Prise Pfeffer verrühren und dünn auf dem Teig verstreichen.','Zwiebelringe und Speckstreifen gleichmäßig darauf verteilen.','Im sehr heißen Ofen ca. 10–12 Minuten backen bis die Ränder dunkelbraun und knusprig sind.'], steps_en:['Knead flour with yeast, a pinch of salt, olive oil and lukewarm water into a smooth dough for about 8 minutes.','Cover dough and leave to rise in a warm place for 45 minutes.','Preheat oven to 250 Grad C – as hot as possible.','Cut onion into thin rings, cut bacon into thin strips.','Roll dough out very thinly on a floured surface (about 3 mm).','Mix crème fraîche with salt and a pinch of pepper, spread thinly over the dough.','Distribute onion rings and bacon strips evenly on top.','Bake in the very hot oven for about 10–12 minutes until edges are dark brown and crispy.']},
+  { id:459, title:'Tafelspitz', title_en:'Tafelspitz (Boiled Beef)', category:'rind', difficulty:'gehoben', ingredients:['rindfleisch','karotte','sellerie','zwiebel','lorbeer','pfeffer','salz','meerrettich'], steps:['Rindfleisch (ca. 1–1,5 kg Tafelspitz) in kochendes Salzwasser legen.','Karotten, Sellerie und Zwiebel grob schneiden und zugeben.','Lorbeerblätter und Pfefferkörner zugeben.','Bei mittlerer Hitze ca. 2–2,5 Stunden leise köcheln lassen bis das Fleisch sehr zart ist – mit einer Gabel testen.','Fleisch aus der Brühe nehmen und 10 Minuten ruhen lassen.','Brühe durch ein Sieb gießen und separat als Suppe servieren.','Tafelspitz gegen die Faser in dünne Scheiben schneiden.','Mit frisch geriebenem Meerrettich und Bratkartoffeln oder Semmelkren servieren.'], steps_en:['Place beef (about 1–1.5 kg Tafelspitz) into boiling salted water.','Roughly chop carrots, celery and onion and add to the pot.','Add bay leaves and peppercorns.','Simmer gently over medium heat for about 2–2.5 hours until meat is very tender – test with a fork.','Remove meat from broth and rest for 10 minutes.','Strain the broth and serve separately as soup.','Slice Tafelspitz thinly against the grain.','Serve with freshly grated horseradish and fried potatoes or bread dumpling.']},
+  { id:460, title:'Leberknödelsuppe', title_en:'Liver Dumpling Soup', category:'suppen', difficulty:'gehoben', ingredients:['rinderleber','paniermehl','eier','zwiebel','petersilie','rinderbrühe','salz','pfeffer','majoran'], steps:['Zwiebel sehr fein hacken und in Butter glasig dünsten, abkühlen lassen.','Rinderleber durch den Fleischwolf drehen oder sehr fein hacken.','Leber mit Paniermehl, Ei, Majoran, fein gehackter Petersilie, gedünsteter Zwiebel, Salz und Pfeffer gut vermengen.','Masse ca. 15 Minuten im Kühlschrank kühlen damit sie fester wird.','Rinderbrühe in einem großen Topf zum Kochen bringen.','Mit feuchten Händen gleichmäßige Knödel (ca. 4–5 cm Durchmesser) formen.','Knödel in die siedende Brühe geben und bei niedriger Hitze ca. 15–20 Minuten pochieren bis sie an der Oberfläche schwimmen.','Mit frischer Petersilie garnieren und sofort heiß servieren.'], steps_en:['Very finely chop onion and sauté in butter until translucent, let cool.','Mince beef liver through a grinder or chop very finely.','Mix liver thoroughly with breadcrumbs, egg, marjoram, finely chopped parsley, sautéed onion, salt and pepper.','Refrigerate the mixture for about 15 minutes to firm up.','Bring beef broth to a boil in a large pot.','Form the liver mixture into even dumplings (about 4–5 cm diameter) with wet hands.','Add dumplings to simmering broth and poach over low heat for about 15–20 minutes until they float and are cooked through.','Garnish with fresh parsley and serve immediately.']},
+  { id:454, title:'Schweinebraten mit Soße', title_en:'Pork Roast with Gravy', category:'schwein', difficulty:'mittel', ingredients:['schweinefleisch','kümmel','knoblauch','zwiebel','fond','salz','pfeffer','karotte'], steps:['Schweinefleisch (z. B. Schulter oder Nacken) von allen Seiten mit Salz, Pfeffer und gemahlenem Kümmel einreiben.','Knoblauch hacken und in die Oberfläche eindrücken.','In einem Bräter Öl erhitzen und das Fleisch von allen Seiten kräftig anbraten.','Grob geschnittene Zwiebeln und Karotten zugeben und kurz mitrösten.','Mit Fond aufgießen (ca. 250 ml), aufkochen.','Im auf 160 Grad C vorgeheizten Ofen zugedeckt ca. 1,5–2 Stunden schmoren.','Deckel abnehmen, Hitze auf 200 Grad C erhöhen und das Fleisch ca. 20 Minuten offen braten bis die Kruste kräftig bräunt.','Braten herausnehmen, ruhen lassen. Bratensaft durch ein Sieb in einen Topf gießen, einkochen und als Soße servieren.'], steps_en:['Rub pork (shoulder or neck) on all sides with salt, pepper and ground caraway.','Chop garlic and press into the surface.','Heat oil in a roasting pan and sear the meat on all sides until well browned.','Add roughly chopped onions and carrots and briefly toast.','Pour in stock (about 250 ml) and bring to a boil.','Cover and roast in a 160 Grad C oven for about 1.5–2 hours.','Remove lid, increase heat to 200 Grad C and roast uncovered for about 20 minutes until the crust is deeply browned.','Remove roast and rest. Strain drippings into a saucepan, reduce and serve as gravy.']},
+  { id:461, title:'Spinat-Tomaten-Spätzle-Pfanne', title_en:'Spinach Tomato Spaetzle Pan', category:'hauptgericht', difficulty:'einfach', ingredients:['spätzle','spinat','kirschtomaten','zwiebel','gruyere','olivenöl','salz','pfeffer'], steps:['Spinat waschen und trocken schütteln. Kirschtomaten waschen und halbieren. Zwiebel klein schneiden. Gruyère reiben.','Olivenöl in einer großen beschichteten Pfanne erhitzen und Zwiebeln darin bei mittlerer Hitze goldbraun anbraten.','Spinat zugeben und unter Rühren dünsten bis er fast zusammenfällt, ca. 2 Minuten.','Spätzle in die Pfanne geben und ca. 3 Minuten mitbraten bis sie leicht Farbe bekommen.','Kirschtomaten unterrühren und weitere 2 Minuten bei mittlerer Hitze garen.','Mit Salz und Pfeffer kräftig abschmecken.','Geriebenen Gruyère über die Pfanne streuen und bei geschlossenem Deckel 1 Minute schmelzen lassen.','Sofort aus der Pfanne servieren.'], steps_en:['Wash spinach and shake dry. Wash cherry tomatoes and halve. Finely chop onion. Grate Gruyère.','Heat olive oil in a large non-stick pan and fry onion over medium heat until golden, about 3 minutes.','Add spinach and stir until it nearly wilts, about 2 minutes.','Add spaetzle and fry for about 3 minutes until lightly browned.','Stir in cherry tomatoes and cook for another 2 minutes over medium heat.','Season generously with salt and pepper.','Scatter grated Gruyère over the pan and cover for 1 minute until melted.','Serve immediately from the pan.']},
+  { id:462, title:'Buntes Ofengemüse mit Feta', title_en:'Colourful Roasted Vegetables with Feta', category:'hauptgericht', difficulty:'einfach', ingredients:['kartoffeln','paprika','zucchini','champignons','kirschtomaten','zwiebel','knoblauch','feta','olivenöl','rosmarin','thymian','salz','pfeffer'], steps:['Ofen auf 200 Grad C (Ober-/Unterhitze) vorheizen.','Kartoffeln in Spalten schneiden. Paprika, Zucchini und Zwiebel in mundgerechte Stücke schneiden. Champignons vierteln.','Alles zusammen mit den Knoblauchzehen in eine große Auflaufform geben.','Reichlich Olivenöl darüber gießen, Rosmarin und Thymian zugeben, mit Salz und Pfeffer würzen und alles gut vermengen.','Kirschtomaten gleichmäßig auf dem Gemüse verteilen.','Feta über das Gemüse bröseln.','Im vorgeheizten Ofen 35–40 Minuten backen bis das Gemüse gar und leicht gebräunt ist.','Direkt aus der Form servieren.'], steps_en:['Preheat oven to 200 Grad C (top and bottom heat).','Cut potatoes into wedges. Cut bell pepper, zucchini and onion into bite-sized pieces. Quarter mushrooms.','Place everything together with garlic cloves in a large baking dish.','Pour generously with olive oil, add rosemary and thyme, season with salt and pepper and mix well.','Distribute cherry tomatoes evenly over the vegetables.','Crumble feta over the vegetables.','Bake in preheated oven for 35–40 minutes until vegetables are tender and lightly browned.','Serve directly from the dish.']},
+  { id:463, title:'Frühlingsrollen', title_en:'Spring Rolls', category:'vorspeisen', difficulty:'mittel', ingredients:['strudelteig','hackfleisch','zwiebel','paprika','zuckerschoten','bohnensprossen','sesamöl','chiliflocken','salz','pfeffer'], steps:['Ofen auf 200 Grad C vorheizen.','Sesamöl in einer großen Pfanne erhitzen. Zwiebel und Paprika in mundgerechte Stücke schneiden und im heißen Öl ca. 2 Minuten anbraten.','Hackfleisch zugeben und krümelig braten. Zuckerschoten und Bohnensprossen unterrühren und weitere 3 Minuten bei hoher Hitze mitbraten.','Mit Chiliflocken, Salz und Pfeffer abschmecken. Füllung etwas abkühlen lassen.','Strudelteigblätter hochkant legen. Je ca. 3 EL Füllung auf den unteren Teil geben, Seiten einschlagen und das Blatt fest aufrollen.','Rollen auf ein mit Backpapier belegtes Blech legen und mit etwas Sesamöl bestreichen.','Im vorgeheizten Ofen 25–30 Minuten goldbraun backen.','Mit Sojasoße oder Chili-Dip servieren.'], steps_en:['Preheat oven to 200 Grad C.','Heat sesame oil in a large pan. Cut onion and bell pepper into bite-sized pieces and fry in the hot oil for about 2 minutes.','Add minced meat and fry until crumbly. Stir in sugar snap peas and bean sprouts and fry for another 3 minutes over high heat.','Season with chilli flakes, salt and pepper. Let filling cool slightly.','Lay strudel dough sheets flat. Place about 3 tbsp filling on the lower section, fold in sides and roll up firmly.','Place rolls on a baking sheet lined with parchment and brush with a little sesame oil.','Bake in the preheated oven for 25–30 minutes until golden brown.','Serve with soy sauce or chilli dip.']},
+  { id:464, title:'Sauerbraten', title_en:'Sauerbraten (German Pot Roast)', category:'rind', difficulty:'gehoben', ingredients:['rindfleisch','rotwein','rotweinessig','zwiebel','karotte','sellerie','lorbeer','nelken','wacholderbeeren','pfeffer','butter','mehl','fond','rosinen','salz'], steps:['Rotwein, Rotweinessig, grob geschnittene Zwiebeln, Karotten, Sellerie, Lorbeer, Nelken, Wacholderbeeren und Pfefferkörner in einem Topf aufkochen und abkühlen lassen.','Rindfleisch (ca. 1,5 kg, z. B. Schulterbraten) in die abgekühlte Marinade legen, abdecken und im Kühlschrank 2–3 Tage einlegen.','Fleisch aus der Marinade nehmen und trocken tupfen. Marinade durch ein Sieb gießen und aufbewahren.','Öl in einem Bräter erhitzen und das Fleisch von allen Seiten kräftig braun anbraten. Herausnehmen.','Grob gewürfeltes Gemüse aus der Marinade im Bratfett kurz anrösten. Mehl darüber stäuben und 1 Minute rühren.','Marinade und etwas Fond angießen, Fleisch zurücksetzen. Aufkochen, Hitze reduzieren und zugedeckt ca. 2 Stunden schmoren bis sehr zart.','Fleisch herausnehmen. Soße durch ein Sieb streichen, aufkochen und Rosinen zugeben. Mit Salz abschmecken.','Fleisch in Scheiben schneiden und mit der Soße servieren.'], steps_en:['Bring red wine, red wine vinegar, roughly chopped onions, carrots, celery, bay leaves, cloves, juniper berries and peppercorns to a boil in a pot. Let cool completely.','Place beef (about 1.5 kg, e.g. shoulder roast) in the cooled marinade, cover and marinate in the fridge for 2–3 days.','Remove meat from marinade and pat dry. Strain marinade through a sieve and set aside.','Heat oil in a heavy pot and sear the meat well on all sides. Remove.','Briefly fry the strained vegetables in the same fat. Dust with flour and stir for 1 minute.','Pour in marinade and a little stock. Return meat. Bring to a boil, reduce heat and braise covered for about 2 hours until very tender.','Remove meat. Strain sauce, bring to a boil and add raisins. Season with salt.','Slice meat and serve with the sauce.']},
+  { id:465, title:'Wiener Schnitzel', title_en:'Wiener Schnitzel', category:'schwein', difficulty:'einfach', ingredients:['schweinefleisch','eier','mehl','paniermehl','butterschmalz','zitrone','salz','pfeffer'], steps:['Schweineschnitzel (ca. 150 g pro Person) zwischen Frischhaltefolie legen und mit einem Fleischklopfer gleichmäßig auf ca. 4 mm Dicke klopfen.','Auf beiden Seiten salzen und pfeffern.','Drei tiefe Teller vorbereiten: Mehl im ersten, verquirlte Eier im zweiten, Paniermehl im dritten.','Jedes Schnitzel zunächst in Mehl wenden, überschüssiges Mehl abschütteln. Dann durch die Eier ziehen und sofort im Paniermehl wenden. Panade nicht andrücken.','Reichlich Butterschmalz in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen bis es schimmert.','Schnitzel einlegen und durch leichtes Schwenken der Pfanne in schwimmender Hitze garen. Von jeder Seite ca. 2 Minuten braten bis goldbraun und knusprig.','Auf Küchenpapier kurz abtropfen lassen.','Sofort mit Zitronenspalten servieren.'], steps_en:['Place pork escalopes (about 150 g per person) between cling film and pound evenly to about 4 mm thickness with a meat mallet.','Season both sides with salt and pepper.','Prepare three shallow plates: flour in the first, beaten eggs in the second, breadcrumbs in the third.','Turn each escalope in flour first and shake off the excess. Then drag through the egg and immediately coat in breadcrumbs. Do not press the coating down.','Heat plenty of clarified butter in a large pan over medium-high heat until shimmering.','Add schnitzels and cook by gently swirling the pan so the coating puffs. Fry about 2 minutes per side until golden and crispy.','Drain briefly on kitchen paper.','Serve immediately with lemon wedges.']},
+  { id:466, title:'Erdbeerkuchen', title_en:'Strawberry Cake', category:'kuchen', difficulty:'einfach', ingredients:['erdbeeren','mehl','butter','zucker','eier','backpulver','vanille','sahne','puderzucker'], steps:['Ofen auf 180 Grad C vorheizen. Springform (26 cm) buttern und mit Mehl ausstäuben.','Weiche Butter mit Zucker und Vanillezucker schaumig schlagen, ca. 3 Minuten.','Eier einzeln einrühren, jeweils vollständig einarbeiten.','Mehl und Backpulver sieben und abwechselnd mit etwas Milch unterrühren bis ein glatter Teig entsteht.','Teig in die Form füllen und glattstreichen. Im vorgeheizten Ofen ca. 30 Minuten backen bis goldbraun und Stäbchentest trocken ist.','Boden vollständig auskühlen lassen.','Schlagsahne mit etwas Zucker und Vanillezucker steif schlagen.','Boden mit Sahne bestreichen. Erdbeeren waschen, putzen, halbieren und dicht auf der Sahne verteilen.','Mit Puderzucker bestäuben und kalt servieren.'], steps_en:['Preheat oven to 180 Grad C. Butter a 26 cm springform pan and dust with flour.','Beat soft butter with sugar and vanilla sugar until fluffy, about 3 minutes.','Add eggs one at a time, fully incorporating each.','Sift flour and baking powder and fold in alternately with a little milk until a smooth batter forms.','Pour batter into pan and smooth the surface. Bake in the preheated oven for about 30 minutes until golden and a skewer comes out dry.','Let base cool completely.','Whip cream with a little sugar and vanilla sugar to stiff peaks.','Spread cream over the base. Wash, hull and halve strawberries and arrange closely on the cream.','Dust with powdered sugar and serve cold.']},
+  { id:477, title:'Kartoffelknödel', title_en:'Potato Dumplings', category:'hauptgericht', difficulty:'mittel', ingredients:['kartoffeln','mehl','eier','salz','muskat','butter'], steps:['Kartoffeln (ca. 1 kg, mehligkochend) waschen und in der Schale in Salzwasser ca. 25 Minuten weich kochen.','Heiß pellen und sofort durch eine Kartoffelpresse drücken. Vollständig auskühlen lassen – das ist wichtig, damit der Teig nicht klebt.','Mehl (ca. 3–4 EL), Ei, Salz und eine Prise Muskat zugeben und mit den Händen zu einem glatten Teig verkneten. Nicht zu lange kneten.','Mit feuchten Händen gleichmäßige Knödel (ca. 6–7 cm Durchmesser) formen – nicht zu fest drücken.','Einen großen Topf Salzwasser zum Sieden bringen (nicht sprudelnd kochen).','Knödel vorsichtig ins Wasser geben und bei niedriger Hitze ca. 20 Minuten pochieren bis sie an der Oberfläche schwimmen.','Mit einer Schaumkelle herausnehmen, kurz abtropfen lassen.','Mit zerlassener Butter übergießen und sofort mit Braten oder Pilzsoße servieren.'], steps_en:['Wash potatoes (about 1 kg, floury variety) and boil in salted water in their skins for about 25 minutes until soft.','Peel while hot and press immediately through a potato ricer. Let cool completely – this prevents sticky dough.','Add flour (about 3–4 tbsp), egg, salt and a pinch of nutmeg. Knead with your hands into a smooth dough. Do not over-knead.','Shape even dumplings (about 6–7 cm diameter) with wet hands – do not press too firmly.','Bring a large pot of salted water to a gentle simmer (not a rolling boil).','Carefully lower dumplings into the water and poach over low heat for about 20 minutes until they float.','Lift out with a slotted spoon and drain briefly.','Pour melted butter over dumplings and serve immediately with roast or mushroom gravy.']},
+  { id:478, title:'Linsensuppe', title_en:'Lentil Soup', category:'suppen', difficulty:'einfach', ingredients:['linsen','zwiebel','karotte','sellerie','speck','lorbeer','essig','salz','pfeffer'], steps:['Rote oder braune Linsen (ca. 300 g) in einem Sieb kalt abspülen.','Speck in kleine Würfel schneiden und in einem großen Topf ohne Fett bei mittlerer Hitze ausbraten bis knusprig. Herausnehmen.','Im Speckfett Zwiebel, Karotte und Sellerie (jeweils gewürfelt) ca. 5 Minuten anschwitzen bis weich.','Linsen zugeben, mit ca. 1,2 Liter Wasser oder Brühe aufgießen.','Lorbeerblätter zugeben, aufkochen und bei mittlerer Hitze ca. 25–30 Minuten köcheln bis die Linsen sehr weich sind.','Lorbeerblätter entfernen. Nach Wunsch ca. die Hälfte der Suppe mit dem Stabmixer pürieren für eine cremigere Konsistenz.','Knusprigen Speck zurückgeben.','Mit Salz, Pfeffer und einem guten Schuss Essig kräftig abschmecken. Sofort servieren.'], steps_en:['Rinse red or brown lentils (about 300 g) under cold water in a sieve.','Dice bacon and fry in a large pot without added fat over medium heat until crispy. Remove and set aside.','In the bacon fat, sauté diced onion, carrot and celery for about 5 minutes until softened.','Add lentils and pour in about 1.2 litres of water or stock.','Add bay leaves, bring to a boil and simmer over medium heat for about 25–30 minutes until lentils are very soft.','Remove bay leaves. If desired, blend about half the soup with a stick blender for a creamier texture.','Return the crispy bacon.','Season well with salt, pepper and a generous splash of vinegar. Serve immediately.']},
+  { id:479, title:'Schupfnudeln mit Sauerkraut', title_en:'Schupfnudeln with Sauerkraut', category:'hauptgericht', difficulty:'mittel', ingredients:['kartoffeln','mehl','eier','speck','sauerkraut','zwiebel','salz','muskat','butter'], steps:['Kartoffeln (ca. 600 g, mehligkochend) in der Schale kochen, heiß pellen und durch die Kartoffelpresse drücken. Abkühlen lassen.','Mehl (ca. 100 g), Eigelb, Salz und Muskat zugeben und zu einem glatten, nicht klebrigen Teig verkneten. Bei Bedarf etwas mehr Mehl zugeben.','Teig zu fingerdicken Rollen formen und in ca. 5 cm lange Stücke schneiden. Jedes Stück mit den Handflächen zu einer spitz zulaufenden Nudel rollen.','Schupfnudeln in gut gesalzenem, siedendem Wasser ca. 3–4 Minuten garen bis sie aufsteigen. Herausnehmen und abtropfen lassen.','Speck in Streifen schneiden und in einer großen Pfanne bei mittlerer Hitze knusprig braten. Herausnehmen.','Zwiebel in derselben Pfanne im Speckfett goldbraun anbraten.','Sauerkraut zugeben und ca. 5 Minuten mitbraten.','Schupfnudeln in die Pfanne geben und alles zusammen bei hoher Hitze ca. 5 Minuten braten bis die Nudeln goldbraune Stellen bekommen. Speck unterheben. Mit Salz und Pfeffer abschmecken.'], steps_en:['Boil potatoes (about 600 g, floury variety) in their skins, peel hot and press through a ricer. Allow to cool.','Add flour (about 100 g), egg yolk, salt and nutmeg and knead into a smooth, non-sticky dough. Add a little more flour if needed.','Roll dough into finger-thick logs and cut into pieces about 5 cm long. Roll each piece between your palms into a pointed dumpling shape.','Cook Schupfnudeln in well-salted simmering water for about 3–4 minutes until they float. Remove and drain.','Cut bacon into strips and fry in a large pan over medium heat until crispy. Remove and set aside.','Fry onion in the same pan in the bacon fat until golden.','Add sauerkraut and fry for about 5 minutes.','Add Schupfnudeln and fry everything together over high heat for about 5 minutes until the dumplings are golden brown in spots. Fold in bacon. Season with salt and pepper.']},
+  { id:480, title:'Sachertorte', title_en:'Sachertorte', category:'kuchen', difficulty:'gehoben', ingredients:['zartbitterschokolade','butter','zucker','eier','mehl','backpulver','marmelade','sahne','vanille'], steps:['Ofen auf 170 Grad C vorheizen. Springform (24 cm) buttern und mit Mehl ausstäuben.','Zartbitterschokolade (150 g) im Wasserbad schmelzen und auf Zimmertemperatur abkühlen lassen.','Weiche Butter (130 g) mit Puderzucker (100 g) und Vanillezucker schaumig schlagen ca. 5 Minuten.','Eigelbe einzeln einrühren. Geschmolzene Schokolade unterrühren.','Eiweiß mit 100 g Zucker steif schlagen.','Mehl (150 g) abwechselnd mit dem Eischnee behutsam unter die Schokoladen-Masse heben – in drei Portionen, nicht zu viel rühren.','Teig in die Form füllen und bei 170 Grad C ca. 45–50 Minuten backen. Stäbchentest. Vollständig auskühlen lassen, dann horizontal halbieren.','Marillenmarmelade (Aprikosenmarmelade) erwärmen und durch ein Sieb streichen. Unteren Boden und die gesamte Außenseite der zusammengesetzten Torte damit bestreichen.','Für die Glasur: Schokolade (150 g) mit Sahne (100 ml) im Wasserbad schmelzen und die Torte gleichmäßig damit überziehen. Kühl stellen bis die Glasur fest ist.'], steps_en:['Preheat oven to 170 Grad C. Butter a 24 cm springform and dust with flour.','Melt dark chocolate (150 g) in a double boiler and cool to room temperature.','Beat soft butter (130 g) with icing sugar (100 g) and vanilla sugar until fluffy, about 5 minutes.','Add egg yolks one at a time, stirring well. Stir in melted chocolate.','Beat egg whites with 100 g sugar to stiff peaks.','Gently fold sifted flour (150 g) into the chocolate mixture alternately with the egg whites – in three additions, do not overmix.','Pour into pan and bake at 170 Grad C for about 45–50 minutes. Test with skewer. Cool completely, then slice horizontally in half.','Warm apricot jam and press through a sieve. Brush the bottom layer and the entire outside of the assembled cake.','For the glaze: melt chocolate (150 g) with cream (100 ml) in a double boiler and coat the cake evenly. Refrigerate until set.']},
+  { id:481, title:'Grießnockerlsuppe', title_en:'Semolina Dumpling Soup', category:'suppen', difficulty:'mittel', ingredients:['grieß','eier','butter','rinderbrühe','salz','muskat','petersilie'], steps:['Weiche Butter (50 g) mit einer Prise Salz schaumig rühren ca. 3 Minuten.','Eier (2 Stück) einzeln einrühren.','Grieß (ca. 100 g) zugeben und gut unterrühren. Mit Salz und frisch geriebenem Muskat würzen.','Die Masse ca. 20 Minuten im Kühlschrank quellen lassen bis der Grieß die Flüssigkeit aufgenommen hat und die Masse formbar ist.','Rinderbrühe (ca. 1,2 Liter) in einem großen Topf aufkochen, dann Hitze auf leises Köcheln reduzieren.','Mit zwei in heißes Wasser getauchten Teelöffeln gleichmäßige Nockerl formen und vorsichtig in die siedende Brühe gleiten lassen.','Nockerl bei niedriger Hitze ohne Deckel ca. 15–20 Minuten pochieren bis sie aufgestiegen sind und eine leichte Spannung beim Eindrücken zeigen.','In tiefen Tellern mit heißer Brühe anrichten und mit frisch gehackter Petersilie bestreuen.'], steps_en:['Beat soft butter (50 g) with a pinch of salt until fluffy, about 3 minutes.','Stir in eggs (2 pieces) one at a time.','Add semolina (about 100 g) and mix well. Season with salt and freshly grated nutmeg.','Refrigerate the mixture for about 20 minutes to let the semolina absorb the liquid and firm up.','Bring beef broth (about 1.2 litres) to a boil in a large pot, then reduce to a gentle simmer.','Shape even dumplings using two teaspoons dipped in hot water and gently slide into the simmering broth.','Poach uncovered over low heat for about 15–20 minutes until risen and slightly firm when pressed.','Serve in deep bowls with hot broth and sprinkle with freshly chopped parsley.']},
+  { id:482, title:'Dampfnudeln', title_en:'Dampfnudeln (Steamed Sweet Dumplings)', category:'dessert', difficulty:'mittel', ingredients:['mehl','milch','hefe','butter','zucker','vanille','eier','salz'], steps:['Hefe (1 Würfel frisch oder 1 Päckchen trocken) in lauwarmer Milch (200 ml) mit 1 TL Zucker auflösen und 10 Minuten stehen lassen.','Mehl (500 g), Zucker (50 g), Ei, weiche Butter (50 g), eine Prise Salz und Vanillezucker in eine Schüssel geben.','Hefemilch zugießen und alles zu einem glatten, elastischen Teig verkneten ca. 10 Minuten. Der Teig soll sich vom Schüsselrand lösen.','Teig abgedeckt an warmem Ort 1 Stunde gehen lassen bis er sich verdoppelt hat.','Teig auf leicht bemehlter Fläche kurz durchkneten, in 10–12 gleich große Stücke teilen und zu runden Bällchen formen.','Butter (30 g) mit Milch (150 ml) und einer Prise Salz in einem breiten, flachen Topf mit Deckel erhitzen.','Dampfnudeln mit Abstand nebeneinander einsetzen. Deckel fest aufsetzen und bei mittlerer Hitze ca. 20 Minuten dämpfen – den Deckel dabei keinesfalls öffnen.','Sobald ein leises Knistern zu hören ist (die Milch ist verdampft und die Böden bräunen), sind die Dampfnudeln fertig. Mit Vanillesoße oder Zwetschgenröster servieren.'], steps_en:['Dissolve yeast (1 cube fresh or 1 packet dry) in lukewarm milk (200 ml) with 1 tsp sugar and leave for 10 minutes.','Place flour (500 g), sugar (50 g), egg, soft butter (50 g), a pinch of salt and vanilla sugar in a bowl.','Pour in yeast milk and knead into a smooth, elastic dough for about 10 minutes. The dough should pull away from the bowl.','Cover and leave to rise in a warm place for 1 hour until doubled.','Briefly knead dough on a lightly floured surface, divide into 10–12 equal pieces and shape into round balls.','Heat butter (30 g) with milk (150 ml) and a pinch of salt in a wide, shallow pot with a lid.','Place dumplings side by side with space between them. Put the lid on firmly and steam over medium heat for about 20 minutes – do not open the lid during this time.','Once you hear a gentle crackling sound (the milk has evaporated and the bases are browning), the dumplings are done. Serve with vanilla sauce or plum compote.']},
+  { id:483, title:'Käsespätzle', title_en:'Käsespätzle (Swabian Cheese Noodles)', category:'hauptgericht', difficulty:'einfach', ingredients:['mehl','eier','öl','salz','zwiebel','emmentaler'], steps:['Für den Teig Eier (6 Stück), Mehl (500 g), Öl (1 EL) und reichlich Salz (ca. 4 TL) mit dem Knethaken verrühren. Je nach Eigröße so viel Wasser (ca. 250 ml) zugeben, dass ein zähflüssiger Teig entsteht.','Einen großen Topf Salzwasser zum Kochen bringen.','Teig löffelweise in eine Spätzlerpresse geben und in das kochende Wasser drücken. Alternativ den Teig vom nassen Brett ins Wasser schaben.','Spätzle mit einer Schaumkelle herausnehmen sobald sie an die Oberfläche steigen. In eine gebutterte Schüssel geben.','Abwechselnd Spätzle und geriebenen Emmentaler (300 g) schichten damit sich Käse und Nudeln gleichmäßig verbinden.','Zwiebeln (3 mittelgroße) schälen, in Ringe schneiden und in Butter bei mittlerer Hitze dunkelbraun und knusprig braten.','Röstzwiebeln über die Käsespätzle verteilen.','Sofort heiß servieren – dazu passt ein grüner Salat.'], steps_en:['For the dough, mix eggs (6), flour (500 g), oil (1 tbsp) and plenty of salt (about 4 tsp) with the dough hook. Add enough water (about 250 ml) to form a thick, viscous batter.','Bring a large pot of salted water to a boil.','Press batter through a Spätzle press into the boiling water, or scrape from a wet board.','Lift Spätzle out with a slotted spoon as soon as they float. Place in a buttered dish.','Layer Spätzle and grated Emmental (300 g) alternately so the cheese melts evenly through the noodles.','Peel onions (3 medium), cut into rings and fry in butter over medium heat until deep brown and crispy.','Spread fried onions over the Käsespätzle.','Serve immediately, hot. A green salad pairs well.']},
+  { id:484, title:'Kürbissuppe mit Ingwer und Kokosmilch', title_en:'Pumpkin Soup with Ginger and Coconut Milk', category:'suppen', difficulty:'mittel', ingredients:['kürbis','karotte','ingwer','zwiebel','butter','gemüsebrühe','kokosmilch','salz','pfeffer','sojasauce','zitronensaft','koriander'], steps:['Kürbis (Hokkaido, 800 g – muss nicht geschält werden), Karotten (600 g), Ingwer (ca. 5 cm Stück) und Zwiebel schälen und grob würfeln.','Butter in einem großen Topf erhitzen und das Gemüse darin bei mittlerer Hitze ca. 5 Minuten andünsten.','Mit Gemüsebrühe (1 Liter) aufgießen und das Gemüse ca. 15–20 Minuten weich kochen.','Mit einem Stabmixer sehr fein pürieren. Für eine besonders glatte Konsistenz durch ein feines Sieb streichen.','Kokosmilch (500 ml) unterrühren und die Suppe noch einmal erhitzen ohne sie zu kochen.','Mit Salz, Pfeffer, Sojasoße und Zitronensaft kräftig abschmecken.','In Suppentellern mit frischen Korianderblättchen garnieren und sofort servieren.'], steps_en:['Roughly dice pumpkin (Hokkaido, 800 g – no peeling needed), carrots (600 g), ginger (about 5 cm piece) and onion.','Heat butter in a large pot and sauté the vegetables over medium heat for about 5 minutes.','Pour in vegetable stock (1 litre) and cook for about 15–20 minutes until very soft.','Blend very finely with a stick blender. For a smoother result, press through a fine sieve.','Stir in coconut milk (500 ml) and heat through without boiling.','Season with salt, pepper, soy sauce and lemon juice.','Garnish with fresh coriander leaves and serve immediately.']},
+  { id:485, title:'Grießbrei', title_en:'Semolina Porridge', category:'dessert', difficulty:'einfach', ingredients:['milch','grieß','zucker','vanille','salz','eier','butter'], steps:['Milch (800 ml) mit Zucker (2 EL), Vanillezucker (1 Päckchen) und einer Prise Salz in einem weiten Topf zum Kochen bringen.','Grieß (80 g) unter Rühren mit einem Schneebesen einrieseln lassen und nochmals kurz aufkochen.','Topf vom Herd nehmen und den Grieß zugedeckt 5 Minuten quellen lassen.','In der Zwischenzeit das Ei trennen und das Eiweiß steif schlagen.','Eigelb in den Grießbrei rühren, Butter (25 g) zugeben und rühren bis die Butter vollständig geschmolzen ist.','Eischnee behutsam unterheben damit der Brei luftig und locker wird.','Sofort servieren – dazu passt Kompott, Zimt und Zucker oder braune Butter.'], steps_en:['Bring milk (800 ml) with sugar (2 tbsp), vanilla sugar (1 packet) and a pinch of salt to a boil in a wide pot.','Whisk in semolina (80 g) in a thin stream and bring briefly back to a boil.','Remove from heat, cover and leave the semolina to swell for 5 minutes.','Meanwhile separate the egg and beat egg white to stiff peaks.','Stir egg yolk into the porridge, add butter (25 g) and stir until completely melted.','Gently fold in the egg white to make the porridge light and fluffy.','Serve immediately. Stewed fruit, cinnamon sugar or brown butter pair well.']},
+  { id:486, title:'Lasagne', title_en:'Lasagne', category:'pasta', difficulty:'mittel', ingredients:['olivenöl','hackfleisch','zwiebel','knoblauch','petersilie','tomatenmark','tomate','rotwein','milch','butter','mehl','salz','pfeffer','zitronensaft','muskat','lasagneplatten','käse'], steps:['Für die Bolognese: Olivenöl in einem Topf erhitzen, Hackfleisch (500 g) rundherum anbraten. Gehackte Zwiebel, Knoblauch und Petersilie zugeben und ca. 2 Minuten mitbraten. Tomatenmark einrühren.','Dosentomaten (800 g) zugeben, mit Salz und Pfeffer würzen und nach Belieben Rotwein zugeben. Mindestens 30 Minuten bei geöffnetem Topf einkochen lassen.','Für die Béchamel: Butter (30 g) in einem Topf schmelzen, Mehl (40 g) einrühren und hellgelb anschwitzen. Milch (0,5 Liter) zugießen und glatt rühren.','Béchamelsauce bei kleiner Flamme ca. 20 Minuten köcheln lassen. Mit Salz, Pfeffer, Zitronensaft und Muskat abschmecken.','Ofen auf 180 Grad C vorheizen. Boden einer gebutterten Auflaufform dünn mit Bolognese bedecken.','Schichtweise aufbauen: Lasagneplatten, Bolognese, Béchamel – so lange schichten bis die Form gefüllt ist. Die letzte Schicht ist Béchamel.','Großzügig mit geriebenem Käse bestreuen und Butterflöckchen daraufsetzen.','Im vorgeheizten Ofen bei 180 Grad C ca. 30–40 Minuten backen bis die Kruste goldbraun ist.'], steps_en:['For the Bolognese: heat olive oil in a pot, brown minced meat (500 g) all over. Add chopped onion, garlic and parsley, fry for about 2 minutes. Stir in tomato paste.','Add canned tomatoes (800 g), season with salt and pepper, add red wine if desired. Simmer uncovered for at least 30 minutes.','For the béchamel: melt butter (30 g) in a pot, whisk in flour (40 g) and cook until pale yellow. Pour in milk (0.5 litre) and stir smooth.','Simmer béchamel over low heat for about 20 minutes. Season with salt, pepper, lemon juice and nutmeg.','Preheat oven to 180 Grad C. Spread a thin layer of Bolognese over the base of a buttered baking dish.','Build up in layers: lasagne sheets, Bolognese, béchamel – repeat until the dish is full. The final layer is béchamel.','Top generously with grated cheese and dot with butter flakes.','Bake in the preheated oven at 180 Grad C for about 30–40 minutes until the top is golden brown.']},
+  { id:487, title:'Hühnersuppe', title_en:'Chicken Soup', category:'haendl', difficulty:'mittel', ingredients:['hähnchen','sellerie','karotte','lauch','zwiebel','reis','petersilie','salz'], steps:['Wasser (2 Liter) in einem großen Topf zum Kochen bringen. Suppenhähnchen kalt abspülen.','Hähnchen ins kochende Salzwasser legen, fast zum Kochen bringen und aufsteigenden Schaum abschöpfen.','Sellerie, Karotten und Lauch grob schneiden, Zwiebel halbieren und alles zur Brühe geben.','Hähnchen bei schwacher Hitze ohne Deckel ca. 1,5 Stunden gar kochen bis das Fleisch sehr zart ist.','Brühe durch ein Sieb gießen, Fett nach Belieben abschöpfen und mit Salz kräftig abschmecken.','Hähnchenfleisch von den Knochen lösen, Haut entfernen und in mundgerechte Stücke schneiden.','Fleisch und Reis (50 g, roh) in die heiße Brühe geben und ca. 15 Minuten bei mittlerer Hitze garen.','Mit gehackter Petersilie bestreut in tiefen Tellern servieren.'], steps_en:['Bring water (2 litres) to a boil in a large pot. Rinse soup chicken under cold water.','Place chicken in the boiling salted water, bring almost back to a boil and skim off the foam.','Roughly chop celery, carrots and leek, halve the onion and add everything to the pot.','Cook chicken over low heat without a lid for about 1.5 hours until the meat is very tender.','Strain broth through a sieve, skim off fat if desired and season generously with salt.','Remove chicken meat from the bones, discard skin and cut into bite-sized pieces.','Add meat and rice (50 g, raw) to the hot broth and cook for about 15 minutes over medium heat.','Serve in deep bowls, sprinkled with chopped parsley.']},
+  { id:488, title:'Curry-Blumenkohl', title_en:'Curry Cauliflower', category:'hauptgericht', difficulty:'einfach', ingredients:['blumenkohl','curry','sesamöl','butter','joghurt','limette','koriander','salz'], steps:['Ofen auf 160 Grad C Umluft vorheizen.','Currypulver (2 TL, z. B. Madras), Sesamöl (20 ml) und Butter (50 g) in einem kleinen Topf bei niedriger Hitze ca. 10 Minuten andünsten damit die Gewürzaromen aufblühen.','Blumenkohl (1 Kopf) in gut gesalzenem Wasser ca. 15 Minuten kochen bis er al dente ist.','Den noch warmen Blumenkohl aus dem Wasser nehmen und rundherum gleichmäßig mit dem Gewürzöl bestreichen.','Blumenkohl auf einem Backblech bei 160 Grad C ca. 30 Minuten backen bis er leicht gebräunt und aromatisch ist.','Joghurt (125 g) mit dem Saft einer halben Limette und etwas Salz verrühren und abschmecken.','Blumenkohl mit dem Limetten-Joghurt und frischem Koriander servieren.'], steps_en:['Preheat oven to 160 Grad C fan.','Gently heat curry powder (2 tsp, e.g. Madras), sesame oil (20 ml) and butter (50 g) in a small pot over low heat for about 10 minutes to bloom the spices.','Boil cauliflower (1 head) in well-salted water for about 15 minutes until al dente.','Remove the still-warm cauliflower and brush all over evenly with the spiced oil.','Roast on a baking sheet at 160 Grad C for about 30 minutes until lightly browned and fragrant.','Mix yoghurt (125 g) with the juice of half a lime and a little salt, season to taste.','Serve with the lime yoghurt and fresh coriander.']},
+  { id:489, title:'Zwiebelrostbraten', title_en:'Viennese Onion Roast', category:'rind', difficulty:'mittel', ingredients:['rindfleisch','zwiebeln','rinderbrühe','rotwein','butter','mehl','senf','salz','pfeffer','rapsöl'], steps:['Rindersteak (ca. 200 g pro Person) auf beiden Seiten mit Salz, Pfeffer und etwas Senf einreiben.','Zwiebeln (3 große, ca. 400 g) in dünne Ringe schneiden.','In einer großen Pfanne reichlich Rapsöl erhitzen und die Zwiebelringe bei mittlerer Hitze ca. 20 Minuten goldbraun rösten, gelegentlich wenden. Warmhalten.','Dasselbe Öl stark erhitzen und die Steaks je nach Dicke ca. 3-4 Minuten pro Seite scharf anbraten.','Steaks aus der Pfanne nehmen und warm stellen.','Pfanne mit Rotwein (100 ml) ablöschen, Rinderbrühe (150 ml) zugießen und aufkochen. Mit etwas Mehl binden und abschmecken.','Steaks auf Tellern anrichten, mit dem Saucenansatz beträufeln und die gerösteten Zwiebelringe großzügig darüber geben.'], steps_en:['Season beef steaks (about 200 g per person) on both sides with salt, pepper and a little mustard.','Cut onions (3 large, about 400 g) into thin rings.','Heat plenty of rapeseed oil in a large pan and fry the onion rings over medium heat for about 20 minutes until golden brown, turning occasionally. Keep warm.','Heat the same oil until very hot and sear the steaks for about 3-4 minutes per side depending on thickness.','Remove steaks from the pan and keep warm.','Deglaze the pan with red wine (100 ml), add beef stock (150 ml) and bring to a boil. Thicken with a little flour and season to taste.','Plate the steaks, drizzle with the pan sauce and generously top with the roasted onion rings.']},
+  { id:490, title:'Hühnerfrikassee', title_en:'Chicken Fricassee', category:'haendl', difficulty:'mittel', ingredients:['hähnchen','hühnerbrühe','champignons','sahne','butter','mehl','eigelb','zitronensaft','erbsen','salz','pfeffer','petersilie'], steps:['Hähnchen (1 ganzes, ca. 1,5 kg) in der Brühe ca. 60 Minuten weich kochen.','Das gegarte Hähnchen aus der Brühe nehmen, Fleisch auslösen und in mundgerechte Stücke zupfen. Brühe aufbewahren.','Champignons (200 g) vierteln und in Butter (30 g) ca. 5 Minuten anschwitzen.','Mehl (30 g) über die Champignons stäuben, kurz anschwitzen, dann mit Hühnerbrühe (600 ml) nach und nach aufgießen und glatt rühren.','Sauce ca. 10 Minuten köcheln lassen, Sahne (100 ml) einrühren.','Erbsen (150 g, gefroren oder frisch) zugeben und erhitzen.','Eigelb (1 Stück) mit etwas Sahne verquirlen und die Sauce damit legieren, nicht mehr kochen lassen.','Hähnchenfleisch einrühren, mit Salz, Pfeffer und Zitronensaft abschmecken und mit Petersilie bestreut servieren.'], steps_en:['Simmer chicken (1 whole, about 1.5 kg) in stock for about 60 minutes until cooked through.','Remove the cooked chicken from the broth, detach the meat and pull into bite-sized pieces. Reserve the broth.','Quarter mushrooms (200 g) and sauté in butter (30 g) for about 5 minutes.','Dust flour (30 g) over the mushrooms, sauté briefly, then gradually add chicken stock (600 ml), stirring until smooth.','Simmer the sauce for about 10 minutes, then stir in cream (100 ml).','Add peas (150 g, frozen or fresh) and heat through.','Whisk egg yolk (1) with a little cream and use it to enrich the sauce, do not allow to boil again.','Stir in the chicken, season with salt, pepper and lemon juice, and serve garnished with parsley.']},
+  { id:491, title:'Kartoffelgratin', title_en:'Potato Gratin', category:'hauptgericht', difficulty:'einfach', ingredients:['kartoffeln','sahne','knoblauch','gruyere','butter','muskatnuss','salz','pfeffer'], steps:['Ofen auf 180 Grad C Ober-/Unterhitze vorheizen. Auflaufform mit Butter (20 g) ausstreichen und mit einer halbierten Knoblauchzehe ausreiben.','Kartoffeln (1 kg, mehligkochend) schälen und in dünne Scheiben (ca. 3 mm) schneiden, am besten mit einer Mandoline.','Sahne (350 ml) mit 1 zerdrückten Knoblauchzehe, Salz, Pfeffer und einer Prise Muskatnuss in einem Topf kurz erhitzen, nicht kochen.','Kartoffelscheiben überlappend in Lagen in die Auflaufform schichten.','Sahngemisch gleichmäßig über die Kartoffeln gießen.','Gruyère (120 g, gerieben) gleichmäßig auf dem Gratin verteilen.','Im vorgeheizten Ofen ca. 60-70 Minuten backen, bis die Oberfläche goldbraun ist und die Kartoffeln beim Einstechen weich sind.','Vor dem Servieren ca. 10 Minuten ruhen lassen.'], steps_en:['Preheat oven to 180 Grad C top and bottom heat. Grease a baking dish with butter (20 g) and rub with a halved garlic clove.','Peel potatoes (1 kg, floury variety) and slice thinly (about 3 mm), best using a mandoline.','Briefly heat cream (350 ml) with 1 crushed garlic clove, salt, pepper and a pinch of nutmeg in a pot, do not boil.','Layer the potato slices overlapping in the baking dish.','Pour the cream mixture evenly over the potatoes.','Spread Gruyère (120 g, grated) evenly over the gratin.','Bake in the preheated oven for about 60-70 minutes until the surface is golden brown and the potatoes are tender when pierced.','Let rest for about 10 minutes before serving.']},
+  { id:492, title:'Spargelcremesuppe', title_en:'Asparagus Cream Soup', category:'suppen', difficulty:'einfach', ingredients:['spargel','butter','mehl','hühnerbrühe','sahne','zitronensaft','zucker','salz','pfeffer'], steps:['Weißen Spargel (1 kg) schälen, die holzigen Enden abschneiden. Schalen und Enden mit Hühnerbrühe (1 l), etwas Salz und einer Prise Zucker ca. 20 Minuten auskochen. Brühe abseihen und aufbewahren.','Spargelstangen in ca. 3 cm lange Stücke schneiden, einige Spitzen zur Garnierung beiseitelegen.','Butter (40 g) in einem Topf schmelzen, Mehl (40 g) einrühren und 2 Minuten anschwitzen.','Die abgesiebte Spargelbrühe nach und nach einrühren bis eine glatte Sauce entsteht.','Spargelstücke zugeben und ca. 15 Minuten bei milder Hitze weich köcheln.','Suppe mit einem Stabmixer fein pürieren.','Sahne (150 ml) einrühren, mit Salz, Pfeffer, Zitronensaft und einer Prise Zucker abschmecken.','Die beiseitegelegten Spargelspitzen in etwas gesalzenem Wasser bissfest garen und als Einlage servieren.'], steps_en:['Peel white asparagus (1 kg) and trim the woody ends. Simmer peelings and ends with chicken stock (1 l), a little salt and a pinch of sugar for about 20 minutes. Strain and set the stock aside.','Cut asparagus spears into roughly 3 cm pieces, set a few tips aside for garnish.','Melt butter (40 g) in a pot, stir in flour (40 g) and sweat for 2 minutes.','Gradually whisk in the strained asparagus stock until you get a smooth sauce.','Add asparagus pieces and simmer over low heat for about 15 minutes until soft.','Blend the soup finely with an immersion blender.','Stir in cream (150 ml), season with salt, pepper, lemon juice and a pinch of sugar.','Cook the reserved asparagus tips in a little salted water until just tender and use as a garnish when serving.']},
+  { id:493, title:'Griechischer Bauernsalat', title_en:'Greek Village Salad', category:'salat', difficulty:'einfach', ingredients:['tomate','gurke','zwiebeln','feta','oliven','olivenöl','oregano','salz','pfeffer','paprika'], steps:['Tomaten (4 große, reife) in grobe Stücke schneiden.','Gurke (1 Salatgurke) schälen und in dicke Halbmonde schneiden.','Rote Zwiebel (1 mittelgroße) in dünne Ringe schneiden.','Paprika (1 grüne) entkernen und in Streifen oder Ringe schneiden.','Alle Gemüse in einer großen Schüssel vermengen, schwarze Oliven (eine Handvoll) zugeben.','Mit Olivenöl (4 EL), Salz, Pfeffer und getrocknetem Oregano (1 TL) beträufeln und locker vermengen.','Feta (200 g) in einem Stück oder grob zerbrochen oben auf den Salat legen.','Mit etwas frischem Oregano und einem Schuss Olivenöl abschließen und sofort servieren.'], steps_en:['Cut tomatoes (4 large, ripe) into rough chunks.','Peel cucumber (1 large) and cut into thick half-moons.','Cut red onion (1 medium) into thin rings.','Deseed green pepper (1) and cut into strips or rings.','Combine all vegetables in a large bowl, add black olives (a handful).','Drizzle with olive oil (4 tbsp), salt, pepper and dried oregano (1 tsp), toss gently.','Place feta (200 g) as a whole block or roughly crumbled on top of the salad.','Finish with a little fresh oregano and a splash of olive oil and serve immediately.']},
+  { id:494, title:'Shakshuka', title_en:'Shakshuka', category:'hauptgericht', difficulty:'einfach', ingredients:['tomate','paprika','eier','zwiebeln','knoblauch','olivenöl','tomatenmark','kreuzkümmel','paprikapulver','chiliflocken','petersilie','salz'], steps:['Zwiebel (1 große) in halbe Ringe, Paprika (2 rote) in Streifen schneiden.','Olivenöl (3 EL) in einer großen, tiefen Pfanne erhitzen und Zwiebel und Paprika ca. 8 Minuten weich dünsten.','Knoblauch (3 Zehen, gehackt), Tomatenmark (2 EL), Paprikapulver (1 TL), Kreuzkümmel (1 TL) und Chiliflocken (nach Geschmack) zugeben und 1-2 Minuten mitrösten.','Dosentomaten (2 x 400 g, oder 800 g frische Tomaten, gehackt) zugeben und gut verrühren.','Sauce ca. 15 Minuten bei mittlerer Hitze einköcheln lassen, mit Salz abschmecken.','Mit einem Löffel vier Mulden in die Sauce drücken und je ein Ei hineingleiten lassen.','Deckel auflegen und bei milder Hitze ca. 8-10 Minuten garen, bis die Eiweiße gestockt, die Eigelbe aber noch weich sind.','Mit frischer Petersilie bestreuen und mit Brot servieren.'], steps_en:['Cut onion (1 large) into half rings and red pepper (2) into strips.','Heat olive oil (3 tbsp) in a large, deep pan and sauté onion and pepper for about 8 minutes until soft.','Add garlic (3 cloves, chopped), tomato paste (2 tbsp), paprika powder (1 tsp), cumin (1 tsp) and chilli flakes (to taste), fry for 1-2 minutes.','Add canned tomatoes (2 x 400 g, or 800 g fresh tomatoes, chopped) and stir everything together.','Simmer the sauce over medium heat for about 15 minutes, season with salt.','Use a spoon to make four wells in the sauce and slide one egg into each.','Cover with a lid and cook over low heat for about 8-10 minutes until the whites are just set but the yolks are still soft.','Sprinkle with fresh parsley and serve with bread.']},
+  { id:495, title:'Tiroler Gröstl', title_en:'Tyrolean Gröstl', category:'hauptgericht', difficulty:'mittel', ingredients:['kartoffeln','schweinefilet','speck','zwiebel','eier','butter','majoran','salz','pfeffer','schnittlauch'], steps:['Kartoffeln (600 g, festkochend) am Vortag in Salzwasser gar kochen, abkühlen lassen, pellen und in ca. 5 mm dicke Scheiben schneiden.','Schweinefilet oder Rindfleisch-Reste (ca. 300 g) in mundgerechte Stücke schneiden.','Speck (100 g) in Streifen schneiden und in einer großen gusseisernen Pfanne knusprig braten. Herausnehmen.','Zwiebel (2 mittelgroße) in Ringe schneiden und im Speckfett bei mittlerer Hitze goldbraun braten.','Butter (20 g) zugeben, Kartoffelscheiben einlegen und bei hoher Hitze ca. 8 Minuten goldbraun braten, nur gelegentlich wenden.','Fleisch zugeben und alles zusammen ca. 5 Minuten braten. Mit Majoran, Salz und Pfeffer kräftig würzen.','Knusprigen Speck untermengen.','Auf Wunsch Spiegeleier separat braten und oben auf dem Gröstl servieren. Mit frisch geschnittenem Schnittlauch bestreuen.'], steps_en:['Cook potatoes (600 g, waxy variety) the day before in salted water until done, let cool, peel and cut into slices about 5 mm thick.','Cut pork fillet or leftover beef (about 300 g) into bite-sized pieces.','Cut bacon (100 g) into strips and fry in a large cast-iron pan until crispy. Remove and set aside.','Cut onions (2 medium) into rings and fry in the bacon fat over medium heat until golden.','Add butter (20 g), place potato slices in the pan and fry over high heat for about 8 minutes until golden brown, turning only occasionally.','Add meat and fry everything together for about 5 minutes. Season generously with marjoram, salt and pepper.','Fold in the crispy bacon.','Optionally fry fried eggs separately and serve on top of the Gröstl. Sprinkle with freshly cut chives.']},
+  { id:496, title:'Semmelknödel', title_en:'Bread Dumplings', category:'hauptgericht', difficulty:'mittel', ingredients:['brötchen','milch','eier','zwiebel','butter','petersilie','salz','muskat'], steps:['Altbackene Brötchen (6 Stück, ca. 300 g) in dünne Scheiben schneiden und in eine große Schüssel geben.','Milch (300 ml) erwärmen bis sie lauwarm ist, dann gleichmäßig über die Brötchenscheiben gießen. 15 Minuten einweichen lassen.','Zwiebel (1 mittelgroße) fein würfeln und in Butter (30 g) bei niedriger Hitze glasig andünsten, nicht bräunen. Abkühlen lassen.','Eier (2 Stück), abgekühlte Zwiebel, gehackte Petersilie (3 EL), Salz und eine Prise frisch geriebenen Muskat zur Brötchenmasse geben.','Alles mit den Händen gut vermengen bis ein formbarer, leicht klebriger Teig entsteht. Bei Bedarf etwas Semmelbrösel zugeben wenn die Masse zu weich ist.','Mit feuchten Händen gleichmäßige, runde Knödel formen (ca. 8 cm Durchmesser).','In einem großen Topf Salzwasser zum leichten Sieden bringen (nicht sprudelnd kochen). Knödel einlegen und bei niedriger Hitze ca. 20 Minuten ziehen lassen bis sie an der Oberfläche schwimmen.','Mit einer Schaumkelle herausnehmen, abtropfen lassen und sofort mit Braten, Pilzsoße oder Sauerkraut servieren.'], steps_en:['Slice stale bread rolls (6 rolls, about 300 g) thinly and place in a large bowl.','Warm milk (300 ml) until lukewarm, then pour evenly over the bread slices. Soak for 15 minutes.','Finely dice onion (1 medium) and sauté in butter (30 g) over low heat until translucent, do not brown. Allow to cool.','Add eggs (2), cooled onion, chopped parsley (3 tbsp), salt and a pinch of freshly grated nutmeg to the bread mixture.','Mix well by hand until you have a shapeable, slightly sticky dough. Add a little breadcrumbs if the mixture is too soft.','Shape even, round dumplings (about 8 cm diameter) with wet hands.','Bring a large pot of salted water to a gentle simmer (not a rolling boil). Lower in the dumplings and poach over low heat for about 20 minutes until they float.','Lift out with a slotted spoon, drain and serve immediately with roast, mushroom gravy or sauerkraut.']},
+  { id:497, title:'Jägerschnitzel', title_en:'Hunter\'s Schnitzel', category:'schwein', difficulty:'mittel', ingredients:['schweineschnitzel','champignons','zwiebel','sahne','tomatenmark','rotwein','butter','mehl','petersilie','salz','pfeffer'], steps:['Schnitzel (ca. 150 g pro Person) zwischen Frischhaltefolie legen, gleichmäßig flach klopfen, salzen und pfeffern.','In Mehl wenden und überschüssiges Mehl abschütteln. In einem Butter-Öl-Gemisch bei mittlerer bis hoher Hitze von jeder Seite ca. 3 Minuten goldbraun braten. Warm stellen.','Champignons (300 g) in Scheiben schneiden und in derselben Pfanne mit etwas Butter bei hoher Hitze ca. 5 Minuten anbraten bis sie Farbe bekommen. Nicht zu früh rühren.','Zwiebel (1 mittelgroße, fein gewürfelt) zugeben und ca. 3 Minuten glasig mitdünsten.','Tomatenmark (1 EL) einrühren und 1 Minute anschwitzen.','Mit Rotwein (100 ml) ablöschen, aufkochen und auf die Hälfte einkochen lassen.','Sahne (200 ml) zugießen und bei mittlerer Hitze ca. 5 Minuten köcheln bis die Soße cremig eindickt. Mit Salz und Pfeffer abschmecken.','Petersilie (2 EL, gehackt) einrühren. Schnitzel in der Soße kurz erwärmen und sofort servieren.'], steps_en:['Place schnitzels (about 150 g per person) between cling film, pound evenly flat, season with salt and pepper.','Turn in flour and shake off the excess. Fry in a butter-oil mixture over medium-high heat for about 3 minutes per side until golden. Keep warm.','Slice mushrooms (300 g) and fry in the same pan with a little butter over high heat for about 5 minutes until browned. Do not stir too early.','Add onion (1 medium, finely diced) and sauté for about 3 minutes until translucent.','Stir in tomato paste (1 tbsp) and fry for 1 minute.','Deglaze with red wine (100 ml), bring to a boil and reduce by half.','Pour in cream (200 ml) and simmer over medium heat for about 5 minutes until the sauce thickens to a creamy consistency. Season with salt and pepper.','Stir in parsley (2 tbsp, chopped). Warm the schnitzels briefly in the sauce and serve immediately.']},
+  { id:498, title:'Zwiebelkuchen', title_en:'Swabian Onion Cake', category:'kuchen', difficulty:'mittel', ingredients:['mehl','hefe','milch','butter','zwiebeln','speck','eier','sahne','salz','kümmel'], steps:['Hefe (halber Würfel frisch, 21 g) in lauwarmer Milch (125 ml) mit einer Prise Zucker auflösen, 10 Minuten stehen lassen.','Mehl (250 g), Butter (50 g, weich), eine Prise Salz und die Hefemilch zu einem glatten, elastischen Teig verkneten, ca. 8 Minuten. Abgedeckt 45 Minuten an warmem Ort gehen lassen.','Zwiebeln (700 g) schälen und in dünne Ringe oder Halbringe schneiden.','Speck (150 g, gewürfelt) in einer großen Pfanne ohne Fett bei mittlerer Hitze ausbraten. Zwiebeln zugeben und ca. 15 Minuten bei niedriger Hitze weich andünsten bis sie glasig und leicht goldfarben sind. Nicht bräunen. Abkühlen lassen.','Eier (3 Stück) mit Sahne (150 ml) verquirlen. Abgekühlte Zwiebel-Speck-Masse einrühren. Mit Salz und Kümmel (1 TL) würzen.','Ofen auf 200 Grad C Ober-/Unterhitze vorheizen. Backblech (ca. 30x40 cm) fetten oder mit Backpapier auslegen.','Teig auf leicht bemehlter Fläche zur Größe des Blechs ausrollen und auflegen. Einen kleinen Rand hochziehen.','Belag gleichmäßig auf dem Teig verteilen. Im vorgeheizten Ofen ca. 30 Minuten backen bis der Belag gestockt und leicht goldbraun ist. Warm servieren.'], steps_en:['Dissolve yeast (half a cube fresh, 21 g) in lukewarm milk (125 ml) with a pinch of sugar, leave for 10 minutes.','Knead flour (250 g), soft butter (50 g), a pinch of salt and the yeast milk into a smooth, elastic dough, about 8 minutes. Cover and leave to rise in a warm place for 45 minutes.','Peel onions (700 g) and cut into thin rings or half-rings.','Fry diced bacon (150 g) in a large pan without added fat over medium heat. Add onions and sauté over low heat for about 15 minutes until translucent and lightly golden. Do not brown. Allow to cool.','Whisk eggs (3) with cream (150 ml). Stir in the cooled onion-bacon mixture. Season with salt and caraway seeds (1 tsp).','Preheat oven to 200 Grad C top and bottom heat. Grease a baking sheet (about 30x40 cm) or line with baking paper.','Roll dough out on a lightly floured surface to the size of the sheet and lay it on. Pull up a small rim.','Spread the topping evenly over the dough. Bake in the preheated oven for about 30 minutes until the topping is set and lightly golden. Serve warm.']},
+  { id:499, title:'Mohnkuchen', title_en:'Poppy Seed Cake', category:'kuchen', difficulty:'einfach', ingredients:['mohn','mehl','milch','butter','zucker','eier','backpulver','vanille','zitrone'], steps:['Ofen auf 180 Grad C Ober-/Unterhitze vorheizen. Kastenform (30 cm) fetten und mit Mehl bestäuben.','Mohn (250 g, gemahlen) mit Milch (200 ml), Zucker (80 g) und Vanillezucker (1 Päckchen) in einem Topf unter Rühren aufkochen. Vom Herd nehmen und vollständig abkühlen lassen.','Weiche Butter (125 g) mit dem restlichen Zucker (80 g) ca. 4 Minuten schaumig rühren.','Eier (3 Stück) einzeln einrühren, jeweils vollständig einarbeiten.','Mehl (250 g) mit Backpulver (1 Päckchen) sieben. Mehl und abgekühlte Mohnmasse abwechselnd in drei Portionen unter die Buttermasse rühren. Zum Schluss Saft einer halben Zitrone einrühren.','Teig in die vorbereitete Form füllen und glattstreichen.','Im vorgeheizten Ofen ca. 55–65 Minuten backen bis der Stäbchentest trocken ist. Falls die Oberfläche zu dunkel wird, mit Alufolie abdecken.','Vollständig in der Form auskühlen lassen, dann stürzen. Nach Belieben mit Puderzucker bestäuben oder mit Zuckerglasur überziehen.'], steps_en:['Preheat oven to 180 Grad C top and bottom heat. Grease a loaf tin (30 cm) and dust with flour.','Bring ground poppy seeds (250 g) with milk (200 ml), sugar (80 g) and vanilla sugar (1 packet) to a boil in a pot, stirring constantly. Remove from heat and allow to cool completely.','Beat soft butter (125 g) with the remaining sugar (80 g) until fluffy, about 4 minutes.','Add eggs (3) one at a time, fully incorporating each.','Sift flour (250 g) with baking powder (1 packet). Fold flour and cooled poppy seed mixture into the butter mixture alternately in three additions. Finally stir in the juice of half a lemon.','Pour batter into the prepared tin and smooth the surface.','Bake in the preheated oven for about 55–65 minutes until a skewer comes out clean. Cover with foil if the surface browns too quickly.','Cool completely in the tin, then turn out. Dust with icing sugar or coat with a sugar glaze as desired.']},
+  { id:500, title:'Bauernfrühstück', title_en:'Farmer\'s Breakfast', category:'hauptgericht', difficulty:'einfach', ingredients:['kartoffeln','eier','speck','zwiebel','butter','salz','pfeffer','schnittlauch'], steps:['Kartoffeln (600 g, festkochend) am Vortag in Salzwasser gar kochen, abkühlen lassen, pellen und in ca. 5 mm dicke Scheiben schneiden.','Speck (150 g) in Streifen oder Würfel schneiden und in einer großen Pfanne bei mittlerer Hitze knusprig ausbraten.','Zwiebel (1 große) in halbe Ringe schneiden und im Speckfett ca. 5 Minuten goldbraun andünsten.','Butter (20 g) zugeben, Kartoffelscheiben einlegen und bei mittlerer bis hoher Hitze ca. 10 Minuten goldbraun braten, dabei gelegentlich wenden.','Eier (4 Stück) mit Salz und Pfeffer verquirlen.','Eiermasse gleichmäßig über die Kartoffeln gießen. Hitze auf niedrig reduzieren und die Eier ca. 5 Minuten stocken lassen – entweder als flaches Omelett oder leicht mit einem Spatel zertrennen für eine stückigere Konsistenz.','Sobald die Eier vollständig gestockt sind, sofort vom Herd nehmen.','Auf Tellern anrichten und großzügig mit frisch geschnittenem Schnittlauch bestreuen.'], steps_en:['Cook potatoes (600 g, waxy variety) the day before in salted water until tender, allow to cool, peel and cut into slices about 5 mm thick.','Cut bacon (150 g) into strips or dice and fry in a large pan over medium heat until crispy.','Cut onion (1 large) into half-rings and sauté in the bacon fat for about 5 minutes until golden.','Add butter (20 g), place potato slices in the pan and fry over medium-high heat for about 10 minutes until golden, turning occasionally.','Whisk eggs (4) with salt and pepper.','Pour the egg mixture evenly over the potatoes. Reduce heat to low and allow the eggs to set for about 5 minutes – either as a flat omelette or break apart gently with a spatula for a chunkier texture.','Remove from heat as soon as the eggs are fully set.','Plate and sprinkle generously with freshly cut chives.']}
 ];
 
 /**
@@ -416,96 +485,141 @@ function applyStemming(word) {
   if (!word || word.length < 4) {
     return word;
   }
-  
-  const suffixesToRemove = ['ern', 'chen', 'lein', 'en', 'er', 'es', 's', 'e'];
-  
-  for (const suffix of suffixesToRemove) {
-    const minLength = 3;
-    if (word.endsWith(suffix) && (word.length - suffix.length >= minLength)) {
+
+  // Längere Suffixe zuerst prüfen (wichtig: Reihenfolge beibehalten)
+  // Für kurze Suffixe ('s', 'e') höhere Mindestlänge, um Fehlkürzungen
+  // wie "lachs" → "lach" oder "reis" → "rei" zu vermeiden.
+  const suffixRules = [
+    { suffix: 'chen', minRoot: 4 },
+    { suffix: 'lein', minRoot: 4 },
+    { suffix: 'ern',  minRoot: 4 },
+    { suffix: 'en',   minRoot: 4 },
+    { suffix: 'er',   minRoot: 4 },
+    { suffix: 'es',   minRoot: 4 },
+    { suffix: 'e',    minRoot: 4 },
+    { suffix: 's',    minRoot: 5 }, // Erhöht: verhindert "lachs"→"lach", "reis"→"rei"
+  ];
+
+  for (const { suffix, minRoot } of suffixRules) {
+    if (word.endsWith(suffix) && (word.length - suffix.length >= minRoot)) {
       return word.slice(0, -suffix.length);
     }
   }
-  
+
   return word;
 }
 
 /**
- * Calculate Levenshtein distance between two strings
- * Measures character-level similarity
+ * Berechnet die OSA-Distanz (Optimal String Alignment) zwischen zwei Zeichenketten.
+ * Erweitert die klassische Levenshtein-Distanz um die Erkennung von Transpositionen
+ * benachbarter Zeichen (z.B. "Tmaoate" → "Tomate" kostet 1 statt 2 Operationen).
+ * Erlaubte Operationen: Einfügen, Löschen, Ersetzen, Transposition.
  */
 function calculateLevenshteinDistance(sourceString, targetString) {
-  if (sourceString === targetString) {
-    return 0;
+  if (sourceString === targetString) return 0;
+
+  const m = sourceString.length;
+  const n = targetString.length;
+
+  if (m === 0) return n;
+  if (n === 0) return m;
+
+  // Vollständige Matrix für OSA mit Transpositionserkennung
+  const d = [];
+  for (let i = 0; i <= m; i++) {
+    d[i] = new Array(n + 1);
+    d[i][0] = i;
   }
-  
-  const sourceLength = sourceString.length;
-  const targetLength = targetString.length;
-  
-  if (sourceLength === 0) {
-    return targetLength;
+  for (let j = 0; j <= n; j++) {
+    d[0][j] = j;
   }
-  
-  if (targetLength === 0) {
-    return sourceLength;
-  }
-  
-  let previousRow = new Array(targetLength + 1);
-  let currentRow = new Array(targetLength + 1);
-  
-  for (let col = 0; col <= targetLength; col++) {
-    previousRow[col] = col;
-  }
-  
-  for (let srcIdx = 0; srcIdx < sourceLength; srcIdx++) {
-    currentRow[0] = srcIdx + 1;
-    
-    for (let tgtIdx = 0; tgtIdx < targetLength; tgtIdx++) {
-      const substitutionCost = sourceString[srcIdx] === targetString[tgtIdx] ? 0 : 1;
-      const deletion = currentRow[tgtIdx] + 1;
-      const insertion = previousRow[tgtIdx + 1] + 1;
-      const substitution = previousRow[tgtIdx] + substitutionCost;
-      
-      currentRow[tgtIdx + 1] = Math.min(deletion, insertion, substitution);
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      const cost = sourceString[i - 1] === targetString[j - 1] ? 0 : 1;
+
+      d[i][j] = Math.min(
+        d[i - 1][j] + 1,           // Löschen
+        d[i][j - 1] + 1,           // Einfügen
+        d[i - 1][j - 1] + cost     // Ersetzen
+      );
+
+      // Transposition: benachbarte Zeichen vertauscht (z.B. "ab" → "ba")
+      // Kostenpunkt ist immer 1 (eine Transpositionsoperation), nicht 'cost'
+      if (i > 1 && j > 1 &&
+          sourceString[i - 1] === targetString[j - 2] &&
+          sourceString[i - 2] === targetString[j - 1]) {
+        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      }
     }
-    
-    [previousRow, currentRow] = [currentRow, previousRow];
   }
-  
-  return previousRow[targetLength];
+
+  return d[m][n];
 }
 
 // ==================== MATCHING & SEARCH ====================
 
 /**
- * Compute fuzzy match score between input token and ingredient token
- * Returns a value between 0 and 1
+ * Berechnet einen Ähnlichkeitsscore zwischen einer Nutzereingabe und einer Rezeptzutat.
+ * Der Score berücksichtigt (in dieser Reihenfolge):
+ *   1. Exakten Treffer nach Normalisierung und Stemming
+ *   2. Präfix-Treffer: Eingabe ist der Anfang der Zutat ("knob" → "knoblauch")
+ *   3. Teilstring-Treffer: Zutat enthält die Eingabe oder umgekehrt
+ *   4. Längengewichtete OSA-Distanz: mehr Fehler erlaubt bei längeren Wörtern
+ * Gibt einen Wert zwischen 0 (keine Übereinstimmung) und 1 (exakter Treffer) zurück.
  */
 function calculateFuzzyMatchScore(userInput, recipeIngredient) {
-  const processedInput = processIngredientToken(userInput) || processIngredientToken(userInput);
-  const processedIngredient = processIngredientToken(recipeIngredient) || processIngredientToken(recipeIngredient);
-  
-  if (!processedInput || !processedIngredient) {
-    return 0;
+  const processedInput      = processIngredientToken(userInput);
+  const processedIngredient = processIngredientToken(recipeIngredient);
+
+  if (!processedInput || !processedIngredient) return 0;
+
+  // Exakter Treffer nach Normalisierung und Stemming
+  if (processedInput === processedIngredient) return 1.0;
+
+  const inputLen = processedInput.length;
+  const ingLen   = processedIngredient.length;
+
+  // Mindestlänge für Teilstring-Matching verhindert Fehlzuordnungen
+  // bei sehr kurzen Eingaben (z.B. "ei" würde sonst "pfeffer" treffen)
+  const MIN_SUBSTRING_LEN = 3;
+
+  // Präfix-Treffer: Eingabe ist Anfang der Zutat ("knob" → "knoblauch")
+  // Score steigt proportional mit der Abdeckung
+  if (ingLen > inputLen &&
+      processedIngredient.startsWith(processedInput) &&
+      inputLen >= MIN_SUBSTRING_LEN) {
+    const coverage = inputLen / ingLen;
+    return 0.70 + coverage * 0.20;
   }
-  
-  if (processedInput === processedIngredient) {
-    return 1.0;
+
+  // Teilstring-Treffer: Zutat enthält die Eingabe vollständig
+  // ("frischkäse" enthält "käse")
+  if (processedIngredient.includes(processedInput) && inputLen >= MIN_SUBSTRING_LEN) {
+    const coverage = inputLen / ingLen;
+    return 0.50 + coverage * 0.20;
   }
-  
-  if (processedIngredient.includes(processedInput) || processedInput.includes(processedIngredient)) {
+
+  // Teilstring-Treffer umgekehrt: Eingabe enthält den Zutatennamen
+  // ("lachsfilet" als Eingabe trifft die Zutat "lachs")
+  if (processedInput.includes(processedIngredient) && ingLen >= MIN_SUBSTRING_LEN) {
     return 0.65;
   }
-  
+
+  // Längengewichtete OSA-Distanz mit Transpositionserkennung
   const distance = calculateLevenshteinDistance(processedInput, processedIngredient);
-  
-  if (distance <= 1) {
-    return 0.82;
-  }
-  
-  if (distance <= 2) {
-    return 0.5;
-  }
-  
+  const maxLen   = Math.max(inputLen, ingLen);
+
+  // 1 Fehler: bei Wörtern ab 4 Zeichen hoch bewertet, darunter moderater Score
+  if (distance === 1) return maxLen >= 4 ? 0.85 : 0.70;
+
+  // 2 Fehler: nur bei längeren Wörtern toleriert
+  if (distance === 2 && maxLen >= 6) return 0.55;
+  if (distance === 2 && maxLen >= 5) return 0.40;
+
+  // 3 Fehler: nur bei sehr langen Zutaten noch verwertbar (z.B. "Schafskaese")
+  if (distance === 3 && maxLen >= 9) return 0.30;
+
   return 0;
 }
 
@@ -596,11 +710,15 @@ function displaySearchResults(matchedRecipes) {
         ? recipe.title_en 
         : recipe.title;
     
+    const matchLabel  = lang === 'en' ? 'Match' : 'Übereinstimmung';
+    const hitLabel    = lang === 'en' ? 'Matches' : 'Treffer';
+    const detailLabel = lang === 'en' ? 'Details' : 'Details';
+
     resultElement.innerHTML = `
       <h4>${recipeTitle} <small>(${recipe.difficulty})</small></h4>
-      <p>übereinstimmung: ${matchPercentage}% – Treffer: ${matchesFound} / ${totalIngredients}</p>
+      <p>${matchLabel}: ${matchPercentage}% – ${hitLabel}: ${matchesFound} / ${totalIngredients}</p>
       <div class="result-actions">
-        <button class="btn" data-id="${recipe.id}">Details</button>
+        <button class="btn" data-id="${recipe.id}">${detailLabel}</button>
       </div>
     `;
     
@@ -1709,14 +1827,15 @@ function displayRecipeDetails(selectedRecipe) {
 function openRecipeModal(htmlContent) {
   const modalElement = document.getElementById('modal');
   const modalBody = document.getElementById('modal-content');
-  
+
   if (modalBody) {
     modalBody.innerHTML = htmlContent;
   }
-  
+
   if (modalElement) {
     modalElement.classList.remove('hidden');
     modalElement.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
   }
 }
 
@@ -1725,559 +1844,168 @@ function openRecipeModal(htmlContent) {
  */
 function closeRecipeModal() {
   const modalElement = document.getElementById('modal');
-  
+
   if (modalElement) {
     modalElement.classList.add('hidden');
     modalElement.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
   }
 }
 
 /**
  * Set up modal close handlers
  */
-function initializeModalHandlers() {
-  const closeButton = document.getElementById('modal-close');
-  const modalBackdrop = document.getElementById('modal');
-  
-  if (closeButton) {
-    closeButton.addEventListener('click', closeRecipeModal);
-  }
-  
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeRecipeModal();
-      }
-    });
-  }
-}
+
+// ==================== CATEGORY PAGE LOADER ====================
 
 /**
- * Initialize calculator form if present on page
+ * Loads and renders recipe cards for a given category.
+ * Called by each category page (rind.html, salat.html, etc.).
+ * Relies on the global `recipes` array and `displayRecipeDetails`.
  */
-function setupCalculatorForm() {
-  const calculatorForm = document.getElementById('calc-form');
-  
-  if (!calculatorForm) {
+function loadCategoryRecipes(categoryName) {
+  var container = document.getElementById('category-recipes');
+  if (!container) return;
+
+  var lang = typeof getLang === 'function' ? getLang() : 'de';
+
+  // Filter recipes for this category
+  var matched = (window.recipes || recipes).filter(function(r) {
+    return r.category === categoryName;
+  });
+
+  if (matched.length === 0) {
+    container.innerHTML = '<p style="color:var(--color-text-muted);text-align:center;padding:2rem;">Keine Rezepte gefunden.</p>';
     return;
   }
-  
-  calculatorForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const ingredientInput = document.getElementById('ingredients-input');
-    if (!ingredientInput) {
-      return;
-    }
-    
-    const rawInput = ingredientInput.value;
-    const ingredients = rawInput
-      .split(',')
-      .map(item => item.trim().toLowerCase())
-      .filter(item => item.length > 0);
-    
-    const matches = findMatchingRecipes(ingredients);
-    displaySearchResults(matches);
-  });
-}
 
-// ==================== STORAGE & PERSISTENCE ====================
+  container.innerHTML = '';
 
-/**
- * Extend recipes with locally stored variants
- */
-function loadRecipesFromLocalStorage() {
-  // DEAKTIVIERT: Verhindert, dass alte fehlerhafte Rezepte aus dem localStorage geladen werden
-  // try {
-  //   const stored = localStorage.getItem('sfc_recipes');
-  //   
-  //   if (!stored) {
-  //     return;
-  //   }
-  //   
-  //   const parsed = JSON.parse(stored);
-  //   
-  //   if (!Array.isArray(parsed)) {
-  //     return;
-  //   }
-  //   
-  //   parsed.forEach(storedRecipe => {
-  //     const exists = recipes.some(r => r.id === storedRecipe.id);
-  //     
-  //     if (!exists) {
-  //       recipes.push(storedRecipe);
-  //     }
-  //   });
-  // } catch (error) {
-  //   console.warn('Could not load stored recipes', error);
-  // }
-}
+  matched.forEach(function(recipe) {
+    var card = document.createElement('div');
+    card.className = 'recipe-card';
 
-/**
- * Persist current recipe list to localStorage
- */
-function saveRecipesToLocalStorage() {
-  try {
-    localStorage.setItem('sfc_recipes', JSON.stringify(recipes));
-  } catch (error) {
-    console.warn('Could not save recipes to storage', error);
-  }
-}
+    // Title with EN support
+    var title = (lang === 'en' && recipe.title_en) ? recipe.title_en : recipe.title;
 
-/**
- * Enhance internal synonym mappings from current recipe ingredients
- * Auto-discovers new ingredient variants
- */
-function expandSynonymMappings() {
-  try {
-    recipes.forEach(recipe => {
-      const ingredientList = recipe.ingredients || [];
-      
-      ingredientList.forEach(ingredient => {
-        const normalized = normalizeString(ingredient);
-        const processed = processIngredientToken(ingredient) || normalized;
-        
-        if (!canonicalLookup[processed]) {
-          canonicalLookup[processed] = processed;
-          
-          if (!ingredientAliases[processed]) {
-            ingredientAliases[processed] = [ingredient];
-          }
-        }
-      });
+    // Difficulty badge
+    var diff = recipe.difficulty || '';
+    var diffColor = diff === 'einfach' ? '#4ecdc4' : diff === 'mittel' ? '#ffd166' : '#ff6b6b';
+
+    card.innerHTML =
+      '<h3>' + title + '</h3>' +
+      (diff ? '<p class="recipe-difficulty" style="color:' + diffColor + ';font-weight:600;">' + diff + '</p>' : '') +
+      '<p class="recipe-ingredients-count">' +
+        (lang === 'en' ? recipe.ingredients.length + ' ingredients' : recipe.ingredients.length + ' Zutaten') +
+      '</p>' +
+      '<button class="recipe-details-btn">' +
+        (lang === 'en' ? 'View Recipe' : 'Rezept ansehen') +
+      '</button>';
+
+    card.querySelector('.recipe-details-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      displayRecipeDetails(recipe);
     });
-  } catch (error) {
-    // silently ignore enhancement errors
-  }
-}
 
-/**
- * Parse JSON string and import as new recipes
- */
-function importRecipesAsJSON(jsonString) {
-  try {
-    const data = JSON.parse(jsonString);
-    
-    if (!Array.isArray(data)) {
-      return { ok: false, message: 'JSON muss ein Array von Rezept-Objekten sein' };
-    }
-    
-    let addedCount = 0;
-    
-    data.forEach(recipeObj => {
-      if (!recipeObj.id) {
-        const timestamp = Math.max(1000, Date.now() % 100000);
-        const random = Math.floor(Math.random() * 1000);
-        recipeObj.id = timestamp + random;
-      }
-      
-      // Convert string ingredients to array
-      if (typeof recipeObj.ingredients === 'string') {
-        recipeObj.ingredients = recipeObj.ingredients
-          .split(/[,;|]/)
-          .map(i => i.trim().toLowerCase())
-          .filter(Boolean);
-      }
-      
-      const alreadyExists = recipes.some(r => r.id === recipeObj.id);
-      
-      if (!alreadyExists) {
-        recipes.push(recipeObj);
-        addedCount++;
-      }
+    card.addEventListener('click', function() {
+      displayRecipeDetails(recipe);
     });
-    
-    saveRecipesToLocalStorage();
-    
-    return { ok: true, added: addedCount };
-  } catch (error) {
-    return { ok: false, message: String(error) };
-  }
-}
 
-/**
- * Export all recipes as JSON string
- */
-function exportRecipesAsJSON() {
-  return JSON.stringify(recipes, null, 2);
-}
-
-/**
- * Parse CSV text and import as recipes
- */
-function importRecipesFromCSV(csvText) {
-  try {
-    const lines = csvText
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(line => line.length > 0);
-    
-    if (lines.length < 2) {
-      return { ok: false, message: 'Keine CSV-Zeilen gefunden' };
-    }
-    
-    const headerLine = lines[0];
-    const headers = headerLine
-      .split(/[,;|]/)
-      .map(h => h.trim().toLowerCase());
-    
-    const dataLines = lines.slice(1);
-    
-    const recipeObjects = dataLines.map(line => {
-      const cells = line.split(/[,;|]/).map(c => c.trim());
-      const obj = {};
-      
-      headers.forEach((header, index) => {
-        obj[header] = cells[index] || '';
-      });
-      
-      // Parse ingredients
-      if (obj.ingredients && typeof obj.ingredients === 'string') {
-        obj.ingredients = obj.ingredients
-          .split(/[,;|]/)
-          .map(i => i.trim().toLowerCase())
-          .filter(Boolean);
-      }
-      
-      // Parse steps
-      if (obj.steps && typeof obj.steps === 'string') {
-        obj.steps = obj.steps
-          .split(/\|/)
-          .map(s => s.trim())
-          .filter(Boolean);
-      }
-      
-      if (obj.id) {
-        obj.id = Number(obj.id) || undefined;
-      }
-      
-      return obj;
-    });
-    
-    return importRecipesAsJSON(JSON.stringify(recipeObjects));
-  } catch (error) {
-    return { ok: false, message: String(error) };
-  }
-}
-
-// Admin functionality removed to simplify the codebase.
-// If you need admin/import features later, we can add a small dedicated module.
-
-// ==================== CATEGORY & NAVIGATION ====================
-
-/**
- * Search/filter recipes in category pages
- */
-function initializeCategorySearch() {
-  document.querySelectorAll('.cat-search').forEach(searchInput => {
-    const parentContainer = searchInput.closest('.container');
-    
-    if (!parentContainer) {
-      return;
-    }
-    
-    const cardList = Array.from(parentContainer.querySelectorAll('.card'));
-    
-    searchInput.addEventListener('input', () => {
-      const rawQuery = searchInput.value.trim().toLowerCase();
-      
-      if (!rawQuery) {
-        cardList.forEach(card => {
-          card.style.display = '';
-        });
-        return;
-      }
-      
-      const queryTokens = rawQuery
-        .split(/\s+/)
-        .map(normalizeString)
-        .filter(Boolean);
-      
-      cardList.forEach(card => {
-        const cardDataId = card.getAttribute('data-id');
-        let matches = false;
-        
-        if (cardDataId) {
-          const recipeMatch = recipes.find(r => String(r.id) === String(cardDataId));
-          
-          if (recipeMatch) {
-            const recipeText = (recipeMatch.ingredients.join(' ') + ' ' + recipeMatch.title).toLowerCase();
-            const normalized = normalizeString(recipeText);
-            
-            matches = queryTokens.every(token => {
-              return calculateFuzzyMatchScore(token, normalized) > 0 || normalized.includes(token);
-            });
-          }
-        }
-        
-        if (!matches) {
-          const cardTitle = (card.querySelector('h4') || { textContent: '' }).textContent || '';
-          const cardText = normalizeString(cardTitle + ' ' + (card.textContent || ''));
-          
-          matches = queryTokens.every(token => cardText.includes(token));
-        }
-        
-        card.style.display = matches ? '' : 'none';
-      });
-    });
-  });
-}
-
-// ==================== THEME & LANGUAGE ====================
-
-/**
- * Language toggle implementation
- */
-function setupLanguageToggle() {
-  // Support both 'lang-toggle-btn' and 'lang-toggle' IDs for compatibility with different pages
-  const languageButton = document.getElementById('lang-toggle-btn') || document.getElementById('lang-toggle');
-  
-  if (!languageButton) {
-    return;
-  }
-  
-  function refreshLangButton() {
-    try {
-      const currentLanguage = typeof getLang === 'function' ? getLang() : 'de';
-      const label = (typeof i18n !== 'undefined' && i18n[currentLanguage]) ? (i18n[currentLanguage]['lang-toggle'] || '') : languageButton.textContent;
-      languageButton.textContent = currentLanguage === 'de' ? 'DE' : 'EN'; // Simple text for icon-btn class buttons
-      const aria = (typeof i18n !== 'undefined' && i18n[currentLanguage]) ? (i18n[currentLanguage]['lang-toggle-aria'] || 'Toggle language') : 'Toggle language';
-      languageButton.setAttribute('aria-label', aria);
-    } catch (e) {}
-  }
-
-  refreshLangButton();
-
-  languageButton.addEventListener('click', () => {
-    const currentLanguage = typeof getLang === 'function' ? getLang() : 'de';
-    const nextLanguage = currentLanguage === 'de' ? 'en' : 'de';
-    if (typeof setLang === 'function') {
-      setLang(nextLanguage);
-    }
-    // force-update language button text immediately (avoid race in test env)
-    try {
-      languageButton.textContent = nextLanguage === 'de' ? 'DE' : 'EN';
-      if (typeof i18n !== 'undefined' && i18n[nextLanguage]) {
-        const aria = i18n[nextLanguage]['lang-toggle-aria'] || languageButton.getAttribute('aria-label') || '';
-        languageButton.setAttribute('aria-label', aria);
-      }
-    } catch (e) {}
-    try { refreshLangButton(); } catch (e) {}
-    try { refreshThemeButton && typeof refreshThemeButton === 'function' && refreshThemeButton(); } catch (e) {}
+    container.appendChild(card);
   });
 
-  // Additional delegated handler as a fallback for environments where direct
-  // button listeners may not attach correctly (headless/test env). This ensures
-  // the toggle always responds to clicks on the element with id 'lang-toggle-btn'.
-  document.addEventListener('click', (ev) => {
-    try {
-      const t = ev.target;
-      if (!t || t.id !== 'lang-toggle-btn') return;
-      const currentLanguage = typeof getLang === 'function' ? getLang() : 'de';
-      const nextLanguage = currentLanguage === 'de' ? 'en' : 'de';
-      if (typeof setLang === 'function') setLang(nextLanguage);
-      if (typeof i18n !== 'undefined' && i18n[nextLanguage] && i18n[nextLanguage]['lang-toggle']) {
-        t.textContent = i18n[nextLanguage]['lang-toggle'];
-        t.setAttribute('aria-label', i18n[nextLanguage]['lang-toggle-aria'] || 'Toggle language');
-      }
-      try { refreshLangButton(); } catch (e) {}
-      try { refreshThemeButton && typeof refreshThemeButton === 'function' && refreshThemeButton(); } catch (e) {}
-    } catch (e) {}
-  });
-}
-
-// ==================== MOBILE & CATEGORIES ====================
-
-/**
- * Mobile navigation toggle
- */
-function setupMobileNavigation() {
-  document.querySelectorAll('#nav-toggle').forEach(toggleButton => {
-    toggleButton.addEventListener('click', () => {
-      const parentNav = toggleButton.parentElement;
-      
-      if (!parentNav) {
-        return;
-      }
-      
-      const navigationMenu = parentNav.querySelector('#main-nav');
-      
-      if (!navigationMenu) {
-        return;
-      }
-      
-      const isOpen = navigationMenu.classList.toggle('open');
-      toggleButton.setAttribute('aria-expanded', String(isOpen));
-      document.body.classList.toggle('nav-open', isOpen);
+  // Re-render when language changes (guard against duplicate listeners)
+  if (!window._categoryLangListenerAdded) {
+    window._categoryLangListenerAdded = true;
+    window.addEventListener('languageChanged', function() {
+      loadCategoryRecipes(window._activeCategoryName);
     });
-  });
+  }
+  window._activeCategoryName = categoryName;
 }
 
-/**
- * Load and display recipes for a specific category
- * Used on category pages (e.g., fisch.html, rind.html)
- */
-function loadCategoryRecipes(category) {
-  const container = document.getElementById('category-recipes');
-  
-  if (!container) {
-    return;
-  }
-  
-  // Filter recipes by category
-  const categoryRecipes = recipes.filter(r => r.category === category);
-  
-  if (categoryRecipes.length === 0) {
-    container.innerHTML = '<p>Keine Rezepte in dieser Kategorie gefunden.</p>';
-    return;
-  }
-  
-  // Create recipe cards
-  const lang = typeof getLang === 'function' ? getLang() : 'de';
-  
-  container.innerHTML = categoryRecipes.map(recipe => {
-    const difficultyText = recipe.difficulty || 'mittel';
-    
-    // Get translated title if in English mode
-    const properTranslation = getProperEnglishRecipe(recipe.id);
-    const recipeTitle = lang === 'en' && properTranslation
-      ? properTranslation.title
-      : lang === 'en' && recipe.title_en 
-        ? recipe.title_en 
-        : recipe.title;
-    
-    return `
-      <div class="recipe-card" data-recipe-id="${recipe.id}">
-        <h3>${recipeTitle}</h3>
-        <p class="recipe-difficulty"><strong>Schwierigkeit:</strong> ${difficultyText}</p>
-        <p class="recipe-ingredients-count">${recipe.ingredients.length} Zutaten</p>
-        <button class="btn-primary recipe-details-btn" data-recipe-id="${recipe.id}">
-          Rezept anzeigen
-        </button>
-      </div>
-    `;
-  }).join('');
-  
-  // Add click handlers to all recipe detail buttons
-  container.querySelectorAll('.recipe-details-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const recipeId = parseInt(e.target.getAttribute('data-recipe-id'));
-      const recipe = recipes.find(r => r.id === recipeId);
-      
-      if (recipe) {
-        displayRecipeDetails(recipe);
-      }
-    });
-  });
-}
+// ==================== MOBILE NAV TOGGLE ====================
 
 /**
- * Initialize categories dropdown modal
- * Displays all available recipe categories in a modal dialog
+ * Mobile navigation drawer — runs on every page that has #nav-toggle
  */
-function setupCategoriesButton() {
-  const categoriesButton = document.getElementById('categories-btn');
-  
-  if (!categoriesButton) {
-    return;
-  }
-  
-  // Determine correct prefix for category page links depending on current document location.
-  // If the current page is inside the `pages/` folder, we should not add `pages/` again.
-  const pagesPrefix = (typeof location !== 'undefined' && String(location.pathname || '').includes('/pages/')) ? '' : 'pages/';
+(function initNavToggle() {
+  var navToggle = document.getElementById('nav-toggle');
+  var mainNav   = document.getElementById('main-nav');
+  var navOverlay = document.getElementById('nav-overlay');
 
-  const categoryMapping = {
-    salat: { href: `${pagesPrefix}salat.html`, icon: '??' },
-    suppen: { href: `${pagesPrefix}suppen.html`, icon: '??' },
-    vorspeisen: { href: `${pagesPrefix}vorspeisen.html`, icon: '???' },
-    rind: { href: `${pagesPrefix}rind.html`, icon: '??' },
-    schwein: { href: `${pagesPrefix}schwein.html`, icon: '??' },
-    haendl: { href: `${pagesPrefix}haendl.html`, icon: '??' },
-    fisch: { href: `${pagesPrefix}fisch.html`, icon: '??' },
-    dessert: { href: `${pagesPrefix}dessert.html`, icon: '??' },
-    kuchen: { href: `${pagesPrefix}kuchen.html`, icon: '??' }
-  };
-  
-  categoriesButton.addEventListener('click', () => {
-    let existingModal = document.getElementById('categories-modal');
-    
-    if (existingModal) {
-      existingModal.remove();
+  if (!navToggle || !mainNav) return;
+
+  function openNav() {
+    mainNav.classList.add('open');
+    if (navOverlay) navOverlay.classList.add('open');
+    document.body.classList.add('nav-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.textContent = '✕';
+  }
+
+  function closeNav() {
+    mainNav.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.textContent = '☰';
+  }
+
+  navToggle.addEventListener('click', function() {
+    if (mainNav.classList.contains('open')) {
+      closeNav();
+    } else {
+      openNav();
     }
-    
-    const categoryModal = document.createElement('div');
-    categoryModal.id = 'categories-modal';
-    categoryModal.className = 'modal';
-    
-    const gridContent = Object.entries(categoryMapping)
-      .map(([catKey, catData]) => {
-        const translationKey = catKey === 'haendl' ? 'haendl' : catKey;
-        return `
-          <a href="${catData.href}" class="category-link">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">${catData.icon}</div>
-            <div style="font-weight: 600;" data-i18n="${translationKey}"></div>
-          </a>
-        `;
-      })
-      .join('');
-    
-    categoryModal.innerHTML = `
-      <div class="modal-panel">
-        <button class="modal-close" aria-label="Close">&times;</button>
-        <h2 style="margin-top: 0; margin-bottom: 1.5rem;" data-i18n="kategorien"></h2>
-        <div class="categories-grid">
-          ${gridContent}
-        </div>
-      </div>
-    `;
-    
-    document.body.appendChild(categoryModal);
-    
-    // Translate immediately if i18n is ready
-    if (typeof setLang === 'function') {
-      const currentLanguage = localStorage.getItem('sfc_lang') || 'de';
-      categoryModal.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (i18n[currentLanguage] && i18n[currentLanguage][key]) {
-          element.textContent = i18n[currentLanguage][key];
-        }
-      });
-    }
-    
-    // Close modal when clicking close button
-    categoryModal.querySelector('.modal-close').addEventListener('click', (event) => {
-      event.preventDefault();
-      categoryModal.remove();
-    });
-    
-    // Close modal when clicking outside the panel
-    categoryModal.addEventListener('click', (event) => {
-      if (event.target === categoryModal) {
-        categoryModal.remove();
-      }
-    });
   });
-}
 
-// ==================== INITIALIZATION ====================
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeNav);
+  }
+
+  // Close when any nav link or nav button is tapped
+  var navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeNav);
+  });
+  // Also close when nav-internal buttons (e.g. categories-btn) are tapped
+  var navBtns = mainNav.querySelectorAll('button');
+  navBtns.forEach(function(btn) {
+    if (btn.id !== 'nav-toggle') {
+      btn.addEventListener('click', closeNav);
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      closeNav();
+    }
+  });
+})();
+
+// ==================== MODAL CLOSE HANDLERS ====================
 
 /**
- * Main initialization - runs when DOM is ready
- * Sets up all event listeners, loads persisted data, and initializes components
+ * Wire up recipe modal close — runs on every page that has #modal
  */
-// Make recipes globally available for other scripts (e.g., ingredients-generator.html)
-window.recipes = recipes;
+(function initModalClose() {
+  var closeBtn = document.getElementById('modal-close');
+  var modal    = document.getElementById('modal');
 
-window.addEventListener('DOMContentLoaded', () => {
-  // WICHTIG: Alte fehlerhafte Rezepte aus localStorage lßschen
-  localStorage.removeItem('sfc_recipes');
-  
-  loadRecipesFromLocalStorage();
-  setupCalculatorForm();
-  initializeModalHandlers();
-  expandSynonymMappings();
-  setupLanguageToggle();
-  setupMobileNavigation();
-  setupCategoriesButton();
-  initializeCategorySearch();
-});
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeRecipeModal);
+  }
+
+  if (modal) {
+    // Close when clicking the dark backdrop
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeRecipeModal();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeRecipeModal();
+  });
+})();

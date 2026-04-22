@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Zutaten-Katalog — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
@@ -165,7 +165,7 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="theme-toggle-btn">🌙</button>
         <button id="lang-toggle-btn">English</button>
       </div>
     </div>
@@ -200,6 +200,8 @@
       <p>© 2025 Kilian Ronacher — SpareFoodCalculator</p>
     </div>
   </footer>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
   <script src="../ingredients.js"></script>

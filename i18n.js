@@ -21,15 +21,15 @@ function updateThemeButton() {
     // getLang not yet defined, use default
   }
   
+  // On narrow screens show only the emoji to prevent header overflow
+  const isMobileScreen = window.matchMedia('(max-width: 560px)').matches;
   let text;
   if (isDarkMode) {
-    text = (currentLang === 'de') ? 'Hell-Modus' : 'Light Mode';
-    themeToggleButton.textContent = '☀️ ' + text;
+    text = isMobileScreen ? '☀️' : ((currentLang === 'de') ? '☀️ Hell-Modus' : '☀️ Light Mode');
   } else {
-    text = (currentLang === 'de') ? 'Dunkel-Modus' : 'Dark Mode';
-    themeToggleButton.textContent = '🌙 ' + text;
+    text = isMobileScreen ? '🌙' : ((currentLang === 'de') ? '🌙 Dunkel-Modus' : '🌙 Dark Mode');
   }
-  console.log('Theme button updated:', themeToggleButton.textContent);
+  themeToggleButton.textContent = text;
 }
 
 // German language dictionary
@@ -73,7 +73,7 @@ i18n['de'] = {
   'gib_zutaten_ein_desc': 'Gib die Zutaten ein, die du vorrätig hast (Komma-separiert). Der Generator schlägt Rezepte vor.',
   'zutaten_label': 'Zutaten',
   'zutaten_placeholder': 'Tomate, Brot, Salat',
-  'rezepte_finden': 'Rezpte Finden',
+  'rezepte_finden': 'Rezepte Finden',
 
   // Search & Compose
   'search_compose_title': 'Generator',
@@ -125,7 +125,7 @@ i18n['de'] = {
   'ing_no_recipe_match': 'Keine passenden Rezepte gefunden. Versuche andere Zutaten!',
   'ing_select_first': 'Bitte wähle zuerst Zutaten aus!',
   'ing_not_for_recipe': 'Nicht für dieses Rezept gedacht',
-  'ing_find_recipes_btn': 'Rezpte Finden',
+  'ing_find_recipes_btn': 'Rezepte Finden',
 
   // Recipe Generator
   'recipe_generator_title': 'Rezept-Generator',
@@ -189,7 +189,7 @@ i18n['en'] = {
   'gib_zutaten_ein_desc': 'Enter the ingredients you have on hand (comma-separated). The generator will suggest recipes.',
   'zutaten_label': 'Ingredients',
   'zutaten_placeholder': 'tomato, bread, salad',
-  'rezepte_finden': 'Rezpte Finden',
+  'rezepte_finden': 'Find Recipes',
 
   // Search & Compose
   'search_compose_title': 'Generator',
@@ -241,7 +241,7 @@ i18n['en'] = {
   'ing_no_recipe_match': 'No matching recipes found. Try different ingredients!',
   'ing_select_first': 'Please select ingredients first!',
   'ing_not_for_recipe': 'Not intended for this recipe',
-  'ing_find_recipes_btn': 'Rezpte Finden',
+  'ing_find_recipes_btn': 'Find Recipes',
 
   // Recipe Generator
   'recipe_generator_title': 'Recipe Generator',
@@ -288,6 +288,26 @@ i18n['en']['hero_art_alt'] = 'Colorful plates with ingredients (placeholder)';
 // Additional page link translations
 i18n['de']['alle_seiten'] = 'Alle Seiten';
 i18n['en']['alle_seiten'] = 'All pages';
+
+// Category page headings (DE/EN)
+i18n['de']['rind_rezepte']      = 'Rind Rezepte';
+i18n['en']['rind_rezepte']      = 'Beef Recipes';
+i18n['de']['fisch_rezepte']     = 'Fisch Rezepte';
+i18n['en']['fisch_rezepte']     = 'Fish Recipes';
+i18n['de']['schwein_rezepte']   = 'Schwein Rezepte';
+i18n['en']['schwein_rezepte']   = 'Pork Recipes';
+i18n['de']['haendl_rezepte']    = 'Hähnchen Rezepte';
+i18n['en']['haendl_rezepte']    = 'Poultry Recipes';
+i18n['de']['salat_rezepte']     = 'Salat Rezepte';
+i18n['en']['salat_rezepte']     = 'Salad Recipes';
+i18n['de']['suppen_rezepte']    = 'Suppen Rezepte';
+i18n['en']['suppen_rezepte']    = 'Soup Recipes';
+i18n['de']['dessert_rezepte']   = 'Dessert Rezepte';
+i18n['en']['dessert_rezepte']   = 'Dessert Recipes';
+i18n['de']['kuchen_rezepte']    = 'Kuchen Rezepte';
+i18n['en']['kuchen_rezepte']    = 'Cake Recipes';
+i18n['de']['vorspeisen_rezepte'] = 'Vorspeisen';
+i18n['en']['vorspeisen_rezepte'] = 'Starters';
 
 // Ingredient translations (DE -> EN)
 const ingredientTranslations = {
@@ -412,10 +432,21 @@ const ingredientTranslations = {
   // Fruits
   'apfel': 'apple',
   'äpfel': 'apples',
-  'apfel': 'apple',
+  'apfle': 'apple',
   'zitrone': 'lemon',
   'limette': 'lime',
+  'erdbeere': 'strawberry',
   'erdbeeren': 'strawberries',
+  'himbeeren': 'raspberries',
+  'blaubeeren': 'blueberries',
+  'kirschen': 'cherries',
+  'birne': 'pear',
+  'birnen': 'pears',
+  'mango': 'mango',
+  'banane': 'banana',
+  'bananen': 'bananas',
+  'orange': 'orange',
+  'orangen': 'oranges',
   'spargel': 'asparagus',
   'grüner spargel': 'green asparagus',
   'grüner-spargel': 'green asparagus',
@@ -488,7 +519,180 @@ const ingredientTranslations = {
   'oliven': 'olives',
   'kapern': 'capers',
   'zitronensaft': 'lemon juice',
-  'limettensaft': 'lime juice'
+  'limettensaft': 'lime juice',
+
+  // Zusätzliche häufige Zutaten (ergänzt 2026-04-22)
+  'zwiebeln': 'onions',
+  'knoblauchzehe': 'garlic clove',
+  'knoblauchzehen': 'garlic cloves',
+  'hühnerbrühe': 'chicken broth',
+  'huhnerbruhe': 'chicken broth',
+  'gemüsebrühe': 'vegetable broth',
+  'gemüsebruhe': 'vegetable broth',
+  'gemusebruhe': 'vegetable broth',
+  'tomatensoße': 'tomato sauce',
+  'tomatensauce': 'tomato sauce',
+  'paprikapulver scharf': 'hot paprika powder',
+  'paprikapulver edelsüß': 'sweet paprika powder',
+  'paprikapulver edelsuss': 'sweet paprika powder',
+  'schlagsahne': 'whipping cream',
+  'crème fraîche': 'crème fraîche',
+  'creme fraiche': 'crème fraîche',
+  'speisestärke': 'cornstarch',
+  'speisestarke': 'cornstarch',
+  'pflanzenöl': 'vegetable oil',
+  'pflanzenol': 'vegetable oil',
+  'sonnenblumenöl': 'sunflower oil',
+  'sonnenblumenol': 'sunflower oil',
+  'rapsöl': 'rapeseed oil',
+  'rapsol': 'rapeseed oil',
+  'balsamicoessig': 'balsamic vinegar',
+  'balsamico': 'balsamic vinegar',
+  'weinessig': 'wine vinegar',
+  'apfelessig': 'apple cider vinegar',
+  'worcestersauce': 'worcestershire sauce',
+  'tabasco': 'tabasco',
+  'ketchup': 'ketchup',
+  'mayonnaise': 'mayonnaise',
+  'mayo': 'mayo',
+  'hefepulver': 'dry yeast',
+  'trockenhefe': 'dry yeast',
+  'frischhefe': 'fresh yeast',
+  'zimt': 'cinnamon',
+  'kardamom': 'cardamom',
+  'nelken': 'cloves',
+  'lorbeerblatt': 'bay leaf',
+  'lorbeerblätter': 'bay leaves',
+  'lorbeerblatter': 'bay leaves',
+  'wacholderbeeren': 'juniper berries',
+  'meersalz': 'sea salt',
+  'jodsalz': 'iodized salt',
+  'vollmilch': 'whole milk',
+  'buttermilch': 'buttermilk',
+  'kondensmilch': 'condensed milk',
+  'hafermilch': 'oat milk',
+  'mandelmilch': 'almond milk',
+  'sojamilch': 'soy milk',
+  'naturjoghurt': 'plain yogurt',
+  'griechischer joghurt': 'greek yogurt',
+  'mascarpone': 'mascarpone',
+  'emmentaler': 'emmental',
+  'gruyere': 'gruyère',
+  'gruyère': 'gruyère',
+  'manchego': 'manchego',
+  'burrata': 'burrata',
+  'hüttenkäse': 'cottage cheese',
+  'huttenkase': 'cottage cheese',
+  'paniermehl': 'breadcrumbs',
+  'semmelbrösel': 'breadcrumbs',
+  'semmelbrosel': 'breadcrumbs',
+  'weißbrot': 'white bread',
+  'vollkornbrot': 'wholegrain bread',
+  'toastbrot': 'toast bread',
+  'brötchen': 'bread roll',
+  'croissant': 'croissant',
+  'tortilla': 'tortilla',
+  'fladenbrot': 'flatbread',
+  'couscous': 'couscous',
+  'quinoa': 'quinoa',
+  'linsenrot': 'red lentils',
+  'rote linsen': 'red lentils',
+  'grüne linsen': 'green lentils',
+  'belugalinsen': 'beluga lentils',
+  'kichererbsendose': 'canned chickpeas',
+  'kidneybohnendose': 'canned kidney beans',
+  'weißbohnen': 'white beans',
+  'edamame': 'edamame',
+  'sojasprossen': 'bean sprouts',
+  'pak choi': 'bok choy',
+  'mangold': 'chard',
+  'rosenkohl': 'brussels sprouts',
+  'kohlrabi': 'kohlrabi',
+  'wirsing': 'savoy cabbage',
+  'rotkohl': 'red cabbage',
+  'spitzkohl': 'pointed cabbage',
+  'chinakohl': 'napa cabbage',
+  'rucola': 'arugula',
+  'feldsalat': 'lamb\'s lettuce',
+  'eisbergsalat': 'iceberg lettuce',
+  'kopfsalat': 'head lettuce',
+  'radicchio': 'radicchio',
+  'chicorée': 'chicory',
+  'chicoree': 'chicory',
+  'artischocke': 'artichoke',
+  'artischocken': 'artichokes',
+  'süßkartoffel': 'sweet potato',
+  'susskartoffel': 'sweet potato',
+  'süßkartoffeln': 'sweet potatoes',
+  'susskartoffeln': 'sweet potatoes',
+  'pastinake': 'parsnip',
+  'pastinaken': 'parsnips',
+  'petersilienwurzel': 'parsley root',
+  'schwarzwurzel': 'salsify',
+  'meerrettich': 'horseradish',
+  'ingwerwurzel': 'ginger root',
+  'frischer ingwer': 'fresh ginger',
+  'kurkuma': 'turmeric',
+  'koriander': 'coriander',
+  'korianderblätter': 'coriander leaves',
+  'korianderblatter': 'coriander leaves',
+  'minze': 'mint',
+  'salbei': 'sage',
+  'estragon': 'tarragon',
+  'liebstöckel': 'lovage',
+  'liebstockel': 'lovage',
+  'zitronenmelisse': 'lemon balm',
+  'bärlauch': 'wild garlic',
+  'barlauch': 'wild garlic',
+  'kapuzinerkresse': 'nasturtium',
+  'walnussöl': 'walnut oil',
+  'haselnussöl': 'hazelnut oil',
+  'haselnusse': 'hazelnuts',
+  'haselnüsse': 'hazelnuts',
+  'cashews': 'cashews',
+  'pistazien': 'pistachios',
+  'macadamia': 'macadamia',
+  'kokosnuss': 'coconut',
+  'kokosraspeln': 'desiccated coconut',
+  'kokosöl': 'coconut oil',
+  'kokosol': 'coconut oil',
+  'tahini': 'tahini',
+  'hummus': 'hummus',
+  'pesto': 'pesto',
+  'tapenade': 'tapenade',
+  'ajvar': 'ajvar',
+  'harissa': 'harissa',
+  'sambal oelek': 'sambal oelek',
+  'miso': 'miso',
+  'fischsauce': 'fish sauce',
+  'austernsoße': 'oyster sauce',
+  'austernsauce': 'oyster sauce',
+  'hoisinsauce': 'hoisin sauce',
+  'sriracha': 'sriracha',
+  'tabascosauce': 'tabasco sauce',
+  'worcestershire': 'worcestershire',
+  'zucchini gelb': 'yellow zucchini',
+  'kirschtomaten': 'cherry tomatoes',
+  'cherrytomaten': 'cherry tomatoes',
+  'flaschentomaten': 'plum tomatoes',
+  'dosentomaten': 'canned tomatoes',
+  'getrocknete tomaten': 'sun-dried tomatoes',
+  'tomatendose': 'canned tomatoes',
+  'schinkenwürfel': 'diced ham',
+  'speckwürfel': 'diced bacon',
+  'räucherlachs': 'smoked salmon',
+  'garnelen': 'prawns',
+  'tintenfisch': 'squid',
+  'calamari': 'calamari',
+  'miesmuscheln': 'mussels',
+  'jakobsmuscheln': 'scallops',
+  'sardellen': 'anchovies',
+  'hering': 'herring',
+  'makrele': 'mackerel',
+  'dorsch': 'cod',
+  'seelachs': 'pollock',
+  'tilapia': 'tilapia',
+  'pangasius': 'pangasius'
 };
 
 // Expose for other scripts that expect global access
@@ -629,17 +833,34 @@ window.addEventListener('DOMContentLoaded', function() {
   // Update theme button text after language is set
   updateThemeButton();
   
-  // Setup theme toggle button event listener - simple direct approach
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  if (themeToggleBtn) {
-    themeToggleBtn.onclick = function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateThemeButton();
-      return false;
-    };
-  }
-});
+  // Setup theme toggle button event listener - handles both IDs
+  // theme-toggle-btn: search.html, ingredients-generator.html
+  // theme-toggle: category pages (rind.html, fisch.html, etc.)
+  function handleThemeToggle(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeButton();
+    // Update icon-btn style buttons on category pages
+        const iconThemeBtn = document.getElementById('theme-toggle');
+        if (iconThemeBtn) {
+          iconThemeBtn.textContent = isDark ? '☀️' : '🌙';
+        }
+        return false;
+      }
+
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      if (themeToggleBtn) {
+        themeToggleBtn.onclick = handleThemeToggle;
+      }
+
+      // Kategorie-Seiten verwenden id="theme-toggle" statt "theme-toggle-btn"
+      const themeToggleIcon = document.getElementById('theme-toggle');
+      if (themeToggleIcon) {
+        const isDarkOnLoad = document.body.classList.contains('dark-mode');
+        themeToggleIcon.textContent = isDarkOnLoad ? '☀️' : '🌙';
+        themeToggleIcon.onclick = handleThemeToggle;
+      }
+    });

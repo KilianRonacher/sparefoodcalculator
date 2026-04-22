@@ -2,9 +2,53 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Kontakt — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .contact-form input,
+    .contact-form textarea {
+      display: block;
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      margin: 0.4rem 0 0.75rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      font-size: 1rem;
+      font-family: inherit;
+      box-sizing: border-box;
+      background: var(--color-background);
+      color: var(--color-text-primary);
+      transition: border-color 0.18s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--color-accent-teal);
+      box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    body.dark-mode .contact-form input,
+    body.dark-mode .contact-form textarea {
+      background: #2a2a2a;
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #f0f0f0;
+    }
+    @media (max-width: 560px) {
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.75rem;
+      }
+      .contact-form button[type="submit"] {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -21,7 +65,7 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="theme-toggle-btn">🌙</button>
         <button id="lang-toggle-btn">English</button>
       </div>
       <a href="search.html" class="btn primary small header-cta" data-i18n="calculator">Calculator</a>
@@ -38,10 +82,10 @@
 
     <h3>Feedback / Anfragen</h3>
     <p>Nutze das Formular oder schreibe direkt eine Mail.</p>
-    <form action="mailto:kilianfelbertal@gmail.com" method="post" enctype="text/plain">
-      <input name="name" placeholder="Dein Name" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd" />
-      <input name="email" placeholder="Deine E-Mail" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd" />
-      <textarea name="message" placeholder="Nachricht" style="width:100%;padding:.6rem;margin:.3rem 0;border-radius:8px;border:1px solid #ddd;min-height:120px"></textarea>
+    <form action="mailto:kilianfelbertal@gmail.com" method="post" enctype="text/plain" class="contact-form">
+      <input name="name" placeholder="Dein Name" type="text" autocomplete="name" inputmode="text" />
+      <input name="email" placeholder="Deine E-Mail" type="email" autocomplete="email" inputmode="email" />
+      <textarea name="message" placeholder="Nachricht"></textarea>
       <button class="btn primary" type="submit">E-Mail senden</button>
     </form>
   </main>
@@ -65,6 +109,8 @@
   </div>
 
   <!-- duplicate footer removed -->
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
   <script src="../app.js"></script>

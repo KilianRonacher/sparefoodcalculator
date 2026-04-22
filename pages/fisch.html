@@ -2,26 +2,27 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Fisch Rezepte — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <div class="header-content">
-        <h1>🐟 <span data-i18n="fisch">Fisch</span></h1>
-        <nav class="main-nav">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
+      <div class="nav-wrap">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
+        <nav class="main-nav mobile-hidden" id="main-nav">
           <button id="categories-btn" class="nav-btn" data-i18n="kategorien">Kategorien</button>
           <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="suche">Suche</a>
+          <a href="search.html" data-i18n="calculator">Rezept-Generator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
+          <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
-        <div class="header-controls">
-          <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-          <button id="lang-toggle" class="icon-btn" aria-label="Toggle language">DE</button>
-          <button id="mobile-menu-toggle" class="icon-btn mobile-only" aria-label="Menu">☰</button>
-        </div>
+      </div>
+      <div class="theme-lang-controls">
+        <button id="theme-toggle-btn">🌙</button>
+        <button id="lang-toggle-btn">English</button>
       </div>
     </div>
   </header>
@@ -54,6 +55,8 @@
       <div id="modal-content"></div>
     </div>
   </div>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
   <script src="../app.js"></script>

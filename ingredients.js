@@ -153,7 +153,8 @@ const ingredientsDatabase = {
     'schokolade', 'zartbitterschokolade', 'dunkle schokolade',
     'vollmilchschokolade', 'weiße schokolade', 'schokodrops', 'kakao',
     'kakaopulver', 'backkakao', 'nougatcreme', 'nutella', 'marmelade',
-    'konfitüre', 'gelee', 'apfelmus', 'pflaumenmus', 'powidl'
+    'konfitüre', 'gelee', 'apfelmus', 'pflaumenmus', 'powidl',
+    'löffelbiskuits'
   ],
 
   // ==================== EIER ====================
@@ -167,7 +168,7 @@ const ingredientsDatabase = {
     'wasser', 'mineralwasser', 'sprudelwasser', 'wein', 'weißwein',
     'rotwein', 'sekt', 'champagner', 'prosecco', 'bier', 'helles',
     'dunkles bier', 'rum', 'cognac', 'brandy', 'whisky', 'vodka',
-    'gin', 'likör', 'orangenlikör', 'grand marnier', 'amaretto',
+    'gin', 'likör', 'orangenlikör', 'grand marnier', 'amaretto', 'kirschwasser',
     'kaffee', 'espresso', 'tee', 'schwarzer tee', 'grüner tee',
     'kräutertee', 'kamillentee', 'pfefferminztee'
   ],
