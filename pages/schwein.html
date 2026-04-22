@@ -2,31 +2,33 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Schwein Rezepte — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <div class="header-content">
-        <h1>🐷 <span data-i18n="schwein">Schwein</span></h1>
-        <nav class="main-nav">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
+      <div class="nav-wrap">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
+        <nav class="main-nav mobile-hidden" id="main-nav">
           <button id="categories-btn" class="nav-btn" data-i18n="kategorien">Kategorien</button>
           <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="suche">Suche</a>
+          <a href="search.html" data-i18n="calculator">Rezept-Generator</a>
+          <a href="contact.html" data-i18n="kontakt">Kontakt</a>
+          <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
-        <div class="header-controls">
-          <button id="theme-toggle" class="icon-btn">🌙</button>
-          <button id="lang-toggle" class="icon-btn">DE</button>
-          <button id="mobile-menu-toggle" class="icon-btn mobile-only">☰</button>
-        </div>
+      </div>
+      <div class="theme-lang-controls">
+        <button id="theme-toggle-btn">🌙</button>
+        <button id="lang-toggle-btn">English</button>
       </div>
     </div>
   </header>
   <main class="container">
     <section class="category-intro">
-      <h2>Schwein Rezepte</h2>
+      <h2 data-i18n="schwein_rezepte">Schwein Rezepte</h2>
       <p>Entdecke köstliche Schweinefleisch-Rezepte.</p>
     </section>
     <section id="category-recipes" class="recipes-grid"></section>
@@ -37,7 +39,14 @@
       <p>© 2025 Kilian Ronacher</p>
     </div>
   </footer>
-  <div id="modal" class="modal hidden"><div class="modal-panel"><button id="modal-close" class="modal-close">✕</button><div id="modal-content"></div></div></div>
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
   <script src="../i18n.js"></script>
   <script src="../app.js"></script>
   <script>document.addEventListener('DOMContentLoaded', () => { loadCategoryRecipes('schwein'); });</script>

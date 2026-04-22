@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Zutaten-Generator — SpareFoodCalculator</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
@@ -33,7 +33,7 @@
 
     /* Manueller Dark Mode - hat höchste Priorität */
     body.dark-mode {
-      background-image: 
+      background-image:
         radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.7) 100%),
         url("../images/Gemüse und Früchte Dark.webp") !important;
       background-size: cover !important;
@@ -52,6 +52,20 @@
     body.dark-mode main.container h3 {
       color: #ffd166 !important;
     }
+
+    /* iOS Safari Fix: background-attachment: fixed bricht auf allen Touch-Geräten,
+       unabhängig von der Bildschirmbreite (betrifft iPhone und iPad gleichermaßen). */
+    @media (pointer: coarse), (max-width: 560px) {
+      body { background-attachment: scroll !important; }
+      body.dark-mode { background-attachment: scroll !important; }
+    }
+
+    @media (max-width: 560px) {
+      main.container {
+        padding: 0.75rem 0.6rem !important;
+        margin: 0.5rem auto !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -63,13 +77,13 @@
         <nav class="main-nav mobile-hidden" id="main-nav">
           <a href="../index.html" data-i18n="startseite">Startseite</a>
           <a href="search.html" data-i18n="calculator">Rezept Generator</a>
-          <a href="ingredients-generator.html">Zutaten Generator</a>
+          <a href="ingredients-generator.html" data-i18n="ing_generator_title">Zutaten Generator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
           <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn" style="min-width:7em">🌙 Dunkel-Modus</button>
+        <button id="theme-toggle-btn">🌙</button>
         <button id="lang-toggle-btn">English</button>
       </div>
     </div>
@@ -117,7 +131,7 @@
       <div class="ing-selected-header">
         <h3>✓ <span data-i18n="ing_selected_title">Ausgewählte Zutaten</span> (<span id="selected-count">0</span>)</h3>
         <div style="display: flex; gap: 0.5rem;">
-          <button id="find-recipes-btn" class="btn primary" style="font-size: 0.9rem;">Rezpte Finden</button>
+          <button id="find-recipes-btn" class="btn primary" style="font-size: 0.9rem;">Rezepte Finden</button>
           <button id="clear-selection-btn" class="btn secondary" style="font-size: 0.9rem;" data-i18n="ing_clear_btn">Alle löschen</button>
         </div>
       </div>
@@ -147,6 +161,8 @@
     </div>
   </div>
 
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
   <script src="../i18n.js"></script>
   <script src="../app.js"></script>
   <script>
@@ -160,31 +176,22 @@
       console.warn('WARNING: ingredientMatches not found, using fallback');
     }
     if (typeof getLang !== 'function') {
-      window.getLang = () => localStorage.getItem('lang') || 'de';
+      // Muss denselben Key wie i18n.js verwenden: sfc_lang
+      window.getLang = () => localStorage.getItem('sfc_lang') || 'de';
       console.warn('WARNING: getLang not found, using fallback');
     }
     
     // ==================== INGREDIENTS GENERATOR LOGIC ====================
     
-    // Check if recipes is available
-    console.log('DEBUG: window.recipes exists?', !!window.recipes);
-    console.log('DEBUG: recipes exists?', typeof recipes !== 'undefined');
-    console.log('DEBUG: recipes array length:', (window.recipes || recipes) ? (window.recipes || recipes).length : 'UNDEFINED');
-    
     // Use window.recipes or recipes variable
     const recipeData = window.recipes || (typeof recipes !== 'undefined' ? recipes : []);
-    console.log('DEBUG: recipeData length:', recipeData.length);
-    console.log('DEBUG: first recipe:', recipeData[0]);
-    
+
     // Extract all unique ingredients from recipes (exclude lasagne and pizza)
     const excludedIngredients = ['lasagne', 'pizza'];
     const allIngredients = new Set();
     
     if (!recipeData || recipeData.length === 0) {
-      console.error('FATAL ERROR: recipes array is empty or undefined!');
-      console.error('window.recipes:', window.recipes);
-      console.error('Type of recipes:', typeof recipes);
-      document.body.innerHTML = '<h1 style="color:red;">FEHLER: Rezepte können nicht geladen werden! (RecipeData: ' + recipeData.length + ')</h1>';
+      document.body.innerHTML = '<h1 style="color:red;">FEHLER: Rezepte können nicht geladen werden!</h1>';
     }
     
     recipeData.forEach(recipe => {
@@ -200,31 +207,28 @@
       return a.localeCompare(b, 'de-DE', { sensitivity: 'base' });
     });
     
-    console.log('DEBUG: sortedIngredients array length:', sortedIngredients.length);
-    console.log('DEBUG: first 10 ingredients:', sortedIngredients.slice(0, 10));
-
     // Simplified category mapping
     const ingredientCategories = {
-      'fleisch': ['rindfleisch', 'rind', 'schweinefleisch', 'schwein', 'schweineschnitzel', 'schweinefilet', 'schweinefaschiertes', 'hähnchen', 'hahnchen', 'haehnchen', 'hähnchenbrust', 'lamm', 'kalb', 'wild', 'ente', 'fleischbällchen', 'fleischballchen', 'schinken', 'speck'],
+      'fleisch': ['rindfleisch', 'rind', 'rinderhack', 'hackfleisch', 'rinderleber', 'schweinefleisch', 'schwein', 'schweineschnitzel', 'schweinefilet', 'schweinefaschiertes', 'hähnchen', 'hahnchen', 'haehnchen', 'hähnchenbrust', 'lamm', 'kalb', 'wild', 'ente', 'fleischbällchen', 'fleischballchen', 'schinken', 'speck'],
       'fisch': ['fisch', 'lachs', 'lachsfilet', 'forelle', 'kabeljau', 'thunfisch', 'seelachs', 'garnelen', 'muscheln', 'shrimps'],
-      'gemüse': ['tomate', 'zwiebel', 'zwiebeln', 'paprika', 'gelbe paprika', 'rote paprika', 'karotte', 'karotten', 'zucchini', 'aubergine', 'brokkoli', 'blumenkohl', 'spinat', 'salat', 'gurke', 'sellerie', 'staudensellerie', 'rote beete', 'kürbis', 'kurbis', 'mais', 'erbsen', 'bohnen', 'lauch', 'porree', 'fenchel', 'champignons', 'pilze', 'pilz', 'weißkraut', 'weisskraut', 'äpfel', 'apfel', 'spargel', 'grüner spargel', 'gemüse'],
+      'gemüse': ['tomate', 'zwiebel', 'zwiebeln', 'paprika', 'gelbe paprika', 'rote paprika', 'karotte', 'karotten', 'zucchini', 'aubergine', 'brokkoli', 'blumenkohl', 'spinat', 'salat', 'gurke', 'sellerie', 'staudensellerie', 'rote beete', 'kürbis', 'kurbis', 'mais', 'erbsen', 'bohnen', 'lauch', 'porree', 'fenchel', 'champignons', 'pilze', 'pilz', 'weißkraut', 'weisskraut', 'äpfel', 'apfel', 'spargel', 'grüner spargel', 'gemüse', 'kirschtomaten', 'zuckerschoten', 'bohnensprossen', 'sauerkraut'],
       'kartoffeln': ['kartoffel', 'kartoffeln', 'süßkartoffel', 'susskahrrtoffel', 'süßkartoffeln', 'susskartoffeln'],
-      'getreide': ['reis', 'pasta', 'nudeln', 'spaghetti', 'penne', 'fusilli', 'ravioli', 'quinoa', 'couscous', 'bulgur', 'hafer', 'haferflocken', 'risottoreis'],
+      'getreide': ['reis', 'pasta', 'nudeln', 'spaghetti', 'penne', 'fusilli', 'ravioli', 'quinoa', 'couscous', 'bulgur', 'hafer', 'haferflocken', 'risottoreis', 'spätzle', 'grieß'],
       'mehl': ['mehl', 'weizenmehl', 'dinkelmehl', 'vollkornmehl'],
-      'brot': ['brot', 'baguette', 'toast', 'brötchen', 'broetchen', 'paniermehl'],
-      'milchprodukte': ['milch', 'sahne', 'schmand', 'joghurt', 'quark/topfen', 'quark', 'topfen', 'käse', 'kase', 'parmesan', 'mozzarella', 'gouda', 'feta', 'ricotta', 'cheddar', 'roquefort käse', 'roquefort kase', 'mascarpone', 'frischkäse', 'frischkase', 'butter', 'crème fraîche', 'creme fraiche'],
+      'brot': ['brot', 'baguette', 'toast', 'brötchen', 'broetchen', 'paniermehl', 'strudelteig', 'lasagneplatten'],
+      'milchprodukte': ['milch', 'sahne', 'schmand', 'joghurt', 'quark/topfen', 'quark', 'topfen', 'käse', 'kase', 'parmesan', 'mozzarella', 'gouda', 'feta', 'ricotta', 'cheddar', 'roquefort käse', 'roquefort kase', 'mascarpone', 'frischkäse', 'frischkase', 'butter', 'crème fraîche', 'creme fraiche', 'gruyere', 'butterschmalz', 'emmentaler'],
       'eier': ['ei', 'eier', 'eigelb', 'eiweiß', 'eiweis'],
       'hülsenfrüchte': ['hülsenfrüchte', 'hulsenfruchte', 'linsen', 'kichererbsen', 'bohnen', 'kidneybohnen', 'tofu'],
       'nüsse': ['nüsse', 'nusse', 'mandeln', 'walnüsse', 'walnusse', 'haselnüsse', 'haselnusse', 'cashews', 'pinienkerne', 'erdnüsse', 'erdnusse'],
-      'obst': ['obst', 'apfel', 'äpfel', 'banane', 'zitrone', 'zitronensaft', 'limette', 'limettensaft', 'orange', 'erdbeeren', 'himbeeren', 'blaubeeren', 'avocado'],
-      'kräuter': ['kräuter', 'krauter', 'kraeuter', 'basilikum', 'petersilie', 'schnittlauch', 'dill', 'oregano', 'thymian', 'rosmarin'],
-      'gewürze': ['gewürze', 'gewurze', 'salz', 'pfeffer', 'schwarzer pfeffer', 'paprikapulver', 'curry', 'kurkuma', 'zimt', 'muskat', 'muskatnuss', 'ingwer', 'chili', 'fleur de sel', 'roter pfeffer', 'kümmel', 'kummel', 'kreuzkümmel', 'kreuzkummel'],
+      'obst': ['obst', 'apfel', 'äpfel', 'banane', 'zitrone', 'zitronensaft', 'limette', 'limettensaft', 'orange', 'erdbeeren', 'himbeeren', 'blaubeeren', 'avocado', 'zwetschgen', 'johannisbeeren', 'kirschen'],
+      'kräuter': ['kräuter', 'krauter', 'kraeuter', 'basilikum', 'petersilie', 'schnittlauch', 'dill', 'oregano', 'thymian', 'rosmarin', 'majoran', 'salbei', 'minze', 'koriander'],
+      'gewürze': ['gewürze', 'gewurze', 'salz', 'pfeffer', 'schwarzer pfeffer', 'paprikapulver', 'curry', 'kurkuma', 'zimt', 'muskat', 'muskatnuss', 'ingwer', 'chili', 'chiliflocken', 'fleur de sel', 'roter pfeffer', 'kümmel', 'kummel', 'kreuzkümmel', 'kreuzkummel', 'lorbeer', 'lorbeerblätter', 'wacholderbeeren', 'nelken'],
       'öl': ['öl', 'ol', 'olivenöl', 'olivenol', 'sesamöl', 'sesamol', 'sonnenblumenöl', 'sonnenblumenol', 'rapsöl', 'rapsol', 'kokosöl', 'kokosor'],
-      'essig': ['essig', 'balsamico', 'apfelessig'],
-      'soßen': ['soßen', 'sossen', 'sojasauce', 'worcestersauce', 'teriyaki sauce', 'senf', 'ketchup', 'tomatenmark'],
+      'essig': ['essig', 'balsamico', 'apfelessig', 'rotweinessig'],
+      'soßen': ['soßen', 'sossen', 'sojasauce', 'worcestersauce', 'teriyaki sauce', 'senf', 'ketchup', 'tomatenmark', 'meerrettich'],
       'fond': ['fond', 'brühe', 'bruhe', 'gemüsebrühe', 'gemuesebruhe', 'hühnerbrühe', 'huhnerbruhe', 'rinderbrühe', 'rinderbr', 'rinderbrue', 'bouillon'],
       'wein': ['rotwein', 'weißwein', 'weisswein', 'wein'],
-      'sonstiges': ['knoblauch', 'honig', 'zucker', 'puderzucker', 'schokolade', 'vanille', 'backpulver', 'hefe', 'kokosmilch', 'sesam', 'oliven', 'kapern', 'gelatine']
+      'sonstiges': ['knoblauch', 'honig', 'zucker', 'puderzucker', 'schokolade', 'vanille', 'backpulver', 'hefe', 'kokosmilch', 'sesam', 'oliven', 'kapern', 'gelatine', 'marmelade', 'kakaopulver', 'löffelbiskuits', 'amaretto', 'kirschwasser', 'natron', 'rosinen', 'zartbitterschokolade', 'gewürzgurken', 'mohn']
     };
 
     // Returns category for an ingredient
@@ -421,7 +425,8 @@
 
     function syncFindRecipesButtonLabel() {
       if (findRecipesBtn) {
-        findRecipesBtn.textContent = 'Rezpte Finden';
+        const lang = getLang();
+        findRecipesBtn.textContent = (i18n[lang] && i18n[lang]['ing_find_recipes_btn']) || 'Rezepte Finden';
       }
     }
 
@@ -443,7 +448,7 @@
       recipeResultsContainer.innerHTML = `<p style="margin-bottom: 1rem;">${i18n[lang]['ing_found_label']}: <strong>${matchingRecipes.length} ${i18n[lang]['recipes']}</strong></p>`;
       
       const grid = document.createElement('div');
-      grid.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;';
+      grid.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 1.5rem;';
       
       matchingRecipes.forEach(({ recipe, matchCount, matchPercentage }) => {
         const card = createRecipeCardWithValidation(recipe, selectedArray, matchCount, matchPercentage);
@@ -501,14 +506,17 @@
         cursor: pointer;
       `;
 
-      card.addEventListener('mouseover', () => {
-        card.style.transform = 'translateY(-4px)';
-        card.style.boxShadow = '0 8px 24px rgba(78, 205, 196, 0.2)';
-      });
-      card.addEventListener('mouseout', () => {
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = 'none';
-      });
+      // Only apply hover lift on non-touch devices
+      if (!window.matchMedia('(hover: none)').matches) {
+        card.addEventListener('mouseover', () => {
+          card.style.transform = 'translateY(-4px)';
+          card.style.boxShadow = '0 8px 24px rgba(78, 205, 196, 0.2)';
+        });
+        card.addEventListener('mouseout', () => {
+          card.style.transform = 'translateY(0)';
+          card.style.boxShadow = 'none';
+        });
+      }
 
       // Click to show recipe details
       card.addEventListener('click', () => {
@@ -634,17 +642,13 @@
       }
     });
 
-    // Mobile nav toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const mainNav = document.getElementById('main-nav');
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !expanded);
-      mainNav.classList.toggle('mobile-visible');
-    });
+    // Mobile nav is handled by setupMobileNavigation() in app.js
 
-    // Parallax-Effekt für Hintergrundbild
+    // Parallax-Effekt für Hintergrundbild (nur auf Desktop)
     (() => {
+      // Kein Parallax auf Touch-Geräten (iOS Safari Performance)
+      if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
       let ticking = false;
 
       // Funktion zur Aktualisierung der Hintergrundposition
@@ -679,17 +683,15 @@
 
       // Initiale Position setzen
       updateParallax();
-      
+
       // Update Parallax wenn Theme gewechselt wird
       const themeBtn = document.getElementById('theme-toggle-btn');
       if (themeBtn) {
         themeBtn.addEventListener('click', () => {
-          setTimeout(updateParallax, 50); // Kurze Verzögerung für Theme-Wechsel
+          setTimeout(updateParallax, 50);
         });
       }
     })();
   </script>
 </body>
 </html>
-
-

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>SpareFoodCalculator — Recipes from Surplus</title>
   <meta name="description" content="Find simple, inspiring recipes made from surplus ingredients — from home-style classics to refined dishes." />
   <link rel="stylesheet" href="styles.css" />
@@ -127,16 +127,91 @@
       transform: translateY(-2px);
     }
 
-    /* Responsive */
+    /* Responsive: Tablet */
     @media (max-width: 768px) {
       .hero-text-container {
         padding: 2rem 2.5rem;
+        width: 90vw;
+        max-width: 480px;
       }
       .hero-text-container h1 {
         font-size: 2.2rem;
       }
       .hero-text-container .subtitle {
         font-size: 1rem;
+      }
+      .rahmen {
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
+
+    /* Responsive: Mobile */
+    @media (max-width: 480px) {
+      .hero-text-container {
+        padding: 1.5rem 1.25rem;
+        width: 92vw;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .hero-text-container h1 {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+      }
+      .hero-text-container .subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
+      .hero-text-container .hero-copy {
+        font-size: 0.8rem;
+      }
+      .hero-text-container .hero-links {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .hero-text-container .cta-button {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+      }
+      .rahmen {
+        display: none;
+      }
+    }
+
+    /* Extra-small phones (320px) */
+    @media (max-width: 360px) {
+      .hero-text-container h1 {
+        font-size: 1.4rem;
+      }
+      .hero-text-container .subtitle {
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    /* Landscape on small phones: hero must scroll, not overflow viewport */
+    @media (max-height: 500px) {
+      .hero-text-container {
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 88vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: 1rem 1.25rem;
+      }
+      .hero-text-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+      }
+      .hero-text-container .subtitle {
+        font-size: 0.8rem;
+        margin: 0.5rem 0 1rem;
+      }
+      .hero-text-container .hero-copy {
+        display: none;
       }
     }
   </style>
@@ -189,6 +264,8 @@
     </div>
   </div>
 
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
   <script src="i18n.js"></script>
   <script src="app.js"></script>
 
@@ -220,12 +297,13 @@
 
     // Initiale Sprache setzen
     window.addEventListener('DOMContentLoaded', () => {
-      const lang = localStorage.getItem('lang') || 'de';
+      // Verwende denselben Key wie i18n.js (sfc_lang), nicht 'lang'
+      const lang = localStorage.getItem('sfc_lang') || 'de';
       updateHeroText(lang);
 
       // Sprachenwechsel überwachen
       window.addEventListener('languageChanged', (e) => {
-        const newLang = localStorage.getItem('lang') || 'de';
+        const newLang = localStorage.getItem('sfc_lang') || 'de';
         updateHeroText(newLang);
       });
     });
@@ -235,8 +313,11 @@
       const langBtn = document.getElementById('lang-toggle-btn');
       if (langBtn && !langBtn._heroListenerAdded) {
         langBtn.addEventListener('click', () => {
-          const lang = localStorage.getItem('lang') || 'de';
-          updateHeroText(lang);
+          // Kurze Verzögerung, damit i18n.js setLang() erst den neuen Wert schreibt
+          setTimeout(() => {
+            const lang = localStorage.getItem('sfc_lang') || 'de';
+            updateHeroText(lang);
+          }, 0);
         });
         langBtn._heroListenerAdded = true;
       }
@@ -249,6 +330,10 @@
     });
 
     (() => {
+      // Parallax nur auf Desktop-Geräten mit Maus aktivieren
+      const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+      if (isTouchDevice) return;
+
       const rahmen = document.getElementById('parallax-rahmen');
       if (!rahmen) return;
 
@@ -256,11 +341,11 @@
         // Berechne Mausposition relativ zur Mitte
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
-        
+
         // Rahmen bewegt sich ENTGEGENGESETZT zur Maus (negative Werte)
         const depth = (e.clientX - centerX) * 0.02;
         const depthY = (e.clientY - centerY) * 0.02;
-        
+
         // Inverse Bewegung für Tiefeneffekt (Skalierung beibehalten)
         rahmen.style.transform = `translate(calc(-50% - ${depth}px), calc(-50% - ${depthY}px)) scale(3)`;
       });
