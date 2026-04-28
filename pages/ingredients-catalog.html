@@ -4,6 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Zutaten-Katalog — SpareFoodCalculator</title>
+  <meta name="description" content="Alle verfügbaren Zutaten nach Kategorien sortiert. Gemüse, Fleisch, Fisch, Milchprodukte und mehr.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sparefoodcalculator.com/pages/ingredients-catalog.html" />
+  <meta property="og:title" content="Zutaten-Katalog — SpareFoodCalculator" />
+  <meta property="og:description" content="Alle verfügbaren Zutaten nach Kategorien sortiert: Gemüse, Fleisch, Fisch, Milchprodukte." />
+  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparefoodcalculator.com/pages/ingredients-catalog.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Zutaten-Katalog — SpareFoodCalculator" />
+  <meta name="twitter:description" content="Alle verfügbaren Zutaten nach Kategorien sortiert: Gemüse, Fleisch, Fisch, Milchprodukte." />
+  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#ffd166" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .catalog-hero {
@@ -151,12 +165,13 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
   <header class="site-header">
     <div class="container header-inner">
       <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
-        <nav class="main-nav mobile-hidden" id="main-nav">
+        <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
           <a href="../index.html">Startseite</a>
           <a href="search.html">Generator</a>
           <a href="ingredients-catalog.html" class="active">Zutaten</a>
@@ -165,13 +180,13 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn">🌙</button>
-        <button id="lang-toggle-btn">English</button>
+        <button id="theme-toggle-btn" aria-label="Dunkel-/Hell-Modus umschalten">🌙</button>
+        <button id="lang-toggle-btn" aria-label="Sprache umschalten">English</button>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <section class="catalog-hero">
       <h1>📚 Zutaten-Katalog</h1>
       <p>Über 500 Zutaten in 15 Kategorien verfügbar</p>
@@ -192,7 +207,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <nav>
+      <nav aria-label="Footer-Navigation">
         <a href="../index.html">Startseite</a> •
         <a href="contact.html">Kontakt</a> •
         <a href="impressum.html">Impressum</a>
@@ -204,8 +219,14 @@
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
+  <script src="../data/sustainability.js"></script>
+  <script src="../js/sustainability.js"></script>
   <script src="../ingredients.js"></script>
+  <script src="../search.js"></script>
+  <script src="../recipes.js"></script>
   <script src="../app.js"></script>
+  <script src="../ui.js"></script>
+  <script src="../js/sustainability-ui.js"></script>
   <script>
     // Category icons and colors
     const categoryIcons = {

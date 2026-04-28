@@ -4,13 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Rezept-Generator — SpareFoodCalculator</title>
+  <meta name="description" content="Gib deine Zutaten ein und finde passende Rezepte. Fuzzy-Suche mit Tippfehler-Korrektur.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sparefoodcalculator.com/pages/search.html" />
+  <meta property="og:title" content="Rezept-Generator — SpareFoodCalculator" />
+  <meta property="og:description" content="Gib deine Zutaten ein und finde passende Rezepte mit Fuzzy-Suche und Tippfehler-Korrektur." />
+  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparefoodcalculator.com/pages/search.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Rezept-Generator — SpareFoodCalculator" />
+  <meta name="twitter:description" content="Gib deine Zutaten ein und finde passende Rezepte mit Fuzzy-Suche und Tippfehler-Korrektur." />
+  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#ffd166" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
     /* Hintergrund-Bild für Rezepte Generator - Hellmodus (Standard) */
     body {
       background-image: url("../images/Gemüse und Früchte.webp");
       background-size: cover;
-      background-attachment: fixed;
+      background-attachment: scroll;
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -36,10 +50,10 @@
       background-image:
         radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.7) 100%),
         url("../images/Gemüse und Früchte Dark.webp") !important;
-      background-size: cover !important;
-      background-attachment: fixed !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
+      background-size: cover, cover !important;
+      background-attachment: scroll;
+      background-position: center center, center center;
+      background-repeat: no-repeat, no-repeat !important;
     }
 
     body.dark-mode main.container {
@@ -69,12 +83,13 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
   <header class="site-header">
     <div class="container header-inner">
       <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
-        <nav class="main-nav mobile-hidden" id="main-nav">
+        <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
           <a href="../index.html" data-i18n="startseite">Startseite</a>
           <a href="search.html" data-i18n="calculator">Rezept Generator</a>
           <a href="ingredients-generator.html" data-i18n="ing_generator_title">Zutaten Generator</a>
@@ -83,13 +98,13 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn">🌙</button>
-        <button id="lang-toggle-btn">English</button>
+        <button id="theme-toggle-btn" aria-label="Dunkel-/Hell-Modus umschalten">🌙</button>
+        <button id="lang-toggle-btn" aria-label="Sprache umschalten">English</button>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <section class="generator-hero">
       <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
         <h1 data-i18n="recipe_generator_title">🍳 Rezept-Generator</h1>
@@ -102,15 +117,36 @@
     <section class="generator-input-box">
       <h2 data-i18n="my_ingredients">Meine Zutaten</h2>
       <form id="search-form" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-        <input
-          id="search-input"
-          type="text"
-          placeholder="z.B. Tomate, Salat, Öl..."
-          data-i18n-placeholder="ingredient_placeholder"
-          autocomplete="off"
-          inputmode="text"
-          style="flex: 1; min-width: 0; padding: 0.8rem; border-radius: 8px; border: 2px solid var(--color-accent-teal); font-size: 1rem;"
-        />
+        <div id="search-input-wrap" style="flex: 1; min-width: 0; position: relative;">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="z.B. Tomate, Salat, Öl..."
+            data-i18n-placeholder="ingredient_placeholder"
+            autocomplete="off"
+            inputmode="text"
+            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 2px solid var(--color-accent-teal); font-size: 1rem;"
+          />
+          <!-- Autocomplete Dropdown -->
+          <ul id="autocomplete-dropdown" role="listbox" style="
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: var(--color-background, #fff);
+            border: 2px solid var(--color-accent-teal);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 100;
+            max-height: 200px;
+            overflow-y: auto;
+          "></ul>
+        </div>
         <button
           class="btn primary"
           type="submit"
@@ -119,7 +155,21 @@
         >+ Hinzufügen</button>
       </form>
 
-      <!-- ZUTAT TAGS (grün/rot) -->
+      <!-- Did-you-mean Banner -->
+      <div id="did-you-mean-banner" style="
+        display: none;
+        background: linear-gradient(90deg, #ffe066 0%, #fff8e1 100%);
+        color: #333;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      "></div>
+
+      <!-- ZUTAT TAGS (gruen/rot) -->
       <div id="ingredients-display" class="ingredients-container"></div>
 
       <div class="veg-toggle-wrap" aria-live="polite">
@@ -148,7 +198,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <nav>
+      <nav aria-label="Footer-Navigation">
         <a href="../index.html" data-i18n="startseite">Startseite</a> •
         <a href="contact.html" data-i18n="kontakt">Kontakt</a> •
         <a href="impressum.html" data-i18n="impressum">Impressum</a>
@@ -157,9 +207,9 @@
     </div>
   </footer>
 
-  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-panel">
-      <button id="modal-close" class="modal-close">✕</button>
+      <button id="modal-close" class="modal-close" aria-label="Dialog schließen">✕</button>
       <div id="modal-content"></div>
     </div>
   </div>
@@ -167,7 +217,14 @@
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
+  <script src="../data/sustainability.js"></script>
+  <script src="../js/sustainability.js"></script>
+  <script src="../ingredients.js"></script>
+  <script src="../search.js"></script>
+  <script src="../recipes.js"></script>
   <script src="../app.js"></script>
+  <script src="../ui.js"></script>
+  <script src="../js/sustainability-ui.js"></script>
   <script>
     // Translation helper
     const t = (k, fallback) => { 
@@ -181,11 +238,20 @@
       'lamm','kalb','wild','fisch','lachs','thunfisch','kabeljau','forelle','speck','schinken','wurst'
     ];
 
-    // Check if ingredient matches
+    // Check if ingredient matches (mit Synonym-Aufloesung)
     function isIngredientMatch(userIng, recipeIng) {
       const u = userIng.toLowerCase().trim();
       const r = recipeIng.toLowerCase().trim();
-      return u === r || r.includes(u) || u.includes(r);
+      if (u === r || r.includes(u) || u.includes(r)) return true;
+
+      // Synonym-Aufloesung: alle Varianten pruefen
+      if (typeof resolveSynonyms === 'function') {
+        const uSynonyms = resolveSynonyms(u);
+        for (const syn of uSynonyms) {
+          if (syn === r || r.includes(syn) || syn.includes(r)) return true;
+        }
+      }
+      return false;
     }
 
     // Check if recipe is vegetarian
@@ -433,12 +499,239 @@
       return card;
     }
 
+    // ==================== TYPO LEARNING ====================
+
+    function loadTypoCorrections() {
+      try {
+        const stored = localStorage.getItem('sfc_typo_corrections');
+        return stored ? JSON.parse(stored) : {};
+      } catch(e) { return {}; }
+    }
+
+    function saveTypoCorrection(typo, correction) {
+      try {
+        const data = loadTypoCorrections();
+        data[typo.toLowerCase()] = correction.toLowerCase();
+        localStorage.setItem('sfc_typo_corrections', JSON.stringify(data));
+      } catch(e) { /* Private-Browsing-Mode */ }
+    }
+
+    function getLearnedCorrection(input) {
+      const data = loadTypoCorrections();
+      return data[input.toLowerCase()] || null;
+    }
+
+    // ==================== DID-YOU-MEAN UI ====================
+
+    function showDidYouMean(typedWord, suggestion) {
+      const banner = document.getElementById('did-you-mean-banner');
+      if (!banner) return;
+
+      const lang = getLang();
+      const prefix = t('did_you_mean_prefix', 'Du hast');
+      const typed = t('did_you_mean_typed', 'eingegeben');
+      const suggest = t('did_you_mean_suggest', 'meintest du');
+      const accept = t('did_you_mean_accept', 'Ja, uebernehmen');
+
+      banner.style.display = 'flex';
+      banner.innerHTML = '';
+
+      const textSpan = document.createElement('span');
+      textSpan.textContent = prefix + ' "' + typedWord + '" ' + typed + ' — ' + suggest + ' "' + suggestion + '"?';
+      banner.appendChild(textSpan);
+
+      const btn = document.createElement('button');
+      btn.textContent = accept;
+      btn.style.cssText = 'background: var(--color-accent-teal); color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; white-space: nowrap;';
+      btn.addEventListener('click', () => {
+        // Ersetze das getippte Wort durch den Vorschlag
+        const idx = userIngredients.indexOf(typedWord);
+        if (idx !== -1) {
+          userIngredients[idx] = suggestion;
+        } else {
+          // Falls durch Komma-Trennung mehrere Woerter kamen, suche flexibler
+          for (let i = 0; i < userIngredients.length; i++) {
+            if (userIngredients[i].toLowerCase() === typedWord.toLowerCase()) {
+              userIngredients[i] = suggestion;
+              break;
+            }
+          }
+        }
+        saveTypoCorrection(typedWord, suggestion);
+        banner.style.display = 'none';
+        renderIngredientsDisplay();
+        generateRecipes();
+      });
+      banner.appendChild(btn);
+    }
+
+    function hideDidYouMean() {
+      const banner = document.getElementById('did-you-mean-banner');
+      if (banner) banner.style.display = 'none';
+    }
+
+    // ==================== AUTOCOMPLETE UI ====================
+
+    let autocompleteIndex = -1;
+    let autocompleteSuggestions = [];
+    let debounceTimer = null;
+
+    const searchInput = document.getElementById('search-input');
+    const dropdown = document.getElementById('autocomplete-dropdown');
+
+    function showAutocomplete(suggestions) {
+      autocompleteSuggestions = suggestions;
+      autocompleteIndex = -1;
+      dropdown.innerHTML = '';
+
+      if (suggestions.length === 0) {
+        dropdown.style.display = 'none';
+        return;
+      }
+
+      suggestions.forEach((s, idx) => {
+        const li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.style.cssText = 'padding: 0.6rem 1rem; cursor: pointer; min-height: 44px; display: flex; align-items: center; font-size: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05);';
+
+        // Sicher rendern mit textContent (kein innerHTML)
+        li.textContent = s.text;
+
+        li.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // Verhindert blur auf dem Input
+          acceptAutocompleteSuggestion(s.text);
+        });
+
+        li.addEventListener('mouseover', () => {
+          autocompleteIndex = idx;
+          highlightAutocompleteItem();
+        });
+
+        dropdown.appendChild(li);
+      });
+
+      dropdown.style.display = 'block';
+    }
+
+    function highlightAutocompleteItem() {
+      const items = dropdown.querySelectorAll('li');
+      items.forEach((item, idx) => {
+        if (idx === autocompleteIndex) {
+          item.style.background = 'var(--color-accent-teal)';
+          item.style.color = 'white';
+        } else {
+          item.style.background = 'transparent';
+          item.style.color = 'var(--color-text-primary)';
+        }
+      });
+    }
+
+    function acceptAutocompleteSuggestion(text) {
+      // Aktuelle Eingabe: alles vor dem letzten Komma beibehalten
+      const currentVal = searchInput.value;
+      const lastComma = currentVal.lastIndexOf(',');
+      if (lastComma !== -1) {
+        searchInput.value = currentVal.substring(0, lastComma + 1) + ' ' + text;
+      } else {
+        searchInput.value = text;
+      }
+      dropdown.style.display = 'none';
+      autocompleteSuggestions = [];
+      searchInput.focus();
+    }
+
+    function hideAutocomplete() {
+      dropdown.style.display = 'none';
+      autocompleteSuggestions = [];
+      autocompleteIndex = -1;
+    }
+
+    // Input-Event: debounced Autocomplete
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        const val = searchInput.value;
+        // Letztes Wort nach Komma extrahieren
+        const parts = val.split(',');
+        const lastPart = parts[parts.length - 1].trim();
+
+        if (lastPart.length < 2) {
+          hideAutocomplete();
+          return;
+        }
+
+        // Gelernte Korrekturen pruefen
+        const learned = getLearnedCorrection(lastPart);
+        if (learned && typeof getAutocompleteSuggestions === 'function') {
+          showAutocomplete([{ text: learned, distance: 0 }]);
+          return;
+        }
+
+        if (typeof getAutocompleteSuggestions === 'function') {
+          const suggestions = getAutocompleteSuggestions(lastPart, 3);
+          showAutocomplete(suggestions);
+        }
+      }, 200);
+    });
+
+    // Keyboard-Navigation im Dropdown
+    searchInput.addEventListener('keydown', (e) => {
+      if (dropdown.style.display === 'none' || autocompleteSuggestions.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        autocompleteIndex = Math.min(autocompleteIndex + 1, autocompleteSuggestions.length - 1);
+        highlightAutocompleteItem();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        autocompleteIndex = Math.max(autocompleteIndex - 1, 0);
+        highlightAutocompleteItem();
+      } else if (e.key === 'Enter' && autocompleteIndex >= 0) {
+        e.preventDefault();
+        acceptAutocompleteSuggestion(autocompleteSuggestions[autocompleteIndex].text);
+      } else if (e.key === 'Escape') {
+        hideAutocomplete();
+      }
+    });
+
+    // Klick ausserhalb schliesst Dropdown
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#search-input-wrap')) {
+        hideAutocomplete();
+      }
+    });
+
+    // ==================== EVENT LISTENERS ====================
+
     // Event listeners
     document.getElementById('search-form').addEventListener('submit', (e) => {
       e.preventDefault();
+      hideAutocomplete();
       const input = document.getElementById('search-input');
-      const newIngredients = input.value.trim().split(',').map(s => s.trim()).filter(Boolean);
-      
+      const rawIngredients = input.value.trim().split(',').map(s => s.trim()).filter(Boolean);
+
+      // Did-you-mean Pruefung fuer jede neue Zutat
+      hideDidYouMean();
+      const newIngredients = [];
+      rawIngredients.forEach(ing => {
+        // Gelernte Korrektur automatisch anwenden
+        const learned = getLearnedCorrection(ing);
+        if (learned) {
+          newIngredients.push(learned);
+          return;
+        }
+
+        newIngredients.push(ing);
+
+        // Did-you-mean pruefen
+        if (typeof findDidYouMean === 'function') {
+          const dym = findDidYouMean(ing);
+          if (dym) {
+            showDidYouMean(ing, dym.suggestion);
+          }
+        }
+      });
+
       newIngredients.forEach(ing => {
         if (!userIngredients.includes(ing)) userIngredients.push(ing);
       });

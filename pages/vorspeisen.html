@@ -4,52 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Vorspeisen — SpareFoodCalculator</title>
+  <meta name="description" content="Kreative Vorspeisen und kleine Gerichte aus Resten. Bruschetta, Suppen, Dips.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sparefoodcalculator.com/pages/vorspeisen.html">
+  <meta property="og:title" content="Vorspeisen — SpareFoodCalculator">
+  <meta property="og:description" content="Kreative Vorspeisen und kleine Gerichte aus Resten. Bruschetta, Dips und mehr.">
+  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sparefoodcalculator.com/pages/vorspeisen.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vorspeisen — SpareFoodCalculator">
+  <meta name="twitter:description" content="Kreative Vorspeisen und kleine Gerichte aus Resten. Bruschetta, Dips und mehr.">
+  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffd166">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
-      <div class="nav-wrap">
-        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
-        <nav class="main-nav mobile-hidden" id="main-nav">
-          <button id="categories-btn" class="nav-btn" data-i18n="kategorien">Kategorien</button>
-          <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="calculator">Rezept-Generator</a>
-          <a href="contact.html" data-i18n="kontakt">Kontakt</a>
-          <a href="impressum.html" data-i18n="impressum">Impressum</a>
-        </nav>
-      </div>
-      <div class="theme-lang-controls">
-        <button id="theme-toggle-btn">🌙</button>
-        <button id="lang-toggle-btn">English</button>
-      </div>
-    </div>
-  </header>
-  <main class="container">
-    <section class="category-intro">
-      <h2 data-i18n="vorspeisen_rezepte">Vorspeisen</h2>
-      <p>Entdecke leckere Vorspeisen-Rezepte.</p>
-    </section>
-    <section id="category-recipes" class="recipes-grid"></section>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <nav><a href="../index.html">Startseite</a> • <a href="contact.html">Kontakt</a></nav>
-      <p>© 2025 Kilian Ronacher</p>
-    </div>
-  </footer>
-  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
-    <div class="modal-panel">
-      <button id="modal-close" class="modal-close">✕</button>
-      <div id="modal-content"></div>
-    </div>
-  </div>
-  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
-
-  <script src="../i18n.js"></script>
-  <script src="../app.js"></script>
-  <script>document.addEventListener('DOMContentLoaded', () => { loadCategoryRecipes('vorspeisen'); });</script>
+<body data-category="vorspeisen">
+  <script src="../category-template.js"></script>
 </body>
 </html>
-

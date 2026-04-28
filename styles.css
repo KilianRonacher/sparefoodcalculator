@@ -1059,6 +1059,7 @@ body.dark-mode .all-pages .page-list li {
     top: 0;
     right: 0;
     height: 100vh;
+    height: 100dvh;
     width: 280px;
     max-width: 80vw;
     background: linear-gradient(180deg, var(--color-accent-teal), var(--color-accent-gold));
@@ -1185,6 +1186,7 @@ body.dark-mode .all-pages .page-list li {
   /* Modal auf Mobile */
   .modal-panel {
     max-height: 90vh;
+    max-height: 90dvh;
     overflow-y: auto;
     border-radius: 12px 12px 0 0;
     position: fixed;
@@ -1342,6 +1344,45 @@ body.dark-mode .all-pages .page-list li {
   main.container {
     word-break: break-word;
     overflow-wrap: break-word;
+  }
+
+  /* iOS Auto-Zoom verhindern: Alle Inputs brauchen min 16px font-size */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Touch-Zielgröße: min 44x44px für alle interaktiven Elemente */
+  a, button, [role="button"],
+  input[type="checkbox"], input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Checkboxen und Radio-Buttons visuell vergrößern */
+  input[type="checkbox"], input[type="radio"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Horizontales Scrollen global verhindern */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Tabellen responsive machen */
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* Ingredient tags: mindestens 44px Touch-Target */
+  .ing-block,
+  .ing-suggestion-block,
+  .ing-selected-tag,
+  .suggestion-tag {
+    min-height: 44px;
   }
 }
 
@@ -2271,4 +2312,286 @@ main.container h3 {
   .site-header {
     padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
   }
+}
+
+/* ========================================
+ * Reduced motion: disable animations for vestibular issues
+ * ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+ * Skip-to-content link for keyboard / screenreader
+ * ======================================== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-accent-teal);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+/* ========================================
+ * Sustainability Panel (Rezept-Modal)
+ * ======================================== */
+.sustainability-panel {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(78, 205, 196, 0.15));
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  border-radius: 10px;
+}
+
+body.dark-mode .sustainability-panel {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(78, 205, 196, 0.12));
+  border-color: rgba(78, 205, 196, 0.25);
+}
+
+.sustainability-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.sustainability-icon {
+  font-size: 1.2rem;
+}
+
+.sustainability-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+}
+
+.sustainability-label {
+  font-weight: 500;
+}
+
+.sustainability-comparison {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.sustainability-cooked-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-accent-teal);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.sustainability-cooked-btn:hover {
+  background: #3dbdb5;
+}
+
+.sustainability-cooked-btn:disabled,
+.sustainability-cooked-done {
+  background: #8ed8d3;
+  cursor: default;
+  opacity: 0.7;
+}
+
+body.dark-mode .sustainability-cooked-btn {
+  background: var(--color-accent-teal);
+}
+
+body.dark-mode .sustainability-cooked-btn:disabled,
+body.dark-mode .sustainability-cooked-done {
+  background: rgba(78, 205, 196, 0.4);
+}
+
+/* ========================================
+ * Sustainability Counter (Footer)
+ * ======================================== */
+.sustainability-counter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.06), rgba(255, 209, 102, 0.06));
+  border-top: 1px solid rgba(78, 205, 196, 0.2);
+  border-bottom: 1px solid rgba(78, 205, 196, 0.2);
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+body.dark-mode .sustainability-counter {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.04), rgba(255, 209, 102, 0.04));
+  border-top-color: rgba(78, 205, 196, 0.15);
+  border-bottom-color: rgba(78, 205, 196, 0.15);
+}
+
+.sustainability-counter-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.sustainability-counter-icon {
+  font-size: 1.1rem;
+}
+
+.sustainability-counter-label {
+  font-weight: 600;
+  margin-right: 0.2rem;
+}
+
+.sustainability-counter-value {
+  font-weight: 500;
+}
+
+.sustainability-counter-sep {
+  color: var(--color-text-muted);
+  margin: 0 0.15rem;
+}
+
+.sustainability-reset-btn {
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.sustainability-reset-btn:hover {
+  border-color: var(--color-accent-red);
+  color: var(--color-accent-red);
+}
+
+@media (max-width: 560px) {
+  .sustainability-counter {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.78rem;
+    gap: 0.3rem;
+  }
+  .sustainability-counter-content {
+    gap: 0.3rem;
+  }
+  .sustainability-panel {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Sustainability v2: Quellen-Icons */
+.sustainability-source-icon {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #888;
+  margin-left: 4px;
+  position: relative;
+  vertical-align: super;
+}
+.sustainability-source-icon:hover {
+  color: #4a7c59;
+}
+.sustainability-source-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: normal;
+  width: 260px;
+  z-index: 100;
+  line-height: 1.3;
+  pointer-events: none;
+}
+.sustainability-source-tooltip-visible {
+  display: block;
+}
+.sustainability-source-icon:hover .sustainability-source-tooltip {
+  display: block;
+}
+
+/* Sustainability v2: Saisonalitaet */
+.sustainability-season {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0 6px;
+  flex-wrap: wrap;
+}
+.sustainability-season-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sustainability-season-green {
+  background: #4caf50;
+}
+.sustainability-season-yellow {
+  background: #ff9800;
+}
+.sustainability-season-red {
+  background: #f44336;
+}
+.sustainability-season-label {
+  font-size: 0.8rem;
+  color: #666;
+}
+body.dark-mode .sustainability-season-label {
+  color: #aaa;
+}
+.sustainability-season-hint {
+  width: 100%;
+  font-size: 0.75rem;
+  color: #e65100;
+  font-style: italic;
+  padding-left: 16px;
+}
+body.dark-mode .sustainability-season-hint {
+  color: #ffab40;
+}
+
+/* Sustainability v2: Keine-Daten-Hinweis */
+.sustainability-no-data {
+  font-size: 0.75rem;
+  color: #999;
+  font-style: italic;
+  padding: 4px 0;
+}
+body.dark-mode .sustainability-no-data {
+  color: #777;
 }

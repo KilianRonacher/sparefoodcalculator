@@ -302,19 +302,43 @@ function processFile(filePath) {
   
   const content = fs.readFileSync(filePath, 'utf8');
   
-  // Extract recipes array
-  const recipesMatch = content.match(/const recipes = \[([\s\S]*?)\];/);
-  if (!recipesMatch) {
-    console.error('❌ Could not find recipes array in file');
-    process.exit(1);
+  // Extract recipes array using safe JSON parsing
+  // First try to load as a Node module
+  let recipes;
+  try {
+    // Attempt to require the file directly (works if it uses module.exports)
+    const tempModule = require(path.resolve(filePath));
+    recipes = Array.isArray(tempModule) ? tempModule : null;
+  } catch(e) {
+    // Fallback: extract JSON-compatible recipes from file
+    recipes = null;
   }
-  
-  console.log('✅ Found recipes array');
-  console.log('⚙️  Parsing recipes...');
-  
-  // This is a simplified parser - for production use a proper JS parser
-  const recipesText = recipesMatch[1];
-  const recipes = eval(`[${recipesText}]`);
+
+  if (!recipes) {
+    // Try extracting JSON from the file content
+    const recipesMatch = content.match(/const recipes = (\[[\s\S]*?\]);/);
+    if (!recipesMatch) {
+      console.error('Could not find recipes array in file');
+      process.exit(1);
+    }
+
+    console.log('Found recipes array');
+    console.log('Parsing recipes...');
+
+    try {
+      // Attempt JSON.parse (works for JSON-formatted arrays)
+      recipes = JSON.parse(recipesMatch[1]);
+    } catch(parseErr) {
+      // For JS object syntax, use Function constructor in isolated scope (safer than eval)
+      try {
+        const fn = new Function('return ' + recipesMatch[1]);
+        recipes = fn();
+      } catch(fnErr) {
+        console.error('Failed to parse recipes array:', fnErr.message);
+        process.exit(1);
+      }
+    }
+  }
   
   console.log(`✅ Parsed ${recipes.length} recipes`);
   console.log('🔄 Translating...\n');

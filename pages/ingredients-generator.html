@@ -4,13 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Zutaten-Generator — SpareFoodCalculator</title>
+  <meta name="description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge. Mit intelligenter Zutaten-Empfehlung.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sparefoodcalculator.com/pages/ingredients-generator.html" />
+  <meta property="og:title" content="Zutaten-Generator — SpareFoodCalculator" />
+  <meta property="og:description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge mit intelligenter Empfehlung." />
+  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparefoodcalculator.com/pages/ingredients-generator.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Zutaten-Generator — SpareFoodCalculator" />
+  <meta name="twitter:description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge mit intelligenter Empfehlung." />
+  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#ffd166" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
     /* Hintergrund-Bild für Zutaten Generator - Hellmodus (Standard) */
     body {
       background-image: url("../images/Gemüse und Früchte.webp");
       background-size: cover;
-      background-attachment: fixed;
+      background-attachment: scroll;
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -37,7 +51,7 @@
         radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.7) 100%),
         url("../images/Gemüse und Früchte Dark.webp") !important;
       background-size: cover !important;
-      background-attachment: fixed !important;
+      background-attachment: scroll;
       background-position: center !important;
       background-repeat: no-repeat !important;
     }
@@ -69,12 +83,13 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
   <header class="site-header">
     <div class="container header-inner">
       <h1 class="logo"><a href="../index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
-        <nav class="main-nav mobile-hidden" id="main-nav">
+        <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
           <a href="../index.html" data-i18n="startseite">Startseite</a>
           <a href="search.html" data-i18n="calculator">Rezept Generator</a>
           <a href="ingredients-generator.html" data-i18n="ing_generator_title">Zutaten Generator</a>
@@ -83,13 +98,13 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="theme-toggle-btn">🌙</button>
-        <button id="lang-toggle-btn">English</button>
+        <button id="theme-toggle-btn" aria-label="Dunkel-/Hell-Modus umschalten">🌙</button>
+        <button id="lang-toggle-btn" aria-label="Sprache umschalten">English</button>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <section class="generator-hero">
       <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
         <h1 data-i18n="ing_generator_title">🥗 Zutaten-Generator</h1>
@@ -164,7 +179,14 @@
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="../i18n.js"></script>
+  <script src="../data/sustainability.js"></script>
+  <script src="../js/sustainability.js"></script>
+  <script src="../ingredients.js"></script>
+  <script src="../search.js"></script>
+  <script src="../recipes.js"></script>
   <script src="../app.js"></script>
+  <script src="../ui.js"></script>
+  <script src="../js/sustainability-ui.js"></script>
   <script>
     // Safety fallbacks if functions not defined
     if (typeof translateIngredient !== 'function') {
@@ -216,7 +238,7 @@
       'getreide': ['reis', 'pasta', 'nudeln', 'spaghetti', 'penne', 'fusilli', 'ravioli', 'quinoa', 'couscous', 'bulgur', 'hafer', 'haferflocken', 'risottoreis', 'spätzle', 'grieß'],
       'mehl': ['mehl', 'weizenmehl', 'dinkelmehl', 'vollkornmehl'],
       'brot': ['brot', 'baguette', 'toast', 'brötchen', 'broetchen', 'paniermehl', 'strudelteig', 'lasagneplatten'],
-      'milchprodukte': ['milch', 'sahne', 'schmand', 'joghurt', 'quark/topfen', 'quark', 'topfen', 'käse', 'kase', 'parmesan', 'mozzarella', 'gouda', 'feta', 'ricotta', 'cheddar', 'roquefort käse', 'roquefort kase', 'mascarpone', 'frischkäse', 'frischkase', 'butter', 'crème fraîche', 'creme fraiche', 'gruyere', 'butterschmalz', 'emmentaler'],
+      'milchprodukte': ['milch', 'sahne', 'schmand', 'joghurt', 'quark', 'topfen', 'käse', 'kase', 'parmesan', 'mozzarella', 'gouda', 'feta', 'ricotta', 'cheddar', 'roquefort käse', 'roquefort kase', 'mascarpone', 'frischkäse', 'frischkase', 'butter', 'crème fraîche', 'creme fraiche', 'gruyere', 'butterschmalz', 'emmentaler'],
       'eier': ['ei', 'eier', 'eigelb', 'eiweiß', 'eiweis'],
       'hülsenfrüchte': ['hülsenfrüchte', 'hulsenfruchte', 'linsen', 'kichererbsen', 'bohnen', 'kidneybohnen', 'tofu'],
       'nüsse': ['nüsse', 'nusse', 'mandeln', 'walnüsse', 'walnusse', 'haselnüsse', 'haselnusse', 'cashews', 'pinienkerne', 'erdnüsse', 'erdnusse'],

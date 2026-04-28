@@ -1350,13 +1350,13 @@
   },
   {
     "id": 43,
-    "title": "Spinat-Quark/Topfen-Auflauf",
-    "title_en": "Spinach-Quark/Topfen Casserole",
+    "title": "Spinat-Quark-Auflauf",
+    "title_en": "Spinach Quark Casserole",
     "category": "hauptgericht",
     "difficulty": "mittel",
     "ingredients": [
       "spinat",
-      "quark/topfen",
+      "quark",
       "eier",
       "Käse",
       "butter",
@@ -1365,19 +1365,19 @@
     ],
     "steps": [
       "Frischen Spinat oder tiefgefrorenen auftauen und überschüssige Flüssigkeit auswringen",
-      "Quark/Topfen mit Eiern verquirlen und mit 2/3 des geriebenom Käses vermischen",
+      "Quark mit Eiern verquirlen und mit 2/3 des geriebenom Käses vermischen",
       "Spinat unterheben, mit Salz+Pfeffer+Muskat würzen",
       "Auflauf-Form mit Butter ausfetten",
-      "Spinat-Quark/Topfen-Masse einfüllen, Oberfläche glätten",
+      "Spinat-Quark-Masse einfüllen, Oberfläche glätten",
       "Restlichen Käse darauf streuen",
       "Im auf 180 Grad C vorgheizten Ofen ca. 30 Minuten backen bis goldig oben"
     ],
     "steps_en": [
       "Thaw fresh or frozen spinach and squeeze out excess liquid",
-      "Mix quark/topfen with eggs and blend with 2/3 of grated cheese",
+      "Mix quark with eggs and blend with 2/3 of grated cheese",
       "Fold in spinach, season with salt, pepper and nutmeg",
       "Grease casserole dish with butter",
-      "Pour in spinach-quark/topfen mixture, smooth surface",
+      "Pour in spinach-quark mixture, smooth surface",
       "Sprinkle remaining cheese on top",
       "Bake in oven preheated to 180 Grad C for about 30-35 minutes until golden"
     ]
@@ -10150,7 +10150,7 @@
     "category": "kuchen",
     "difficulty": "mittel",
     "ingredients": [
-      "quark/topfen",
+      "quark",
       "eier",
       "zucker",
       "butter",
@@ -10163,7 +10163,7 @@
       "Ofen auf 160 Grad C vorheizen. Springform (26 cm) buttern und mit Mehl ausstäuben.",
       "Weiche Butter mit Zucker und Vanillezucker ca. 3 Minuten schaumig schlagen bis die Masse hell wird.",
       "Eier einzeln einrühren – jedes vollständig einarbeiten bevor das nächste kommt.",
-      "Quark/Topfen, Sahne, Zitronensaft und Zitronenabrieb unterrühren bis eine glatte Masse entsteht.",
+      "Quark, Sahne, Zitronensaft und Zitronenabrieb unterrühren bis eine glatte Masse entsteht.",
       "Mehl und Backpulver darüber sieben und locker unterheben.",
       "Masse in die Form füllen, Oberfläche glattstreichen.",
       "Im vorgeheizten Ofen 60–70 Minuten backen bis die Oberfläche leicht goldbraun ist.",
@@ -10173,7 +10173,7 @@
       "Preheat oven to 160 Grad C. Butter a 26 cm springform pan and dust with flour.",
       "Beat soft butter with sugar and vanilla sugar for about 3 minutes until pale and fluffy.",
       "Add eggs one at a time, making sure each is fully incorporated before adding the next.",
-      "Stir in quark/topfen, cream, lemon juice and zest until smooth.",
+      "Stir in quark, cream, lemon juice and zest until smooth.",
       "Sift in flour and baking powder and fold in gently.",
       "Pour into the pan and smooth the surface.",
       "Bake 60–70 minutes until the surface is lightly golden.",
@@ -12217,6 +12217,994 @@
       "Pour the egg mixture evenly over the potatoes. Reduce heat to low and allow the eggs to set for about 5 minutes – either as a flat omelette or break apart gently with a spatula for a chunkier texture.",
       "Remove from heat as soon as the eggs are fully set.",
       "Plate and sprinkle generously with freshly cut chives."
+    ]
+  },
+  {
+    "id": 501,
+    "title": "Arme Ritter",
+    "title_en": "French Toast",
+    "category": "dessert",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "eier",
+      "milch",
+      "butter",
+      "zucker",
+      "zimt",
+      "vanille",
+      "salz"
+    ],
+    "steps": [
+      "Altbackenes Weißbrot oder Toastbrot (8 Scheiben) in ca. 2 cm dicke Scheiben schneiden, falls nötig.",
+      "Eier (3 Stück) mit Milch (200 ml), Zucker (2 EL), Vanillezucker (1 Päckchen) und einer Prise Salz in einem tiefen Teller gut verquirlen.",
+      "Brotscheiben einzeln in die Eiermilch legen und ca. 30 Sekunden pro Seite einweichen lassen, bis sie die Flüssigkeit aufgesogen haben. Nicht zu lange einweichen, sonst zerfallen sie.",
+      "Butter (40 g) in einer großen Pfanne bei mittlerer Hitze schmelzen.",
+      "Eingeweichte Brotscheiben portionsweise in die Pfanne legen und von jeder Seite ca. 3 Minuten goldbraun braten.",
+      "Auf Tellern anrichten und sofort mit einer Mischung aus Zucker und Zimt bestreuen.",
+      "Nach Belieben mit Kompott, Ahornsirup oder frischen Beeren servieren."
+    ],
+    "steps_en": [
+      "Cut stale white bread or toast (8 slices) into slices about 2 cm thick if needed.",
+      "Whisk eggs (3) with milk (200 ml), sugar (2 tbsp), vanilla sugar (1 packet) and a pinch of salt in a deep plate.",
+      "Soak bread slices individually in the egg mixture for about 30 seconds per side until they have absorbed the liquid. Do not soak too long or they will fall apart.",
+      "Melt butter (40 g) in a large pan over medium heat.",
+      "Fry the soaked bread slices in batches, about 3 minutes per side until golden brown.",
+      "Plate and immediately sprinkle with a mixture of sugar and cinnamon.",
+      "Serve with compote, maple syrup or fresh berries as desired."
+    ]
+  },
+  {
+    "id": 502,
+    "title": "Kartoffelpuffer",
+    "title_en": "Potato Pancakes",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "zwiebel",
+      "eier",
+      "mehl",
+      "salz",
+      "pfeffer",
+      "rapsöl"
+    ],
+    "steps": [
+      "Kartoffeln (1 kg, festkochend) schälen und auf der groben Seite einer Kastenreibe in eine Schüssel raspeln.",
+      "Zwiebel (1 große) ebenfalls fein reiben und zu den Kartoffeln geben.",
+      "Kartoffelmasse in ein sauberes Geschirrtuch geben und die Flüssigkeit kräftig auswringen. Aufgefangene Stärke am Boden der Schüssel stehen lassen.",
+      "Ausgepresste Kartoffelmasse zurück in die Schüssel geben, die abgesetzte Stärke vom Boden dazugeben.",
+      "Eier (2 Stück), Mehl (2 EL), Salz (1 TL) und Pfeffer unterrühren.",
+      "Rapsöl (ca. 1 cm hoch) in einer großen Pfanne auf mittlere bis hohe Hitze bringen.",
+      "Je 2 EL Kartoffelmasse in das heiße Öl geben, flach drücken und von jeder Seite ca. 4 Minuten goldbraun und knusprig braten.",
+      "Auf Küchenpapier abtropfen lassen und sofort servieren. Dazu passt Apfelmus oder Kräuterquark."
+    ],
+    "steps_en": [
+      "Peel potatoes (1 kg, waxy variety) and grate on the coarse side of a box grater into a bowl.",
+      "Finely grate onion (1 large) and add to the potatoes.",
+      "Place the potato mixture in a clean tea towel and squeeze out the liquid firmly. Let the starch settle at the bottom of the bowl.",
+      "Return the squeezed potato mixture to the bowl and add the settled starch from the bottom.",
+      "Stir in eggs (2), flour (2 tbsp), salt (1 tsp) and pepper.",
+      "Heat rapeseed oil (about 1 cm deep) in a large pan over medium-high heat.",
+      "Drop 2 tbsp of potato mixture into the hot oil, flatten and fry for about 4 minutes per side until golden and crispy.",
+      "Drain on kitchen paper and serve immediately. Apple sauce or herbed quark pair well."
+    ]
+  },
+  {
+    "id": 503,
+    "title": "Brokkoli-Nudelauflauf",
+    "title_en": "Broccoli Pasta Bake",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "nudeln",
+      "brokkoli",
+      "sahne",
+      "käse",
+      "butter",
+      "mehl",
+      "milch",
+      "muskat",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Ofen auf 180 Grad C Ober-/Unterhitze vorheizen.",
+      "Nudeln (300 g, z. B. Penne) in reichlich Salzwasser nach Packungsanweisung bissfest kochen. In den letzten 3 Minuten Brokkoli (400 g, in Röschen) mitkochen. Abgießen.",
+      "Für die Sauce Butter (30 g) in einem Topf schmelzen, Mehl (30 g) einrühren und 2 Minuten anschwitzen.",
+      "Milch (400 ml) und Sahne (100 ml) nach und nach zugießen und mit einem Schneebesen glatt rühren.",
+      "Sauce ca. 5 Minuten köcheln lassen bis sie eindickt. Mit Salz, Pfeffer und einer Prise Muskat abschmecken.",
+      "Die Hälfte des geriebenen Käses (insgesamt 150 g, z. B. Gouda oder Emmentaler) in die Sauce einrühren bis er geschmolzen ist.",
+      "Nudeln und Brokkoli in eine gebutterte Auflaufform geben, Sauce darüber verteilen und alles vermengen.",
+      "Restlichen Käse darüberstreuen. Im Ofen ca. 25 Minuten überbacken bis die Oberfläche goldbraun ist."
+    ],
+    "steps_en": [
+      "Preheat oven to 180 degrees C top and bottom heat.",
+      "Cook pasta (300 g, e.g. penne) in plenty of salted water according to packet instructions until al dente. Add broccoli (400 g, in florets) for the last 3 minutes. Drain.",
+      "For the sauce, melt butter (30 g) in a pot, stir in flour (30 g) and sweat for 2 minutes.",
+      "Gradually add milk (400 ml) and cream (100 ml), whisking until smooth.",
+      "Simmer the sauce for about 5 minutes until it thickens. Season with salt, pepper and a pinch of nutmeg.",
+      "Stir half the grated cheese (150 g total, e.g. Gouda or Emmental) into the sauce until melted.",
+      "Place pasta and broccoli in a buttered baking dish, pour the sauce over and mix everything together.",
+      "Scatter the remaining cheese on top. Bake for about 25 minutes until the surface is golden brown."
+    ]
+  },
+  {
+    "id": 504,
+    "title": "Nudelsalat klassisch",
+    "title_en": "Classic Pasta Salad",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "nudeln",
+      "paprika",
+      "gurke",
+      "mais",
+      "eier",
+      "essig",
+      "öl",
+      "senf",
+      "salz",
+      "pfeffer",
+      "schnittlauch"
+    ],
+    "steps": [
+      "Nudeln (500 g, z. B. Fusilli oder Spiralnudeln) in reichlich Salzwasser bissfest kochen, abgießen und mit kaltem Wasser abschrecken. Abtropfen lassen.",
+      "Eier (3 Stück) in 10 Minuten hart kochen, abschrecken, pellen und in kleine Würfel schneiden.",
+      "Paprika (1 rote) entkernen und in kleine Würfel schneiden. Gurke (1 kleine Salatgurke) ebenfalls in kleine Würfel schneiden.",
+      "Mais (1 Dose, ca. 150 g Abtropfgewicht) abtropfen lassen.",
+      "Für das Dressing: Essig (3 EL), Öl (5 EL), Senf (1 TL), Salz und Pfeffer in einer kleinen Schüssel gut verrühren.",
+      "Nudeln, Gemüse, Eier und Mais in einer großen Schüssel vermengen.",
+      "Dressing darüber geben und alles gut durchmischen.",
+      "Mindestens 30 Minuten im Kühlschrank durchziehen lassen. Vor dem Servieren mit frisch geschnittenem Schnittlauch bestreuen und nochmals abschmecken."
+    ],
+    "steps_en": [
+      "Cook pasta (500 g, e.g. fusilli or spiral pasta) in plenty of salted water until al dente, drain and rinse under cold water. Let drain.",
+      "Hard-boil eggs (3) for 10 minutes, rinse under cold water, peel and dice small.",
+      "Deseed red pepper (1) and dice small. Dice cucumber (1 small) the same way.",
+      "Drain sweetcorn (1 tin, about 150 g drained weight).",
+      "For the dressing: whisk together vinegar (3 tbsp), oil (5 tbsp), mustard (1 tsp), salt and pepper in a small bowl.",
+      "Combine pasta, vegetables, eggs and sweetcorn in a large bowl.",
+      "Pour the dressing over and mix well.",
+      "Refrigerate for at least 30 minutes to let the flavours develop. Sprinkle with freshly cut chives and adjust seasoning before serving."
+    ]
+  },
+  {
+    "id": 505,
+    "title": "Rahmspinat mit Spiegelei",
+    "title_en": "Creamed Spinach with Fried Egg",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "spinat",
+      "eier",
+      "sahne",
+      "knoblauch",
+      "butter",
+      "muskat",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Frischen Spinat (500 g) gründlich waschen und grob hacken. Bei Tiefkühlspinat (300 g) diesen vorher auftauen und ausdrücken.",
+      "Knoblauch (2 Zehen) fein hacken.",
+      "Butter (30 g) in einem weiten Topf schmelzen und den Knoblauch bei niedriger Hitze ca. 1 Minute andünsten.",
+      "Spinat zugeben und bei mittlerer Hitze zusammenfallen lassen (bei frischem Spinat ca. 3 Minuten, bei aufgetautem Tiefkühlspinat ca. 2 Minuten erwärmen).",
+      "Sahne (100 ml) zugießen und den Spinat ca. 3 Minuten köcheln lassen. Mit Salz, Pfeffer und frisch geriebener Muskatnuss kräftig abschmecken.",
+      "In einer separaten Pfanne Butter (20 g) erhitzen und Eier (4 Stück) als Spiegeleier braten, bis das Eiweiß gestockt ist, das Eigelb aber noch flüssig bleibt.",
+      "Rahmspinat auf Tellern verteilen und je ein Spiegelei daraufsetzen.",
+      "Dazu passen Salzkartoffeln oder Kartoffelpüree."
+    ],
+    "steps_en": [
+      "Wash fresh spinach (500 g) thoroughly and chop roughly. If using frozen spinach (300 g), thaw and squeeze out excess water first.",
+      "Finely chop garlic (2 cloves).",
+      "Melt butter (30 g) in a wide pot and sauté the garlic over low heat for about 1 minute.",
+      "Add spinach and let it wilt over medium heat (about 3 minutes for fresh spinach, or heat through for about 2 minutes if using thawed frozen spinach).",
+      "Pour in cream (100 ml) and simmer the spinach for about 3 minutes. Season generously with salt, pepper and freshly grated nutmeg.",
+      "In a separate pan, heat butter (20 g) and fry eggs (4) sunny side up until the whites are set but the yolks are still runny.",
+      "Divide the creamed spinach between plates and top each with a fried egg.",
+      "Boiled potatoes or mashed potatoes go well with this."
+    ]
+  },
+  {
+    "id": 506,
+    "title": "Grießschnitten",
+    "title_en": "Fried Semolina Slices",
+    "category": "dessert",
+    "difficulty": "einfach",
+    "ingredients": [
+      "grieß",
+      "milch",
+      "zucker",
+      "vanille",
+      "butter",
+      "eier",
+      "zimt",
+      "salz"
+    ],
+    "steps": [
+      "Milch (500 ml) mit Zucker (50 g), Vanillezucker (1 Päckchen) und einer Prise Salz in einem Topf zum Kochen bringen.",
+      "Grieß (120 g) unter ständigem Rühren einrieseln lassen und bei niedriger Hitze ca. 3 Minuten zu einem dicken Brei kochen. Topf vom Herd nehmen.",
+      "Den heißen Grießbrei ca. 2 cm dick auf ein mit Backpapier ausgelegtes Blech oder eine flache Form streichen und glattstreichen.",
+      "Vollständig abkühlen lassen, am besten 2 Stunden im Kühlschrank, bis die Masse fest ist.",
+      "Den festen Grießbrei in Rauten oder Rechtecke schneiden (ca. 5x5 cm).",
+      "Eier (2 Stück) in einem tiefen Teller verquirlen. Grießschnitten durch das verquirlte Ei ziehen.",
+      "Butter (50 g) in einer großen Pfanne erhitzen und die Grießschnitten von jeder Seite ca. 3 Minuten goldbraun braten.",
+      "Mit Zimt und Zucker bestreut servieren. Dazu passt Kompott oder Vanillesoße."
+    ],
+    "steps_en": [
+      "Bring milk (500 ml) with sugar (50 g), vanilla sugar (1 packet) and a pinch of salt to a boil in a pot.",
+      "Stir in semolina (120 g) in a steady stream while stirring constantly and cook over low heat for about 3 minutes until thick. Remove from heat.",
+      "Spread the hot semolina porridge about 2 cm thick onto a baking sheet lined with baking paper and smooth the surface.",
+      "Allow to cool completely, ideally 2 hours in the fridge, until the mixture is firm.",
+      "Cut the set semolina into diamonds or rectangles (about 5x5 cm).",
+      "Whisk eggs (2) in a deep plate. Dip the semolina slices through the beaten egg.",
+      "Heat butter (50 g) in a large pan and fry the semolina slices for about 3 minutes per side until golden brown.",
+      "Serve sprinkled with cinnamon and sugar. Compote or vanilla sauce pair well."
+    ]
+  },
+  {
+    "id": 507,
+    "title": "Herzhafter Brotauflauf",
+    "title_en": "Savoury Bread Bake",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "eier",
+      "milch",
+      "käse",
+      "schinken",
+      "zwiebel",
+      "butter",
+      "salz",
+      "pfeffer",
+      "muskat",
+      "schnittlauch"
+    ],
+    "steps": [
+      "Ofen auf 180 Grad C Ober-/Unterhitze vorheizen. Auflaufform mit Butter einfetten.",
+      "Altbackenes Brot (400 g) in ca. 2 cm große Würfel schneiden.",
+      "Schinken (150 g, gekochter Schinken oder Reste) in kleine Würfel schneiden. Zwiebel (1 mittelgroße) fein würfeln.",
+      "Eier (4 Stück) mit Milch (300 ml), Salz, Pfeffer und einer Prise Muskat verquirlen.",
+      "Brotwürfel, Schinken und Zwiebelwürfel in der Auflaufform verteilen und gut mischen.",
+      "Eiermilch gleichmäßig darüber gießen. Ca. 15 Minuten einweichen lassen, damit das Brot die Flüssigkeit aufnimmt.",
+      "Geriebenen Käse (150 g, z. B. Emmentaler oder Gouda) gleichmäßig darüberstreuen.",
+      "Im Ofen ca. 35 Minuten backen bis die Oberfläche goldbraun und der Auflauf durchgestockt ist. Mit Schnittlauch bestreut servieren."
+    ],
+    "steps_en": [
+      "Preheat oven to 180 degrees C top and bottom heat. Grease a baking dish with butter.",
+      "Cut stale bread (400 g) into cubes about 2 cm in size.",
+      "Dice ham (150 g, cooked ham or leftovers) small. Finely dice onion (1 medium).",
+      "Whisk eggs (4) with milk (300 ml), salt, pepper and a pinch of nutmeg.",
+      "Spread bread cubes, ham and diced onion in the baking dish and mix well.",
+      "Pour the egg mixture evenly over the top. Leave to soak for about 15 minutes so the bread absorbs the liquid.",
+      "Sprinkle grated cheese (150 g, e.g. Emmental or Gouda) evenly over the top.",
+      "Bake for about 35 minutes until the surface is golden brown and the bake is set through. Serve sprinkled with chives."
+    ]
+  },
+  {
+    "id": 508,
+    "title": "Kürbis-Risotto",
+    "title_en": "Pumpkin Risotto",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "kürbis",
+      "risottoreis",
+      "zwiebel",
+      "butter",
+      "parmesan",
+      "gemüsebrühe",
+      "weißwein",
+      "olivenöl",
+      "salz",
+      "pfeffer",
+      "salbei"
+    ],
+    "steps": [
+      "Kürbis (Hokkaido, 500 g) waschen, entkernen und in ca. 1 cm große Würfel schneiden. Hokkaido muss nicht geschält werden.",
+      "Gemüsebrühe (1 Liter) in einem Topf erhitzen und warm halten.",
+      "Zwiebel (1 mittelgroße) fein würfeln. Olivenöl (2 EL) und Butter (20 g) in einem weiten Topf erhitzen, Zwiebel darin ca. 3 Minuten glasig andünsten.",
+      "Kürbiswürfel zugeben und ca. 5 Minuten bei mittlerer Hitze mitdünsten.",
+      "Risottoreis (300 g, z. B. Arborio) zugeben und ca. 2 Minuten unter Rühren anrösten bis die Körner glasig werden.",
+      "Mit Weißwein (100 ml) ablöschen und rühren bis der Wein aufgesogen ist.",
+      "Heiße Brühe schöpflöffelweise zugeben und nach jeder Zugabe rühren bis die Flüssigkeit fast vollständig aufgenommen ist. Diesen Vorgang ca. 18-20 Minuten wiederholen bis der Reis cremig und noch leicht bissfest ist.",
+      "Topf vom Herd nehmen, Butter (30 g) und geriebenen Parmesan (60 g) unterrühren. Mit Salz und Pfeffer abschmecken. Mit frischen Salbeiblättern garnieren und sofort servieren."
+    ],
+    "steps_en": [
+      "Wash pumpkin (Hokkaido, 500 g), remove seeds and cut into cubes about 1 cm in size. Hokkaido does not need peeling.",
+      "Heat vegetable stock (1 litre) in a pot and keep warm.",
+      "Finely dice onion (1 medium). Heat olive oil (2 tbsp) and butter (20 g) in a wide pot, sauté the onion for about 3 minutes until translucent.",
+      "Add the pumpkin cubes and cook for about 5 minutes over medium heat.",
+      "Add risotto rice (300 g, e.g. Arborio) and toast for about 2 minutes while stirring until the grains turn translucent.",
+      "Deglaze with white wine (100 ml) and stir until the wine is absorbed.",
+      "Add hot stock one ladle at a time, stirring after each addition until the liquid is almost fully absorbed. Repeat this process for about 18-20 minutes until the rice is creamy and still slightly firm to the bite.",
+      "Remove from heat, stir in butter (30 g) and grated Parmesan (60 g). Season with salt and pepper. Garnish with fresh sage leaves and serve immediately."
+    ]
+  },
+  {
+    "id": 509,
+    "title": "Quiche Lorraine",
+    "title_en": "Quiche Lorraine",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "mehl",
+      "butter",
+      "eier",
+      "speck",
+      "sahne",
+      "käse",
+      "zwiebel",
+      "muskat",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Mehl (200 g), kalte Butter (100 g, in Stücken), 1 Ei, eine Prise Salz und 2 EL kaltes Wasser rasch zu einem glatten Mürbeteig verkneten. In Frischhaltefolie wickeln und 30 Minuten im Kühlschrank ruhen lassen.",
+      "Ofen auf 180 Grad C Ober-/Unterhitze vorheizen.",
+      "Teig auf bemehlter Fläche rund ausrollen (ca. 28 cm Durchmesser) und in eine gefettete Quicheform oder Springform legen. Überstehenden Rand abschneiden. Boden mehrmals mit einer Gabel einstechen.",
+      "Speck (150 g, gewürfelt) in einer Pfanne ohne Fett knusprig ausbraten. Zwiebel (1 mittelgroße, fein gewürfelt) zugeben und 3 Minuten glasig dünsten. Abkühlen lassen.",
+      "Eier (3 Stück) mit Sahne (200 ml), Salz, Pfeffer und einer Prise Muskat verquirlen.",
+      "Speck-Zwiebel-Mischung gleichmäßig auf dem Teigboden verteilen.",
+      "Eiersahne darüber gießen. Geriebenen Käse (100 g, z. B. Gruyère oder Emmentaler) darüberstreuen.",
+      "Im Ofen ca. 35-40 Minuten backen bis die Füllung gestockt und die Oberfläche goldbraun ist. 10 Minuten ruhen lassen, dann servieren."
+    ],
+    "steps_en": [
+      "Quickly knead flour (200 g), cold butter (100 g, cubed), 1 egg, a pinch of salt and 2 tbsp cold water into a smooth shortcrust pastry. Wrap in cling film and chill for 30 minutes.",
+      "Preheat oven to 180 degrees C top and bottom heat.",
+      "Roll the pastry out on a floured surface to about 28 cm diameter and line a greased quiche tin or springform. Trim excess pastry. Prick the base several times with a fork.",
+      "Fry diced bacon (150 g) in a dry pan until crispy. Add finely diced onion (1 medium) and sauté for 3 minutes until translucent. Allow to cool.",
+      "Whisk eggs (3) with cream (200 ml), salt, pepper and a pinch of nutmeg.",
+      "Spread the bacon-onion mixture evenly over the pastry base.",
+      "Pour the egg cream over the top. Scatter grated cheese (100 g, e.g. Gruyère or Emmental) on top.",
+      "Bake for about 35-40 minutes until the filling is set and the surface is golden brown. Rest for 10 minutes, then serve."
+    ]
+  },
+  {
+    "id": 510,
+    "title": "Pfannkuchen klassisch",
+    "title_en": "Classic German Pancakes",
+    "category": "dessert",
+    "difficulty": "einfach",
+    "ingredients": [
+      "mehl",
+      "eier",
+      "milch",
+      "zucker",
+      "butter",
+      "salz",
+      "vanille"
+    ],
+    "steps": [
+      "Mehl (250 g) in eine große Schüssel geben. In der Mitte eine Mulde formen.",
+      "Eier (3 Stück), Milch (400 ml), Zucker (2 EL), Vanillezucker (1 Päckchen) und eine Prise Salz zugeben.",
+      "Mit einem Schneebesen von innen nach außen zu einem glatten, klumpenfreien Teig verrühren. 10 Minuten ruhen lassen.",
+      "Eine beschichtete Pfanne (24 cm) auf mittlere Hitze bringen und dünn mit Butter ausstreichen.",
+      "Eine Schöpfkelle Teig in die Pfanne geben und die Pfanne schwenken, damit der Teig den Boden gleichmäßig bedeckt.",
+      "Pfannkuchen ca. 2 Minuten backen bis die Unterseite goldbraun ist und die Oberseite nicht mehr flüssig ist. Wenden und von der anderen Seite ca. 1 Minute fertig backen.",
+      "Fertige Pfannkuchen auf einem Teller im Ofen bei 80 Grad warm halten bis alle gebacken sind.",
+      "Mit Zucker und Zimt, Nutella, Marmelade oder frischen Früchten servieren."
+    ],
+    "steps_en": [
+      "Place flour (250 g) in a large bowl. Form a well in the centre.",
+      "Add eggs (3), milk (400 ml), sugar (2 tbsp), vanilla sugar (1 packet) and a pinch of salt.",
+      "Whisk from the inside out until you have a smooth, lump-free batter. Rest for 10 minutes.",
+      "Heat a non-stick pan (24 cm) over medium heat and brush thinly with butter.",
+      "Pour one ladle of batter into the pan and swirl so the batter covers the base evenly.",
+      "Cook the pancake for about 2 minutes until the underside is golden and the top is no longer liquid. Flip and cook for about 1 minute on the other side.",
+      "Keep finished pancakes warm on a plate in the oven at 80 degrees until all are done.",
+      "Serve with sugar and cinnamon, Nutella, jam or fresh fruit."
+    ]
+  },
+  {
+    "id": 511,
+    "title": "Linseneintopf mit Würstchen",
+    "title_en": "Lentil Stew with Sausages",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "linsen",
+      "kartoffeln",
+      "karotten",
+      "sellerie",
+      "lauch",
+      "zwiebel",
+      "würstchen",
+      "essig",
+      "salz",
+      "pfeffer",
+      "lorbeer"
+    ],
+    "steps": [
+      "Linsen (250 g, braune Tellerlinsen) in einem Sieb abspülen und abtropfen lassen.",
+      "Zwiebel (1 große) fein würfeln. Karotten (2 mittelgroße) und Sellerie (100 g Knollensellerie) schälen und in kleine Würfel schneiden. Lauch (1 Stange) putzen und in Ringe schneiden.",
+      "In einem großen Topf etwas Öl erhitzen und die Zwiebelwürfel ca. 3 Minuten glasig dünsten.",
+      "Karotten und Sellerie zugeben und 3 Minuten mitdünsten.",
+      "Linsen und 1,2 Liter Wasser oder Brühe zugießen. 2 Lorbeerblätter zugeben und aufkochen.",
+      "Zugedeckt bei niedriger Hitze ca. 25 Minuten köcheln lassen.",
+      "Kartoffeln (300 g) schälen, in kleine Würfel schneiden und zusammen mit dem Lauch in den Topf geben. Weitere 15 Minuten köcheln bis Kartoffeln und Linsen weich sind.",
+      "Würstchen (4 Wiener oder Frankfurter) in Scheiben schneiden und im Eintopf 5 Minuten erwärmen. Lorbeerblätter entfernen. Mit Essig (2 EL), Salz und Pfeffer abschmecken und servieren."
+    ],
+    "steps_en": [
+      "Rinse lentils (250 g, brown plate lentils) in a sieve and drain.",
+      "Finely dice onion (1 large). Peel carrots (2 medium) and celeriac (100 g) and cut into small cubes. Clean leek (1 stalk) and slice into rings.",
+      "Heat a little oil in a large pot and sauté the diced onion for about 3 minutes until translucent.",
+      "Add carrots and celeriac and cook for 3 minutes.",
+      "Add lentils and 1.2 litres of water or stock. Add 2 bay leaves and bring to a boil.",
+      "Cover and simmer over low heat for about 25 minutes.",
+      "Peel potatoes (300 g), cut into small cubes and add to the pot along with the leek. Simmer for another 15 minutes until potatoes and lentils are tender.",
+      "Slice sausages (4 Wiener or Frankfurter) and warm in the stew for 5 minutes. Remove bay leaves. Season with vinegar (2 tbsp), salt and pepper and serve."
+    ]
+  },
+  {
+    "id": 512,
+    "title": "Ofengemüse mit Hähnchen",
+    "title_en": "Roasted Vegetables with Chicken",
+    "category": "haendl",
+    "difficulty": "einfach",
+    "ingredients": [
+      "hähnchenbrust",
+      "paprika",
+      "zucchini",
+      "zwiebel",
+      "knoblauch",
+      "olivenöl",
+      "oregano",
+      "zitronensaft",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Ofen auf 200 Grad C Ober-/Unterhitze vorheizen.",
+      "Hähnchenbrust (400 g) in mundgerechte Stücke schneiden.",
+      "Paprika (2, rot und gelb) entkernen und in breite Streifen schneiden. Zucchini (1 mittelgroße) in Halbmonde schneiden. Zwiebel (1 große) in Achtel teilen. Knoblauch (3 Zehen) ungeschält leicht andrücken.",
+      "Olivenöl (4 EL), Zitronensaft (2 EL), Oregano (1 TL, getrocknet), Salz und Pfeffer in einer Schüssel verrühren.",
+      "Hähnchen und Gemüse auf ein mit Backpapier belegtes Blech geben, die Marinade darüber verteilen und alles gut vermengen. In einer Lage ausbreiten.",
+      "Im Ofen ca. 25-30 Minuten backen bis das Hähnchen durchgegart und das Gemüse an den Rändern leicht gebräunt ist. Nach 15 Minuten einmal wenden.",
+      "Direkt vom Blech servieren. Dazu passt Reis, Fladenbrot oder ein Klecks Joghurt."
+    ],
+    "steps_en": [
+      "Preheat oven to 200 degrees C top and bottom heat.",
+      "Cut chicken breast (400 g) into bite-sized pieces.",
+      "Deseed peppers (2, red and yellow) and cut into broad strips. Cut courgette (1 medium) into half-moons. Cut onion (1 large) into eighths. Lightly crush garlic cloves (3) unpeeled.",
+      "Mix olive oil (4 tbsp), lemon juice (2 tbsp), oregano (1 tsp, dried), salt and pepper in a bowl.",
+      "Place chicken and vegetables on a baking sheet lined with baking paper, pour the marinade over and mix well. Spread in a single layer.",
+      "Bake for about 25-30 minutes until the chicken is cooked through and the vegetables are lightly browned at the edges. Turn once after 15 minutes.",
+      "Serve straight from the baking sheet. Goes well with rice, flatbread or a dollop of yoghurt."
+    ]
+  },
+  {
+    "id": 513,
+    "title": "Kartoffelsuppe mit Würstchen",
+    "title_en": "Potato Soup with Sausages",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "zwiebel",
+      "lauch",
+      "karotten",
+      "butter",
+      "hühnerbrühe",
+      "sahne",
+      "würstchen",
+      "muskat",
+      "salz",
+      "pfeffer",
+      "petersilie"
+    ],
+    "steps": [
+      "Kartoffeln (800 g, mehligkochend) schälen und in ca. 2 cm große Würfel schneiden.",
+      "Zwiebel (1 große) fein würfeln. Karotten (2 mittelgroße) schälen und in kleine Würfel schneiden. Lauch (1 Stange) putzen und in feine Ringe schneiden.",
+      "Butter (30 g) in einem großen Topf schmelzen und Zwiebel ca. 3 Minuten glasig dünsten.",
+      "Kartoffeln und Karotten zugeben und 2 Minuten mitdünsten.",
+      "Mit Hühnerbrühe (1 Liter) aufgießen und aufkochen. Bei mittlerer Hitze zugedeckt ca. 20 Minuten köcheln bis die Kartoffeln weich sind.",
+      "Etwa die Hälfte der Suppe mit einem Stabmixer pürieren, die andere Hälfte stückig lassen für mehr Textur.",
+      "Lauch zugeben und 5 Minuten mitköcheln. Sahne (100 ml) einrühren und mit Muskat, Salz und Pfeffer abschmecken.",
+      "Würstchen (4 Wiener) in Scheiben schneiden und in der Suppe erwärmen. Mit gehackter Petersilie bestreut servieren."
+    ],
+    "steps_en": [
+      "Peel potatoes (800 g, floury variety) and cut into cubes about 2 cm in size.",
+      "Finely dice onion (1 large). Peel carrots (2 medium) and dice small. Clean leek (1 stalk) and slice into thin rings.",
+      "Melt butter (30 g) in a large pot and sauté onion for about 3 minutes until translucent.",
+      "Add potatoes and carrots and cook for 2 minutes.",
+      "Pour in chicken stock (1 litre) and bring to a boil. Cover and simmer over medium heat for about 20 minutes until potatoes are soft.",
+      "Blend roughly half the soup with an immersion blender, leaving the other half chunky for texture.",
+      "Add leek and simmer for 5 minutes. Stir in cream (100 ml) and season with nutmeg, salt and pepper.",
+      "Slice sausages (4 Wiener) and warm in the soup. Serve sprinkled with chopped parsley."
+    ]
+  },
+  {
+    "id": 514,
+    "title": "Zucchini-Käse-Puffer",
+    "title_en": "Courgette Cheese Fritters",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "zucchini",
+      "eier",
+      "mehl",
+      "käse",
+      "knoblauch",
+      "salz",
+      "pfeffer",
+      "rapsöl"
+    ],
+    "steps": [
+      "Zucchini (2 mittelgroße, ca. 500 g) grob raspeln und in ein Sieb geben. Mit 1 TL Salz bestreuen und 10 Minuten ziehen lassen, dann kräftig ausdrücken.",
+      "Knoblauch (1 Zehe) fein hacken oder pressen.",
+      "Ausgepresste Zucchini in eine Schüssel geben. Eier (2 Stück), Mehl (3 EL), geriebenen Käse (80 g, z. B. Gouda oder Parmesan), Knoblauch, Salz und Pfeffer zugeben und gut vermengen.",
+      "Rapsöl (ca. 5 mm hoch) in einer großen Pfanne auf mittlere Hitze bringen.",
+      "Je 2 EL Masse in das heiße Öl setzen und mit dem Löffelrücken flach drücken. Von jeder Seite ca. 3-4 Minuten goldbraun braten.",
+      "Auf Küchenpapier abtropfen lassen.",
+      "Dazu passt Kräuterquark, Tsatsiki oder ein grüner Salat."
+    ],
+    "steps_en": [
+      "Coarsely grate courgettes (2 medium, about 500 g) and place in a sieve. Sprinkle with 1 tsp salt and leave for 10 minutes, then squeeze out firmly.",
+      "Finely chop or press garlic (1 clove).",
+      "Place squeezed courgette in a bowl. Add eggs (2), flour (3 tbsp), grated cheese (80 g, e.g. Gouda or Parmesan), garlic, salt and pepper and mix well.",
+      "Heat rapeseed oil (about 5 mm deep) in a large pan over medium heat.",
+      "Drop 2 tbsp of mixture into the hot oil and flatten with the back of the spoon. Fry for about 3-4 minutes per side until golden brown.",
+      "Drain on kitchen paper.",
+      "Serve with herbed quark, tzatziki or a green salad."
+    ]
+  },
+  {
+    "id": 515,
+    "title": "Käse-Schinken-Toast überbacken",
+    "title_en": "Baked Ham and Cheese Toast",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "toast",
+      "schinken",
+      "käse",
+      "eier",
+      "milch",
+      "senf",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Ofen auf 200 Grad C Ober-/Unterhitze vorheizen.",
+      "Toastbrot (8 Scheiben) dünn mit Butter bestreichen und mit je 1 TL Senf bestreichen.",
+      "Je 1 Scheibe Schinken (insgesamt 4 Scheiben, gekochter Schinken) auf 4 der Toasts legen und mit den restlichen 4 Toasts zuklappen.",
+      "Sandwiches in eine gebutterte Auflaufform legen.",
+      "Eier (2 Stück) mit Milch (100 ml), Salz und Pfeffer verquirlen und gleichmäßig über die Sandwiches gießen. 5 Minuten einziehen lassen.",
+      "Geriebenen Käse (120 g, z. B. Gouda oder Emmentaler) gleichmäßig über die Sandwiches streuen.",
+      "Im Ofen ca. 15-18 Minuten backen bis der Käse geschmolzen und goldbraun ist.",
+      "Sofort servieren. Dazu passt ein grüner Salat."
+    ],
+    "steps_en": [
+      "Preheat oven to 200 degrees C top and bottom heat.",
+      "Spread toast (8 slices) thinly with butter and spread 1 tsp mustard on each.",
+      "Place 1 slice of ham (4 slices total, cooked ham) on 4 of the toasts and close with the remaining 4 toasts.",
+      "Place sandwiches in a buttered baking dish.",
+      "Whisk eggs (2) with milk (100 ml), salt and pepper and pour evenly over the sandwiches. Leave to soak for 5 minutes.",
+      "Scatter grated cheese (120 g, e.g. Gouda or Emmental) evenly over the sandwiches.",
+      "Bake for about 15-18 minutes until the cheese is melted and golden brown.",
+      "Serve immediately. A green salad goes well with this."
+    ]
+  },
+  {
+    "id": 516,
+    "title": "Eiersalat",
+    "title_en": "Egg Salad",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "eier",
+      "joghurt",
+      "senf",
+      "schnittlauch",
+      "salz",
+      "pfeffer",
+      "paprikapulver"
+    ],
+    "steps": [
+      "Eier (8 Stück) in kochendem Wasser 10 Minuten hart kochen. Unter kaltem Wasser abschrecken und vollständig abkühlen lassen.",
+      "Eier pellen und grob würfeln. In eine Schüssel geben.",
+      "Joghurt (150 g, Naturjoghurt) mit Senf (2 TL), Salz, Pfeffer und Paprikapulver (1/2 TL) verrühren.",
+      "Das Dressing über die Eier geben und vorsichtig unterheben, damit die Eistücke nicht zu stark zerfallen.",
+      "Schnittlauch (3 EL, fein geschnitten) unterheben.",
+      "Mindestens 15 Minuten im Kühlschrank durchziehen lassen.",
+      "Auf Brot, Brötchen oder als Beilage zu Pellkartoffeln servieren."
+    ],
+    "steps_en": [
+      "Hard-boil eggs (8) in boiling water for 10 minutes. Rinse under cold water and allow to cool completely.",
+      "Peel eggs and dice roughly. Place in a bowl.",
+      "Mix yoghurt (150 g, natural) with mustard (2 tsp), salt, pepper and paprika powder (1/2 tsp).",
+      "Pour the dressing over the eggs and fold in gently so the egg pieces do not break up too much.",
+      "Fold in chives (3 tbsp, finely cut).",
+      "Refrigerate for at least 15 minutes to let the flavours develop.",
+      "Serve on bread, rolls or as a side dish with jacket potatoes."
+    ]
+  },
+  {
+    "id": 517,
+    "title": "Reispfanne mit Gemüse und Ei",
+    "title_en": "Vegetable Fried Rice with Egg",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "reis",
+      "eier",
+      "karotte",
+      "erbsen",
+      "zwiebel",
+      "sojasauce",
+      "sesamöl",
+      "knoblauch",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Reis (300 g) vom Vortag verwenden oder frisch kochen und vollständig abkühlen lassen. Kalter Reis ergibt die bessere Konsistenz.",
+      "Karotten (2 Stück) schälen und in kleine Würfel schneiden. Zwiebel (1 mittelgroße) fein würfeln. Knoblauch (2 Zehen) fein hacken.",
+      "Eier (3 Stück) in einer Schüssel verquirlen und mit etwas Salz würzen.",
+      "Sesamöl (1 EL) in einem Wok oder einer großen Pfanne bei hoher Hitze erhitzen. Eier hineingeben und unter Rühren stocken lassen. Herausnehmen und beiseitestellen.",
+      "Erneut Öl (2 EL) in die Pfanne geben. Zwiebel und Knoblauch ca. 1 Minute anbraten.",
+      "Karotten und Erbsen (100 g, tiefgekühlt) zugeben und 3 Minuten mitbraten.",
+      "Den kalten Reis zugeben und bei hoher Hitze ca. 4-5 Minuten braten. Dabei regelmäßig wenden.",
+      "Sojasauce (3 EL) zugeben und gut vermengen. Rührei zurück in die Pfanne geben und unterheben. Mit Salz und Pfeffer abschmecken."
+    ],
+    "steps_en": [
+      "Use day-old rice (300 g) or cook fresh rice and let it cool completely. Cold rice gives a better texture.",
+      "Peel carrots (2) and dice small. Finely dice onion (1 medium). Finely chop garlic (2 cloves).",
+      "Whisk eggs (3) in a bowl and season with a pinch of salt.",
+      "Heat sesame oil (1 tbsp) in a wok or large pan over high heat. Pour in eggs and scramble until set. Remove and set aside.",
+      "Add more oil (2 tbsp) to the pan. Stir-fry onion and garlic for about 1 minute.",
+      "Add carrots and peas (100 g, frozen) and fry for 3 minutes.",
+      "Add the cold rice and fry over high heat for about 4-5 minutes, turning regularly.",
+      "Add soy sauce (3 tbsp) and mix well. Return scrambled egg to the pan and fold in. Season with salt and pepper."
+    ]
+  },
+  {
+    "id": 518,
+    "title": "Brotsuppe mit Knoblauch",
+    "title_en": "Garlic Bread Soup",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "brot",
+      "knoblauch",
+      "zwiebel",
+      "gemüsebrühe",
+      "eier",
+      "olivenöl",
+      "paprikapulver",
+      "salz",
+      "pfeffer",
+      "petersilie"
+    ],
+    "steps": [
+      "Altbackenes Brot (250 g) in ca. 2 cm große Würfel schneiden.",
+      "Olivenöl (3 EL) in einem Topf erhitzen. Zwiebel (1 große, fein gewürfelt) und Knoblauch (4 Zehen, in Scheiben) ca. 3 Minuten bei mittlerer Hitze anbraten.",
+      "Paprikapulver (1 TL) zugeben und 30 Sekunden unter Rühren mitrösten.",
+      "Brotwürfel zugeben und 2 Minuten mitrösten bis sie leicht Farbe annehmen.",
+      "Gemüsebrühe (1 Liter) angießen und aufkochen. Bei niedriger Hitze 15 Minuten köcheln lassen bis das Brot weich ist.",
+      "Die Suppe grob mit einer Gabel zerdrücken, sodass eine sämige Konsistenz entsteht. Nicht pürieren, die Suppe soll Stücke behalten.",
+      "Eier (2 Stück) verquirlen und in dünnem Strahl unter Rühren in die heiße Suppe gießen. 2 Minuten stocken lassen.",
+      "Mit Salz und Pfeffer abschmecken und mit gehackter Petersilie servieren."
+    ],
+    "steps_en": [
+      "Cut stale bread (250 g) into cubes about 2 cm in size.",
+      "Heat olive oil (3 tbsp) in a pot. Fry onion (1 large, finely diced) and garlic (4 cloves, sliced) for about 3 minutes over medium heat.",
+      "Add paprika powder (1 tsp) and toast for 30 seconds while stirring.",
+      "Add bread cubes and toast for 2 minutes until they take on some colour.",
+      "Pour in vegetable stock (1 litre) and bring to a boil. Simmer over low heat for 15 minutes until the bread is soft.",
+      "Roughly mash the soup with a fork to create a thick consistency. Do not blend, the soup should keep some chunks.",
+      "Whisk eggs (2) and pour in a thin stream into the hot soup while stirring. Let set for 2 minutes.",
+      "Season with salt and pepper and serve with chopped parsley."
+    ]
+  },
+  {
+    "id": 519,
+    "title": "Nudel-Gemüse-Auflauf",
+    "title_en": "Pasta Vegetable Bake",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "nudeln",
+      "zucchini",
+      "paprika",
+      "tomate",
+      "sahne",
+      "eier",
+      "käse",
+      "salz",
+      "pfeffer",
+      "oregano"
+    ],
+    "steps": [
+      "Ofen auf 200 Grad C Ober-/Unterhitze vorheizen.",
+      "Nudeln (300 g, z. B. Penne oder Fusilli) nach Packungsanweisung bissfest kochen. Reste vom Vortag funktionieren ebenfalls.",
+      "Zucchini (1 mittelgroße) in Halbmonde schneiden. Paprika (1 rote) in Streifen schneiden. Tomaten (2 große) grob würfeln.",
+      "Sahne (200 ml) mit Eiern (2 Stück), Salz, Pfeffer und Oregano (1 TL) verquirlen.",
+      "Nudeln und Gemüse in einer gefetteten Auflaufform vermischen.",
+      "Die Sahne-Ei-Mischung gleichmäßig darüber gießen.",
+      "Geriebenen Käse (150 g, z. B. Gouda) darüber streuen.",
+      "Im Ofen ca. 25-30 Minuten backen bis die Oberfläche goldbraun ist."
+    ],
+    "steps_en": [
+      "Preheat oven to 200 degrees C top and bottom heat.",
+      "Cook pasta (300 g, e.g. penne or fusilli) until al dente according to package instructions. Leftover pasta from the day before works too.",
+      "Cut courgette (1 medium) into half moons. Cut bell pepper (1 red) into strips. Roughly dice tomatoes (2 large).",
+      "Whisk cream (200 ml) with eggs (2), salt, pepper and oregano (1 tsp).",
+      "Mix pasta and vegetables in a greased baking dish.",
+      "Pour the cream and egg mixture evenly over the top.",
+      "Scatter grated cheese (150 g, e.g. Gouda) on top.",
+      "Bake for about 25-30 minutes until the surface is golden brown."
+    ]
+  },
+  {
+    "id": 520,
+    "title": "Kartoffel-Schinken-Gratin",
+    "title_en": "Potato and Ham Gratin",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "kartoffeln",
+      "schinken",
+      "sahne",
+      "käse",
+      "zwiebel",
+      "muskat",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Ofen auf 180 Grad C Ober-/Unterhitze vorheizen. Eine Auflaufform mit Butter einfetten.",
+      "Kartoffeln (800 g, festkochend) schälen und in ca. 3 mm dünne Scheiben schneiden. Gekochte Restkartoffeln vom Vortag in Scheiben schneiden.",
+      "Schinken (150 g, gekochter Schinken) in Streifen schneiden. Zwiebel (1 mittelgroße) in feine Ringe schneiden.",
+      "Sahne (300 ml) mit Muskat (1 Prise), Salz und Pfeffer verrühren.",
+      "Kartoffelscheiben, Schinken und Zwiebelringe abwechselnd in die Form schichten.",
+      "Die gewürzte Sahne gleichmäßig darüber gießen.",
+      "Geriebenen Käse (120 g, z. B. Emmentaler) darüber streuen.",
+      "Im Ofen ca. 45-50 Minuten backen bis die Kartoffeln gar und die Oberfläche goldbraun ist. Bei vorgekochten Kartoffeln reichen 25-30 Minuten."
+    ],
+    "steps_en": [
+      "Preheat oven to 180 degrees C top and bottom heat. Grease a baking dish with butter.",
+      "Peel potatoes (800 g, waxy) and cut into slices about 3 mm thin. If using leftover cooked potatoes, simply slice them.",
+      "Cut ham (150 g, cooked ham) into strips. Cut onion (1 medium) into thin rings.",
+      "Mix cream (300 ml) with nutmeg (1 pinch), salt and pepper.",
+      "Layer potato slices, ham and onion rings alternately in the dish.",
+      "Pour the seasoned cream evenly over the top.",
+      "Scatter grated cheese (120 g, e.g. Emmental) on top.",
+      "Bake for about 45-50 minutes until the potatoes are cooked through and the top is golden brown. With pre-cooked potatoes, 25-30 minutes is enough."
+    ]
+  },
+  {
+    "id": 521,
+    "title": "Linsen-Karotten-Eintopf",
+    "title_en": "Lentil and Carrot Stew",
+    "category": "suppen",
+    "difficulty": "einfach",
+    "ingredients": [
+      "linsen",
+      "karotte",
+      "zwiebel",
+      "knoblauch",
+      "gemüsebrühe",
+      "tomatenmark",
+      "kreuzkümmel",
+      "salz",
+      "pfeffer",
+      "olivenöl"
+    ],
+    "steps": [
+      "Rote Linsen (200 g) in einem Sieb unter fließendem Wasser abspülen bis das Wasser klar ist.",
+      "Zwiebel (1 große) und Knoblauch (2 Zehen) fein würfeln. Karotten (3 mittelgroße) schälen und in kleine Würfel schneiden.",
+      "Olivenöl (2 EL) in einem großen Topf erhitzen. Zwiebel und Knoblauch ca. 2 Minuten glasig dünsten.",
+      "Karotten zugeben und 3 Minuten mitdünsten. Tomatenmark (2 EL) und Kreuzkümmel (1 TL) einrühren und 1 Minute rösten.",
+      "Linsen und Gemüsebrühe (800 ml) zugeben. Aufkochen und bei mittlerer Hitze ca. 20 Minuten köcheln lassen bis Linsen und Karotten weich sind.",
+      "Nach Wunsch einen Teil der Suppe mit dem Stabmixer pürieren oder komplett stückig lassen.",
+      "Mit Salz und Pfeffer abschmecken. Ein Spritzer Zitronensaft passt gut dazu.",
+      "Mit einem Klecks Joghurt und frischem Brot servieren."
+    ],
+    "steps_en": [
+      "Rinse red lentils (200 g) in a sieve under running water until the water runs clear.",
+      "Finely dice onion (1 large) and garlic (2 cloves). Peel carrots (3 medium) and cut into small cubes.",
+      "Heat olive oil (2 tbsp) in a large pot. Sauté onion and garlic for about 2 minutes until translucent.",
+      "Add carrots and cook for 3 minutes. Stir in tomato paste (2 tbsp) and cumin (1 tsp) and toast for 1 minute.",
+      "Add lentils and vegetable stock (800 ml). Bring to a boil and simmer over medium heat for about 20 minutes until lentils and carrots are soft.",
+      "Optionally blend part of the soup with an immersion blender or leave it chunky.",
+      "Season with salt and pepper. A squeeze of lemon juice goes well with this.",
+      "Serve with a dollop of yoghurt and fresh bread."
+    ]
+  },
+  {
+    "id": 522,
+    "title": "Herzhafte Pfannkuchen",
+    "title_en": "Savoury Pancakes",
+    "category": "hauptgericht",
+    "difficulty": "einfach",
+    "ingredients": [
+      "mehl",
+      "eier",
+      "milch",
+      "schinken",
+      "käse",
+      "schnittlauch",
+      "butter",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Mehl (200 g), Eier (3 Stück) und Milch (300 ml) zu einem glatten Teig verrühren. Mit einer Prise Salz würzen. Den Teig 15 Minuten ruhen lassen.",
+      "Schinken (100 g, gekochter Schinken) in kleine Würfel schneiden. Käse (80 g, z. B. Gouda) grob reiben. Schnittlauch (2 EL) fein schneiden.",
+      "Schinkenwürfel und Schnittlauch unter den Teig rühren.",
+      "Etwas Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen.",
+      "Eine Kelle Teig in die Pfanne geben und durch Schwenken gleichmäßig verteilen.",
+      "Ca. 2-3 Minuten backen bis die Unterseite goldbraun ist, dann wenden und weitere 2 Minuten backen.",
+      "Geriebenen Käse auf den fertigen Pfannkuchen streuen und kurz schmelzen lassen.",
+      "Warm servieren, dazu passt ein frischer Salat oder Kräuterquark."
+    ],
+    "steps_en": [
+      "Whisk flour (200 g), eggs (3) and milk (300 ml) into a smooth batter. Season with a pinch of salt. Let the batter rest for 15 minutes.",
+      "Dice ham (100 g, cooked ham) small. Coarsely grate cheese (80 g, e.g. Gouda). Finely cut chives (2 tbsp).",
+      "Stir diced ham and chives into the batter.",
+      "Melt a little butter in a non-stick pan over medium heat.",
+      "Pour a ladle of batter into the pan and spread evenly by tilting.",
+      "Cook for about 2-3 minutes until the underside is golden brown, then flip and cook for another 2 minutes.",
+      "Scatter grated cheese on the finished pancake and let it melt briefly.",
+      "Serve warm with a fresh salad or herbed quark."
+    ]
+  },
+  {
+    "id": 523,
+    "title": "Hähnchen-Erdnuss-Pfanne",
+    "title_en": "Chicken Peanut Stir-Fry",
+    "category": "haendl",
+    "difficulty": "mittel",
+    "ingredients": [
+      "hähnchen",
+      "erdnüsse",
+      "paprika",
+      "zucchini",
+      "sojasauce",
+      "ingwer",
+      "knoblauch",
+      "sesamöl",
+      "honig",
+      "salz"
+    ],
+    "steps": [
+      "Hähnchenbrustfilet (400 g) in mundgerechte Streifen schneiden und mit Sojasauce (1 EL) marinieren.",
+      "Paprika (1 rote) in Streifen schneiden. Zucchini (1 kleine) in Halbmonde schneiden. Knoblauch (2 Zehen) und Ingwer (1 daumengroßes Stück) fein hacken.",
+      "Erdnüsse (50 g, ungesalzen) in einer trockenen Pfanne 2 Minuten goldbraun rösten. Herausnehmen und beiseitestellen.",
+      "Sesamöl (2 EL) in einem Wok oder einer großen Pfanne bei hoher Hitze erhitzen. Hähnchen portionsweise 4-5 Minuten scharf anbraten. Herausnehmen.",
+      "Im selben Wok Knoblauch und Ingwer 30 Sekunden anbraten. Paprika und Zucchini zugeben und 3-4 Minuten bei hoher Hitze braten.",
+      "Hähnchen zurückgeben. Sojasauce (2 EL) und Honig (1 EL) zugeben und alles gut vermengen.",
+      "Geröstete Erdnüsse unterheben.",
+      "Sofort mit Reis servieren."
+    ],
+    "steps_en": [
+      "Cut chicken breast (400 g) into bite-sized strips and marinate with soy sauce (1 tbsp).",
+      "Cut bell pepper (1 red) into strips. Cut courgette (1 small) into half moons. Finely chop garlic (2 cloves) and ginger (1 thumb-sized piece).",
+      "Toast peanuts (50 g, unsalted) in a dry pan for 2 minutes until golden. Remove and set aside.",
+      "Heat sesame oil (2 tbsp) in a wok or large pan over high heat. Sear chicken in batches for 4-5 minutes. Remove.",
+      "In the same wok, fry garlic and ginger for 30 seconds. Add pepper and courgette and stir-fry for 3-4 minutes over high heat.",
+      "Return chicken. Add soy sauce (2 tbsp) and honey (1 tbsp) and mix everything well.",
+      "Fold in toasted peanuts.",
+      "Serve immediately with rice."
+    ]
+  },
+  {
+    "id": 524,
+    "title": "Milchreis mit Zimt",
+    "title_en": "Rice Pudding with Cinnamon",
+    "category": "dessert",
+    "difficulty": "einfach",
+    "ingredients": [
+      "reis",
+      "milch",
+      "zucker",
+      "vanille",
+      "zimt",
+      "butter",
+      "salz"
+    ],
+    "steps": [
+      "Milch (750 ml) mit Zucker (60 g), einer Prise Salz und Vanillemark (1 Schote auskratzen oder 1 TL Vanilleextrakt) in einem Topf aufkochen.",
+      "Milchreis (200 g, Rundkornreis) einrühren und unter gelegentlichem Rühren bei niedrigster Hitze ca. 30-35 Minuten köcheln lassen.",
+      "Regelmäßig umrühren damit der Reis nicht am Boden ansetzt. Der Reis nimmt die Milch langsam auf.",
+      "Wenn der Reis weich und cremig ist, den Topf vom Herd nehmen. Butter (20 g) unterrühren.",
+      "Der Milchreis dickt beim Abkühlen noch nach. Wer ihn flüssiger mag, gibt etwas mehr Milch zu.",
+      "In Schüsseln füllen und großzügig mit Zimt und Zucker bestreuen.",
+      "Warm oder kalt servieren. Dazu passen Kompott, frische Beeren oder Apfelmus."
+    ],
+    "steps_en": [
+      "Bring milk (750 ml) with sugar (60 g), a pinch of salt and vanilla seeds (scrape 1 pod or use 1 tsp extract) to a boil in a pot.",
+      "Stir in pudding rice (200 g, short-grain rice) and simmer over the lowest heat for about 30-35 minutes, stirring occasionally.",
+      "Stir regularly so the rice does not stick to the bottom. The rice absorbs the milk slowly.",
+      "When the rice is soft and creamy, remove the pot from the heat. Stir in butter (20 g).",
+      "The rice pudding thickens further as it cools. Add a little more milk if you prefer it more liquid.",
+      "Spoon into bowls and sprinkle generously with cinnamon and sugar.",
+      "Serve warm or cold. Goes well with compote, fresh berries or apple sauce."
+    ]
+  },
+  {
+    "id": 525,
+    "title": "Griechischer Nudelauflauf",
+    "title_en": "Greek Pasta Bake",
+    "category": "hauptgericht",
+    "difficulty": "mittel",
+    "ingredients": [
+      "nudeln",
+      "hackfleisch",
+      "tomate",
+      "zwiebel",
+      "knoblauch",
+      "zimt",
+      "feta",
+      "eier",
+      "milch",
+      "käse",
+      "olivenöl",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Ofen auf 180 Grad C Ober-/Unterhitze vorheizen.",
+      "Nudeln (400 g, z. B. Penne) bissfest kochen, abgießen und beiseitestellen.",
+      "Olivenöl (2 EL) in einer Pfanne erhitzen. Zwiebel (1 große, fein gewürfelt) und Knoblauch (2 Zehen, gehackt) 2 Minuten anbraten.",
+      "Hackfleisch (400 g, Rind oder gemischt) zugeben und 5-6 Minuten krümelig braten. Fett abgießen.",
+      "Tomaten (1 Dose, 400 g, stückig) zugeben. Mit Zimt (1/2 TL), Salz und Pfeffer würzen. 10 Minuten einköcheln lassen.",
+      "Nudeln mit der Fleischsauce in einer Auflaufform vermischen. Feta (100 g) darüber bröseln.",
+      "Eier (2 Stück) mit Milch (150 ml) verquirlen und über den Auflauf gießen. Geriebenen Käse (100 g) darüber streuen.",
+      "Im Ofen 30-35 Minuten backen bis die Oberfläche goldbraun ist. 5 Minuten ruhen lassen vor dem Servieren."
+    ],
+    "steps_en": [
+      "Preheat oven to 180 degrees C top and bottom heat.",
+      "Cook pasta (400 g, e.g. penne) until al dente, drain and set aside.",
+      "Heat olive oil (2 tbsp) in a pan. Fry onion (1 large, finely diced) and garlic (2 cloves, chopped) for 2 minutes.",
+      "Add minced meat (400 g, beef or mixed) and fry for 5-6 minutes until crumbly. Drain excess fat.",
+      "Add tomatoes (1 tin, 400 g, chopped). Season with cinnamon (1/2 tsp), salt and pepper. Simmer for 10 minutes.",
+      "Mix pasta with the meat sauce in a baking dish. Crumble feta (100 g) over the top.",
+      "Whisk eggs (2) with milk (150 ml) and pour over the bake. Scatter grated cheese (100 g) on top.",
+      "Bake for 30-35 minutes until the surface is golden brown. Let rest for 5 minutes before serving."
+    ]
+  },
+  {
+    "id": 526,
+    "title": "Krautsalat mit Apfel und Walnüssen",
+    "title_en": "Coleslaw with Apple and Walnuts",
+    "category": "salat",
+    "difficulty": "einfach",
+    "ingredients": [
+      "weißkraut",
+      "apfel",
+      "walnüsse",
+      "joghurt",
+      "essig",
+      "honig",
+      "salz",
+      "pfeffer"
+    ],
+    "steps": [
+      "Weißkraut (400 g, ca. 1/2 kleiner Kopf) vierteln, den Strunk entfernen und in feine Streifen schneiden oder hobeln.",
+      "Kraut mit 1 TL Salz in einer Schüssel kräftig durchkneten bis es weicher wird und Saft austritt. Ca. 5 Minuten.",
+      "Apfel (1 großer, z. B. Elstar) vierteln, Kerngehäuse entfernen und in dünne Scheiben schneiden.",
+      "Walnüsse (40 g) grob hacken und in einer trockenen Pfanne 2 Minuten anrösten.",
+      "Für das Dressing: Joghurt (3 EL), Essig (2 EL, z. B. Apfelessig), Honig (1 TL), Salz und Pfeffer verrühren.",
+      "Kraut, Apfelscheiben und Dressing gut vermischen.",
+      "Geröstete Walnüsse darüber streuen.",
+      "Mindestens 15 Minuten durchziehen lassen. Der Salat schmeckt am nächsten Tag noch besser."
+    ],
+    "steps_en": [
+      "Quarter white cabbage (400 g, about 1/2 small head), remove the core and cut or shred into fine strips.",
+      "Massage cabbage with 1 tsp salt in a bowl until it softens and releases juice. About 5 minutes.",
+      "Quarter apple (1 large, e.g. Elstar), remove the core and cut into thin slices.",
+      "Roughly chop walnuts (40 g) and toast in a dry pan for 2 minutes.",
+      "For the dressing: mix yoghurt (3 tbsp), vinegar (2 tbsp, e.g. cider vinegar), honey (1 tsp), salt and pepper.",
+      "Mix cabbage, apple slices and dressing well.",
+      "Scatter toasted walnuts on top.",
+      "Let sit for at least 15 minutes. The salad tastes even better the next day."
     ]
   }
 ]

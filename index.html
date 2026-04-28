@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>SpareFoodCalculator — Recipes from Surplus</title>
   <meta name="description" content="Find simple, inspiring recipes made from surplus ingredients — from home-style classics to refined dishes." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sparefoodcalculator.com/index.html" />
+  <meta property="og:title" content="SpareFoodCalculator — Rezepte aus Resten" />
+  <meta property="og:description" content="Finde einfache Rezepte aus Zutaten, die du bereits hast. Von Hausmannskost bis gehobene Küche." />
+  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparefoodcalculator.com/index.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SpareFoodCalculator — Rezepte aus Resten" />
+  <meta name="twitter:description" content="Finde einfache Rezepte aus Zutaten, die du bereits hast." />
+  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffd166" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Animierte Sterne-Hintergrund */
@@ -21,7 +34,7 @@
       background-image: url("images/star-trails.Background.webp");
       background-size: 120% 120%;
       background-position: 0 0;
-      background-attachment: fixed;
+      background-attachment: scroll;
       background-repeat: no-repeat;
       overflow-x: hidden;
       animation: starsFloat 120s linear infinite;
@@ -54,7 +67,7 @@
       text-align: center;
       z-index: 5;
       pointer-events: all;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 3rem 4rem;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.35);
@@ -197,6 +210,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         max-height: 88vh;
+        max-height: 88dvh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
@@ -217,11 +231,12 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
   <!-- Rahmen-Element mit Animation -->
-  <div class="rahmen" id="parallax-rahmen"></div>
+  <div class="rahmen" id="parallax-rahmen" aria-hidden="true"></div>
 
   <!-- Zentraler Text-Container -->
-  <div class="hero-text-container">
+  <main id="main" class="hero-text-container">
     <h1 id="hero-title">Kulinarisches Recycling</h1>
     <span class="subtitle" id="hero-subtitle">SPARE FOOD CALCULATOR</span>
     <p class="hero-copy">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
@@ -230,15 +245,15 @@
       <a href="pages/contact.html" data-i18n="kontakt">Kontakt</a>
     </div>
     <a href="pages/search.html" class="cta-button">🍳 Jetzt Starten</a>
-  </div>
+  </main>
 
   <header class="site-header" style="position: relative; z-index: 10;">
     <div class="container header-inner">
       <h1 class="logo"><a href="index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
-        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menu">☰</button>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Navigationsmenü öffnen">☰</button>
         <!-- Categories button removed (kept in background for admin usage) -->
-        <nav class="main-nav mobile-hidden" id="main-nav">
+        <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
           <a href="index.html" data-i18n="startseite">Home</a>
           <a href="pages/search.html" class="cta" data-i18n="calculator">Calculator</a>
           <a href="pages/contact.html" data-i18n="kontakt">Contact</a>
@@ -246,7 +261,7 @@
         </nav>
       </div>
       <div class="theme-lang-controls">
-        <button id="lang-toggle-btn" data-i18n="lang-toggle">English</button>
+        <button id="lang-toggle-btn" data-i18n="lang-toggle" aria-label="Sprache umschalten">English</button>
       </div>
           <a href="pages/search.html" class="btn primary header-cta" data-i18n="calculator">Calculator</a>
     </div>
@@ -257,9 +272,9 @@
     </div>
   </footer>
 
-  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-panel">
-      <button id="modal-close" class="modal-close">✕</button>
+      <button id="modal-close" class="modal-close" aria-label="Dialog schließen">✕</button>
       <div id="modal-content"></div>
     </div>
   </div>
@@ -267,7 +282,14 @@
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <script src="i18n.js"></script>
+  <script src="ingredients.js"></script>
+  <script src="data/sustainability.js"></script>
+  <script src="js/sustainability.js"></script>
+  <script src="search.js"></script>
+  <script src="recipes.js"></script>
   <script src="app.js"></script>
+  <script src="ui.js"></script>
+  <script src="js/sustainability-ui.js"></script>
 
   <script>
     // I18n Translations für Startseite
