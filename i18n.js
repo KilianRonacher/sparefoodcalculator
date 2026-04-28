@@ -98,6 +98,9 @@ i18n['de'] = {
   // Accessibility labels
   'theme-toggle-aria': 'Dunkel-/Hell-Modus umschalten',
   'lang-toggle-aria': 'Sprache umschalten',
+  'nav-toggle-aria': 'Navigationsmenü öffnen',
+  'modal-close-aria': 'Dialog schließen',
+  'categories-btn-aria': 'Kategorien anzeigen',
 
   // Recipes admin
   'recipe_input_title': 'Rezept-Eingabe (Einzeln)',
@@ -145,7 +148,35 @@ i18n['de'] = {
   'more_suggestions': 'Weitere Vorschläge',
   'ingredients_colon': 'Zutaten:',
   'perfect_badge': 'Perfekt',
-  'partial_badge': 'Teilweise'
+  'partial_badge': 'Teilweise',
+
+  // Did-you-mean & Autocomplete
+  'did_you_mean_prefix': 'Du hast',
+  'did_you_mean_typed': 'eingegeben',
+  'did_you_mean_suggest': 'meintest du',
+  'did_you_mean_accept': 'Ja, übernehmen',
+
+  // Sustainability Tracking
+  'sust_panel_title': 'Mit diesem Rezept rettest du:',
+  'sust_equals': 'entspricht',
+  'sust_food_value': 'an Lebensmittelwert',
+  'sust_cooked': 'Habe ich gekocht',
+  'sust_already_cooked': 'Bereits gekocht',
+  'sust_your_balance': 'Deine Bilanz',
+  'sust_saved': 'gespart',
+  'sust_recipes_cooked': 'Rezepte gekocht',
+  'sust_reset': 'Bilanz zurücksetzen',
+  'sust_reset_confirm': 'Bilanz wirklich zurücksetzen? Alle gespeicherten Werte gehen verloren.',
+  'sust_water': 'Wasser-Fussabdruck',
+  'sust_water_showers': 'Duschen',
+  'sust_co2_km': 'km Autofahrt',
+  'sust_source': 'Quelle',
+  'sust_no_data': 'keine Daten verfügbar',
+  'sust_season_green': 'Alle Zutaten haben Saison',
+  'sust_season_yellow': 'Teilweise saisonal',
+  'sust_season_red': 'Wenige Zutaten haben Saison',
+  'sust_better_in': 'Besser im',
+  'sust_seasonal': 'Saisonalität'
 };
 
 // English language dictionary
@@ -214,6 +245,9 @@ i18n['en'] = {
   // Accessibility labels
   'theme-toggle-aria': 'Toggle dark/light mode',
   'lang-toggle-aria': 'Toggle language',
+  'nav-toggle-aria': 'Open navigation menu',
+  'modal-close-aria': 'Close dialog',
+  'categories-btn-aria': 'Show categories',
 
   // Recipes admin
   'recipe_input_title': 'Recipe Input (single)',
@@ -261,7 +295,35 @@ i18n['en'] = {
   'more_suggestions': 'More Suggestions',
   'ingredients_colon': 'Ingredients:',
   'perfect_badge': 'Perfect',
-  'partial_badge': 'Partial'
+  'partial_badge': 'Partial',
+
+  // Did-you-mean & Autocomplete
+  'did_you_mean_prefix': 'You typed',
+  'did_you_mean_typed': '',
+  'did_you_mean_suggest': 'did you mean',
+  'did_you_mean_accept': 'Yes, apply',
+
+  // Sustainability Tracking
+  'sust_panel_title': 'By cooking this recipe you save:',
+  'sust_equals': 'equals',
+  'sust_food_value': 'in food value',
+  'sust_cooked': 'I cooked this',
+  'sust_already_cooked': 'Already cooked',
+  'sust_your_balance': 'Your balance',
+  'sust_saved': 'saved',
+  'sust_recipes_cooked': 'recipes cooked',
+  'sust_reset': 'Reset balance',
+  'sust_reset_confirm': 'Really reset your balance? All saved values will be lost.',
+  'sust_water': 'Water footprint',
+  'sust_water_showers': 'showers',
+  'sust_co2_km': 'km by car',
+  'sust_source': 'Source',
+  'sust_no_data': 'no data available',
+  'sust_season_green': 'All ingredients in season',
+  'sust_season_yellow': 'Partially seasonal',
+  'sust_season_red': 'Few ingredients in season',
+  'sust_better_in': 'Better in',
+  'sust_seasonal': 'Seasonality'
 };
 
 // New category translations
@@ -398,7 +460,8 @@ const ingredientTranslations = {
   'sahne': 'cream',
   'schmand': 'sour cream',
   'joghurt': 'yogurt',
-  'quark': 'quark/topfen',
+  'quark': 'quark',
+  'topfen': 'quark',
   'käse': 'cheese',
   'kase': 'cheese',
   'parmesan': 'parmesan',
@@ -692,7 +755,40 @@ const ingredientTranslations = {
   'dorsch': 'cod',
   'seelachs': 'pollock',
   'tilapia': 'tilapia',
-  'pangasius': 'pangasius'
+  'pangasius': 'pangasius',
+  'amaretto': 'amaretto',
+  'avocado': 'avocado',
+  'bohnensprossen': 'bean sprouts',
+  'butterschmalz': 'clarified butter',
+  'chiliflocken': 'chili flakes',
+  'espresso': 'espresso',
+  'gewürzgurken': 'pickled gherkins',
+  'grieß': 'semolina',
+  'hackfleisch': 'ground meat',
+  'hefe': 'yeast',
+  'johannisbeeren': 'currants',
+  'kakaopulver': 'cocoa powder',
+  'kirschwasser': 'kirsch',
+  'lasagne': 'lasagna',
+  'lasagneplatten': 'lasagna sheets',
+  'lorbeer': 'bay leaf',
+  'löffelbiskuits': 'ladyfingers',
+  'majoran': 'marjoram',
+  'marmelade': 'jam',
+  'mohn': 'poppy seeds',
+  'muskat': 'nutmeg',
+  'natron': 'baking soda',
+  'pizza': 'pizza',
+  'rinderhack': 'ground beef',
+  'rinderleber': 'beef liver',
+  'rosinen': 'raisins',
+  'rotweinessig': 'red wine vinegar',
+  'sauerkraut': 'sauerkraut',
+  'spätzle': 'spaetzle',
+  'strudelteig': 'strudel dough',
+  'zartbitterschokolade': 'dark chocolate',
+  'zuckerschoten': 'sugar snap peas',
+  'zwetschgen': 'plums'
 };
 
 // Expose for other scripts that expect global access
@@ -747,8 +843,12 @@ function translateCategory(category, targetLang) {
  * Defaults to German if not set
  */
 function getLang() {
-  const storedLanguage = localStorage.getItem('sfc_lang');
-  return storedLanguage ? storedLanguage : 'de';
+  try {
+    var storedLanguage = localStorage.getItem('sfc_lang');
+    return storedLanguage ? storedLanguage : 'de';
+  } catch(e) {
+    return 'de';
+  }
 }
 
 /**
@@ -757,7 +857,7 @@ function getLang() {
  * Persists selection to localStorage
  */
 function setLang(targetLanguage) {
-  localStorage.setItem('sfc_lang', targetLanguage);
+  try { localStorage.setItem('sfc_lang', targetLanguage); } catch(e) { /* Private mode fallback */ }
   
   // Process all elements with translation keys (except theme-toggle-btn which is handled separately)
   const allTranslatableElements = document.querySelectorAll('[data-i18n]');
@@ -795,6 +895,24 @@ function setLang(targetLanguage) {
     element.setAttribute('alt', altText);
   });
   
+  // Update aria-labels for accessibility
+  var ariaMap = {
+    'theme-toggle-btn': 'theme-toggle-aria',
+    'theme-toggle': 'theme-toggle-aria',
+    'lang-toggle-btn': 'lang-toggle-aria',
+    'nav-toggle': 'nav-toggle-aria',
+    'modal-close': 'modal-close-aria',
+    'categories-btn': 'categories-btn-aria'
+  };
+  Object.keys(ariaMap).forEach(function(elId) {
+    var el = document.getElementById(elId);
+    if (el) {
+      var key = ariaMap[elId];
+      var label = (i18n[targetLanguage] && i18n[targetLanguage][key]) || i18n['de'][key] || '';
+      if (label) el.setAttribute('aria-label', label);
+    }
+  });
+
   // Refresh theme toggle button with correct text for current mode and language
   updateThemeButton();
   
@@ -814,7 +932,8 @@ function setLang(targetLanguage) {
  */
 window.addEventListener('DOMContentLoaded', function() {
   // Load and apply stored theme
-  const currentTheme = localStorage.getItem('theme') || 'light';
+  var currentTheme = 'light';
+  try { currentTheme = localStorage.getItem('theme') || 'light'; } catch(e) { /* Private mode */ }
   if (currentTheme === 'dark') {
     document.body.classList.add('dark-mode');
   }
@@ -841,26 +960,26 @@ window.addEventListener('DOMContentLoaded', function() {
     e.stopPropagation();
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e) { /* Private mode */ }
     updateThemeButton();
     // Update icon-btn style buttons on category pages
-        const iconThemeBtn = document.getElementById('theme-toggle');
-        if (iconThemeBtn) {
-          iconThemeBtn.textContent = isDark ? '☀️' : '🌙';
-        }
-        return false;
-      }
+    var iconThemeBtn = document.getElementById('theme-toggle');
+    if (iconThemeBtn) {
+      iconThemeBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+    return false;
+  }
 
-      const themeToggleBtn = document.getElementById('theme-toggle-btn');
-      if (themeToggleBtn) {
-        themeToggleBtn.onclick = handleThemeToggle;
-      }
+  var themeToggleBtn = document.getElementById('theme-toggle-btn');
+  if (themeToggleBtn) {
+    themeToggleBtn.onclick = handleThemeToggle;
+  }
 
-      // Kategorie-Seiten verwenden id="theme-toggle" statt "theme-toggle-btn"
-      const themeToggleIcon = document.getElementById('theme-toggle');
-      if (themeToggleIcon) {
-        const isDarkOnLoad = document.body.classList.contains('dark-mode');
-        themeToggleIcon.textContent = isDarkOnLoad ? '☀️' : '🌙';
-        themeToggleIcon.onclick = handleThemeToggle;
-      }
-    });
+  // Kategorie-Seiten verwenden id="theme-toggle" statt "theme-toggle-btn"
+  var themeToggleIcon = document.getElementById('theme-toggle');
+  if (themeToggleIcon) {
+    var isDarkOnLoad = document.body.classList.contains('dark-mode');
+    themeToggleIcon.textContent = isDarkOnLoad ? '☀️' : '🌙';
+    themeToggleIcon.onclick = handleThemeToggle;
+  }
+});

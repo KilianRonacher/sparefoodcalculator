@@ -51,7 +51,7 @@ const ingredientsDatabase = {
     'milch', 'vollmilch', 'sahne', 'schlagsahne', 'saure sahne',
     'schmand', 'crème fraîche', 'butter', 'margarine', 'butterschmalz',
     'jogurt', 'joghurt', 'griechischer joghurt', 'naturjoghurt',
-    'quark/topfen', 'magerquark', 'speisequark', 'frischkäse', 'mascarpone',
+    'quark', 'topfen', 'magerquark', 'speisequark', 'frischkäse', 'mascarpone',
     'ricotta', 'hüttenkäse', 'cottage cheese', 'mozzarella',
     'parmesan', 'parmigiano', 'gouda', 'edamer', 'emmentaler',
     'cheddar', 'gruyère', 'bergkäse', 'feta', 'schafskäse',
@@ -295,6 +295,60 @@ function getSuggestedIngredients(userIngredients, maxSuggestions = 12) {
     .map(([ingredient, score]) => ingredient);
 }
 
+/**
+ * Österreichisch ↔ Deutsch Synonym-Mapping
+ * Bidirektional: Eingabe "Erdäpfel" findet Kartoffel-Rezepte und umgekehrt.
+ */
+const ingredientSynonyms = {
+  'erdäpfel': 'kartoffeln',
+  'paradeiser': 'tomaten',
+  'topfen': 'quark',
+  'karfiol': 'blumenkohl',
+  'fisolen': 'grüne bohnen',
+  'marillen': 'aprikosen',
+  'ribisel': 'johannisbeeren',
+  'obers': 'sahne',
+  'faschiertes': 'hackfleisch',
+  'kren': 'meerrettich',
+  'germ': 'hefe',
+  'kukuruz': 'mais',
+  'palatschinken': 'pfannkuchen',
+  'powidl': 'pflaumenmus',
+  'schwammerl': 'pilze',
+  'melanzani': 'aubergine',
+  'vogerlsalat': 'feldsalat',
+  'eierschwammerl': 'pfifferlinge',
+  'hendl': 'hähnchen',
+  'beiried': 'roastbeef',
+  'schlagobers': 'schlagsahne',
+  'staubzucker': 'puderzucker'
+};
+
+/**
+ * Reverse-Lookup erstellen: deutsch → österreichisch
+ */
+const ingredientSynonymsReverse = {};
+for (const [austrian, german] of Object.entries(ingredientSynonyms)) {
+  ingredientSynonymsReverse[german] = austrian;
+}
+
+/**
+ * Löst ein Wort bidirektional auf:
+ * Gibt ein Array aller Synonyme zurück (inkl. Originalwort).
+ */
+function resolveSynonyms(word) {
+  const lower = word.toLowerCase().trim();
+  const result = [lower];
+
+  if (ingredientSynonyms[lower]) {
+    result.push(ingredientSynonyms[lower]);
+  }
+  if (ingredientSynonymsReverse[lower]) {
+    result.push(ingredientSynonymsReverse[lower]);
+  }
+  return result;
+}
+
 // Exportiere für Verwendung in anderen Scripts
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
@@ -303,6 +357,9 @@ if (typeof module !== 'undefined' && module.exports) {
     getIngredientsByCategory,
     findCategoryForIngredient,
     getIngredientCompatibility,
-    getSuggestedIngredients
+    getSuggestedIngredients,
+    ingredientSynonyms,
+    ingredientSynonymsReverse,
+    resolveSynonyms
   };
 }
