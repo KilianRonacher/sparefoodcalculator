@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "node tests/sustainability.test.js",
+    "validate:i18n": "node tools/validate-i18n.js"
+  },
   "dependencies": {
     "jsdom": "^21.1.2"
   }

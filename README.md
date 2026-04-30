@@ -47,6 +47,33 @@ Konventionen & Hinweise:
 - DB‑Seeding: `server/db.js` lädt `server/data/recipes.json` in die SQLite DB, wenn die Tabelle leer ist.
 - Wenn du das Rezept‑Shape änderst, aktualisiere `app.js` (Import/Export) und `server/db.js` (Serialisierung von `ingredients`/`steps`).
 
+## Development
+
+### Tests
+
+```powershell
+node tests/sustainability.test.js
+# or via npm:
+npm test
+```
+
+### i18n Key Validation
+
+Run before opening any PR that adds or renames translation keys in `i18n.js`:
+
+```powershell
+npm run validate:i18n
+```
+
+The script (`tools/validate-i18n.js`) scans all HTML files under the repo root and `pages/` for `data-i18n="…"` attributes and verifies every key exists in **both** `i18n['de']` and `i18n['en']`.
+
+- Exit 0 — all keys present.  
+- Exit 1 — one or more keys missing; the missing keys and their source files are printed.
+
+### Namespace conventions
+
+All identifiers exported by `ingredients.js` live under the global `Ingredients` namespace (e.g. `Ingredients.allIngredients`, `Ingredients.resolveSynonyms`). Do not access them as bare globals — the IIFE wrapper removes them from `window`.
+
 Roadmap (aktuell umgesetzt):
 - Such/Compose‑Grundgerüst: `pages/search.html` — Auswahl von Suchergebnissen, Komposition (merge ingredients, concat steps), lokale Speicherung und optionaler Server‑Import.
 - (removed) Einzelrezept‑Formular page removed.
