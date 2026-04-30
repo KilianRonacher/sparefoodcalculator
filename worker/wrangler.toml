@@ -1,0 +1,12 @@
+name = "sfc-contact"
+main = "contact-worker.js"
+compatibility_date = "2025-01-01"
+
+# Optional: Empfaenger und Absender ueber Vars setzen, sonst nehmen die
+# Defaults aus dem Worker-Code.
+# [vars]
+# RECIPIENT_EMAIL = "kilianfelbertal@gmail.com"
+# FROM_EMAIL = "SpareFoodCalculator <kontakt@sparefoodcalculator.com>"
+
+# Secrets werden NICHT hier eingetragen, sondern via:
+#   wrangler secret put RESEND_API_KEY

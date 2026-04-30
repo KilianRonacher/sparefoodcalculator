@@ -210,14 +210,12 @@ var SustainabilityUI = (function() {
     cookedBtn.addEventListener('click', function() {
       if (cookedBtn.disabled) return;
 
-      var updated = SustainabilityCalc.addToBalance(impact.co2, impact.money, impact.water);
+      SustainabilityCalc.addToBalance(impact.co2, impact.money, impact.water);
       cookedBtn.disabled = true;
       cookedBtn.classList.add('sustainability-cooked-done');
       setText(cookedBtn, '✓ ' + t('sust_already_cooked'));
 
       try { sessionStorage.setItem(cookedKey, '1'); } catch(e) {}
-
-      updateCounterDisplay();
     });
 
     panel.appendChild(cookedBtn);
@@ -225,124 +223,11 @@ var SustainabilityUI = (function() {
     return panel;
   }
 
-  // ==================== PERSOENLICHER COUNTER ====================
-
-  function initCounter() {
-    if (document.getElementById('sustainability-counter')) return;
-
-    var counter = document.createElement('div');
-    counter.id = 'sustainability-counter';
-    counter.className = 'sustainability-counter';
-
-    var content = document.createElement('div');
-    content.className = 'sustainability-counter-content';
-    content.id = 'sustainability-counter-content';
-    counter.appendChild(content);
-
-    var resetBtn = document.createElement('button');
-    resetBtn.className = 'sustainability-reset-btn';
-    resetBtn.type = 'button';
-    resetBtn.id = 'sustainability-reset-btn';
-    setText(resetBtn, t('sust_reset'));
-    resetBtn.addEventListener('click', function() {
-      var confirmMsg = t('sust_reset_confirm');
-      if (confirm(confirmMsg)) {
-        SustainabilityCalc.resetBalance();
-        try {
-          var keys = Object.keys(sessionStorage);
-          for (var i = 0; i < keys.length; i++) {
-            if (keys[i].indexOf('sfc_cooked_') === 0) {
-              sessionStorage.removeItem(keys[i]);
-            }
-          }
-        } catch(e) {}
-        updateCounterDisplay();
-      }
-    });
-    counter.appendChild(resetBtn);
-
-    var footer = document.querySelector('.site-footer');
-    if (footer) {
-      footer.parentNode.insertBefore(counter, footer);
-    } else {
-      document.body.appendChild(counter);
-    }
-
-    updateCounterDisplay();
-  }
-
-  function updateCounterDisplay() {
-    var contentEl = document.getElementById('sustainability-counter-content');
-    var resetBtn = document.getElementById('sustainability-reset-btn');
-    if (!contentEl) return;
-
-    var balance = SustainabilityCalc.getUserBalance();
-
-    while (contentEl.firstChild) {
-      contentEl.removeChild(contentEl.firstChild);
-    }
-
-    var globeSpan = document.createElement('span');
-    globeSpan.className = 'sustainability-counter-icon';
-    setText(globeSpan, '🌍');
-    contentEl.appendChild(globeSpan);
-
-    var labelSpan = document.createElement('span');
-    labelSpan.className = 'sustainability-counter-label';
-    setText(labelSpan, t('sust_your_balance') + ':');
-    contentEl.appendChild(labelSpan);
-
-    // CO2
-    var co2Span = document.createElement('span');
-    co2Span.className = 'sustainability-counter-value';
-    setText(co2Span, balance.co2_kg.toFixed(1) + ' kg CO₂ ' + t('sust_saved'));
-    contentEl.appendChild(co2Span);
-
-    var sepSpan1 = document.createElement('span');
-    sepSpan1.className = 'sustainability-counter-sep';
-    setText(sepSpan1, '·');
-    contentEl.appendChild(sepSpan1);
-
-    // Wasser
-    var waterSpan = document.createElement('span');
-    waterSpan.className = 'sustainability-counter-value';
-    setText(waterSpan, Math.round(balance.water_l || 0) + ' L 💧 ' + t('sust_saved'));
-    contentEl.appendChild(waterSpan);
-
-    var sepSpan2 = document.createElement('span');
-    sepSpan2.className = 'sustainability-counter-sep';
-    setText(sepSpan2, '·');
-    contentEl.appendChild(sepSpan2);
-
-    // Geld
-    var moneySpan = document.createElement('span');
-    moneySpan.className = 'sustainability-counter-value';
-    setText(moneySpan, balance.money_eur.toFixed(2) + ' € ' + t('sust_saved'));
-    contentEl.appendChild(moneySpan);
-
-    var sepSpan3 = document.createElement('span');
-    sepSpan3.className = 'sustainability-counter-sep';
-    setText(sepSpan3, '·');
-    contentEl.appendChild(sepSpan3);
-
-    var recipesSpan = document.createElement('span');
-    recipesSpan.className = 'sustainability-counter-value';
-    setText(recipesSpan, balance.recipes_cooked + ' ' + t('sust_recipes_cooked'));
-    contentEl.appendChild(recipesSpan);
-
-    if (resetBtn) {
-      setText(resetBtn, t('sust_reset'));
-      resetBtn.style.display = balance.recipes_cooked > 0 ? '' : 'none';
-    }
-  }
-
   // ==================== INIT ====================
 
   function init() {
-    initCounter();
-    window.addEventListener('languageChanged', function() {
-      updateCounterDisplay();
-    });
+    // Sustainability UI is consumed via createRecipeImpactPanel() on demand.
+    // Side-stats boxes on generator pages are wired separately in js/side-stats.js.
   }
 
   if (document.readyState === 'loading') {
@@ -353,7 +238,6 @@ var SustainabilityUI = (function() {
 
   return {
     createRecipeImpactPanel: createRecipeImpactPanel,
-    updateCounterDisplay: updateCounterDisplay,
     init: init
   };
 

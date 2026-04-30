@@ -31,9 +31,15 @@
     }
 
     body {
+      /* Reason: header + hero sind position:fixed → body hat sonst fast 0 Hoehe,
+         und 120% von ~250px deckt das Viewport nicht ab. min-height + cover
+         sorgen dafuer, dass der Sternenhintergrund immer den ganzen Screen fuellt.
+         Die background-color dient als Fallback, falls das WebP scheitert. */
+      min-height: 100vh;
+      background-color: #0c0a1c;
       background-image: url("images/star-trails.Background.webp");
-      background-size: 120% 120%;
-      background-position: 0 0;
+      background-size: cover;
+      background-position: center center;
       background-attachment: scroll;
       background-repeat: no-repeat;
       overflow-x: hidden;
@@ -254,10 +260,8 @@
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Navigationsmenü öffnen">☰</button>
         <!-- Categories button removed (kept in background for admin usage) -->
         <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
-          <a href="index.html" data-i18n="startseite">Home</a>
-          <a href="pages/search.html" class="cta" data-i18n="calculator">Calculator</a>
-          <a href="pages/contact.html" data-i18n="kontakt">Contact</a>
-          <a href="pages/impressum.html" data-i18n="impressum">Legal Notice</a>
+          <a href="pages/contact.html" data-i18n="kontakt">Kontakt</a>
+          <a href="pages/impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
       </div>
       <div class="theme-lang-controls">
