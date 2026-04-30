@@ -40,10 +40,7 @@
     '      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">&#9776;</button>\n' +
     '      <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">\n' +
     '        <button id="categories-btn" class="nav-btn" data-i18n="kategorien" aria-label="Kategorien anzeigen">Kategorien</button>\n' +
-    '        <a href="../index.html" data-i18n="startseite">Startseite</a>\n' +
-    '        <a href="search.html" data-i18n="calculator">Rezept-Generator</a>\n' +
     '        <a href="contact.html" data-i18n="kontakt">Kontakt</a>\n' +
-    '        <a href="ingredients-generator.html" data-i18n="zutaten_generator">Zutaten-Generator</a>\n' +
     '        <a href="impressum.html" data-i18n="impressum">Impressum</a>\n' +
     '      </nav>\n' +
     '    </div>\n' +

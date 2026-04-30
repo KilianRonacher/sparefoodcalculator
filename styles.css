@@ -2595,3 +2595,110 @@ body.dark-mode .sustainability-season-hint {
 body.dark-mode .sustainability-no-data {
   color: #777;
 }
+
+/* ==================== SIDE STATS BOXES ==================== */
+/* Geld-Box (links) und Oeko-Box (rechts) auf den beiden Generator-Seiten.
+   Drei-Spalten-Buehne; auf schmalen Screens stapeln die Seitenboxen unter
+   den Generator. Wird verwendet von pages/search.html und
+   pages/ingredients-generator.html ueber js/side-stats.js. */
+.sfc-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 880px) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.sfc-stage > main {
+  grid-column: 2;
+  margin: 2rem 0 !important;
+}
+
+.sfc-side {
+  position: sticky;
+  top: 88px;
+  padding: 1.4rem 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+  text-align: center;
+  margin-top: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+.sfc-side-money {
+  background: linear-gradient(135deg, #ffd166 0%, #ffe28a 60%, #fff2b8 100%);
+  color: #4a3500;
+}
+.sfc-side-eco {
+  background: linear-gradient(135deg, #4ecdc4 0%, #6eddb8 55%, #b9f0d6 100%);
+  color: #08362f;
+}
+.sfc-side-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.sfc-side-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.1rem 0;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+.sfc-side-value.sfc-side-secondary {
+  font-size: 1.5rem;
+  margin-top: 0.9rem;
+}
+.sfc-side-sub {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin: 0;
+}
+.sfc-side-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 1rem 0;
+}
+.sfc-side-context {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.9rem;
+  opacity: 0.9;
+}
+
+body.dark-mode .sfc-side {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+body.dark-mode .sfc-side-money {
+  background: linear-gradient(135deg, #b88820 0%, #8a6517 60%, #5e4510 100%);
+  color: #fff5d6 !important;
+}
+body.dark-mode .sfc-side-eco {
+  background: linear-gradient(135deg, #1f7a73 0%, #155f54 55%, #0d3a32 100%);
+  color: #d6f5ee !important;
+}
+body.dark-mode .sfc-side-divider {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 1100px) {
+  .sfc-stage {
+    grid-template-columns: 1fr;
+    max-width: 880px;
+  }
+  .sfc-stage > main { grid-column: 1; }
+  .sfc-side {
+    position: static;
+    margin-top: 0;
+  }
+}
+@media (max-width: 560px) {
+  .sfc-side {
+    padding: 1rem 0.9rem;
+  }
+  .sfc-side-value {
+    font-size: 1.8rem;
+  }
+}

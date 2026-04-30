@@ -45,6 +45,55 @@
       min-height: 120px;
       resize: vertical;
     }
+    /* Sichtbar fuer Screenreader, unsichtbar fuer sehende Nutzer */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    /* Honeypot — fuer Menschen unsichtbar, Bots fuellen es trotzdem aus */
+    .contact-form .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .contact-form .form-status {
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: none;
+    }
+    .contact-form .form-status.success {
+      display: block;
+      background: rgba(78, 205, 196, 0.15);
+      border: 1px solid #4ecdc4;
+      color: #1e6e68;
+    }
+    .contact-form .form-status.error {
+      display: block;
+      background: rgba(255, 107, 107, 0.12);
+      border: 1px solid #ff6b6b;
+      color: #8a2424;
+    }
+    .contact-form .form-status.sending {
+      display: block;
+      background: rgba(255, 209, 102, 0.15);
+      border: 1px solid #ffd166;
+      color: #6e5a1c;
+    }
+    body.dark-mode .contact-form .form-status.success { color: #b6f5ee; }
+    body.dark-mode .contact-form .form-status.error   { color: #ffc7c7; }
+    body.dark-mode .contact-form .form-status.sending { color: #ffe9a8; }
     body.dark-mode .contact-form input,
     body.dark-mode .contact-form textarea {
       background: #2a2a2a;
@@ -73,8 +122,6 @@
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
         <!-- Kategorien button removed (kept in background for admin usage) -->
         <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
-          <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="calculator">Calculator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
           <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
@@ -88,20 +135,40 @@
   </header>
 
   <main id="main" class="container">
-    <h2>Kontakt</h2>
-    <p>Du kannst mich per E-Mail oder Telefon erreichen.</p>
+    <h2 data-i18n="contact_heading">Kontakt</h2>
+    <p data-i18n="contact_intro">Du kannst mich per E-Mail oder Telefon erreichen.</p>
     <ul>
-      <li>E-Mail: <a href="mailto:kilianfelbertal@gmail.com">kilianfelbertal@gmail.com</a></li>
-      <li>Telefon: +43 650 6965227</li>
+      <li><span data-i18n="contact_email_label">E-Mail</span>: <a href="mailto:kilianfelbertal@gmail.com">kilianfelbertal@gmail.com</a></li>
+      <li><span data-i18n="contact_phone_label">Telefon</span>: +43 650 6965227</li>
     </ul>
 
-    <h3>Feedback / Anfragen</h3>
-    <p>Nutze das Formular oder schreibe direkt eine Mail.</p>
-    <form action="mailto:kilianfelbertal@gmail.com" method="post" enctype="text/plain" class="contact-form">
-      <input name="name" placeholder="Dein Name" type="text" autocomplete="name" inputmode="text" />
-      <input name="email" placeholder="Deine E-Mail" type="email" autocomplete="email" inputmode="email" />
-      <textarea name="message" placeholder="Nachricht"></textarea>
-      <button class="btn primary" type="submit">E-Mail senden</button>
+    <h3 data-i18n="contact_form_heading">Feedback / Anfragen</h3>
+    <p data-i18n="contact_form_intro">Schreibe uns direkt — die Nachricht geht ueber unseren Server an mich. Kein externes E-Mail-Programm noetig.</p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <label for="cf-name" class="visually-hidden" data-i18n="contact_name_label">Name</label>
+      <input id="cf-name" name="name" type="text" required maxlength="100"
+             autocomplete="name" data-i18n-placeholder="contact_name_placeholder" placeholder="Dein Name" />
+
+      <label for="cf-email" class="visually-hidden" data-i18n="contact_email_label">E-Mail</label>
+      <input id="cf-email" name="email" type="email" required maxlength="200"
+             autocomplete="email" data-i18n-placeholder="contact_email_placeholder" placeholder="Deine E-Mail" />
+
+      <label for="cf-message" class="visually-hidden" data-i18n="contact_message_label">Nachricht</label>
+      <textarea id="cf-message" name="message" required maxlength="5000"
+                data-i18n-placeholder="contact_message_placeholder" placeholder="Nachricht"></textarea>
+
+      <!-- Honeypot: invisible to humans, still submits "website" field for bot detection. -->
+      <!-- Wrapper has no aria-hidden so axe-core does not flag focusable-in-hidden-subtree. -->
+      <!-- Off-screen visual hiding lives in .hp-field rule above. -->
+      <div class="hp-field">
+        <label for="cf-website" aria-hidden="true">Website (leave empty)</label>
+        <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      </div>
+
+      <button id="cf-submit" class="btn primary" type="submit" data-i18n="contact_submit">Nachricht senden</button>
+
+      <div id="cf-status" class="form-status" role="status" aria-live="polite"></div>
     </form>
   </main>
 
@@ -136,6 +203,90 @@
   <script src="../app.js"></script>
   <script src="../ui.js"></script>
   <script src="../js/sustainability-ui.js"></script>
+
+  <script>
+    // ==================== CONTACT FORM SUBMISSION ====================
+    // Sendet das Formular an unseren Cloudflare Worker (siehe worker/README.md
+    // fuer Setup). Solange die URL noch nicht eingetragen ist, zeigt das
+    // Formular einen Hinweis an, dass der Endpoint noch konfiguriert werden muss.
+    //
+    // TODO: Nach `wrangler deploy` hier die echte URL eintragen:
+    const CONTACT_ENDPOINT = 'https://sfc-contact.REPLACE-ME.workers.dev';
+
+    (function() {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var statusEl = document.getElementById('cf-status');
+      var submitBtn = document.getElementById('cf-submit');
+
+      function t(key, fallback) {
+        try {
+          var lang = (typeof getLang === 'function') ? getLang() : 'de';
+          if (typeof i18n === 'object' && i18n[lang] && i18n[lang][key]) return i18n[lang][key];
+        } catch(e) {}
+        return fallback;
+      }
+
+      function setStatus(kind, msg) {
+        statusEl.className = 'form-status ' + kind;
+        statusEl.textContent = msg;
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Endpoint nicht konfiguriert?
+        if (CONTACT_ENDPOINT.indexOf('REPLACE-ME') !== -1) {
+          setStatus('error', t('contact_endpoint_missing',
+            'Das Kontaktformular ist noch nicht aktiviert. Bitte schreibe vorerst direkt an kilianfelbertal@gmail.com.'));
+          return;
+        }
+
+        var fd = new FormData(form);
+        var payload = {
+          name: (fd.get('name') || '').toString().trim(),
+          email: (fd.get('email') || '').toString().trim(),
+          message: (fd.get('message') || '').toString().trim(),
+          website: (fd.get('website') || '').toString() // honeypot
+        };
+
+        if (!payload.name || !payload.email || !payload.message) {
+          setStatus('error', t('contact_err_missing', 'Bitte fuelle alle Felder aus.'));
+          return;
+        }
+
+        submitBtn.disabled = true;
+        setStatus('sending', t('contact_sending', 'Nachricht wird gesendet ...'));
+
+        try {
+          var res = await fetch(CONTACT_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          var data = null;
+          try { data = await res.json(); } catch(_) {}
+
+          if (res.ok && data && data.ok) {
+            setStatus('success', t('contact_success',
+              'Danke! Deine Nachricht wurde gesendet. Ich melde mich bald zurueck.'));
+            form.reset();
+          } else {
+            var errKey = data && data.error ? data.error : ('http_' + res.status);
+            var msg = t('contact_err_' + errKey, t('contact_err_generic',
+              'Senden fehlgeschlagen. Bitte versuche es spaeter nochmal oder schreibe direkt an kilianfelbertal@gmail.com.'));
+            setStatus('error', msg);
+          }
+        } catch (err) {
+          setStatus('error', t('contact_err_network',
+            'Netzwerkfehler — bitte Internetverbindung pruefen und nochmal versuchen.'));
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+    })();
+  </script>
 </body>
 </html>
 

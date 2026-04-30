@@ -90,9 +90,6 @@
       <div class="nav-wrap">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
         <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
-          <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="calculator">Rezept Generator</a>
-          <a href="ingredients-generator.html" data-i18n="ing_generator_title">Zutaten Generator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
           <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
@@ -104,7 +101,17 @@
     </div>
   </header>
 
-  <main id="main" class="container">
+  <div class="sfc-stage">
+    <!-- LEFT SIDE: Geld-Box -->
+    <aside class="sfc-side sfc-side-money" aria-labelledby="sfc-money-title">
+      <h3 id="sfc-money-title" class="sfc-side-title" data-i18n="sfc_box_money_title">💶 Geld gespart</h3>
+      <div class="sfc-side-value" id="sfc-money-value">0,00 €</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_money_sub">Geschätzter Wert der eingesparten Reste</p>
+      <div class="sfc-side-divider" aria-hidden="true"></div>
+      <p class="sfc-side-sub" id="sfc-recipes-cooked-text">0 Rezepte gekocht</p>
+    </aside>
+
+    <main id="main" class="container">
     <section class="generator-hero">
       <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
         <h1 data-i18n="ing_generator_title">🥗 Zutaten-Generator</h1>
@@ -160,7 +167,19 @@
       <h2 id="recipe-results-title" data-i18n="ing_results_title" style="color: var(--color-accent-red); margin-bottom: 1rem;">🍽️ Passende Rezepte</h2>
       <div id="recipe-results-container"></div>
     </section>
-  </main>
+    </main>
+
+    <!-- RIGHT SIDE: Oeko-Box -->
+    <aside class="sfc-side sfc-side-eco" aria-labelledby="sfc-eco-title">
+      <h3 id="sfc-eco-title" class="sfc-side-title" data-i18n="sfc_box_eco_title">🌱 Ökologischer Fußabdruck</h3>
+      <div class="sfc-side-value" id="sfc-eco-co2">0,0 kg CO₂</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_eco_co2_sub">CO₂ gespart</p>
+      <div class="sfc-side-value sfc-side-secondary" id="sfc-eco-water">0 L 💧</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_eco_water_sub">Wasser gespart</p>
+      <div class="sfc-side-divider" aria-hidden="true"></div>
+      <p class="sfc-side-context" id="sfc-eco-context">≈ 0 km Autofahrt</p>
+    </aside>
+  </div><!-- /.sfc-stage -->
 
   <footer class="site-footer">
     <div class="container">
@@ -187,6 +206,7 @@
   <script src="../app.js"></script>
   <script src="../ui.js"></script>
   <script src="../js/sustainability-ui.js"></script>
+  <script src="../js/side-stats.js"></script>
   <script>
     // Safety fallbacks if functions not defined
     if (typeof translateIngredient !== 'function') {
@@ -210,22 +230,26 @@
 
     // Extract all unique ingredients from recipes (exclude lasagne and pizza)
     const excludedIngredients = ['lasagne', 'pizza'];
-    const allIngredients = new Set();
-    
+    // Note: renamed from `allIngredients` because ingredients.js already
+    // declares a top-level `const allIngredients` — two `const` with the
+    // same name in the shared global lexical scope throws a SyntaxError
+    // and prevents this entire inline script from executing.
+    const recipeIngredientSet = new Set();
+
     if (!recipeData || recipeData.length === 0) {
       document.body.innerHTML = '<h1 style="color:red;">FEHLER: Rezepte können nicht geladen werden!</h1>';
     }
-    
+
     recipeData.forEach(recipe => {
       recipe.ingredients.forEach(ing => {
         const normalized = ing.toLowerCase().trim();
         if (!excludedIngredients.includes(normalized)) {
-          allIngredients.add(normalized);
+          recipeIngredientSet.add(normalized);
         }
       });
     });
     // Sort alphabetically with German locale for proper umlauts handling
-    const sortedIngredients = Array.from(allIngredients).sort((a, b) => {
+    const sortedIngredients = Array.from(recipeIngredientSet).sort((a, b) => {
       return a.localeCompare(b, 'de-DE', { sensitivity: 'base' });
     });
     

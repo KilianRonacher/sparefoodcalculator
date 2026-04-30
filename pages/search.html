@@ -80,6 +80,8 @@
         margin: 0.5rem auto !important;
       }
     }
+
+    /* Side-Stats-Boxen-Styles liegen in styles.css (.sfc-stage / .sfc-side). */
   </style>
 </head>
 <body>
@@ -90,9 +92,6 @@
       <div class="nav-wrap">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">☰</button>
         <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">
-          <a href="../index.html" data-i18n="startseite">Startseite</a>
-          <a href="search.html" data-i18n="calculator">Rezept Generator</a>
-          <a href="ingredients-generator.html" data-i18n="ing_generator_title">Zutaten Generator</a>
           <a href="contact.html" data-i18n="kontakt">Kontakt</a>
           <a href="impressum.html" data-i18n="impressum">Impressum</a>
         </nav>
@@ -104,7 +103,17 @@
     </div>
   </header>
 
-  <main id="main" class="container">
+  <div class="sfc-stage">
+    <!-- LEFT SIDE: Geld-Box -->
+    <aside class="sfc-side sfc-side-money" aria-labelledby="sfc-money-title">
+      <h3 id="sfc-money-title" class="sfc-side-title" data-i18n="sfc_box_money_title">💶 Geld gespart</h3>
+      <div class="sfc-side-value" id="sfc-money-value">0,00 €</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_money_sub">Geschaetzter Wert der eingesparten Reste</p>
+      <div class="sfc-side-divider" aria-hidden="true"></div>
+      <p class="sfc-side-sub" id="sfc-recipes-cooked-text">0 Rezepte gekocht</p>
+    </aside>
+
+    <main id="main" class="container">
     <section class="generator-hero">
       <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
         <h1 data-i18n="recipe_generator_title">🍳 Rezept-Generator</h1>
@@ -194,7 +203,19 @@
 
     <!-- RESULTS SECTION -->
     <section id="compose-results" class="generator-results" style="margin-top: 2rem;"></section>
-  </main>
+    </main>
+
+    <!-- RIGHT SIDE: Oeko-Box -->
+    <aside class="sfc-side sfc-side-eco" aria-labelledby="sfc-eco-title">
+      <h3 id="sfc-eco-title" class="sfc-side-title" data-i18n="sfc_box_eco_title">🌱 Ökologischer Fußabdruck</h3>
+      <div class="sfc-side-value" id="sfc-eco-co2">0,0 kg CO₂</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_eco_co2_sub">CO₂ gespart</p>
+      <div class="sfc-side-value sfc-side-secondary" id="sfc-eco-water">0 L 💧</div>
+      <p class="sfc-side-sub" data-i18n="sfc_box_eco_water_sub">Wasser gespart</p>
+      <div class="sfc-side-divider" aria-hidden="true"></div>
+      <p class="sfc-side-context" id="sfc-eco-context">≈ 0 km Autofahrt</p>
+    </aside>
+  </div><!-- /.sfc-stage -->
 
   <footer class="site-footer">
     <div class="container">
@@ -225,6 +246,7 @@
   <script src="../app.js"></script>
   <script src="../ui.js"></script>
   <script src="../js/sustainability-ui.js"></script>
+  <script src="../js/side-stats.js"></script>
   <script>
     // Translation helper
     const t = (k, fallback) => { 
@@ -754,6 +776,8 @@
 
     // Initialize
     renderIngredientsDisplay();
+
+    // Side-Stats (Geld + Oeko) werden von js/side-stats.js verwaltet.
 
     // Listen for language changes to update dynamic content
     window.addEventListener('languageChanged', (e) => {

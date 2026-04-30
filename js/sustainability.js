@@ -223,6 +223,15 @@ var SustainabilityCalc = (function() {
     }
   }
 
+  // Reason: Custom-Event, damit UI-Komponenten (Side-Boxen auf Generator-Seiten,
+  // bestehender Footer-Counter) auf Bilanz-Aenderungen reagieren koennen, ohne
+  // dass wir alle Update-Pfade kennen muessen.
+  function emitBalanceChanged(balance) {
+    try {
+      window.dispatchEvent(new CustomEvent('sfc:balanceChanged', { detail: balance }));
+    } catch(e) {}
+  }
+
   function addToBalance(co2, money, water) {
     var current = getUserBalance();
     if (current.recipes_cooked >= MAX_RECIPES) return current;
@@ -239,6 +248,7 @@ var SustainabilityCalc = (function() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     } catch(e) {}
 
+    emitBalanceChanged(updated);
     return updated;
   }
 
@@ -246,6 +256,7 @@ var SustainabilityCalc = (function() {
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch(e) {}
+    emitBalanceChanged(getUserBalance());
   }
 
   // ==================== PUBLIC API ====================
