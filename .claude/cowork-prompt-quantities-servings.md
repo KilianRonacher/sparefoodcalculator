@@ -2,6 +2,15 @@
 
 You are adding a new feature to the **Spare Food Calculator** static web app at `C:\Users\Kilian\.vscode\spare-food-calculator\`. Vanilla HTML/JS/CSS, no bundler, no module system. Recipes live in `recipes.js` as a `const recipes = [ {id, title, title_en, ingredients, steps, steps_en, ...}, ... ]` array (~406 entries). Quantities are currently embedded in `steps` strings as free text (e.g. `"Reis zugeben (ca. 300g pro 4 Personen)"`). The recipe modal is rendered by code in `recipes.js` / `ui.js` / `app.js` (find the actual location with `Grep "modal" recipes.js ui.js app.js`).
 
+## Current codebase state (as of session start)
+
+- `main` branch is the working branch — commit directly there (or on a feature branch + PR).
+- `sw.js` `CACHE_VERSION` is currently **`sfc-v2`** — bump to `sfc-v3` when you update it.
+- `ingredients.js` is now wrapped in `var Ingredients = (function(){...}())`. All symbols live under `Ingredients.*`. This does not affect the quantities feature but is good to know.
+- `js/sustainability.js`, `js/side-stats.js`, `js/sustainability-ui.js`, `data/sustainability.js`, `category-template.js` are already in the `sw.js` ASSETS list.
+- `tools/validate-i18n.js` exists (`npm run validate:i18n`) — run it after adding new i18n keys to confirm no key is missing.
+- **No `js/quantities.js` exists yet** — this is the primary deliverable of this session.
+
 The user wants:
 1. **Structured per-ingredient quantities** on each recipe, calibrated for **4 servings**.
 2. **A servings stepper** (− / count / +) in the recipe modal that scales quantities live, default 4, persisted in `localStorage` under `sfc_default_servings`.
@@ -151,8 +160,9 @@ recipe_unit_taste              "nach Geschmack"                 "to taste"
 - **Modify:** wherever the recipe modal is rendered — find with `Grep "modal" recipes.js ui.js app.js` — add the stepper component + ingredients list above the steps section. Bind dec/inc handlers. Listen for `sfc:servingsChanged` to re-render. Honor `getDefaultServings()` on first open.
 - **Modify:** `i18n.js` — add the 18 new keys above (DE + EN)
 - **Modify:** `styles.css` — add `.sfc-servings` rules (flex, button styles matching existing `.btn` look)
-- **Modify:** every HTML page that loads `recipes.js` — add `<script src="js/quantities.js"></script>` BEFORE `recipes.js`. Pages: `index.html`, `pages/search.html`, `pages/ingredients-generator.html`, all `pages/<category>.html`.
-- **Modify:** `sw.js` — add `/js/quantities.js` to `ASSETS` list, bump `CACHE_VERSION`.
+- **Modify:** pages that load `recipes.js` directly — add `<script src="../js/quantities.js"></script>` (or `<script src="js/quantities.js">` for root-level pages) BEFORE `recipes.js`. Direct loaders: `index.html`, `pages/search.html`, `pages/ingredients-generator.html`, `pages/contact.html`, `pages/impressum.html`, `pages/ingredients-catalog.html`.
+  - **⚠️ Category pages are different**: `pages/dessert.html`, `pages/fisch.html`, etc. do NOT contain `<script>` tags themselves — they each contain only `<script src="../category-template.js"></script>`. The template injects all other scripts via a `scriptSrcs` array and `document.write()`. Add `'../js/quantities.js'` to the `scriptSrcs` array in `category-template.js` **before** `'../recipes.js'`. Do NOT add script tags to individual category HTML files.
+- **Modify:** `sw.js` — add `/js/quantities.js` to `ASSETS` list, bump `CACHE_VERSION` (currently `sfc-v2` → use `sfc-v3`).
 
 ---
 
