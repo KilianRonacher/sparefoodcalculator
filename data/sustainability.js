@@ -341,8 +341,8 @@ function getIngredientRole(ingredientName) {
   ];
   if (oilList.indexOf(lower) !== -1) return 'öl';
 
-  if (typeof findCategoryForIngredient === 'function') {
-    var cat = findCategoryForIngredient(lower);
+  if (typeof Ingredients !== 'undefined' && typeof Ingredients.findCategoryForIngredient === 'function') {
+    var cat = Ingredients.findCategoryForIngredient(lower);
     if (['fleisch', 'fisch', 'getreide', 'gemüse', 'milchprodukte', 'obst', 'eier'].indexOf(cat) !== -1) {
       return 'hauptzutat';
     }
@@ -400,8 +400,8 @@ function isInSeason(ingredientName, currentMonth) {
   var lower = ingredientName.toLowerCase().trim();
 
   // Synonym-Aufloesung wenn verfuegbar
-  if (typeof resolveSynonyms === 'function') {
-    var synonyms = resolveSynonyms(lower);
+  if (typeof Ingredients !== 'undefined' && typeof Ingredients.resolveSynonyms === 'function') {
+    var synonyms = Ingredients.resolveSynonyms(lower);
     for (var s = 0; s < synonyms.length; s++) {
       var d = sustainabilityData[synonyms[s]];
       if (d) {

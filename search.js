@@ -135,9 +135,9 @@ function processIngredientToken(rawToken) {
  * Varianten des Tokens zurück (nach Normalisierung).
  */
 function resolveTokenSynonyms(rawToken) {
-  if (typeof resolveSynonyms !== 'function') return [rawToken];
+  if (typeof Ingredients === 'undefined' || typeof Ingredients.resolveSynonyms !== 'function') return [rawToken];
   const normalized = normalizeString(rawToken);
-  const synonyms = resolveSynonyms(normalized);
+  const synonyms = Ingredients.resolveSynonyms(normalized);
   return synonyms;
 }
 
@@ -369,8 +369,8 @@ function findDidYouMean(input) {
   if (!normalizedInput || normalizedInput.length < 4) return null;
 
   // Prüfe zuerst ob exakter Treffer existiert (inkl. Synonyme)
-  if (typeof allIngredients !== 'undefined') {
-    const directMatch = allIngredients.some(ing =>
+  if (typeof Ingredients !== 'undefined' && Ingredients.allIngredients) {
+    const directMatch = Ingredients.allIngredients.some(ing =>
       normalizeForComparison(ing) === normalizedInput
     );
     if (directMatch) return null;
@@ -379,8 +379,8 @@ function findDidYouMean(input) {
   // Synonyme prüfen
   const synonyms = resolveTokenSynonyms(input);
   for (const syn of synonyms) {
-    if (syn !== normalizedInput && typeof allIngredients !== 'undefined') {
-      const synMatch = allIngredients.some(ing =>
+    if (syn !== normalizedInput && typeof Ingredients !== 'undefined' && Ingredients.allIngredients) {
+      const synMatch = Ingredients.allIngredients.some(ing =>
         normalizeForComparison(ing) === normalizeForComparison(syn)
       );
       if (synMatch) return null;
@@ -389,7 +389,7 @@ function findDidYouMean(input) {
 
   let bestMatch = null;
   let bestDistance = Infinity;
-  const candidates = typeof allIngredients !== 'undefined' ? allIngredients : [];
+  const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
 
   for (const candidate of candidates) {
     const normalizedCandidate = normalizeForComparison(candidate);
@@ -419,7 +419,7 @@ function getAutocompleteSuggestions(input, maxResults) {
   const normalizedInput = normalizeForComparison(input);
   if (!normalizedInput) return [];
 
-  const candidates = typeof allIngredients !== 'undefined' ? allIngredients : [];
+  const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
   const scored = [];
 
   for (const candidate of candidates) {

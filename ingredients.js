@@ -3,9 +3,18 @@
  * ====================
  * Zentrale Datenbank aller verfügbaren Zutaten nach Kategorien
  * Wird vom Generator verwendet, um intelligente Vorschläge zu machen
+ *
+ * Namespace: window.Ingredients
+ * All identifiers are scoped inside this IIFE so they do not pollute
+ * the global scope.  Access via Ingredients.allIngredients,
+ * Ingredients.ingredientsDatabase, Ingredients.resolveSynonyms, etc.
  */
 
-const ingredientsDatabase = {
+/* exported Ingredients */
+var Ingredients = (function () {
+  'use strict';
+
+  var ingredientsDatabase = {
   
   // ==================== GEMÜSE ====================
   gemüse: [
@@ -349,17 +358,30 @@ function resolveSynonyms(word) {
   return result;
 }
 
-// Exportiere für Verwendung in anderen Scripts
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    ingredientsDatabase,
-    allIngredients,
-    getIngredientsByCategory,
-    findCategoryForIngredient,
-    getIngredientCompatibility,
-    getSuggestedIngredients,
-    ingredientSynonyms,
-    ingredientSynonymsReverse,
-    resolveSynonyms
+  // Node.js compatibility — used by tests/sustainability.test.js
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      ingredientsDatabase,
+      allIngredients,
+      getIngredientsByCategory,
+      findCategoryForIngredient,
+      getIngredientCompatibility,
+      getSuggestedIngredients,
+      ingredientSynonyms,
+      ingredientSynonymsReverse,
+      resolveSynonyms
+    };
+  }
+
+  return {
+    ingredientsDatabase: ingredientsDatabase,
+    allIngredients: allIngredients,
+    getIngredientsByCategory: getIngredientsByCategory,
+    findCategoryForIngredient: findCategoryForIngredient,
+    getIngredientCompatibility: getIngredientCompatibility,
+    getSuggestedIngredients: getSuggestedIngredients,
+    ingredientSynonyms: ingredientSynonyms,
+    ingredientSynonymsReverse: ingredientSynonymsReverse,
+    resolveSynonyms: resolveSynonyms
   };
-}
+}());

@@ -267,8 +267,8 @@
       if (u === r || r.includes(u) || u.includes(r)) return true;
 
       // Synonym-Aufloesung: alle Varianten pruefen
-      if (typeof resolveSynonyms === 'function') {
-        const uSynonyms = resolveSynonyms(u);
+      if (typeof Ingredients !== 'undefined' && typeof Ingredients.resolveSynonyms === 'function') {
+        const uSynonyms = Ingredients.resolveSynonyms(u);
         for (const syn of uSynonyms) {
           if (syn === r || r.includes(syn) || syn.includes(r)) return true;
         }

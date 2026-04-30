@@ -6,9 +6,11 @@
 
 // Module laden
 var ingredients = require('../ingredients.js');
-var resolveSynonyms = ingredients.resolveSynonyms;
 
-global.resolveSynonyms = resolveSynonyms;
+// Expose als Ingredients-Namespace (wie im Browser nach IIFE-Refactor)
+global.Ingredients = ingredients;
+// Legacy-Globals fuer Code der noch direkt prüft (Rueckwaertskompatibilitaet)
+global.resolveSynonyms = ingredients.resolveSynonyms;
 global.findCategoryForIngredient = ingredients.findCategoryForIngredient;
 
 var sustData = require('../data/sustainability.js');

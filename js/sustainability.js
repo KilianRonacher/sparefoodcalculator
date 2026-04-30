@@ -31,9 +31,9 @@ var SustainabilityCalc = (function() {
       return { data: sustainabilityData[name], resolvedName: name };
     }
 
-    // Synonym-Aufloesung wenn verfuegbar
-    if (typeof resolveSynonyms === 'function') {
-      var synonyms = resolveSynonyms(name);
+    // Synonym-Aufloesung wenn verfuegbar (via Ingredients-Namespace)
+    if (typeof Ingredients !== 'undefined' && typeof Ingredients.resolveSynonyms === 'function') {
+      var synonyms = Ingredients.resolveSynonyms(name);
       for (var i = 0; i < synonyms.length; i++) {
         if (sustainabilityData[synonyms[i]]) {
           return { data: sustainabilityData[synonyms[i]], resolvedName: synonyms[i] };
@@ -325,8 +325,8 @@ var SustainabilityCalc = (function() {
   console.assert(result4.noDataIngredients.length === 1, 'Unbekannte Zutat in noDataIngredients');
   console.assert(result4.details[0].noData === true, 'Detail muss noData=true haben');
 
-  // Test 10: Synonym-Aufloesung (wenn resolveSynonyms verfuegbar)
-  if (typeof resolveSynonyms === 'function') {
+  // Test 10: Synonym-Aufloesung (wenn Ingredients-Namespace verfuegbar)
+  if (typeof Ingredients !== 'undefined' && typeof Ingredients.resolveSynonyms === 'function') {
     var resolved = SustainabilityCalc.resolveIngredientData('erdäpfel');
     console.assert(resolved !== null, 'erdäpfel muss via Synonym aufgeloest werden');
     console.assert(resolved.resolvedName === 'kartoffeln', 'erdäpfel -> kartoffeln');

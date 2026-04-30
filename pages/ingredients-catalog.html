@@ -265,8 +265,8 @@
     // Render statistics
     function renderStats() {
       const statsBar = document.getElementById('stats-bar');
-      const totalCategories = Object.keys(ingredientsDatabase).length;
-      const totalIngredients = allIngredients.length;
+      const totalCategories = Object.keys(Ingredients.ingredientsDatabase).length;
+      const totalIngredients = Ingredients.allIngredients.length;
 
       statsBar.innerHTML = `
         <div class="stat-box">
@@ -285,7 +285,7 @@
       const container = document.getElementById('categories-container');
       container.innerHTML = '';
 
-      Object.entries(ingredientsDatabase).forEach(([category, ingredients]) => {
+      Object.entries(Ingredients.ingredientsDatabase).forEach(([category, ingredients]) => {
         // Filter ingredients if search term provided
         let filteredIngredients = ingredients;
         if (searchTerm) {
