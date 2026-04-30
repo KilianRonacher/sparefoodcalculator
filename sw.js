@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'sfc-v1';
+const CACHE_VERSION = 'sfc-v2';
 const ASSETS = [
   '/',
   '/index.html',
@@ -9,7 +9,17 @@ const ASSETS = [
   '/search.js',
   '/recipes.js',
   '/ui.js',
+  '/category-template.js',
   '/manifest.json',
+  '/robots.txt',
+  '/sitemap.xml',
+  // JS modules (js/)
+  '/js/sustainability.js',
+  '/js/sustainability-ui.js',
+  '/js/side-stats.js',
+  // Data
+  '/data/sustainability.js',
+  // Pages
   '/pages/contact.html',
   '/pages/dessert.html',
   '/pages/fisch.html',
@@ -24,6 +34,7 @@ const ASSETS = [
   '/pages/search.html',
   '/pages/suppen.html',
   '/pages/vorspeisen.html',
+  // Images
   '/images/icon-192.png',
   '/images/icon-512.png',
   '/images/hero-image.webp',
