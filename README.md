@@ -84,3 +84,17 @@ Wenn du möchtest, kann ich als nächstes:
 - automatisierte Tests für `findMatchingRecipes` hinzufügen.
 
 Sage mir, welchen Schritt ich als Nächstes erledigen soll.
+
+## Development
+
+### i18n-Validierung
+
+Prüft, ob alle `data-i18n`-Keys in den HTML-Dateien auch in `i18n.js` für beide Sprachen (`de` + `en`) vorhanden sind.
+
+```bash
+npm run validate:i18n
+```
+
+Exit 0 — alle Keys vorhanden. Exit 1 — fehlende Keys werden aufgelistet.
+
+Wann ausführen: nach dem Umbenennen oder Hinzufügen von Keys in `i18n.js`, sowie nach Änderungen an HTML-Dateien, die `data-i18n`-Attribute nutzen.
