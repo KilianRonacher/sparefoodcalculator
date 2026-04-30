@@ -41,7 +41,13 @@ const ASSETS = [
   '/images/frucht-rahmen.webp',
   '/images/star-trails.Background.webp',
   '/images/Gem%C3%BCse%20und%20Fr%C3%BCchte.webp',
-  '/images/Gem%C3%BCse%20und%20Fr%C3%BCchte%20Dark.webp'
+  '/images/Gem%C3%BCse%20und%20Fr%C3%BCchte%20Dark.webp',
+  '/js/sustainability.js',
+  '/js/sustainability-ui.js',
+  '/data/sustainability.js',
+  '/category-template.js',
+  '/robots.txt',
+  '/sitemap.xml'
 ];
 
 // Install: cache all static assets
