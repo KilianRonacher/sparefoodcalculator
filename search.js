@@ -81,7 +81,7 @@ const PHONETIC_REPLACEMENTS = [
   [/ss/g, 'ß'],
   [/th/g, 't'],
   [/dt/g, 't'],
-  [/ie/g, 'i'],
+  [/ie(?=[^a-zäöüß]|$)/gi, 'i'],
 ];
 
 function applyPhoneticNormalization(text) {
@@ -322,23 +322,26 @@ function calculateFuzzyMatchScore(userInput, recipeIngredient) {
 // ==================== RECIPE SEARCH ====================
 
 function findMatchingRecipes(userProvidedIngredients) {
-  // Synonym-Auflösung: Jede Eingabe wird um österreichische/deutsche Varianten erweitert
-  const expandedIngredients = [];
+  // Set deduplicates O(1); no .includes() scan needed
+  const expandedIngredients = new Set();
   userProvidedIngredients.forEach(ingredient => {
     const synonyms = resolveTokenSynonyms(ingredient);
     synonyms.forEach(syn => {
       const tokens = processIngredientToken(syn);
       tokens.forEach(processed => {
         const resolved = canonicalLookup[processed] || processed;
-        if (resolved && !expandedIngredients.includes(resolved)) {
-          expandedIngredients.push(resolved);
-        }
+        if (resolved) expandedIngredients.add(resolved);
       });
     });
   });
+
+  const expandedArr = Array.from(expandedIngredients);
+
   const scoredRecipes = recipes.map(recipeEntry => {
     let totalScore = 0;
     let totalWeight = 0;
+    let matchedCount = 0;
+    const missingIngredients = [];
 
     recipeEntry.ingredients.forEach(recipeIngredient => {
       const pts = processIngredientToken(recipeIngredient);
@@ -349,23 +352,21 @@ function findMatchingRecipes(userProvidedIngredients) {
 
       totalWeight += weight;
 
-      const bestMatch = expandedIngredients.reduce((maxScore, userToken) => {
+      const bestMatch = expandedArr.reduce((maxScore, userToken) => {
         const matchQuality = calculateFuzzyMatchScore(userToken, canonical);
         return matchQuality > maxScore ? matchQuality : maxScore;
       }, 0);
 
       totalScore += bestMatch * weight;
+
+      if (bestMatch > 0.4) {
+        matchedCount++;
+      } else {
+        missingIngredients.push(recipeIngredient);
+      }
     });
 
     const normalizedScore = totalWeight > 0 ? (totalScore / totalWeight) : 0;
-
-    const matchedCount = recipeEntry.ingredients.filter(ing => {
-      const tokens = processIngredientToken(ing);
-      const canonical = tokens.map(t => canonicalLookup[t] || t || normalizeString(ing));
-      return expandedIngredients.some(u =>
-        canonical.some(c => calculateFuzzyMatchScore(u, c) > 0.4)
-      );
-    }).length;
     const coverage = recipeEntry.ingredients.length > 0
       ? matchedCount / recipeEntry.ingredients.length
       : 0;
@@ -375,7 +376,8 @@ function findMatchingRecipes(userProvidedIngredients) {
     return {
       ...recipeEntry,
       matchCount: approximateMatches,
-      score: finalScore
+      score: finalScore,
+      missingIngredients
     };
   });
 
@@ -423,9 +425,11 @@ function findDidYouMean(input) {
   let bestDistance = Infinity;
   const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
 
+  const phoneticInput = applyPhoneticNormalization(normalizedInput);
+
   for (const candidate of candidates) {
-    const normalizedCandidate = normalizeForComparison(candidate);
-    const dist = calculateDamerauLevenshtein(normalizedInput, normalizedCandidate, 2);
+    const phoneticCandidate = applyPhoneticNormalization(normalizeForComparison(candidate));
+    const dist = calculateDamerauLevenshtein(phoneticInput, phoneticCandidate, 2);
     if (dist < bestDistance && dist > 0 && dist <= 2) {
       bestDistance = dist;
       bestMatch = candidate;
@@ -451,6 +455,9 @@ function getAutocompleteSuggestions(input, maxResults) {
   const normalizedInput = normalizeForComparison(input);
   if (!normalizedInput) return [];
 
+  // Compound-aware: split input so "rinderbraten" also matches "rind" candidates
+  const inputTokens = processIngredientToken(input);
+
   const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
   const scored = [];
 
@@ -465,7 +472,7 @@ function getAutocompleteSuggestions(input, maxResults) {
 
     // Prefix-Match: höchste Priorität
     if (normalizedCandidate.startsWith(normalizedInput)) {
-      score = 100 - normalizedCandidate.length; // kürzere Treffer bevorzugen
+      score = 100 - normalizedCandidate.length;
     }
     // Substring-Match
     else if (normalizedCandidate.includes(normalizedInput) && normalizedInput.length >= 3) {
@@ -477,6 +484,23 @@ function getAutocompleteSuggestions(input, maxResults) {
       if (dist <= 2 && dist > 0) {
         score = 30 - dist * 10;
         cachedDist = dist;
+      }
+    }
+
+    // Compound-token fallback: match individual split tokens against candidate
+    if (score === 0 && inputTokens.length > 0) {
+      for (const token of inputTokens) {
+        if (token.length >= 3 && normalizedCandidate.startsWith(token)) {
+          score = Math.max(score, 25 - normalizedCandidate.length);
+          break;
+        }
+        if (token.length >= 4) {
+          const dist = calculateDamerauLevenshtein(token, normalizedCandidate, 2);
+          if (dist <= 2 && dist > 0) {
+            score = Math.max(score, 15 - dist * 5);
+            cachedDist = dist;
+          }
+        }
       }
     }
 
@@ -609,6 +633,31 @@ function runSearchTests() {
     dymResult !== null && dymResult.suggestion === 'tomate',
     'FAIL: "tmoate" sollte "tomate" vorschlagen, Ergebnis: ' + JSON.stringify(dymResult)
   );
+
+  // === missingIngredients Test ===
+  console.log('=== missingIngredients Tests ===');
+
+  // Stub für findMatchingRecipes-Test: Rezept mit 2 Zutaten, Nutzer hat nur 1
+  const stubRecipes = [{ name: 'Testrezept', ingredients: ['Tomate', 'Lachs'], url: '#' }];
+  const origRecipes = typeof recipes !== 'undefined' ? recipes : [];
+  // Temporärer Austausch für isolierten Test (nur wenn recipes global ist)
+  if (typeof recipes !== 'undefined') {
+    recipes.length = 0;
+    stubRecipes.forEach(r => recipes.push(r));
+    const missingResult = findMatchingRecipes(['tomate']);
+    if (missingResult.length > 0) {
+      console.assert(
+        Array.isArray(missingResult[0].missingIngredients),
+        'FAIL: missingIngredients sollte ein Array sein'
+      );
+      console.assert(
+        missingResult[0].missingIngredients.includes('Lachs'),
+        'FAIL: missingIngredients sollte "Lachs" enthalten, ist: ' + JSON.stringify(missingResult[0].missingIngredients)
+      );
+    }
+    recipes.length = 0;
+    origRecipes.forEach(r => recipes.push(r));
+  }
 
   console.log('=== Alle Tests abgeschlossen ===');
 }

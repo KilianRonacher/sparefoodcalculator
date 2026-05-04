@@ -519,6 +519,15 @@
       ingSection.appendChild(ingTags);
       card.appendChild(ingSection);
 
+      // "Dir fehlt noch" hint from fuzzy-search missingIngredients
+      if (recipe.missingIngredients && recipe.missingIngredients.length > 0) {
+        const missingDiv = document.createElement('div');
+        missingDiv.style.cssText = 'margin-top: 0.8rem; font-size: 0.85rem; color: #cc4400; font-style: italic;';
+        const label = (i18n[lang] && i18n[lang]['missing_ingredients_label']) || 'Dir fehlt noch:';
+        missingDiv.textContent = label + ' ' + recipe.missingIngredients.map(m => translateIngredient(m, lang)).join(', ');
+        card.appendChild(missingDiv);
+      }
+
       return card;
     }
 

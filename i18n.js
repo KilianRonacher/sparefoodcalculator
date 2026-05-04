@@ -149,6 +149,7 @@ i18n['de'] = {
   'ingredients_colon': 'Zutaten:',
   'perfect_badge': 'Perfekt',
   'partial_badge': 'Teilweise',
+  'missing_ingredients_label': 'Dir fehlt noch:',
 
   // Did-you-mean & Autocomplete
   'did_you_mean_prefix': 'Du hast',
@@ -296,6 +297,7 @@ i18n['en'] = {
   'ingredients_colon': 'Ingredients:',
   'perfect_badge': 'Perfect',
   'partial_badge': 'Partial',
+  'missing_ingredients_label': 'You are still missing:',
 
   // Did-you-mean & Autocomplete
   'did_you_mean_prefix': 'You typed',
