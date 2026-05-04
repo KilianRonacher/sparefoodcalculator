@@ -360,25 +360,41 @@
     function generateRecipes() {
       const results = document.getElementById('compose-results');
       const lang = getLang();
-      
+
       if (userIngredients.length === 0) {
         results.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['no_ingredients_added']}</p>`;
         return;
       }
 
-      // Filter recipes based on vegetarian mode
+      // Build title→scored map so createRecipeCard gets missingIngredients[]
+      const scoredByTitle = new Map();
+      if (typeof findMatchingRecipes === 'function') {
+        findMatchingRecipes(userIngredients).forEach(s => scoredByTitle.set(s.title, s));
+      }
+
+      const getMissing = (recipe) => {
+        const s = scoredByTitle.get(recipe.title);
+        if (s && Array.isArray(s.missingIngredients)) return s.missingIngredients;
+        return recipe.ingredients.filter(ing =>
+          !userIngredients.some(u => isIngredientMatch(u, ing))
+        );
+      };
+
       let allRecipes = vegMode ? recipes.filter(isVegetarianRecipe) : recipes;
 
-      // Find exact matches (recipes with ALL user ingredients)
-      const exactMatches = allRecipes.filter(recipe => 
+      const exactMatches = allRecipes.filter(recipe =>
         userIngredients.every(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
       );
 
-      // Find partial matches (recipes with SOME user ingredients)
       const partialMatches = allRecipes
-        .filter(recipe => !exactMatches.includes(recipe) && 
+        .filter(recipe => !exactMatches.includes(recipe) &&
           userIngredients.some(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
         )
+        .sort((a, b) => {
+          const sa = scoredByTitle.get(a.title);
+          const sb = scoredByTitle.get(b.title);
+          return ((sb && sb.score) || 0) - ((sa && sa.score) || 0);
+        })
         .slice(0, 5);
 
       const allMatches = [...exactMatches, ...partialMatches];
@@ -391,17 +407,15 @@
       const recipeWord = allMatches.length === 1 ? i18n[lang]['recipe'] : i18n[lang]['recipes'];
       results.innerHTML = `<h2>🍽️ ${allMatches.length} ${recipeWord} ${i18n[lang]['recipes_for_you']}</h2>`;
 
-      // Display exact matches
       if (exactMatches.length > 0) {
         const section = createRecipeSection(`✅ ${i18n[lang]['perfect_matches']}`, '#4ecdc4');
-        exactMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, true)));
+        exactMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, true, getMissing(recipe))));
         results.appendChild(section);
       }
 
-      // Display partial matches
       if (partialMatches.length > 0) {
         const section = createRecipeSection(`💡 ${i18n[lang]['more_suggestions']}`, '#ffe066');
-        partialMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, false)));
+        partialMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, false, getMissing(recipe))));
         results.appendChild(section);
       }
     }
@@ -434,7 +448,7 @@
     }
 
     // Create recipe card with ingredients
-    function createRecipeCard(recipe, isExact) {
+    function createRecipeCard(recipe, isExact, missingIngredients) {
       const lang = getLang();
       const card = document.createElement('div');
       card.style.cssText = `
@@ -519,12 +533,13 @@
       ingSection.appendChild(ingTags);
       card.appendChild(ingSection);
 
-      // "Dir fehlt noch" hint from fuzzy-search missingIngredients
-      if (recipe.missingIngredients && recipe.missingIngredients.length > 0) {
+      // "Dir fehlt noch" hint
+      const missing = Array.isArray(missingIngredients) ? missingIngredients : [];
+      if (missing.length > 0) {
         const missingDiv = document.createElement('div');
         missingDiv.style.cssText = 'margin-top: 0.8rem; font-size: 0.85rem; color: #cc4400; font-style: italic;';
         const label = (i18n[lang] && i18n[lang]['missing_ingredients_label']) || 'Dir fehlt noch:';
-        missingDiv.textContent = label + ' ' + recipe.missingIngredients.map(m => translateIngredient(m, lang)).join(', ');
+        missingDiv.textContent = label + ' ' + missing.map(m => translateIngredient(m, lang)).join(', ');
         card.appendChild(missingDiv);
       }
 
