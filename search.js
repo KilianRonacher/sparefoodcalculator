@@ -61,14 +61,7 @@ function normalizeString(inputText) {
  * Konvertiert Umlaute in Basisform und entfernt Sonderzeichen.
  */
 function normalizeForComparison(text) {
-  if (!text) return '';
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/ae/g, 'ä')
-    .replace(/oe/g, 'ö')
-    .replace(/ue/g, 'ü')
-    .replace(/[^a-zäöüß0-9\-]/gi, '');
+  return normalizeString(text).replace(/[^a-zäöüß0-9\-]/gi, '');
 }
 
 // ==================== PHONETIC EQUIVALENCES ====================
@@ -124,10 +117,39 @@ function applyStemming(word) {
   return word;
 }
 
+const COMPOUND_JOINTS = ['es', 'en', 'er'];
+
+const NEVER_SPLIT = new Set([
+  'petersilie','paradeiser','oregano','basilikum','rosmarin','thymian',
+  'salbei','majoran','kerbel','kapern','olivenöl','oliven','tomate',
+  'tomaten','gurken','gurke','paprika','avocado','sellerie','banane',
+  'bananen','orange','orangen','mandarine','zitrone','zitronen',
+  'aubergine','zucchini','spinat','rucola','champignon','champignons',
+  'erdbeere','erdbeeren','himbeere','himbeeren','heidelbeere','heidelbeeren',
+]);
+
+function splitGermanCompound(word) {
+  if (!word || word.length < 8) return [word];
+  if (NEVER_SPLIT.has(word)) return [word];
+
+  for (const joint of COMPOUND_JOINTS) {
+    let searchFrom = 4;
+    while (searchFrom <= word.length - joint.length - 4) {
+      const idx = word.indexOf(joint, searchFrom);
+      if (idx === -1) break;
+      const left = word.slice(0, idx);
+      const right = word.slice(idx + joint.length);
+      if (left.length >= 4 && right.length >= 4) return [left, right];
+      searchFrom = idx + 1;
+    }
+  }
+  return [word];
+}
+
 function processIngredientToken(rawToken) {
   const normalized = normalizeForComparison(rawToken);
-  if (commonStopwords.includes(normalized)) return '';
-  return applyStemming(normalized);
+  if (commonStopwords.includes(normalized)) return [];
+  return splitGermanCompound(normalized).map(applyStemming).filter(Boolean);
 }
 
 /**
@@ -159,12 +181,10 @@ function calculateDamerauLevenshtein(source, target, maxAllowed) {
   if (m === 0) return n;
   if (n === 0) return m;
 
-  // Early exit: Wenn der Längenunterschied den Schwellwert überschreitet
   if (typeof maxAllowed === 'number' && Math.abs(m - n) > maxAllowed) {
     return maxAllowed + 1;
   }
 
-  // Vollständige DL-Matrix mit Transpositionserkennung
   const d = [];
   for (let i = 0; i <= m; i++) {
     d[i] = new Array(n + 1);
@@ -186,7 +206,6 @@ function calculateDamerauLevenshtein(source, target, maxAllowed) {
         d[i - 1][j - 1] + cost
       );
 
-      // Transposition benachbarter Zeichen
       if (i > 1 && j > 1 &&
           source[i - 1] === target[j - 2] &&
           source[i - 2] === target[j - 1]) {
@@ -196,7 +215,6 @@ function calculateDamerauLevenshtein(source, target, maxAllowed) {
       if (d[i][j] < rowMin) rowMin = d[i][j];
     }
 
-    // Early exit: Wenn die komplette Zeile über dem Schwellwert liegt
     if (typeof maxAllowed === 'number' && rowMin > maxAllowed) {
       return maxAllowed + 1;
     }
@@ -219,29 +237,26 @@ function getMaxAllowedErrors(length) {
 
 // ==================== FUZZY MATCHING ====================
 
-/**
- * Berechnet einen Ähnlichkeitsscore zwischen Nutzereingabe und Rezeptzutat.
- * Berücksichtigt:
- *   1. Exakten Treffer (nach Normalisierung + Stemming)
- *   2. Prefix-Bonus: "toma" trifft "tomate" bevorzugt
- *   3. Substring-Treffer: "käse" in "frischkäse"
- *   4. Phonetische Normalisierung + Damerau-Levenshtein mit dynamischem Schwellwert
- * Gibt 0 (kein Treffer) bis 1 (exakt) zurück.
- */
-function calculateFuzzyMatchScore(userInput, recipeIngredient) {
-  const processedInput      = processIngredientToken(userInput);
-  const processedIngredient = processIngredientToken(recipeIngredient);
+const SCORE_BANDS = [
+  { dist: 1, minLen: 4, base: 0.85, cap: 0.94 },
+  { dist: 1, minLen: 0, base: 0.70, cap: 0.94 },
+  { dist: 2, minLen: 6, base: 0.55, cap: 0.70 },
+  { dist: 2, minLen: 5, base: 0.40, cap: 0.55 },
+  { dist: 3, minLen: 9, base: 0.30, cap: 0.45 },
+];
 
+/**
+ * Score für ein einzelnes Token-Paar (String vs String).
+ */
+function scoreTokenPair(processedInput, processedIngredient) {
   if (!processedInput || !processedIngredient) return 0;
 
-  // 1. Exakter Treffer
   if (processedInput === processedIngredient) return 1.0;
 
   const inputLen = processedInput.length;
   const ingLen   = processedIngredient.length;
   const MIN_SUBSTRING_LEN = 3;
 
-  // 2. Prefix-Bonus: Eingabe ist Anfang der Zutat
   if (ingLen > inputLen &&
       processedIngredient.startsWith(processedInput) &&
       inputLen >= MIN_SUBSTRING_LEN) {
@@ -249,35 +264,26 @@ function calculateFuzzyMatchScore(userInput, recipeIngredient) {
     return 0.70 + coverage * 0.20;
   }
 
-  // 3a. Substring: Zutat enthält Eingabe
   if (processedIngredient.includes(processedInput) && inputLen >= MIN_SUBSTRING_LEN) {
     const coverage = inputLen / ingLen;
     return 0.50 + coverage * 0.20;
   }
 
-  // 3b. Substring umgekehrt: Eingabe enthält Zutat
   if (processedInput.includes(processedIngredient) && ingLen >= MIN_SUBSTRING_LEN) {
     return 0.65;
   }
 
-  // 4. Phonetische Normalisierung + Damerau-Levenshtein
   const phoneticInput = applyPhoneticNormalization(processedInput);
   const phoneticIng   = applyPhoneticNormalization(processedIngredient);
 
-  // Nach phonetischer Normalisierung nochmal exakt prüfen
   if (phoneticInput === phoneticIng) return 0.95;
 
   const maxLen = Math.max(phoneticInput.length, phoneticIng.length);
   const maxErrors = getMaxAllowedErrors(maxLen);
-
   const distance = calculateDamerauLevenshtein(phoneticInput, phoneticIng, maxErrors);
 
   if (distance > maxErrors) return 0;
 
-  // Normalisierter Score: Distanz relativ zur Wortlänge
-  const normalizedDist = distance / maxLen;
-
-  // Prefix-Bonus bei gleichen Anfangsbuchstaben
   let prefixBonus = 0;
   const prefixLen = Math.min(phoneticInput.length, phoneticIng.length, 3);
   let matchingPrefix = 0;
@@ -289,16 +295,28 @@ function calculateFuzzyMatchScore(userInput, recipeIngredient) {
     prefixBonus = 0.05 * matchingPrefix;
   }
 
-  // Score-Berechnung
-  if (distance === 1) {
-    const base = maxLen >= 4 ? 0.85 : 0.70;
-    return Math.min(base + prefixBonus, 0.94);
-  }
-  if (distance === 2 && maxLen >= 6) return Math.min(0.55 + prefixBonus, 0.70);
-  if (distance === 2 && maxLen >= 5) return Math.min(0.40 + prefixBonus, 0.55);
-  if (distance === 3 && maxLen >= 9) return Math.min(0.30 + prefixBonus, 0.45);
+  const band = SCORE_BANDS.find(b => distance === b.dist && maxLen >= b.minLen);
+  return band ? Math.min(band.base + prefixBonus, band.cap) : 0;
+}
 
-  return 0;
+/**
+ * Berechnet einen Ähnlichkeitsscore zwischen Nutzereingabe und Rezeptzutat.
+ * Iteriert über alle Compound-Tokens und gibt den besten Score zurück.
+ */
+function calculateFuzzyMatchScore(userInput, recipeIngredient) {
+  const inputTokens = processIngredientToken(userInput);
+  const ingredientTokens = processIngredientToken(recipeIngredient);
+
+  if (inputTokens.length === 0 || ingredientTokens.length === 0) return 0;
+
+  let bestScore = 0;
+  for (const pi of inputTokens) {
+    for (const pg of ingredientTokens) {
+      const score = scoreTokenPair(pi, pg);
+      if (score > bestScore) bestScore = score;
+    }
+  }
+  return bestScore;
 }
 
 // ==================== RECIPE SEARCH ====================
@@ -309,27 +327,29 @@ function findMatchingRecipes(userProvidedIngredients) {
   userProvidedIngredients.forEach(ingredient => {
     const synonyms = resolveTokenSynonyms(ingredient);
     synonyms.forEach(syn => {
-      const processed = processIngredientToken(syn);
-      const resolved = (processed && (canonicalLookup[processed] || processed)) || null;
-      if (resolved && !expandedIngredients.includes(resolved)) {
-        expandedIngredients.push(resolved);
-      }
+      const tokens = processIngredientToken(syn);
+      tokens.forEach(processed => {
+        const resolved = canonicalLookup[processed] || processed;
+        if (resolved && !expandedIngredients.includes(resolved)) {
+          expandedIngredients.push(resolved);
+        }
+      });
     });
   });
-  const processedUserInputs = expandedIngredients;
-
   const scoredRecipes = recipes.map(recipeEntry => {
     let totalScore = 0;
     let totalWeight = 0;
 
     recipeEntry.ingredients.forEach(recipeIngredient => {
-      const canonical = canonicalLookup[processIngredientToken(recipeIngredient)] || processIngredientToken(recipeIngredient) || normalizeString(recipeIngredient);
+      const pts = processIngredientToken(recipeIngredient);
+      const pt = pts[0] || '';
+      const canonical = canonicalLookup[pt] || pt || normalizeString(recipeIngredient);
       const isHighValue = highPriorityIngredients.includes(canonical);
       const weight = isHighValue ? 1.6 : 1.0;
 
       totalWeight += weight;
 
-      const bestMatch = processedUserInputs.reduce((maxScore, userToken) => {
+      const bestMatch = expandedIngredients.reduce((maxScore, userToken) => {
         const matchQuality = calculateFuzzyMatchScore(userToken, canonical);
         return matchQuality > maxScore ? matchQuality : maxScore;
       }, 0);
@@ -338,12 +358,24 @@ function findMatchingRecipes(userProvidedIngredients) {
     });
 
     const normalizedScore = totalWeight > 0 ? (totalScore / totalWeight) : 0;
+
+    const matchedCount = recipeEntry.ingredients.filter(ing => {
+      const tokens = processIngredientToken(ing);
+      const canonical = tokens.map(t => canonicalLookup[t] || t || normalizeString(ing));
+      return expandedIngredients.some(u =>
+        canonical.some(c => calculateFuzzyMatchScore(u, c) > 0.4)
+      );
+    }).length;
+    const coverage = recipeEntry.ingredients.length > 0
+      ? matchedCount / recipeEntry.ingredients.length
+      : 0;
+    const finalScore = normalizedScore * (0.5 + 0.5 * coverage);
     const approximateMatches = Math.round(totalScore);
 
     return {
       ...recipeEntry,
       matchCount: approximateMatches,
-      score: normalizedScore
+      score: finalScore
     };
   });
 
@@ -429,6 +461,7 @@ function getAutocompleteSuggestions(input, maxResults) {
     if (normalizedCandidate === normalizedInput) continue;
 
     let score = 0;
+    let cachedDist = 0;
 
     // Prefix-Match: höchste Priorität
     if (normalizedCandidate.startsWith(normalizedInput)) {
@@ -443,11 +476,12 @@ function getAutocompleteSuggestions(input, maxResults) {
       const dist = calculateDamerauLevenshtein(normalizedInput, normalizedCandidate, 2);
       if (dist <= 2 && dist > 0) {
         score = 30 - dist * 10;
+        cachedDist = dist;
       }
     }
 
     if (score > 0) {
-      scored.push({ text: candidate, score: score, distance: score < 50 ? calculateDamerauLevenshtein(normalizedInput, normalizedCandidate, 2) : 0 });
+      scored.push({ text: candidate, score, distance: cachedDist });
     }
   }
 
@@ -462,6 +496,34 @@ function getAutocompleteSuggestions(input, maxResults) {
  * Wird nur in der Entwicklung aufgerufen.
  */
 function runSearchTests() {
+  console.log('=== Compound-Splitter Tests ===');
+
+  const splitPetersilie = splitGermanCompound('petersilie');
+  console.assert(
+    splitPetersilie.length === 1 && splitPetersilie[0] === 'petersilie',
+    'FAIL: petersilie sollte NICHT gesplittet werden, ist: ' + JSON.stringify(splitPetersilie)
+  );
+
+  const splitParadeiser = splitGermanCompound('paradeiser');
+  console.assert(
+    splitParadeiser.length === 1 && splitParadeiser[0] === 'paradeiser',
+    'FAIL: paradeiser sollte NICHT gesplittet werden, ist: ' + JSON.stringify(splitParadeiser)
+  );
+
+  // rinderbraten hat Fuge 'er' → soll splitten
+  const splitRinderbraten = splitGermanCompound('rinderbraten');
+  console.assert(
+    splitRinderbraten.length === 2 && splitRinderbraten[0] === 'rind' && splitRinderbraten[1] === 'braten',
+    'FAIL: rinderbraten sollte in [rind, braten] gesplittet werden, ist: ' + JSON.stringify(splitRinderbraten)
+  );
+
+  // hähnchenschenkel hat Fuge 'en' → soll splitten
+  const splitHaehnchensch = splitGermanCompound('hähnchenschenkel');
+  console.assert(
+    splitHaehnchensch.length === 2,
+    'FAIL: hähnchenschenkel sollte gesplittet werden, ist: ' + JSON.stringify(splitHaehnchensch)
+  );
+
   console.log('=== Damerau-Levenshtein Tests ===');
 
   // Transposition: "tmoate" -> "tomate" = Distanz 1
