@@ -7,6 +7,8 @@
     "jsdom": "^21.1.2"
   },
   "scripts": {
-    "validate:i18n": "node tools/validate-i18n.js"
+    "validate:i18n": "node tools/validate-i18n.js",
+    "test:quantities": "node tests/quantities.test.js",
+    "test": "npm run validate:i18n && npm run test:quantities"
   }
 }

@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'sfc-v2';
+const CACHE_VERSION = 'sfc-v4';
 const ASSETS = [
   '/',
   '/index.html',
@@ -42,6 +42,7 @@ const ASSETS = [
   '/images/star-trails.Background.webp',
   '/images/Gem%C3%BCse%20und%20Fr%C3%BCchte.webp',
   '/images/Gem%C3%BCse%20und%20Fr%C3%BCchte%20Dark.webp',
+  '/js/quantities.js',
   '/js/sustainability.js',
   '/js/sustainability-ui.js',
   '/data/sustainability.js',
@@ -80,8 +81,8 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request).then(function(cached) {
       if (cached) return cached;
       return fetch(event.request).then(function(response) {
-        // Cache successful GET responses for future offline use
-        if (response.ok && event.request.method === 'GET') {
+        // Only cache same-origin 200 GET responses (avoids caching opaque/error responses)
+        if (response.status === 200 && response.type === 'basic' && event.request.method === 'GET') {
           var clone = response.clone();
           caches.open(CACHE_VERSION).then(function(cache) {
             cache.put(event.request, clone);

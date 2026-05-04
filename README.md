@@ -87,6 +87,14 @@ Sage mir, welchen Schritt ich als Nächstes erledigen soll.
 
 ## Development
 
+### Tests ausführen
+
+```bash
+npm test
+```
+
+Führt i18n-Validierung + Quantities-API-Tests aus (beide müssen Exit 0 liefern).
+
 ### i18n-Validierung
 
 Prüft, ob alle `data-i18n`-Keys in den HTML-Dateien auch in `i18n.js` für beide Sprachen (`de` + `en`) vorhanden sind.
@@ -97,4 +105,24 @@ npm run validate:i18n
 
 Exit 0 — alle Keys vorhanden. Exit 1 — fehlende Keys werden aufgelistet.
 
-Wann ausführen: nach dem Umbenennen oder Hinzufügen von Keys in `i18n.js`, sowie nach Änderungen an HTML-Dateien, die `data-i18n`-Attribute nutzen.
+### Quantities-Tests
+
+```bash
+npm run test:quantities
+```
+
+19 Node-Assert-Tests für `js/quantities.js` (scale, normalize, format, getDefaultServings, setDefaultServings).
+
+## Mengenangaben & Personen-Skalierung
+
+Die Rezept-Detailansicht (Modal) enthält einen Stepper zum Anpassen der Personenzahl (1–12):
+
+- **Stepper**: `-` / `[Zahl]` / `+` Buttons, min 44 × 44 px (WCAG Touch-Target)
+- **Skalierung**: Alle Zutatenmengen werden proportional zur gewählten Personenzahl skaliert (`js/quantities.js`)
+- **Persistenz**: Gewählte Personenzahl wird in `localStorage` unter Key `sfc_default_servings` gespeichert und beim nächsten Öffnen wiederhergestellt
+- **i18n**: Stepper-Labels und Mengeneinheiten wechseln mit der Sprache (DE/EN)
+- **Relevante i18n-Keys**: `recipe_servings_label`, `recipe_servings_dec_aria`, `recipe_servings_inc_aria`, `recipe_steps_for_4_note`, `recipe_min_quantity_note`, `recipe_quantities_missing`
+
+### Service Worker
+
+Cache-Version `sfc-v4`. Alle statischen Assets (inkl. `js/quantities.js`, `category-template.js`) werden beim Install gecacht. Offline-Fallback auf `index.html` für Navigation-Requests.

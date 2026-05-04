@@ -795,6 +795,91 @@ body.dark-mode .modal-panel {
   background: rgba(0, 0, 0, 0.08);
 }
 
+/* Servings stepper */
+.sfc-servings {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.sfc-servings-dec,
+.sfc-servings-inc {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 8px;
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #333);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+  line-height: 1;
+}
+
+.sfc-servings-dec:hover,
+.sfc-servings-inc:hover {
+  background: var(--color-hover, #f0f0f0);
+}
+
+.sfc-servings-dec:focus-visible,
+.sfc-servings-inc:focus-visible {
+  outline: 2px solid var(--color-accent-teal, #4ecdc4);
+  outline-offset: 2px;
+}
+
+.sfc-servings-dec:active,
+.sfc-servings-inc:active {
+  transform: scale(0.95);
+}
+
+.sfc-servings-count {
+  min-width: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.sfc-quantities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.sfc-quantities-list li {
+  padding: 0.15rem 0;
+}
+
+.sfc-quantities-list li::before {
+  content: '\2022';
+  margin-right: 0.5rem;
+  color: var(--color-text-muted, #888);
+}
+
+.sfc-quantities-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #888);
+  font-style: italic;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.sfc-quantities-missing {
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #888);
+  font-style: italic;
+}
+
+.sfc-min-qty-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #888);
+  vertical-align: super;
+}
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

@@ -80,6 +80,7 @@
     '../js/sustainability.js',
     '../ingredients.js',
     '../search.js',
+    '../js/quantities.js',
     '../recipes.js',
     '../app.js',
     '../ui.js',

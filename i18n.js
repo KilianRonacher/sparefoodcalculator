@@ -342,6 +342,52 @@ i18n['en']['gewuerze'] = 'Spices';
 i18n['de']['gewuerze_desc'] = 'Salze, Kräuter und Gewürzmischungen — Ideen zur Verwendung von Resten.';
 i18n['en']['gewuerze_desc'] = 'Salts, herbs and spice blends — ideas to use leftovers.';
 
+// Quantities / Servings Stepper
+i18n['de']['recipe_servings_label'] = 'Personen';
+i18n['en']['recipe_servings_label'] = 'Servings';
+i18n['de']['recipe_servings_dec_aria'] = 'Eine Person weniger';
+i18n['en']['recipe_servings_dec_aria'] = 'One fewer serving';
+i18n['de']['recipe_servings_inc_aria'] = 'Eine Person mehr';
+i18n['en']['recipe_servings_inc_aria'] = 'One more serving';
+i18n['de']['recipe_steps_for_4_note'] = 'Mengen in den Schritten sind für 4 Personen geschrieben';
+i18n['en']['recipe_steps_for_4_note'] = 'Quantities in the steps are written for 4 servings';
+i18n['de']['recipe_quantities_missing'] = 'Mengenangaben fehlen';
+i18n['en']['recipe_quantities_missing'] = 'Quantities missing';
+i18n['de']['recipe_unit_g'] = 'g';
+i18n['en']['recipe_unit_g'] = 'g';
+i18n['de']['recipe_unit_kg'] = 'kg';
+i18n['en']['recipe_unit_kg'] = 'kg';
+i18n['de']['recipe_unit_ml'] = 'ml';
+i18n['en']['recipe_unit_ml'] = 'ml';
+i18n['de']['recipe_unit_l'] = 'l';
+i18n['en']['recipe_unit_l'] = 'l';
+i18n['de']['recipe_unit_tbsp'] = 'EL';
+i18n['en']['recipe_unit_tbsp'] = 'tbsp';
+i18n['de']['recipe_unit_tsp'] = 'TL';
+i18n['en']['recipe_unit_tsp'] = 'tsp';
+i18n['de']['recipe_unit_piece'] = '';
+i18n['en']['recipe_unit_piece'] = '';
+i18n['de']['recipe_unit_pieces'] = 'Stk.';
+i18n['en']['recipe_unit_pieces'] = 'pcs';
+i18n['de']['recipe_unit_head'] = 'Kopf';
+i18n['en']['recipe_unit_head'] = 'head';
+i18n['de']['recipe_unit_heads'] = 'Köpfe';
+i18n['en']['recipe_unit_heads'] = 'heads';
+i18n['de']['recipe_unit_clove'] = 'Zehe';
+i18n['en']['recipe_unit_clove'] = 'clove';
+i18n['de']['recipe_unit_cloves'] = 'Zehen';
+i18n['en']['recipe_unit_cloves'] = 'cloves';
+i18n['de']['recipe_unit_bunch'] = 'Bund';
+i18n['en']['recipe_unit_bunch'] = 'bunch';
+i18n['de']['recipe_unit_bunches'] = 'Bund';
+i18n['en']['recipe_unit_bunches'] = 'bunches';
+i18n['de']['recipe_unit_pinch'] = 'Prise';
+i18n['en']['recipe_unit_pinch'] = 'pinch';
+i18n['de']['recipe_unit_taste'] = 'nach Geschmack';
+i18n['en']['recipe_unit_taste'] = 'to taste';
+i18n['de']['recipe_min_quantity_note'] = 'Mindestmenge';
+i18n['en']['recipe_min_quantity_note'] = 'minimum quantity';
+
 // Additional keys
 i18n['de']['hero_art_alt'] = 'Bunte Teller mit Zutaten (Platzhalter)';
 i18n['en']['hero_art_alt'] = 'Colorful plates with ingredients (placeholder)';
@@ -1064,6 +1110,11 @@ function setLang(targetLanguage) {
   const languageToggleButton = document.getElementById('lang-toggle-btn');
   if (languageToggleButton) {
     languageToggleButton.textContent = i18n[targetLanguage]['lang-toggle'];
+  }
+
+  // Keep <html lang> in sync with active language (SEO + a11y)
+  if (document && document.documentElement) {
+    document.documentElement.lang = targetLanguage;
   }
 
   // Trigger custom event for dynamic content updates
