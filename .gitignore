@@ -2,3 +2,12 @@ node_modules/
 .DS_Store
 *.log
 .env
+.vscode/
+.claude/
+PLANNING.md
+TASK.md
+PROJECT_STRUCTURE.md
+CODE_STRUCTURE.md
+server/
+tools/MIGRATION.md
+*.bak

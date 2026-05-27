@@ -18,6 +18,9 @@
   <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#ffd166" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Animierte Sterne-Hintergrund */
@@ -64,101 +67,8 @@
       z-index: 1;
     }
 
-    /* Text-Container mit schwarzer Box und 50% Transparenz */
-    .hero-text-container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 5;
-      pointer-events: all;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 3rem 4rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-    }
-
-    .hero-text-container h1 {
-      color: #ffffff;
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-      margin: 0 0 0.5rem 0;
-      line-height: 1.1;
-    }
-
-    .hero-text-container .subtitle {
-      color: #ffffff;
-      font-size: 1.2rem;
-      letter-spacing: 3px;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-      font-weight: 600;
-      margin: 1rem 0 2rem 0;
-    }
-
-    .hero-text-container .hero-copy {
-      color: #ffffff;
-      font-size: 0.95rem;
-      margin: 0 0 1.5rem 0;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-      opacity: 0.95;
-    }
-
-    .hero-text-container .hero-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 0 0 1.5rem 0;
-    }
-
-    .hero-text-container .hero-links a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      padding-bottom: 0.1rem;
-    }
-
-    .hero-text-container .hero-links a:hover {
-      color: #ffd166;
-      border-bottom-color: #ffd166;
-    }
-
-    .hero-text-container .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #ffd166;
-      color: #2d2d2d;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
-    }
-
-    .hero-text-container .cta-button:hover {
-      background-color: #ffc84d;
-      box-shadow: 0 6px 20px rgba(255, 209, 102, 0.5);
-      transform: translateY(-2px);
-    }
-
     /* Responsive: Tablet */
     @media (max-width: 768px) {
-      .hero-text-container {
-        padding: 2rem 2.5rem;
-        width: 90vw;
-        max-width: 480px;
-      }
-      .hero-text-container h1 {
-        font-size: 2.2rem;
-      }
-      .hero-text-container .subtitle {
-        font-size: 1rem;
-      }
       .rahmen {
         transform: translate(-50%, -50%) scale(2);
       }
@@ -166,73 +76,146 @@
 
     /* Responsive: Mobile */
     @media (max-width: 480px) {
-      .hero-text-container {
-        padding: 1.5rem 1.25rem;
-        width: 92vw;
-        max-width: 100%;
-        border-radius: 10px;
-      }
-      .hero-text-container h1 {
-        font-size: 1.7rem;
-        letter-spacing: 1px;
-      }
-      .hero-text-container .subtitle {
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-      }
-      .hero-text-container .hero-copy {
-        font-size: 0.8rem;
-      }
-      .hero-text-container .hero-links {
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-      .hero-text-container .cta-button {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.95rem;
-        width: 100%;
-        text-align: center;
-      }
       .rahmen {
         display: none;
       }
     }
 
-    /* Extra-small phones (320px) */
-    @media (max-width: 360px) {
-      .hero-text-container h1 {
-        font-size: 1.4rem;
-      }
-      .hero-text-container .subtitle {
-        font-size: 0.78rem;
-        letter-spacing: 1.5px;
-      }
+    /* ── HEADER / FOOTER: visuell hidden, DOM + SEO erhalten ── */
+    .site-header,
+    .site-footer {
+      position: absolute !important;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
 
-    /* Landscape on small phones: hero must scroll, not overflow viewport */
-    @media (max-height: 500px) {
-      .hero-text-container {
-        position: fixed;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        max-height: 88vh;
-        max-height: 88dvh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        padding: 1rem 1.25rem;
+    /* ── HERO STAGE ── */
+    .hero-stage {
+      position: relative;
+      z-index: 5;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(2rem, 5vh, 4rem);
+      padding: 2rem 1rem;
+    }
+
+    /* ── GLASSMORPHISM TITELBOX ── */
+    .hero-glass {
+      background: rgba(12, 10, 28, 0.45);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 6vw, 4rem);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+    .hero-glass__title {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #4ecdc4, #ffd166);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-glass__subtitle {
+      margin: 0;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ── MARQUEE WRAPPER ── */
+    .marquee-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .marquee {
+      overflow: hidden;
+      width: 100%;
+    }
+    .marquee__track {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: max-content;
+      will-change: transform;
+    }
+    .marquee__track--left  { animation: marquee-left  32s linear infinite; }
+    .marquee__track--right { animation: marquee-right 36s linear infinite; }
+    .marquee:hover .marquee__track { animation-play-state: paused; }
+
+    @keyframes marquee-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+
+    /* ── ICON-KARTEN ── */
+    .marquee__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-width: 160px;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .marquee__card:hover,
+    .marquee__card:focus-visible {
+      transform: translateY(-4px) scale(1.03);
+      border-color: #ffd166;
+      background: rgba(255, 209, 102, 0.12);
+      outline: none;
+    }
+    .marquee__card:focus-visible {
+      box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.55);
+    }
+    .marquee__icon  { font-size: 2.25rem; line-height: 1; }
+    .marquee__label { font-size: 0.95rem; letter-spacing: 0.5px; }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .marquee__track--left,
+      .marquee__track--right {
+        animation: none;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
       }
-      .hero-text-container h1 {
-        font-size: 1.5rem;
-        margin-bottom: 0.3rem;
-      }
-      .hero-text-container .subtitle {
-        font-size: 0.8rem;
-        margin: 0.5rem 0 1rem;
-      }
-      .hero-text-container .hero-copy {
-        display: none;
-      }
+      .marquee-wrap { -webkit-mask-image: none; mask-image: none; }
+      body { animation: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .marquee__card { min-width: 120px; padding: 0.9rem 1rem; }
+      .marquee__icon  { font-size: 1.75rem; }
+      .marquee__label { font-size: 0.8rem; }
+      .marquee__track--left  { animation-duration: 22s; }
+      .marquee__track--right { animation-duration: 26s; }
     }
   </style>
 </head>
@@ -241,19 +224,133 @@
   <!-- Rahmen-Element mit Animation -->
   <div class="rahmen" id="parallax-rahmen" aria-hidden="true"></div>
 
-  <!-- Zentraler Text-Container -->
-  <main id="main" class="hero-text-container">
-    <h1 id="hero-title">Kulinarisches Recycling</h1>
-    <span class="subtitle" id="hero-subtitle">SPARE FOOD CALCULATOR</span>
-    <p class="hero-copy">© 2025 Kilian Ronacher — SpareFoodCalculator</p>
-    <div class="hero-links">
-      <a href="pages/impressum.html" data-i18n="impressum">Impressum</a>
-      <a href="pages/contact.html" data-i18n="kontakt">Kontakt</a>
-    </div>
-    <a href="pages/search.html" class="cta-button">🍳 Jetzt Starten</a>
+  <main id="main" class="hero-stage" aria-labelledby="hero-title">
+
+    <!-- Glassmorphism Titelbox -->
+    <section class="hero-glass">
+      <h1 id="hero-title" class="hero-glass__title">SpareFoodCalculator</h1>
+      <p id="hero-subtitle" class="hero-glass__subtitle">Kulinarisches Recycling</p>
+    </section>
+
+    <!-- 2-zeiliger Infinite Marquee -->
+    <section class="marquee-wrap" aria-label="Schnellzugriff Navigation">
+
+      <!-- Zeile 1: rechts → links -->
+      <div class="marquee">
+        <ul class="marquee__track marquee__track--left">
+          <!-- Original-Set -->
+          <li>
+            <a class="marquee__card" href="pages/search.html" aria-label="Rezept-Generator">
+              <span class="marquee__icon" aria-hidden="true">🍳</span>
+              <span class="marquee__label" data-i18n="recipe_generator_title">Rezept-Generator</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/ingredients-generator.html" aria-label="Zutaten-Generator">
+              <span class="marquee__icon" aria-hidden="true">🥕</span>
+              <span class="marquee__label" data-i18n="ing_generator_title">Zutaten-Generator</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/impressum.html" aria-label="Impressum">
+              <span class="marquee__icon" aria-hidden="true">📜</span>
+              <span class="marquee__label" data-i18n="impressum">Impressum</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/contact.html" aria-label="Kontakt">
+              <span class="marquee__icon" aria-hidden="true">✉️</span>
+              <span class="marquee__label" data-i18n="kontakt">Kontakt</span>
+            </a>
+          </li>
+          <!-- Duplikat-Set fuer nahtlosen Loop -->
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/search.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">🍳</span>
+              <span class="marquee__label">Rezept-Generator</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/ingredients-generator.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">🥕</span>
+              <span class="marquee__label">Zutaten-Generator</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/impressum.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">📜</span>
+              <span class="marquee__label">Impressum</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/contact.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">✉️</span>
+              <span class="marquee__label">Kontakt</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Zeile 2: links → rechts (umgekehrte Richtung) -->
+      <div class="marquee">
+        <ul class="marquee__track marquee__track--right">
+          <!-- Original-Set (Reihenfolge umgekehrt) -->
+          <li>
+            <a class="marquee__card" href="pages/contact.html" aria-label="Kontakt">
+              <span class="marquee__icon" aria-hidden="true">✉️</span>
+              <span class="marquee__label" data-i18n="kontakt">Kontakt</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/impressum.html" aria-label="Impressum">
+              <span class="marquee__icon" aria-hidden="true">📜</span>
+              <span class="marquee__label" data-i18n="impressum">Impressum</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/ingredients-generator.html" aria-label="Zutaten-Generator">
+              <span class="marquee__icon" aria-hidden="true">🥕</span>
+              <span class="marquee__label" data-i18n="ing_generator_title">Zutaten-Generator</span>
+            </a>
+          </li>
+          <li>
+            <a class="marquee__card" href="pages/search.html" aria-label="Rezept-Generator">
+              <span class="marquee__icon" aria-hidden="true">🍳</span>
+              <span class="marquee__label" data-i18n="recipe_generator_title">Rezept-Generator</span>
+            </a>
+          </li>
+          <!-- Duplikat-Set -->
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/contact.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">✉️</span>
+              <span class="marquee__label">Kontakt</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/impressum.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">📜</span>
+              <span class="marquee__label">Impressum</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/ingredients-generator.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">🥕</span>
+              <span class="marquee__label">Zutaten-Generator</span>
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <a class="marquee__card" href="pages/search.html" tabindex="-1">
+              <span class="marquee__icon" aria-hidden="true">🍳</span>
+              <span class="marquee__label">Rezept-Generator</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
   </main>
 
-  <header class="site-header" style="position: relative; z-index: 10;">
+  <header class="site-header">
     <div class="container header-inner">
       <h1 class="logo"><a href="index.html">SpareFoodCalculator</a></h1>
       <div class="nav-wrap">
@@ -298,27 +395,15 @@
   <script>
     // I18n Translations für Startseite
     const heroTranslations = {
-      de: {
-        title: 'Kulinarisches Recycling',
-        subtitle: 'SPARE FOOD CALCULATOR'
-      },
-      en: {
-        title: 'Culinary Recycling',
-        subtitle: 'SPARE FOOD CALCULATOR'
-      }
+      de: { title: 'Kulinarisches Recycling', subtitle: 'SPARE FOOD CALCULATOR' },
+      en: { title: 'Culinary Recycling',      subtitle: 'SPARE FOOD CALCULATOR' }
     };
 
-    // Funktion zum Aktualisieren der Helden-Texte
     function updateHeroText(lang) {
-      const titleEl = document.getElementById('hero-title');
+      const titleEl    = document.getElementById('hero-title');
       const subtitleEl = document.getElementById('hero-subtitle');
-      
-      if (titleEl) {
-        titleEl.textContent = heroTranslations[lang].title;
-      }
-      if (subtitleEl) {
-        subtitleEl.textContent = heroTranslations[lang].subtitle;
-      }
+      if (titleEl)    titleEl.textContent    = heroTranslations[lang]?.title    ?? heroTranslations.de.title;
+      if (subtitleEl) subtitleEl.textContent = heroTranslations[lang]?.subtitle ?? heroTranslations.de.subtitle;
     }
 
     // Initiale Sprache setzen
