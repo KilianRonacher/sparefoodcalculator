@@ -177,7 +177,18 @@ i18n['de'] = {
   'sust_season_yellow': 'Teilweise saisonal',
   'sust_season_red': 'Wenige Zutaten haben Saison',
   'sust_better_in': 'Besser im',
-  'sust_seasonal': 'Saisonalität'
+  'sust_seasonal': 'Saisonalität',
+  'show_more_recipes': 'Mehr Rezepte anzeigen',
+  'recipe_for_you_suffix': 'für dich',
+  'contact_mailto_opened': 'Dein E-Mail-Programm öffnet sich mit der fertigen Nachricht. Dort nur noch auf Senden klicken.',
+  'difficulty_einfach': 'einfach',
+  'difficulty_mittel': 'mittel',
+  'difficulty_gehoben': 'gehoben',
+  'difficulty_schwer': 'schwer',
+  'skip_link': 'Zum Hauptinhalt springen',
+  'pwa_install': 'App installieren',
+  'category_empty': 'Keine Rezepte gefunden.',
+  'remove_ingredient_aria': 'Entfernen'
 };
 
 // English language dictionary
@@ -325,7 +336,18 @@ i18n['en'] = {
   'sust_season_yellow': 'Partially seasonal',
   'sust_season_red': 'Few ingredients in season',
   'sust_better_in': 'Better in',
-  'sust_seasonal': 'Seasonality'
+  'sust_seasonal': 'Seasonality',
+  'show_more_recipes': 'Show more recipes',
+  'recipe_for_you_suffix': 'for you',
+  'contact_mailto_opened': 'Your email app opens with the finished message. Just press send there.',
+  'difficulty_einfach': 'easy',
+  'difficulty_mittel': 'medium',
+  'difficulty_gehoben': 'advanced',
+  'difficulty_schwer': 'hard',
+  'skip_link': 'Skip to main content',
+  'pwa_install': 'Install app',
+  'category_empty': 'No recipes found.',
+  'remove_ingredient_aria': 'Remove'
 };
 
 // New category translations
@@ -418,6 +440,27 @@ i18n['de']['kuchen_rezepte']    = 'Kuchen Rezepte';
 i18n['en']['kuchen_rezepte']    = 'Cake Recipes';
 i18n['de']['vorspeisen_rezepte'] = 'Vorspeisen';
 i18n['en']['vorspeisen_rezepte'] = 'Starters';
+// Category pages added 2026-11-10 (recipes existed, pages did not)
+i18n['de']['hauptgericht'] = 'Hauptgerichte';
+i18n['en']['hauptgericht'] = 'Main Dishes';
+i18n['de']['hauptgericht_rezepte'] = 'Hauptgerichte';
+i18n['en']['hauptgericht_rezepte'] = 'Main Dishes';
+i18n['de']['pasta'] = 'Pasta';
+i18n['en']['pasta'] = 'Pasta';
+i18n['de']['pasta_rezepte'] = 'Pasta Rezepte';
+i18n['en']['pasta_rezepte'] = 'Pasta Recipes';
+i18n['de']['beilage'] = 'Beilagen';
+i18n['en']['beilage'] = 'Side Dishes';
+i18n['de']['beilage_rezepte'] = 'Beilagen';
+i18n['en']['beilage_rezepte'] = 'Side Dishes';
+i18n['de']['snack'] = 'Snacks';
+i18n['en']['snack'] = 'Snacks';
+i18n['de']['snack_rezepte'] = 'Snacks';
+i18n['en']['snack_rezepte'] = 'Snacks';
+i18n['de']['fruehstueck'] = 'Frühstück';
+i18n['en']['fruehstueck'] = 'Breakfast';
+i18n['de']['fruehstueck_rezepte'] = 'Frühstück';
+i18n['en']['fruehstueck_rezepte'] = 'Breakfast';
 
 // ==================== SIDE STATS BOXES (search.html) ====================
 i18n['de']['sfc_box_money_title']             = '💶 Geld gespart';
@@ -448,8 +491,8 @@ i18n['de']['contact_phone_label']         = 'Telefon';
 i18n['en']['contact_phone_label']         = 'Phone';
 i18n['de']['contact_form_heading']        = 'Feedback / Anfragen';
 i18n['en']['contact_form_heading']        = 'Feedback / Inquiries';
-i18n['de']['contact_form_intro']          = 'Schreibe uns direkt — die Nachricht geht ueber unseren Server an mich. Kein externes E-Mail-Programm noetig.';
-i18n['en']['contact_form_intro']          = 'Write to us directly — the message is delivered through our server. No external email client required.';
+i18n['de']['contact_form_intro']          = 'Schreib mir direkt. Beim Absenden öffnet sich dein E-Mail-Programm mit der fertigen Nachricht.';
+i18n['en']['contact_form_intro']          = 'Write to me directly. When you submit, your email app opens with the finished message.';
 i18n['de']['contact_name_label']          = 'Name';
 i18n['en']['contact_name_label']          = 'Name';
 i18n['de']['contact_message_label']       = 'Nachricht';
@@ -983,6 +1026,45 @@ const ingredientTranslations = {
   'zwetschgen': 'plums'
 };
 
+// Ingredients added by the daily recipe routine (May 2026) that had no English name yet.
+Object.assign(ingredientTranslations, {
+  'aal': 'eel', 'ananas': 'pineapple', 'aprikosen': 'apricots', 'arborio': 'arborio rice',
+  'auberginen': 'eggplants', 'baguette': 'baguette', 'bambussprossen': 'bamboo shoots', 'basmati': 'basmati rice',
+  'bergkäse': 'alpine cheese', 'bier': 'beer', 'blattspinat': 'leaf spinach', 'blutwurst': 'blood sausage',
+  'borretsch': 'borage', 'bratwurst': 'bratwurst', 'brezn': 'pretzels', 'bucatini': 'bucatini',
+  'camembert': 'camembert', 'cayennepfeffer': 'cayenne pepper', 'chilibohnenpaste': 'chili bean paste', 'chilipulver': 'chili powder',
+  'chiliöl': 'chili oil', 'cognac': 'cognac', 'cornichons': 'cornichons', 'curryblätter': 'curry leaves',
+  'dashi': 'dashi', 'datteln': 'dates', 'eiernudeln': 'egg noodles', 'eierschwammerl': 'chanterelles',
+  'eiswasser': 'ice water', 'ente': 'duck', 'erdnussöl': 'peanut oil', 'erdnüsse': 'peanuts',
+  'filoteig': 'filo pastry', 'frühlingszwiebeln': 'spring onions', 'fünf gewürze': 'five-spice', 'fünf-gewürze-pulver': 'five-spice powder',
+  'galgant': 'galangal', 'garam masala': 'garam masala', 'garam-masala': 'garam masala', 'gemahlene mandeln': 'ground almonds',
+  'ghee': 'ghee', 'glasnudeln': 'glass noodles', 'gochujang': 'gochujang', 'grüne bohnen': 'green beans',
+  'grüne oliven': 'green olives', 'grünkohl': 'kale', 'guanciale': 'guanciale', 'kaffirblätter': 'kaffir lime leaves',
+  'kalbshaxe': 'veal shank', 'kalbslunge': 'veal lung', 'kalbsrücken': 'saddle of veal', 'kassler': 'smoked pork loin',
+  'katsuobushi': 'bonito flakes', 'kecap manis': 'kecap manis', 'kerbel': 'chervil', 'kichererbsenmehl': 'chickpea flour',
+  'konfitüre': 'jam', 'koriander frisch': 'fresh cilantro', 'koriandergrün': 'cilantro', 'korianderkraut': 'cilantro leaves',
+  'korianderpulver': 'ground coriander', 'koriandersamen': 'coriander seeds', 'kresse': 'cress', 'kürbiskerne': 'pumpkin seeds',
+  'kürbiskernöl': 'pumpkin seed oil', 'leberkäse': 'leberkäse (meatloaf)', 'maismehl': 'cornmeal', 'maisstärke': 'cornstarch',
+  'mandarin-pfannkuchen': 'mandarin pancakes', 'marillen': 'apricots (Austrian)', 'markknochen': 'marrow bones', 'mirin': 'mirin',
+  'mohnsamen': 'poppy seeds', 'möhren': 'carrots', 'nori': 'nori', 'okraschoten': 'okra',
+  'orangenlikör': 'orange liqueur', 'paneer': 'paneer', 'panko': 'panko', 'parmaschinken': 'Parma ham',
+  'passierte tomaten': 'tomato passata', 'pecorino': 'pecorino', 'pflaumen': 'plums', 'piment': 'allspice',
+  'pimpinelle': 'salad burnet', 'powidl': 'plum butter', 'radieschen': 'radishes', 'ramen-nudeln': 'ramen noodles',
+  'reisessig': 'rice vinegar', 'reisnudeln': 'rice noodles', 'rinderbrust': 'beef brisket', 'roggenmehl': 'rye flour',
+  'romanasalat': 'romaine lettuce', 'rosenpaprika': 'hot paprika', 'rote-paprika': 'red bell pepper', 'rum': 'rum',
+  'safran': 'saffron', 'sake': 'sake', 'sauerampfer': 'sorrel', 'sauerkirschen': 'sour cherries',
+  'sauerrahm': 'sour cream', 'saure sahne': 'sour cream', 'schalotten': 'shallots', 'schmalz': 'lard',
+  'schwarzbrot': 'dark rye bread', 'schwarze oliven': 'black olives', 'schweinebauch': 'pork belly', 'schweinebraten': 'pork roast',
+  'schweinehack': 'ground pork', 'schweineschmalz': 'pork lard', 'schweineschulter': 'pork shoulder', 'schweinshaxe': 'pork knuckle',
+  'senfblätter': 'mustard greens', 'senfkörner': 'mustard seeds', 'sesampaste': 'sesame paste', 'shaoxing-wein': 'Shaoxing wine',
+  'shiitake': 'shiitake', 'sojasoße': 'soy sauce', 'staubzucker': 'powdered sugar', 'sternanis': 'star anise',
+  'szechuan pfeffer': 'Sichuan pepper', 'süßer senf': 'sweet mustard', 'tamarindenpaste': 'tamarind paste', 'thunfisch aus der dose': 'canned tuna',
+  'toast': 'toast', 'urad dal': 'urad dal', 'vanilleextrakt': 'vanilla extract', 'vanilleschote': 'vanilla bean',
+  'vanillezucker': 'vanilla sugar', 'wakame': 'wakame', 'wasser': 'water', 'weizenmehl': 'wheat flour',
+  'weißkohl': 'white cabbage', 'weißweinessig': 'white wine vinegar', 'weißwürste': 'white sausages', 'würstchen': 'sausages',
+  'zander': 'pike-perch', 'zimtstange': 'cinnamon stick', 'zitronengras': 'lemongrass'
+});
+
 // Expose for other scripts that expect global access
 window.ingredientTranslations = ingredientTranslations;
 
@@ -1062,7 +1144,13 @@ function setLang(targetLanguage) {
       ? (i18n[targetLanguage][translationKey] || i18n['de'][translationKey] || translationKey)
       : (i18n['de'][translationKey] || translationKey);
     
-    element.textContent = translation;
+    // Reason: headings like "🍳 Rezept-Generator" carry an emoji in the HTML that the dictionary text does not have.
+    if (!element.hasAttribute('data-i18n-prefix')) {
+      const emoji = (element.textContent || '').trim().match(/^([^\w\s"'(]{1,4})\s/u);
+      element.setAttribute('data-i18n-prefix', emoji && !/^[\u0000-\u024f]/u.test(emoji[1]) ? emoji[1] + ' ' : '');
+    }
+    const prefix = element.getAttribute('data-i18n-prefix');
+    element.textContent = (prefix && !translation.startsWith(prefix.trim())) ? prefix + translation : translation;
   });
   
   // Update placeholder text for input fields

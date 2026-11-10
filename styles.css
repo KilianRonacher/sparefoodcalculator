@@ -2454,6 +2454,71 @@ main.container h3 {
 }
 
 /* ========================================
+ * Reduced transparency: replace blur-glass with solid panels
+ * Reason: backdrop-filter can be illegible for users with low vision
+ * or those who have enabled "Reduce Transparency" in system settings.
+ * ======================================== */
+@media (prefers-reduced-transparency: reduce) {
+  .card,
+  body.dark-mode .card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+  }
+  body.dark-mode .card {
+    background: #1e1e2e;
+    border: 1px solid #444466;
+  }
+
+  .glass-card,
+  body.dark-mode .glass-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+  }
+  body.dark-mode .glass-card {
+    background: #1e1e2e;
+    border: 1px solid #444466;
+  }
+
+  .how-it-works,
+  body.dark-mode .how-it-works {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #f9f9f9;
+    border: 1px solid #cccccc;
+  }
+  body.dark-mode .how-it-works {
+    background: #1e1e2e;
+    border: 1px solid #444466;
+  }
+
+  .search-box {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #f9f9f9;
+    border: 1px solid #cccccc;
+  }
+}
+
+/* ========================================
+ * Visually hidden but accessible to screen readers
+ * ======================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
  * Skip-to-content link for keyboard / screenreader
  * ======================================== */
 .skip-link {
@@ -2828,4 +2893,146 @@ body.dark-mode .sfc-side-divider {
   .sfc-side-value {
     font-size: 1.8rem;
   }
+}
+
+/* ====================================================================
+   CLS-FIX: Reserve vertical space so initial render doesn't shift.
+   Reason: #compose-results, #recipe-results-section, #suggestions-container
+   start empty and fill async after JS init. Without min-height the page
+   "jumps" once content arrives.
+   ==================================================================== */
+
+#compose-results {
+  min-height: 4rem;
+}
+
+#suggestions-container {
+  min-height: 4rem;
+}
+
+#all-ingredients-container {
+  min-height: 8rem;
+}
+
+#selected-ingredients-container {
+  min-height: 3rem;
+}
+
+#category-summary-container {
+  min-height: 3rem;
+}
+
+#recipe-results-section[style*="display: block"] {
+  min-height: 12rem;
+}
+
+.sfc-stage {
+  /* Reason: explicit contain prevents side boxes from animating into
+     position once side-stats.js initializes. */
+  contain: layout;
+}
+
+/* ====================================================================
+   Recipe Result Card (shared between recipe-generator & ing-generator)
+   Reason: replaces ~20 lines of inline cssText per card → one class.
+   Easier to theme (dark mode), test, and update.
+   ==================================================================== */
+
+.sfc-recipe-card {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
+  border: 2px solid var(--color-accent-teal);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .sfc-recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(78, 205, 196, 0.2);
+  }
+}
+
+.sfc-recipe-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.sfc-recipe-card .sfc-match-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.sfc-match-badge--exact {
+  background: #4ecdc4;
+  color: white;
+}
+
+.sfc-match-badge--partial {
+  background: #ffe066;
+  color: #222;
+}
+
+.sfc-recipe-card .sfc-ing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sfc-ing-tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sfc-ing-tag--have {
+  background-color: #90EE90;
+  color: #006600;
+}
+
+.sfc-ing-tag--need {
+  background-color: #FFB6B6;
+  color: #990000;
+}
+
+.sfc-ing-tag--extra {
+  background-color: #FFD700;
+  color: #664400;
+  cursor: help;
+}
+
+.sfc-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 1.5rem;
+}
+
+/* Dark-Mode */
+body.dark-mode .sfc-recipe-card {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.12), rgba(255, 107, 107, 0.10));
+  border-color: rgba(78, 205, 196, 0.6);
+}
+
+/* ==================== CATEGORIES MENU (category pages) ==================== */
+.categories-wrap { position: relative; display: inline-block; }
+.categories-menu {
+  position: absolute; top: calc(100% + 0.4rem); left: 0; z-index: 200;
+  display: flex; flex-direction: column; min-width: 11rem; padding: 0.4rem;
+  background: var(--color-background, #fff); border: 2px solid var(--color-accent-teal, #4ecdc4);
+  border-radius: 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.categories-menu[hidden] { display: none; }
+.categories-menu a { padding: 0.55rem 0.8rem; border-radius: 6px; color: var(--color-text-primary, #2d2d2d); text-decoration: none; }
+.categories-menu a:hover, .categories-menu a:focus-visible { background: rgba(78, 205, 196, 0.18); }
+.categories-menu a[aria-current="page"] { font-weight: 700; }
+body.dark-mode .categories-menu { background: #1a1625; }
+body.dark-mode .categories-menu a { color: #f0f0f0; }
+@media (max-width: 768px) {
+  .categories-wrap { display: block; }
+  .categories-menu { position: static; box-shadow: none; margin-top: 0.4rem; }
 }

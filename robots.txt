@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sparefoodcalculator.com/sitemap.xml
+Sitemap: https://kilianronacher.github.io/sparefoodcalculator/sitemap.xml

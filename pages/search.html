@@ -6,16 +6,16 @@
   <title>Rezept-Generator — SpareFoodCalculator</title>
   <meta name="description" content="Gib deine Zutaten ein und finde passende Rezepte. Fuzzy-Suche mit Tippfehler-Korrektur.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sparefoodcalculator.com/pages/search.html" />
+  <link rel="canonical" href="https://kilianronacher.github.io/sparefoodcalculator/pages/search.html" />
   <meta property="og:title" content="Rezept-Generator — SpareFoodCalculator" />
   <meta property="og:description" content="Gib deine Zutaten ein und finde passende Rezepte mit Fuzzy-Suche und Tippfehler-Korrektur." />
-  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta property="og:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sparefoodcalculator.com/pages/search.html" />
+  <meta property="og:url" content="https://kilianronacher.github.io/sparefoodcalculator/pages/search.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Rezept-Generator — SpareFoodCalculator" />
   <meta name="twitter:description" content="Gib deine Zutaten ein und finde passende Rezepte mit Fuzzy-Suche und Tippfehler-Korrektur." />
-  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta name="twitter:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <link rel="manifest" href="../manifest.json" />
   <meta name="theme-color" content="#ffd166" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -204,6 +204,9 @@
 
     <!-- SUGGESTION BOX entfernt -->
 
+    <!-- Screen-reader announcer: updated by generateRecipes() -->
+    <div id="search-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
     <!-- RESULTS SECTION -->
     <section id="compose-results" class="generator-results" style="margin-top: 2rem;"></section>
     </main>
@@ -240,310 +243,261 @@
 
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-  <script src="../i18n.js"></script>
-  <script src="../data/sustainability.js"></script>
-  <script src="../js/sustainability.js"></script>
-  <script src="../ingredients.js"></script>
-  <script src="../search.js"></script>
-  <script src="../js/quantities.js"></script>
-  <script src="../recipes.js"></script>
-  <script src="../app.js"></script>
-  <script src="../ui.js"></script>
-  <script src="../js/sustainability-ui.js"></script>
-  <script src="../js/side-stats.js"></script>
+  <script defer src="../js/safe-dom.js"></script>
+  <script defer src="../i18n.js"></script>
+  <script defer src="../data/sustainability.js"></script>
+  <script defer src="../js/sustainability.js"></script>
+  <script defer src="../ingredients.js"></script>
+  <script defer src="../search.js"></script>
+  <script defer src="../js/search-suggest.js"></script>
+  <script defer src="../js/search-worker-client.js"></script>
+  <script defer src="../js/quantities.js"></script>
+  <script defer src="../recipes.js"></script>
+  <script defer src="../js/recipe-ui.js"></script>
+  <script defer src="../app.js"></script>
+  <script defer src="../ui.js"></script>
+  <script defer src="../js/sustainability-ui.js"></script>
+  <script defer src="../js/side-stats.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
     // Translation helper
     const t = (k, fallback) => { 
       const lang = getLang(); 
-      return (i18n[lang] && i18n[lang][k]) || i18n['de'][k] || fallback || k; 
+      // Reason: an intentionally empty text (English "did_you_mean_typed") must stay empty.
+      if (i18n[lang] && i18n[lang][k] !== undefined) return i18n[lang][k];
+      return i18n['de'][k] || fallback || k;
     };
 
-    // Non-vegetarian keywords for filtering
-    const nonVegKeywords = [
-      'fleisch','rind','rindfleisch','schwein','schweinefleisch','hähnchen','haehnchen','huhn',
-      'lamm','kalb','wild','fisch','lachs','thunfisch','kabeljau','forelle','speck','schinken','wurst'
-    ];
-
-    // Check if ingredient matches (mit Synonym-Aufloesung)
-    function isIngredientMatch(userIng, recipeIng) {
-      const u = userIng.toLowerCase().trim();
-      const r = recipeIng.toLowerCase().trim();
-      if (u === r || r.includes(u) || u.includes(r)) return true;
-
-      // Synonym-Aufloesung: alle Varianten pruefen
-      if (typeof Ingredients !== 'undefined' && typeof Ingredients.resolveSynonyms === 'function') {
-        const uSynonyms = Ingredients.resolveSynonyms(u);
-        for (const syn of uSynonyms) {
-          if (syn === r || r.includes(syn) || syn.includes(r)) return true;
-        }
-      }
-      return false;
-    }
-
-    // Check if recipe is vegetarian
-    function isVegetarianRecipe(recipe) {
-      return !recipe.ingredients.some(ing => 
-        nonVegKeywords.some(k => ing.toLowerCase().includes(k))
-      );
+    // Reason: matching and the vegetarian check live in search.js, so the page,
+    // the ingredient generator and the worker all decide the same way.
+    function isVegetarian(recipe) {
+      return typeof isVegetarianRecipe === 'function' ? isVegetarianRecipe(recipe) : true;
     }
 
     let userIngredients = [];
     let vegMode = false;
 
-    // Render user ingredients as tags
+    // Render user ingredients as tags (XSS-safe via SafeDom)
     function renderIngredientsDisplay() {
       const container = document.getElementById('ingredients-display');
       const lang = getLang();
-      container.innerHTML = '';
+      SafeDom.clearChildren(container);
 
       if (userIngredients.length === 0) {
-        container.innerHTML = `<p style="color: var(--color-text-muted);">${i18n[lang]['no_ingredients_added']}</p>`;
+        container.appendChild(SafeDom.el('p',
+          { style: 'color: var(--color-text-muted);' },
+          i18n[lang]['no_ingredients_added']
+        ));
         return;
       }
 
-      const tagContainer = document.createElement('div');
-      tagContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;';
+      const tagContainer = SafeDom.el('div', {
+        style: 'display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;'
+      });
 
       userIngredients.forEach((ing, idx) => {
-        const tag = document.createElement('div');
-        tag.className = 'ingredient-tag';
-        tag.style.cssText = `
-          background-color: #4ecdc4;
-          color: white;
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
-          font-weight: 500;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
-        `;
-        tag.innerHTML = `
-          <span>${ing}</span>
-          <button class="btn-remove" data-idx="${idx}" style="
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 0;
-            line-height: 1;
-          ">×</button>
-        `;
+        const removeBtn = SafeDom.el('button', {
+          className: 'btn-remove',
+          ariaLabel: 'Entfernen',
+          style: 'background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem; padding: 0; line-height: 1;',
+          onClick: () => {
+            userIngredients.splice(idx, 1);
+            renderIngredientsDisplay();
+            generateRecipes();
+          }
+        }, '×');
+
+        const tag = SafeDom.el('div', {
+          className: 'ingredient-tag',
+          style: 'background-color: #4ecdc4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);'
+        },
+          SafeDom.el('span', {}, ing),
+          removeBtn
+        );
+
         tagContainer.appendChild(tag);
       });
 
       container.appendChild(tagContainer);
 
-      // Attach remove handlers
-      container.querySelectorAll('.btn-remove').forEach(btn => {
-        btn.addEventListener('click', () => {
-          userIngredients.splice(Number(btn.dataset.idx), 1);
-          renderIngredientsDisplay();
-          generateRecipes();
-        });
-      });
-
-      // Clear all button
       if (userIngredients.length > 0) {
-        const clearBtn = document.createElement('button');
-        clearBtn.className = 'btn secondary';
-        clearBtn.textContent = i18n[lang]['ing_clear_btn'];
-        clearBtn.style.marginTop = '0.5rem';
-        clearBtn.addEventListener('click', () => {
-          userIngredients = [];
-          renderIngredientsDisplay();
-          generateRecipes();
-        });
+        const clearBtn = SafeDom.el('button', {
+          className: 'btn secondary',
+          style: 'margin-top: 0.5rem;',
+          onClick: () => {
+            userIngredients = [];
+            renderIngredientsDisplay();
+            generateRecipes();
+          }
+        }, i18n[lang]['ing_clear_btn']);
         container.appendChild(clearBtn);
       }
     }
 
-    // Generate and display matching recipes
+    // Stale-token guard: incremented each call so a slow async result that
+    // arrives after a newer search started is silently dropped.
+    let _searchToken = 0;
+    const PAGE_SIZE = 12;
+    let _visibleCount = PAGE_SIZE;
+    let _lastRanked = [];
+
+    function announce(msg) {
+      const el = document.getElementById('search-announcer');
+      if (el) el.textContent = msg;
+    }
+
+    function showMessage(resultsEl, text) {
+      SafeDom.clearChildren(resultsEl);
+      resultsEl.appendChild(SafeDom.el('p', { style: 'text-align: center; color: var(--color-text-muted);' }, text));
+    }
+
+    // Generate and display matching recipes (search worker first, same engine on the page as fallback)
     function generateRecipes() {
       const results = document.getElementById('compose-results');
       const lang = getLang();
+      _visibleCount = PAGE_SIZE;
 
       if (userIngredients.length === 0) {
-        results.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['no_ingredients_added']}</p>`;
+        _lastRanked = [];
+        showMessage(results, i18n[lang]['no_ingredients_added']);
+        announce('');
         return;
       }
 
-      // Build title→scored map so createRecipeCard gets missingIngredients[]
-      const scoredByTitle = new Map();
-      if (typeof findMatchingRecipes === 'function') {
-        findMatchingRecipes(userIngredients).forEach(s => scoredByTitle.set(s.title, s));
-      }
-
-      const getMissing = (recipe) => {
-        const s = scoredByTitle.get(recipe.title);
-        if (s && Array.isArray(s.missingIngredients)) return s.missingIngredients;
-        return recipe.ingredients.filter(ing =>
-          !userIngredients.some(u => isIngredientMatch(u, ing))
-        );
+      const token = ++_searchToken;
+      const runOnPage = () => {
+        if (token !== _searchToken) return;
+        const ranked = typeof findMatchingRecipes === 'function' ? findMatchingRecipes(userIngredients.slice(), { light: true }) : [];
+        showRanked(ranked);
       };
 
-      let allRecipes = vegMode ? recipes.filter(isVegetarianRecipe) : recipes;
+      if (typeof SearchWorker !== 'undefined' && SearchWorker.isSupported()) {
+        SearchWorker.findMatchingRecipes(userIngredients.slice())
+          .then(ranked => { if (token === _searchToken) showRanked(ranked); })
+          .catch(runOnPage);
+      } else {
+        runOnPage();
+      }
+    }
 
-      const exactMatches = allRecipes.filter(recipe =>
-        userIngredients.every(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
-      );
+    // Joins the ranked match data with the full recipes and renders them.
+    function showRanked(ranked) {
+      const byId = new Map();
+      (Array.isArray(window.recipes) ? window.recipes : []).forEach(recipe => byId.set(recipe.id, recipe));
+      _lastRanked = (Array.isArray(ranked) ? ranked : [])
+        .map(match => ({ match, recipe: byId.get(match.id) }))
+        .filter(item => item.recipe && (!vegMode || isVegetarian(item.recipe)));
+      renderResults();
+    }
 
-      const partialMatches = allRecipes
-        .filter(recipe => !exactMatches.includes(recipe) &&
-          userIngredients.some(u => recipe.ingredients.some(r => isIngredientMatch(u, r)))
-        )
-        .sort((a, b) => {
-          const sa = scoredByTitle.get(a.title);
-          const sb = scoredByTitle.get(b.title);
-          return ((sb && sb.score) || 0) - ((sa && sa.score) || 0);
-        })
-        .slice(0, 5);
+    function renderResults() {
+      const results = document.getElementById('compose-results');
+      const lang = getLang();
+      const total = _lastRanked.length;
 
-      const allMatches = [...exactMatches, ...partialMatches];
-
-      if (allMatches.length === 0) {
-        results.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['no_recipes_found']}</p>`;
+      if (userIngredients.length === 0) {
+        showMessage(results, i18n[lang]['no_ingredients_added']);
+        return;
+      }
+      if (total === 0) {
+        showMessage(results, i18n[lang]['no_recipes_found']);
+        announce(i18n[lang]['no_recipes_found']);
         return;
       }
 
-      const recipeWord = allMatches.length === 1 ? i18n[lang]['recipe'] : i18n[lang]['recipes'];
-      results.innerHTML = `<h2>🍽️ ${allMatches.length} ${recipeWord} ${i18n[lang]['recipes_for_you']}</h2>`;
+      SafeDom.clearChildren(results);
+      // Reason: the key "recipes_for_you" already contains the word "Rezepte"; only the singular needs its own text.
+      const heading = total === 1
+        ? '1 ' + i18n[lang]['recipe'] + ' ' + t('recipe_for_you_suffix', 'für dich')
+        : total + ' ' + i18n[lang]['recipes_for_you'];
+      results.appendChild(SafeDom.el('h2', {}, '🍽️ ' + heading));
 
-      if (exactMatches.length > 0) {
-        const section = createRecipeSection(`✅ ${i18n[lang]['perfect_matches']}`, '#4ecdc4');
-        exactMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, true, getMissing(recipe))));
+      const visible = _lastRanked.slice(0, _visibleCount);
+      const exact = visible.filter(item => item.match.isExact);
+      const partial = visible.filter(item => !item.match.isExact);
+
+      if (exact.length > 0) {
+        const section = createRecipeSection('✅ ' + i18n[lang]['perfect_matches'], '#4ecdc4');
+        exact.forEach(item => section._grid.appendChild(createRecipeCard(item.recipe, item.match)));
+        results.appendChild(section);
+      }
+      if (partial.length > 0) {
+        const section = createRecipeSection('💡 ' + i18n[lang]['more_suggestions'], '#ffe066');
+        partial.forEach(item => section._grid.appendChild(createRecipeCard(item.recipe, item.match)));
         results.appendChild(section);
       }
 
-      if (partialMatches.length > 0) {
-        const section = createRecipeSection(`💡 ${i18n[lang]['more_suggestions']}`, '#ffe066');
-        partialMatches.forEach(recipe => section._grid.appendChild(createRecipeCard(recipe, false, getMissing(recipe))));
-        results.appendChild(section);
+      if (total > _visibleCount) {
+        results.appendChild(SafeDom.el('button', {
+          className: 'btn secondary',
+          style: 'display: block; margin: 1.5rem auto 0;',
+          onClick: () => { _visibleCount += PAGE_SIZE; renderResults(); }
+        }, t('show_more_recipes', 'Mehr Rezepte anzeigen') + ' (' + (total - _visibleCount) + ')'));
       }
+
+      const exactTotal = _lastRanked.filter(item => item.match.isExact).length;
+      announce(lang === 'en'
+        ? total + ' recipes found, ' + exactTotal + ' of them contain all your ingredients.'
+        : total + ' Rezepte gefunden, ' + exactTotal + ' davon enthalten alle deine Zutaten.');
     }
 
     // Create recipe section with title bar
     function createRecipeSection(title, color) {
       const section = document.createElement('div');
       section.style.marginTop = '2rem';
-      
+
       const bar = document.createElement('div');
       bar.textContent = title;
-      bar.style.cssText = `
-        background: linear-gradient(90deg, ${color} 0%, #fff0 100%);
-        color: #222;
-        font-weight: 700;
-        font-size: 1.1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        box-shadow: 0 2px 8px rgba(78,205,196,0.1);
-      `;
+      bar.style.cssText = 'background: linear-gradient(90deg, ' + color + ' 0%, #fff0 100%); color: #222; font-weight: 700; ' +
+        'font-size: 1.1rem; padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(78,205,196,0.1);';
       section.appendChild(bar);
-      
-      const grid = document.createElement('div');
-      grid.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.5rem;';
+
+      const grid = SafeDom.el('div', { className: 'sfc-recipe-grid' });
       section.appendChild(grid);
-      
+
       section._grid = grid;
       return section;
     }
 
-    // Create recipe card with ingredients
-    function createRecipeCard(recipe, isExact, missingIngredients) {
+    // Create recipe card (CSS-class-based, XSS-safe). Colours and the
+    // "Dir fehlt noch" line come from the same match data, so they always agree.
+    function createRecipeCard(recipe, match) {
       const lang = getLang();
-      const card = document.createElement('div');
-      card.style.cssText = `
-        background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
-        border: 2px solid var(--color-accent-teal);
-        border-radius: 12px;
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      `;
 
-      // Only apply hover lift on non-touch devices
-      if (!window.matchMedia('(hover: none)').matches) {
-        card.addEventListener('mouseover', () => {
-          card.style.transform = 'translateY(-4px)';
-          card.style.boxShadow = '0 8px 24px rgba(78, 205, 196, 0.2)';
-        });
-        card.addEventListener('mouseout', () => {
-          card.style.transform = 'translateY(0)';
-          card.style.boxShadow = 'none';
-        });
-      }
-
-      // Click handler to show recipe details with instructions
-      card.addEventListener('click', () => {
-        displayRecipeDetails(recipe);
-      });
-
-      // Title with translation support
-      const recipeTitle = lang === 'en' && recipe.title_en 
-        ? recipe.title_en 
+      const recipeTitle = lang === 'en' && recipe.title_en
+        ? recipe.title_en
         : lang === 'en' && typeof autoTranslateGermanText === 'function'
           ? autoTranslateGermanText(recipe.title)
           : recipe.title;
-      
-      const title = document.createElement('h3');
-      title.textContent = recipeTitle;
-      title.style.margin = '0 0 0.5rem 0';
-      card.appendChild(title);
 
-      // Match badge
-      const badge = document.createElement('span');
-      badge.textContent = isExact ? `✅ ${i18n[lang]['perfect_badge']}` : `💡 ${i18n[lang]['partial_badge']}`;
-      badge.style.cssText = `
-        display: inline-block;
-        font-size: 0.8rem;
-        font-weight: bold;
-        padding: 0.3rem 0.8rem;
-        border-radius: 12px;
-        background-color: ${isExact ? '#4ecdc4' : '#ffe066'};
-        color: ${isExact ? 'white' : '#222'};
-        margin-bottom: 0.8rem;
-      `;
-      card.appendChild(badge);
+      const badge = SafeDom.el('span', {
+        className: 'sfc-match-badge ' + (match.isExact ? 'sfc-match-badge--exact' : 'sfc-match-badge--partial')
+      }, match.isExact ? '✅ ' + i18n[lang]['perfect_badge'] : '💡 ' + i18n[lang]['partial_badge']);
 
-      // Ingredients with color coding
-      const ingSection = document.createElement('div');
-      
-      const ingTitle = document.createElement('p');
-      ingTitle.textContent = i18n[lang]['ingredients_colon'];
-      ingTitle.style.cssText = 'font-weight: bold; margin: 0 0 0.5rem 0; font-size: 0.9rem;';
-      ingSection.appendChild(ingTitle);
-
-      const ingTags = document.createElement('div');
-      ingTags.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.4rem;';
-
+      const have = new Set(match.haveIngredients);
+      const ingTags = SafeDom.el('div', { className: 'sfc-ing-tags' });
       recipe.ingredients.forEach(ing => {
-        const hasIt = userIngredients.some(u => isIngredientMatch(u, ing));
-        const tag = document.createElement('span');
-        tag.textContent = translateIngredient(ing, lang);
-        tag.style.cssText = `
-          padding: 0.3rem 0.7rem;
-          border-radius: 12px;
-          font-size: 0.85rem;
-          background-color: ${hasIt ? '#90EE90' : '#FFB6B6'};
-          color: ${hasIt ? '#006600' : '#990000'};
-          font-weight: 500;
-        `;
-        ingTags.appendChild(tag);
+        ingTags.appendChild(SafeDom.el('span', {
+          className: 'sfc-ing-tag ' + (have.has(ing) ? 'sfc-ing-tag--have' : 'sfc-ing-tag--need')
+        }, translateIngredient(ing, lang)));
       });
 
-      ingSection.appendChild(ingTags);
-      card.appendChild(ingSection);
+      const card = SafeDom.el('div', {
+        className: 'sfc-recipe-card',
+        onClick: () => displayRecipeDetails(recipe)
+      },
+        SafeDom.el('h3', {}, recipeTitle),
+        badge,
+        SafeDom.el('p', { style: 'font-weight: bold; margin: 0 0 0.5rem 0; font-size: 0.9rem;' },
+          i18n[lang]['ingredients_colon']),
+        ingTags
+      );
 
-      // "Dir fehlt noch" hint
-      const missing = Array.isArray(missingIngredients) ? missingIngredients : [];
-      if (missing.length > 0) {
-        const missingDiv = document.createElement('div');
-        missingDiv.style.cssText = 'margin-top: 0.8rem; font-size: 0.85rem; color: #cc4400; font-style: italic;';
-        const label = (i18n[lang] && i18n[lang]['missing_ingredients_label']) || 'Dir fehlt noch:';
-        missingDiv.textContent = label + ' ' + missing.map(m => translateIngredient(m, lang)).join(', ');
-        card.appendChild(missingDiv);
+      if (match.missingIngredients.length > 0) {
+        card.appendChild(SafeDom.el('p', {
+          style: 'margin: 0.8rem 0 0; font-size: 0.85rem; color: #cc4400; font-style: italic;'
+        }, t('missing_ingredients_label', 'Dir fehlt noch:') + ' ' +
+           match.missingIngredients.map(name => translateIngredient(name, lang)).join(', ')));
       }
 
       return card;
@@ -567,28 +521,40 @@
     }
 
     function getLearnedCorrection(input) {
+      // Reason: a learned correction must never replace a correctly spelled
+      // ingredient (an old wrong entry turned "Fisch" into "hirsch" for good).
+      if (typeof buildQuery === 'function' && buildQuery(input).known) return null;
       const data = loadTypoCorrections();
       return data[input.toLowerCase()] || null;
     }
 
     // ==================== DID-YOU-MEAN UI ====================
 
-    function showDidYouMean(typedWord, suggestion) {
+    // Reason: previously each call wiped the banner, so when the user
+    // submitted multiple typo'd ingredients only the last suggestion was
+    // visible. Now each call appends a new row; hideDidYouMean() clears.
+    function appendDidYouMeanRow(typedWord, suggestion) {
       const banner = document.getElementById('did-you-mean-banner');
       if (!banner) return;
 
-      const lang = getLang();
       const prefix = t('did_you_mean_prefix', 'Du hast');
       const typed = t('did_you_mean_typed', 'eingegeben');
       const suggest = t('did_you_mean_suggest', 'meintest du');
       const accept = t('did_you_mean_accept', 'Ja, uebernehmen');
 
       banner.style.display = 'flex';
-      banner.innerHTML = '';
+      banner.style.flexDirection = 'column';
+      banner.style.alignItems = 'flex-start';
+      banner.style.gap = '0.5rem';
+
+      const row = document.createElement('div');
+      row.className = 'did-you-mean-row';
+      row.style.cssText = 'display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;';
 
       const textSpan = document.createElement('span');
-      textSpan.textContent = prefix + ' "' + typedWord + '" ' + typed + ' — ' + suggest + ' "' + suggestion + '"?';
-      banner.appendChild(textSpan);
+      textSpan.textContent = prefix + ' "' + typedWord + '"' + (typed ? ' ' + typed : '') + '. ' +
+        suggest.charAt(0).toUpperCase() + suggest.slice(1) + ' "' + suggestion + '"?';
+      row.appendChild(textSpan);
 
       const btn = document.createElement('button');
       btn.textContent = accept;
@@ -599,7 +565,6 @@
         if (idx !== -1) {
           userIngredients[idx] = suggestion;
         } else {
-          // Falls durch Komma-Trennung mehrere Woerter kamen, suche flexibler
           for (let i = 0; i < userIngredients.length; i++) {
             if (userIngredients[i].toLowerCase() === typedWord.toLowerCase()) {
               userIngredients[i] = suggestion;
@@ -608,16 +573,30 @@
           }
         }
         saveTypoCorrection(typedWord, suggestion);
-        banner.style.display = 'none';
+
+        // Remove just this row; keep other suggestions visible.
+        row.remove();
+        if (banner.querySelectorAll('.did-you-mean-row').length === 0) {
+          banner.style.display = 'none';
+        }
         renderIngredientsDisplay();
         generateRecipes();
       });
-      banner.appendChild(btn);
+      row.appendChild(btn);
+
+      banner.appendChild(row);
+    }
+
+    // Backwards-compatible alias: callers used to invoke showDidYouMean(...).
+    function showDidYouMean(typedWord, suggestion) {
+      appendDidYouMeanRow(typedWord, suggestion);
     }
 
     function hideDidYouMean() {
       const banner = document.getElementById('did-you-mean-banner');
-      if (banner) banner.style.display = 'none';
+      if (!banner) return;
+      SafeDom.clearChildren(banner);
+      banner.style.display = 'none';
     }
 
     // ==================== AUTOCOMPLETE UI ====================
@@ -632,7 +611,7 @@
     function showAutocomplete(suggestions) {
       autocompleteSuggestions = suggestions;
       autocompleteIndex = -1;
-      dropdown.innerHTML = '';
+      SafeDom.clearChildren(dropdown);
 
       if (suggestions.length === 0) {
         dropdown.style.display = 'none';
@@ -734,12 +713,19 @@
         highlightAutocompleteItem();
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        autocompleteIndex = Math.max(autocompleteIndex - 1, 0);
+        // Reason: allow index -1 (no selection) so the user can ArrowUp back
+        // to their raw input after navigating into the dropdown.
+        autocompleteIndex = Math.max(autocompleteIndex - 1, -1);
         highlightAutocompleteItem();
       } else if (e.key === 'Enter' && autocompleteIndex >= 0) {
         e.preventDefault();
         acceptAutocompleteSuggestion(autocompleteSuggestions[autocompleteIndex].text);
       } else if (e.key === 'Escape') {
+        hideAutocomplete();
+      } else if (e.key === 'Tab') {
+        // Reason: Tab moves focus away. Hide the dropdown so it doesn't
+        // visually linger over the next focused control. Don't preventDefault —
+        // we still want the browser's native focus behaviour.
         hideAutocomplete();
       }
     });
@@ -793,10 +779,15 @@
 
     // Vegetarian toggle
     const vegToggle = document.getElementById('veg-toggle');
+    // Reason: the language switch rewrites every data-i18n text, so the label is set again from the real state.
+    function syncVegToggleLabel() {
+      const lang = getLang();
+      vegToggle.textContent = vegMode ? '🥬 ' + i18n[lang]['vegetarian_on'] : '🌿 ' + i18n[lang]['vegetarian_mode'];
+    }
     vegToggle.addEventListener('click', () => {
       const lang = getLang();
       vegMode = !vegMode;
-      vegToggle.textContent = vegMode ? `🥬 ${i18n[lang]['vegetarian_on']}` : `🌿 ${i18n[lang]['vegetarian_mode']}`;
+      syncVegToggleLabel();
       vegToggle.setAttribute('aria-pressed', String(vegMode));
       document.querySelector('.veg-toggle-wrap').classList.toggle('veg-active', vegMode);
       generateRecipes();
@@ -808,9 +799,13 @@
     // Side-Stats (Geld + Oeko) werden von js/side-stats.js verwaltet.
 
     // Listen for language changes to update dynamic content
+    // Reason: recipes arrive asynchronously; search again once they are there.
+    window.addEventListener('recipesLoaded', () => { if (userIngredients.length > 0) generateRecipes(); });
+
     window.addEventListener('languageChanged', (e) => {
+      syncVegToggleLabel();
       renderIngredientsDisplay();
-      generateRecipes();
+      renderResults();
     });
 
     // Parallax-Effekt für Hintergrundbild (nur auf Desktop)
@@ -861,6 +856,7 @@
         });
       }
     })();
+    }); // DOMContentLoaded
   </script>
 </body>
 </html>

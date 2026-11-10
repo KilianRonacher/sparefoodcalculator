@@ -6,16 +6,16 @@
   <title>SpareFoodCalculator — Recipes from Surplus</title>
   <meta name="description" content="Find simple, inspiring recipes made from surplus ingredients — from home-style classics to refined dishes." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://sparefoodcalculator.com/index.html" />
+  <link rel="canonical" href="https://kilianronacher.github.io/sparefoodcalculator/index.html" />
   <meta property="og:title" content="SpareFoodCalculator — Rezepte aus Resten" />
   <meta property="og:description" content="Finde einfache Rezepte aus Zutaten, die du bereits hast. Von Hausmannskost bis gehobene Küche." />
-  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta property="og:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sparefoodcalculator.com/index.html" />
+  <meta property="og:url" content="https://kilianronacher.github.io/sparefoodcalculator/index.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="SpareFoodCalculator — Rezepte aus Resten" />
   <meta name="twitter:description" content="Finde einfache Rezepte aus Zutaten, die du bereits hast." />
-  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta name="twitter:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#ffd166" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -300,16 +300,11 @@
 
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
+  <!-- Reason: the start page only needs language, navigation and the service worker.
+       Loading the recipe data here would download about a megabyte for nothing. -->
   <script src="i18n.js"></script>
-  <script src="ingredients.js"></script>
-  <script src="data/sustainability.js"></script>
-  <script src="js/sustainability.js"></script>
-  <script src="search.js"></script>
-  <script src="js/quantities.js"></script>
-  <script src="recipes.js"></script>
   <script src="app.js"></script>
   <script src="ui.js"></script>
-  <script src="js/sustainability-ui.js"></script>
 
   <script>
     // I18n Translations für Startseite

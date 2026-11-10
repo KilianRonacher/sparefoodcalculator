@@ -6,16 +6,16 @@
   <title>Zutaten-Generator — SpareFoodCalculator</title>
   <meta name="description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge. Mit intelligenter Zutaten-Empfehlung.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sparefoodcalculator.com/pages/ingredients-generator.html" />
+  <link rel="canonical" href="https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-generator.html" />
   <meta property="og:title" content="Zutaten-Generator — SpareFoodCalculator" />
   <meta property="og:description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge mit intelligenter Empfehlung." />
-  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta property="og:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sparefoodcalculator.com/pages/ingredients-generator.html" />
+  <meta property="og:url" content="https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-generator.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Zutaten-Generator — SpareFoodCalculator" />
   <meta name="twitter:description" content="Wähle Zutaten aus und erhalte passende Rezeptvorschläge mit intelligenter Empfehlung." />
-  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta name="twitter:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <link rel="manifest" href="../manifest.json" />
   <meta name="theme-color" content="#ffd166" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,18 +200,21 @@
 
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-  <script src="../i18n.js"></script>
-  <script src="../data/sustainability.js"></script>
-  <script src="../js/sustainability.js"></script>
-  <script src="../ingredients.js"></script>
-  <script src="../search.js"></script>
-  <script src="../js/quantities.js"></script>
-  <script src="../recipes.js"></script>
-  <script src="../app.js"></script>
-  <script src="../ui.js"></script>
-  <script src="../js/sustainability-ui.js"></script>
-  <script src="../js/side-stats.js"></script>
+  <script defer src="../js/safe-dom.js"></script>
+  <script defer src="../i18n.js"></script>
+  <script defer src="../data/sustainability.js"></script>
+  <script defer src="../js/sustainability.js"></script>
+  <script defer src="../ingredients.js"></script>
+  <script defer src="../search.js"></script>
+  <script defer src="../js/quantities.js"></script>
+  <script defer src="../recipes.js"></script>
+  <script defer src="../js/recipe-ui.js"></script>
+  <script defer src="../app.js"></script>
+  <script defer src="../ui.js"></script>
+  <script defer src="../js/sustainability-ui.js"></script>
+  <script defer src="../js/side-stats.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
     // Safety fallbacks if functions not defined
     if (typeof translateIngredient !== 'function') {
       window.translateIngredient = (ing, lang) => ing;
@@ -226,9 +229,13 @@
       window.getLang = () => localStorage.getItem('sfc_lang') || 'de';
       console.warn('WARNING: getLang not found, using fallback');
     }
-    
+
     // ==================== INGREDIENTS GENERATOR LOGIC ====================
-    
+    // Reason: recipes.js loads data/recipes.json asynchronously via fetch().
+    // window.recipes is [] at DOMContentLoaded time — we must wait for the
+    // recipesLoaded event before running init() so recipeData is populated.
+    function init() {
+
     // Use window.recipes or recipes variable
     const recipeData = window.recipes || (typeof recipes !== 'undefined' ? recipes : []);
 
@@ -241,7 +248,13 @@
     const recipeIngredientSet = new Set();
 
     if (!recipeData || recipeData.length === 0) {
-      document.body.innerHTML = '<h1 style="color:red;">FEHLER: Rezepte können nicht geladen werden!</h1>';
+      // Reason: don't nuke document.body — append visible error and bail.
+      const errBox = document.createElement('div');
+      errBox.setAttribute('role', 'alert');
+      errBox.style.cssText = 'background:#ffe5e5;color:#990000;padding:1rem;margin:1rem;border:2px solid #cc0000;border-radius:8px;font-weight:bold;';
+      errBox.textContent = 'FEHLER: Rezepte können nicht geladen werden. Bitte Seite neu laden.';
+      document.body.prepend(errBox);
+      return;
     }
 
     recipeData.forEach(recipe => {
@@ -305,8 +318,11 @@
     // Initialize: render all ingredients as white blocks
     function renderAllIngredients() {
       const lang = getLang();
-      allIngredientsContainer.innerHTML = '';
-      sortedIngredients.forEach(ingredient => {
+      SafeDom.clearChildren(allIngredientsContainer);
+      // Reason: in English the tiles show English names, so they are sorted by what the user reads.
+      const shownOrder = sortedIngredients.slice().sort((a, b) =>
+        translateIngredient(a, lang).localeCompare(translateIngredient(b, lang), lang === 'en' ? 'en' : 'de-DE', { sensitivity: 'base' }));
+      shownOrder.forEach(ingredient => {
         const block = document.createElement('div');
         block.className = 'ing-block';
         block.textContent = translateIngredient(ingredient, lang);
@@ -353,76 +369,77 @@
       });
     }
 
-    // Update selected ingredients bar at bottom (GREEN)
+    // Update selected ingredients bar at bottom (GREEN) — XSS-safe
     function updateSelectedIngredientsBar() {
       const lang = getLang();
+      SafeDom.clearChildren(selectedIngredientsContainer);
+
       if (selectedIngredients.size === 0) {
-        selectedIngredientsContainer.innerHTML = `<div class="ing-empty-state">${i18n[lang]['ing_empty_selected']}</div>`;
+        selectedIngredientsContainer.appendChild(
+          SafeDom.el('div', { className: 'ing-empty-state' }, i18n[lang]['ing_empty_selected'])
+        );
         return;
       }
 
-      selectedIngredientsContainer.innerHTML = '';
-      Array.from(selectedIngredients).sort().forEach(ingredient => {
-        const tag = document.createElement('div');
-        tag.className = 'ing-selected-tag';
-        tag.innerHTML = `
-          <span>${translateIngredient(ingredient, lang)}</span>
-          <button class="ing-remove-btn" onclick="removeIngredient('${ingredient}')">×</button>
-        `;
+      Array.from(selectedIngredients).sort((a, b) => a.localeCompare(b, 'de-DE', { sensitivity: 'base' })).forEach(ingredient => {
+        const tag = SafeDom.el('div', { className: 'ing-selected-tag' },
+          SafeDom.el('span', {}, translateIngredient(ingredient, lang)),
+          SafeDom.el('button', {
+            className: 'ing-remove-btn',
+            ariaLabel: 'Entfernen',
+            onClick: () => {
+              selectedIngredients.delete(ingredient);
+              updateUI();
+            }
+          }, '×')
+        );
         selectedIngredientsContainer.appendChild(tag);
       });
     }
 
-    // Remove ingredient from selection
-    window.removeIngredient = function(ingredient) {
-      selectedIngredients.delete(ingredient);
-      updateUI();
-    };
-
-    // Update suggestions based on selected ingredients
+    // Update suggestions based on selected ingredients — XSS-safe
     function updateSuggestions() {
       const lang = getLang();
+      SafeDom.clearChildren(suggestionsContainer);
+
       if (selectedIngredients.size === 0) {
-        suggestionsContainer.innerHTML = `<div class="ing-empty-state">${i18n[lang]['ing_empty_suggestions']}</div>`;
+        suggestionsContainer.appendChild(
+          SafeDom.el('div', { className: 'ing-empty-state' }, i18n[lang]['ing_empty_suggestions'])
+        );
         return;
       }
 
-      // Find matching recipes and collect their ingredients
-      const suggestions = new Set();
-      recipes.forEach(recipe => {
-        // Check if recipe has any selected ingredients (using bilingual matching)
-        const hasMatch = recipe.ingredients.some(recipeIng => 
-          Array.from(selectedIngredients).some(selected => 
-            ingredientMatches(selected, recipeIng)
-          )
-        );
-        if (hasMatch) {
-          recipe.ingredients.forEach(ing => {
-            const norm = ing.toLowerCase().trim();
-            // Only add if not already selected
-            const isSelected = Array.from(selectedIngredients).some(sel => 
-              ingredientMatches(sel, ing)
-            );
-            if (!isSelected) suggestions.add(norm);
-          });
-        }
+      // Reason: count in how many matching recipes each other ingredient appears,
+      // so the suggestions are the ones that complete the most recipes.
+      const selectedList = Array.from(selectedIngredients);
+      const suggestions = new Map();
+      findMatchingRecipes(selectedList, { light: true }).forEach(match => {
+        match.missingIngredients.forEach(ing => {
+          const norm = ing.toLowerCase().trim();
+          if (excludedIngredients.includes(norm)) return;
+          suggestions.set(norm, (suggestions.get(norm) || 0) + 1);
+        });
       });
 
       if (suggestions.size === 0) {
-        suggestionsContainer.innerHTML = `<div class="ing-empty-state">${i18n[lang]['ing_no_suggestions']}</div>`;
+        suggestionsContainer.appendChild(
+          SafeDom.el('div', { className: 'ing-empty-state' }, i18n[lang]['ing_no_suggestions'])
+        );
         return;
       }
 
-      // Render top 20 suggestions
-      suggestionsContainer.innerHTML = '';
-      Array.from(suggestions).sort().slice(0, 20).forEach(ingredient => {
-        const block = document.createElement('div');
-        block.className = 'ing-suggestion-block';
-        block.textContent = translateIngredient(ingredient, lang);
-        block.addEventListener('click', () => {
-          selectedIngredients.add(ingredient);
-          updateUI();
-        });
+      Array.from(suggestions.entries())
+        .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0], 'de-DE'))
+        .slice(0, 20)
+        .map(entry => entry[0])
+        .forEach(ingredient => {
+        const block = SafeDom.el('div', {
+          className: 'ing-suggestion-block',
+          onClick: () => {
+            selectedIngredients.add(ingredient);
+            updateUI();
+          }
+        }, translateIngredient(ingredient, lang));
         suggestionsContainer.appendChild(block);
       });
     }
@@ -449,14 +466,15 @@
         counts[cat] = (counts[cat] || 0) + 1;
       });
 
-      // Display sorted by count
-      categorySummaryContainer.innerHTML = '';
+      // Display sorted by count — XSS-safe
+      SafeDom.clearChildren(categorySummaryContainer);
       Object.entries(counts)
         .sort((a, b) => b[1] - a[1])
         .forEach(([cat, count]) => {
-          const tag = document.createElement('div');
-          tag.className = 'ing-category-tag';
-          tag.innerHTML = `<strong>${count}x</strong> ${translateCategory(cat, lang)}`;
+          const tag = SafeDom.el('div', { className: 'ing-category-tag' },
+            SafeDom.el('strong', {}, count + 'x'),
+            ' ' + translateCategory(cat, lang)
+          );
           categorySummaryContainer.appendChild(tag);
         });
     }
@@ -486,26 +504,45 @@
     let lastMatchingRecipes = null;
     let lastSelectedArray = [];
 
+    const RESULTS_PAGE_SIZE = 12;
+    let visibleResults = RESULTS_PAGE_SIZE;
+
     // Render (or re-render) recipe result cards with current language
     function renderRecipeResults(matchingRecipes, selectedArray) {
       const lang = getLang();
       if (!matchingRecipes || matchingRecipes.length === 0) {
-        recipeResultsContainer.innerHTML = `<p style="text-align: center; color: var(--color-text-muted);">${i18n[lang]['ing_no_recipe_match']}</p>`;
+        SafeDom.clearChildren(recipeResultsContainer);
+        recipeResultsContainer.appendChild(SafeDom.el('p',
+          { style: 'text-align: center; color: var(--color-text-muted);' },
+          i18n[lang]['ing_no_recipe_match']
+        ));
         recipeResultsSection.style.display = 'block';
         return;
       }
 
-      recipeResultsContainer.innerHTML = `<p style="margin-bottom: 1rem;">${i18n[lang]['ing_found_label']}: <strong>${matchingRecipes.length} ${i18n[lang]['recipes']}</strong></p>`;
+      SafeDom.clearChildren(recipeResultsContainer);
+      recipeResultsContainer.appendChild(SafeDom.el('p',
+        { style: 'margin-bottom: 1rem;' },
+        i18n[lang]['ing_found_label'] + ': ',
+        SafeDom.el('strong', {}, matchingRecipes.length + ' ' + i18n[lang][matchingRecipes.length === 1 ? 'recipe' : 'recipes'])
+      ));
+
+      const grid = SafeDom.el('div', { className: 'sfc-recipe-grid' });
       
-      const grid = document.createElement('div');
-      grid.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 1.5rem;';
-      
-      matchingRecipes.forEach(({ recipe, matchCount, matchPercentage }) => {
+      matchingRecipes.slice(0, visibleResults).forEach(({ recipe, matchCount, matchPercentage }) => {
         const card = createRecipeCardWithValidation(recipe, selectedArray, matchCount, matchPercentage);
         grid.appendChild(card);
       });
 
       recipeResultsContainer.appendChild(grid);
+      if (matchingRecipes.length > visibleResults) {
+        const moreLabel = (i18n[lang] && i18n[lang]['show_more_recipes']) || 'Mehr Rezepte anzeigen';
+        recipeResultsContainer.appendChild(SafeDom.el('button', {
+          className: 'btn secondary',
+          style: 'display: block; margin: 1.5rem auto 0;',
+          onClick: () => { visibleResults += RESULTS_PAGE_SIZE; renderRecipeResults(matchingRecipes, selectedArray); }
+        }, moreLabel + ' (' + (matchingRecipes.length - visibleResults) + ')'));
+      }
       recipeResultsSection.style.display = 'block';
     }
 
@@ -519,21 +556,18 @@
         return;
       }
 
-      // Find matching recipes using bilingual ingredient matching
-      const matchingRecipes = recipes
-        .map(recipe => {
-          const matches = selectedArray.filter(userIng => 
-            recipe.ingredients.some(recipeIng => ingredientMatches(userIng, recipeIng))
-          );
-          return {
-            recipe,
-            matchCount: matches.length,
-            matchPercentage: (matches.length / selectedArray.length) * 100
-          };
-        })
-        .filter(item => item.matchCount > 0)
-        .sort((a, b) => b.matchCount - a.matchCount)
-        .slice(0, 10);
+      // Reason: the shared engine ranks by how much of the selection AND of the
+      // recipe is covered. Before, the first ten recipes by id were shown.
+      const recipeById = new Map();
+      recipes.forEach(recipe => recipeById.set(recipe.id, recipe));
+      const matchingRecipes = findMatchingRecipes(selectedArray, { light: true })
+        .filter(match => recipeById.has(match.id))
+        .map(match => ({
+          recipe: recipeById.get(match.id),
+          matchCount: match.matchCount,
+          matchPercentage: (match.matchCount / selectedArray.length) * 100
+        }));
+      visibleResults = RESULTS_PAGE_SIZE;
 
       // Store state for language-change re-renders
       lastMatchingRecipes = matchingRecipes;
@@ -544,131 +578,51 @@
     });
 
     // Create recipe card with ingredient validation
+    // Create recipe card with ingredient validation (CSS-class-based, XSS-safe)
     function createRecipeCardWithValidation(recipe, selectedIngredients, matchCount, matchPercentage) {
       const lang = getLang();
-      const card = document.createElement('div');
-      card.style.cssText = `
-        background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
-        border: 2px solid var(--color-accent-teal);
-        border-radius: 12px;
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      `;
 
-      // Only apply hover lift on non-touch devices
-      if (!window.matchMedia('(hover: none)').matches) {
-        card.addEventListener('mouseover', () => {
-          card.style.transform = 'translateY(-4px)';
-          card.style.boxShadow = '0 8px 24px rgba(78, 205, 196, 0.2)';
-        });
-        card.addEventListener('mouseout', () => {
-          card.style.transform = 'translateY(0)';
-          card.style.boxShadow = 'none';
-        });
-      }
-
-      // Click to show recipe details
-      card.addEventListener('click', () => {
-        displayRecipeDetails(recipe);
-      });
-
-      // Title: prefer title_en for English, fall back to autoTranslate, then German title
       const recipeTitle = lang === 'en' && recipe.title_en
         ? recipe.title_en
         : lang === 'en' && typeof autoTranslateGermanText === 'function'
           ? autoTranslateGermanText(recipe.title)
           : recipe.title;
-      
-      const title = document.createElement('h3');
-      title.textContent = recipeTitle;
-      title.style.cssText = 'margin: 0 0 0.8rem 0; color: var(--color-accent-red);';
-      card.appendChild(title);
 
-      // Match percentage badge
-      const badge = document.createElement('div');
-      badge.textContent = `${Math.round(matchPercentage)}% ${i18n[lang]['ing_match_word']} (${matchCount}/${selectedIngredients.length} ${i18n[lang]['ing_ingredients_short']})`;
-      badge.style.cssText = `
-        display: inline-block;
-        background: ${matchPercentage >= 80 ? '#4ecdc4' : matchPercentage >= 50 ? '#ffe066' : '#ffb6b6'};
-        color: ${matchPercentage >= 80 ? 'white' : '#222'};
-        padding: 0.4rem 0.8rem;
-        border-radius: 12px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      `;
-      card.appendChild(badge);
+      const tierClass = matchPercentage >= 80 ? 'sfc-match-badge--exact' : 'sfc-match-badge--partial';
+      const badgeText = Math.round(matchPercentage) + '% ' + i18n[lang]['ing_match_word'] +
+        ' (' + matchCount + '/' + selectedIngredients.length + ' ' + i18n[lang]['ing_ingredients_short'] + ')';
 
-      // Ingredients section
-      const ingSection = document.createElement('div');
-      const ingTitle = document.createElement('p');
-      ingTitle.textContent = i18n[lang]['ingredients_colon'];
-      ingTitle.style.cssText = 'font-weight: bold; margin: 0 0 0.5rem 0; font-size: 0.9rem;';
-      ingSection.appendChild(ingTitle);
-
-      const ingTags = document.createElement('div');
-      ingTags.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.4rem;';
+      const ingTags = SafeDom.el('div', { className: 'sfc-ing-tags' });
 
       recipe.ingredients.forEach(recipeIng => {
         const hasIt = selectedIngredients.some(userIng => ingredientMatches(userIng, recipeIng));
-        const tag = document.createElement('span');
-        tag.textContent = translateIngredient(recipeIng, lang);
-        
-        if (hasIt) {
-          // Green - user has this ingredient
-          tag.style.cssText = `
-            padding: 0.3rem 0.7rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            background-color: #90EE90;
-            color: #006600;
-            font-weight: 500;
-          `;
-        } else {
-          // Red - user needs this ingredient
-          tag.style.cssText = `
-            padding: 0.3rem 0.7rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            background-color: #FFB6B6;
-            color: #990000;
-            font-weight: 500;
-          `;
-        }
-        
-        ingTags.appendChild(tag);
+        ingTags.appendChild(SafeDom.el('span', {
+          className: 'sfc-ing-tag ' + (hasIt ? 'sfc-ing-tag--have' : 'sfc-ing-tag--need')
+        }, translateIngredient(recipeIng, lang)));
       });
 
-      // Check if user selected ingredients not in recipe (mark yellow with tooltip)
       selectedIngredients.forEach(userIng => {
         const isInRecipe = recipe.ingredients.some(recipeIng => ingredientMatches(userIng, recipeIng));
         if (!isInRecipe) {
-          const tag = document.createElement('span');
-          tag.textContent = translateIngredient(userIng, lang);
-          tag.title = i18n[lang]['ing_not_for_recipe'];
-          tag.style.cssText = `
-            padding: 0.3rem 0.7rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            background-color: #FFD700;
-            color: #664400;
-            font-weight: 500;
-            cursor: help;
-            position: relative;
-          `;
-          ingTags.appendChild(tag);
+          ingTags.appendChild(SafeDom.el('span', {
+            className: 'sfc-ing-tag sfc-ing-tag--extra',
+            title: i18n[lang]['ing_not_for_recipe']
+          }, translateIngredient(userIng, lang)));
         }
       });
 
-      ingSection.appendChild(ingTags);
-      card.appendChild(ingSection);
-
-      // Steps count
-      const stepsInfo = document.createElement('p');
-      stepsInfo.textContent = `📖 ${recipe.steps.length} ${i18n[lang]['ing_prep_steps']}`;
-      stepsInfo.style.cssText = 'margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);';
-      card.appendChild(stepsInfo);
+      const card = SafeDom.el('div', {
+        className: 'sfc-recipe-card',
+        onClick: () => displayRecipeDetails(recipe)
+      },
+        SafeDom.el('h3', { style: 'color: var(--color-accent-red);' }, recipeTitle),
+        SafeDom.el('div', { className: 'sfc-match-badge ' + tierClass }, badgeText),
+        SafeDom.el('p', { style: 'font-weight: bold; margin: 0 0 0.5rem 0; font-size: 0.9rem;' },
+          i18n[lang]['ingredients_colon']),
+        ingTags,
+        SafeDom.el('p', { style: 'margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);' },
+          '📖 ' + recipe.steps.length + ' ' + i18n[lang]['ing_prep_steps'])
+      );
 
       return card;
     }
@@ -742,6 +696,16 @@
         });
       }
     })();
+    } // end init()
+
+    // Run init once recipes are available (or immediately if already loaded)
+    if (Array.isArray(window.recipes) && window.recipes.length > 0) {
+      init();
+    } else {
+      window.addEventListener('recipesLoaded', init, { once: true });
+    }
+
+    }); // DOMContentLoaded
   </script>
 </body>
 </html>

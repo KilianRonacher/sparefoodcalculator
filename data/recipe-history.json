@@ -1,0 +1,4242 @@
+[
+  {
+    "key": "grießnockerlsuppe::butter|ei|grieß|muskatnuss|rinderbruhe|salz",
+    "id": 527,
+    "title": "Grießnockerlsuppe",
+    "addedAt": "2026-05-08T14:30:16.899Z",
+    "_snapshot": {
+      "title": "Grießnockerlsuppe",
+      "title_en": "Semolina Dumpling Soup",
+      "ingredients": [
+        "grieß",
+        "butter",
+        "ei",
+        "salz",
+        "muskatnuss",
+        "rinderbrühe"
+      ]
+    }
+  },
+  {
+    "key": "krautfleckerl::butter|kummel|nudeln|pfeffer|salz|weißkohl|zucker|zwiebeln",
+    "id": 528,
+    "title": "Krautfleckerl",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Krautfleckerl",
+      "title_en": "Pasta with Caramelised Cabbage",
+      "ingredients": [
+        "weißkohl",
+        "nudeln",
+        "zwiebeln",
+        "butter",
+        "zucker",
+        "kümmel",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "salzburger nockerl::butter|eigelb|eiweiß|mehl|milch|staubzucker|vanilleextrakt",
+    "id": 529,
+    "title": "Salzburger Nockerl",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Salzburger Nockerl",
+      "title_en": "Salzburg Sweet Soufflé",
+      "ingredients": [
+        "eiweiß",
+        "eigelb",
+        "staubzucker",
+        "mehl",
+        "vanilleextrakt",
+        "butter",
+        "milch"
+      ]
+    }
+  },
+  {
+    "key": "schweinsbraten mit kummel::bier|knoblauch|kummel|pfeffer|salz|schweinebraten|zwiebeln",
+    "id": 530,
+    "title": "Schweinsbraten mit Kümmel",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Schweinsbraten mit Kümmel",
+      "title_en": "Roast Pork with Caraway",
+      "ingredients": [
+        "schweinebraten",
+        "knoblauch",
+        "kümmel",
+        "salz",
+        "pfeffer",
+        "zwiebeln",
+        "bier"
+      ]
+    }
+  },
+  {
+    "key": "steirisches backhendl::eier|hahnchen|mehl|pfeffer|salz|semmelbrosel|sonnenblumenol|zitrone",
+    "id": 531,
+    "title": "Steirisches Backhendl",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Steirisches Backhendl",
+      "title_en": "Styrian Fried Chicken",
+      "ingredients": [
+        "hähnchen",
+        "mehl",
+        "eier",
+        "semmelbrösel",
+        "salz",
+        "pfeffer",
+        "sonnenblumenöl",
+        "zitrone"
+      ]
+    }
+  },
+  {
+    "key": "frittatensuppe::butter|eier|mehl|milch|rinderbruhe|salz|schnittlauch",
+    "id": 532,
+    "title": "Frittatensuppe",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Frittatensuppe",
+      "title_en": "Austrian Pancake Soup",
+      "ingredients": [
+        "mehl",
+        "milch",
+        "eier",
+        "salz",
+        "butter",
+        "rinderbrühe",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "buchteln mit powidlfullung::butter|eier|hefe|mehl|milch|powidl|salz|vanillezucker|zucker",
+    "id": 533,
+    "title": "Buchteln mit Powidlfüllung",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Buchteln mit Powidlfüllung",
+      "title_en": "Baked Yeast Buns with Plum Jam",
+      "ingredients": [
+        "mehl",
+        "milch",
+        "hefe",
+        "zucker",
+        "butter",
+        "eier",
+        "salz",
+        "powidl",
+        "vanillezucker"
+      ]
+    }
+  },
+  {
+    "key": "langos::frischhefe|knoblauch|mehl|milch|salz|saure sahne|sonnenblumenol|zucker",
+    "id": 534,
+    "title": "Lángos",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Lángos",
+      "title_en": "Hungarian Fried Flatbread",
+      "ingredients": [
+        "mehl",
+        "frischhefe",
+        "milch",
+        "salz",
+        "zucker",
+        "sonnenblumenöl",
+        "saure sahne",
+        "knoblauch"
+      ]
+    }
+  },
+  {
+    "key": "csirkepaprikas::hahnchen|paprikapulver|pfeffer|salz|schmalz|schmand|tomaten|zwiebeln",
+    "id": 535,
+    "title": "Csirkepaprikás",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Csirkepaprikás",
+      "title_en": "Hungarian Chicken Paprikash",
+      "ingredients": [
+        "hähnchen",
+        "zwiebeln",
+        "paprikapulver",
+        "tomaten",
+        "schmand",
+        "schmalz",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "toltott paprika::eier|hackfleisch|paprika|passierte tomaten|pfeffer|reis|salz|tomatenmark|zwiebeln",
+    "id": 536,
+    "title": "Töltött Paprika",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Töltött Paprika",
+      "title_en": "Hungarian Stuffed Peppers",
+      "ingredients": [
+        "paprika",
+        "hackfleisch",
+        "reis",
+        "zwiebeln",
+        "eier",
+        "passierte tomaten",
+        "tomatenmark",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "rakott krumpli::eier|kartoffeln|pfeffer|salz|schmand|speck",
+    "id": 537,
+    "title": "Rakott Krumpli",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Rakott Krumpli",
+      "title_en": "Hungarian Layered Potato Casserole",
+      "ingredients": [
+        "kartoffeln",
+        "eier",
+        "speck",
+        "schmand",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "gulyasleves::kartoffeln|kummel|lorbeer|paprika|paprikapulver|rindfleisch|salz|schmalz|tomaten|wasser|zwiebeln",
+    "id": 538,
+    "title": "Gulyásleves",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Gulyásleves",
+      "title_en": "Hungarian Goulash Soup",
+      "ingredients": [
+        "rindfleisch",
+        "zwiebeln",
+        "paprikapulver",
+        "kartoffeln",
+        "tomaten",
+        "paprika",
+        "schmalz",
+        "kümmel",
+        "lorbeer",
+        "salz",
+        "wasser"
+      ]
+    }
+  },
+  {
+    "key": "konigsberger klopse::brotchen|butter|eier|hackfleisch|kapern|mehl|milch|pfeffer|rinderbruhe|salz|sardellen|zitronensaft|zwiebeln",
+    "id": 539,
+    "title": "Königsberger Klopse",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Königsberger Klopse",
+      "title_en": "Königsberg Meatballs in Caper Sauce",
+      "ingredients": [
+        "hackfleisch",
+        "brötchen",
+        "milch",
+        "eier",
+        "zwiebeln",
+        "sardellen",
+        "kapern",
+        "rinderbrühe",
+        "butter",
+        "mehl",
+        "zitronensaft",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "schwabische maultaschen::butter|eier|gemusebruhe|hackfleisch|mehl|muskatnuss|petersilie|pfeffer|salz|spinat|zwiebeln",
+    "id": 540,
+    "title": "Schwäbische Maultaschen",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Schwäbische Maultaschen",
+      "title_en": "Swabian Stuffed Pasta Pockets",
+      "ingredients": [
+        "mehl",
+        "eier",
+        "salz",
+        "hackfleisch",
+        "spinat",
+        "zwiebeln",
+        "petersilie",
+        "pfeffer",
+        "muskatnuss",
+        "gemüsebrühe",
+        "butter"
+      ]
+    }
+  },
+  {
+    "key": "schwabische linsen mit spatzle::butter|eier|essig|linsen|lorbeer|mehl|pfeffer|salz|speck|wasser|zwiebeln",
+    "id": 541,
+    "title": "Schwäbische Linsen mit Spätzle",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Schwäbische Linsen mit Spätzle",
+      "title_en": "Swabian Lentils with Egg Noodles",
+      "ingredients": [
+        "linsen",
+        "speck",
+        "zwiebeln",
+        "essig",
+        "lorbeer",
+        "mehl",
+        "eier",
+        "wasser",
+        "butter",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "labskaus::butter|cornichons|hering|kartoffeln|pfeffer|rindfleisch|rote beete|salz|zwiebeln",
+    "id": 542,
+    "title": "Labskaus",
+    "addedAt": "2026-05-08T14:30:16.907Z",
+    "_snapshot": {
+      "title": "Labskaus",
+      "title_en": "North German Corned Beef Hash",
+      "ingredients": [
+        "rindfleisch",
+        "kartoffeln",
+        "rote beete",
+        "hering",
+        "zwiebeln",
+        "cornichons",
+        "butter",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "rheinischer sauerbraten::karotten|lorbeer|pfeffer|piment|rindfleisch|rosinen|rotwein|rotweinessig|salz|schwarzbrot|wacholderbeeren|zucker|zwiebeln",
+    "id": 543,
+    "title": "Rheinischer Sauerbraten",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Rheinischer Sauerbraten",
+      "title_en": "Rhenish Marinated Pot Roast",
+      "ingredients": [
+        "rindfleisch",
+        "rotweinessig",
+        "rotwein",
+        "zwiebeln",
+        "karotten",
+        "lorbeer",
+        "wacholderbeeren",
+        "piment",
+        "zucker",
+        "rosinen",
+        "schwarzbrot",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "himmel und erde::apfel|butter|kartoffeln|muskatnuss|pfeffer|salz|speck|zwiebeln",
+    "id": 544,
+    "title": "Himmel und Erde",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Himmel und Erde",
+      "title_en": "Heaven and Earth",
+      "ingredients": [
+        "kartoffeln",
+        "äpfel",
+        "speck",
+        "zwiebeln",
+        "butter",
+        "muskatnuss",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "grunkohleintopf mit kassler::grunkohl|kartoffeln|kassler|kummel|pfeffer|rinderbruhe|salz|schmalz|senf|zwiebeln",
+    "id": 545,
+    "title": "Grünkohleintopf mit Kassler",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Grünkohleintopf mit Kassler",
+      "title_en": "Kale Stew with Smoked Pork",
+      "ingredients": [
+        "grünkohl",
+        "kassler",
+        "kartoffeln",
+        "zwiebeln",
+        "schmalz",
+        "rinderbrühe",
+        "kümmel",
+        "senf",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "bayerischer obatzda::bier|butter|camembert|frischkase|kummel|paprikapulver|salz|schnittlauch|zwiebeln",
+    "id": 546,
+    "title": "Bayerischer Obatzda",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Bayerischer Obatzda",
+      "title_en": "Bavarian Cheese Spread",
+      "ingredients": [
+        "camembert",
+        "butter",
+        "frischkäse",
+        "zwiebeln",
+        "paprikapulver",
+        "kümmel",
+        "bier",
+        "schnittlauch",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "kung pao hahnchen::chili|erdnusse|hahnchenbrust|ingwer|knoblauch|maisstarke|reisessig|sesamol|sojasauce|sonnenblumenol|zucker",
+    "id": 547,
+    "title": "Kung Pao Hähnchen",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Kung Pao Hähnchen",
+      "title_en": "Kung Pao Chicken",
+      "ingredients": [
+        "hähnchenbrust",
+        "erdnüsse",
+        "chili",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "reisessig",
+        "zucker",
+        "maisstärke",
+        "sesamöl",
+        "sonnenblumenöl"
+      ]
+    }
+  },
+  {
+    "key": "mapo tofu::chilibohnenpaste|fruhlingszwiebeln|gemusebruhe|hackfleisch|ingwer|knoblauch|maisstarke|sesamol|sojasauce|szechuan pfeffer|tofu",
+    "id": 548,
+    "title": "Mapo Tofu",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Mapo Tofu",
+      "title_en": "Mapo Tofu",
+      "ingredients": [
+        "tofu",
+        "hackfleisch",
+        "chilibohnenpaste",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "sesamöl",
+        "szechuan pfeffer",
+        "frühlingszwiebeln",
+        "gemüsebrühe",
+        "maisstärke"
+      ]
+    }
+  },
+  {
+    "key": "gebratener reis mit ei::eier|erbsen|fruhlingszwiebeln|karotten|reis|salz|sesamol|sojasauce|sonnenblumenol",
+    "id": 549,
+    "title": "Gebratener Reis mit Ei",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Gebratener Reis mit Ei",
+      "title_en": "Egg Fried Rice",
+      "ingredients": [
+        "reis",
+        "eier",
+        "erbsen",
+        "karotten",
+        "frühlingszwiebeln",
+        "sojasauce",
+        "sesamöl",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "geschmorte auberginen sichuan-art::aubergine|fischsauce|fruhlingszwiebeln|ingwer|knoblauch|reisessig|sesamol|sojasauce|sonnenblumenol|zucker",
+    "id": 550,
+    "title": "Geschmorte Auberginen Sichuan-Art",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Geschmorte Auberginen Sichuan-Art",
+      "title_en": "Sichuan Braised Aubergines",
+      "ingredients": [
+        "aubergine",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "reisessig",
+        "zucker",
+        "fischsauce",
+        "frühlingszwiebeln",
+        "sesamöl",
+        "sonnenblumenöl"
+      ]
+    }
+  },
+  {
+    "key": "chinesische huhnersuppe mit pak choi::fruhlingszwiebeln|hahnchenbrust|huhnerbruhe|ingwer|knoblauch|pak choi|salz|sesamol|shiitake|sojasauce",
+    "id": 551,
+    "title": "Chinesische Hühnersuppe mit Pak Choi",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Chinesische Hühnersuppe mit Pak Choi",
+      "title_en": "Chinese Chicken Soup with Pak Choi",
+      "ingredients": [
+        "hähnchenbrust",
+        "pak choi",
+        "shiitake",
+        "ingwer",
+        "knoblauch",
+        "sojasauce",
+        "sesamöl",
+        "hühnerbrühe",
+        "frühlingszwiebeln",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "gedampfter lachs mit ingwer::fruhlingszwiebeln|ingwer|lachsfilet|reisessig|salz|sesamol|sojasauce",
+    "id": 552,
+    "title": "Gedämpfter Lachs mit Ingwer",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Gedämpfter Lachs mit Ingwer",
+      "title_en": "Steamed Salmon with Ginger",
+      "ingredients": [
+        "lachsfilet",
+        "ingwer",
+        "frühlingszwiebeln",
+        "sojasauce",
+        "sesamöl",
+        "reisessig",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "chinesische egg drop soup::eier|fruhlingszwiebeln|huhnerbruhe|maisstarke|salz|sesamol|sojasauce",
+    "id": 553,
+    "title": "Chinesische Egg Drop Soup",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Chinesische Egg Drop Soup",
+      "title_en": "Chinese Egg Drop Soup",
+      "ingredients": [
+        "eier",
+        "hühnerbrühe",
+        "maisstärke",
+        "sojasauce",
+        "frühlingszwiebeln",
+        "sesamöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "suß-saures hahnchen::ananas|hahnchenbrust|maisstarke|paprika|rotweinessig|sojasauce|sonnenblumenol|tomatenmark|zucker|zwiebeln",
+    "id": 554,
+    "title": "Süß-Saures Hähnchen",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Süß-Saures Hähnchen",
+      "title_en": "Sweet and Sour Chicken",
+      "ingredients": [
+        "hähnchenbrust",
+        "ananas",
+        "paprika",
+        "zwiebeln",
+        "rotweinessig",
+        "zucker",
+        "tomatenmark",
+        "maisstärke",
+        "sojasauce",
+        "sonnenblumenöl"
+      ]
+    }
+  },
+  {
+    "key": "palak paneer::garam masala|ingwer|knoblauch|kreuzkummel|kurkuma|paneer|sahne|salz|sonnenblumenol|spinat|tomaten|zwiebeln",
+    "id": 555,
+    "title": "Palak Paneer",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Palak Paneer",
+      "title_en": "Spinach and Indian Cheese Curry",
+      "ingredients": [
+        "spinat",
+        "paneer",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "tomaten",
+        "sahne",
+        "garam masala",
+        "kreuzkümmel",
+        "kurkuma",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "dal tadka::garam masala|ingwer|knoblauch|koriandergrun|kreuzkummel|kurkuma|rote linsen|salz|sonnenblumenol|tomaten|wasser|zwiebeln",
+    "id": 556,
+    "title": "Dal Tadka",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Dal Tadka",
+      "title_en": "Spiced Red Lentil Dal",
+      "ingredients": [
+        "rote linsen",
+        "zwiebeln",
+        "tomaten",
+        "knoblauch",
+        "ingwer",
+        "kurkuma",
+        "kreuzkümmel",
+        "garam masala",
+        "sonnenblumenöl",
+        "wasser",
+        "koriandergrün",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "chicken tikka masala::cayennepfeffer|garam masala|hahnchenbrust|ingwer|joghurt|knoblauch|kurkuma|paprikapulver|sahne|salz|sonnenblumenol|tomaten|zwiebeln",
+    "id": 557,
+    "title": "Chicken Tikka Masala",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Chicken Tikka Masala",
+      "title_en": "Chicken Tikka Masala",
+      "ingredients": [
+        "hähnchenbrust",
+        "joghurt",
+        "tomaten",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "sahne",
+        "paprikapulver",
+        "garam masala",
+        "kurkuma",
+        "cayennepfeffer",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "aloo gobi::blumenkohl|garam masala|ingwer|kartoffeln|knoblauch|koriandergrun|kreuzkummel|kurkuma|salz|sonnenblumenol|tomaten|zwiebeln",
+    "id": 558,
+    "title": "Aloo Gobi",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Aloo Gobi",
+      "title_en": "Potato and Cauliflower Curry",
+      "ingredients": [
+        "kartoffeln",
+        "blumenkohl",
+        "zwiebeln",
+        "tomaten",
+        "knoblauch",
+        "ingwer",
+        "kurkuma",
+        "kreuzkümmel",
+        "garam masala",
+        "sonnenblumenöl",
+        "koriandergrün",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "malai kofta::cashews|garam masala|ingwer|kartoffeln|knoblauch|mehl|paneer|sahne|salz|sonnenblumenol|tomaten|zwiebeln",
+    "id": 559,
+    "title": "Malai Kofta",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Malai Kofta",
+      "title_en": "Vegetable and Cheese Dumplings in Cream Sauce",
+      "ingredients": [
+        "kartoffeln",
+        "paneer",
+        "mehl",
+        "garam masala",
+        "sahne",
+        "zwiebeln",
+        "tomaten",
+        "knoblauch",
+        "ingwer",
+        "cashews",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "samosas::erbsen|garam masala|ingwer|kartoffeln|koriandersamen|kreuzkummel|mehl|salz|sonnenblumenol|wasser|zwiebeln",
+    "id": 560,
+    "title": "Samosas",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Samosas",
+      "title_en": "Indian Filled Pastry Pockets",
+      "ingredients": [
+        "mehl",
+        "wasser",
+        "kartoffeln",
+        "erbsen",
+        "zwiebeln",
+        "ingwer",
+        "kreuzkümmel",
+        "koriandersamen",
+        "garam masala",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "raita::gurke|joghurt|koriandergrun|kreuzkummel|minze|salz|tomaten",
+    "id": 561,
+    "title": "Raita",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Raita",
+      "title_en": "Indian Yoghurt Dip",
+      "ingredients": [
+        "joghurt",
+        "gurke",
+        "tomaten",
+        "kreuzkümmel",
+        "koriandergrün",
+        "minze",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "miso suppe mit tofu::dashi|fruhlingszwiebeln|miso|tofu|wakame|wasser",
+    "id": 562,
+    "title": "Miso Suppe mit Tofu",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Miso Suppe mit Tofu",
+      "title_en": "Miso Soup with Tofu",
+      "ingredients": [
+        "miso",
+        "tofu",
+        "wakame",
+        "frühlingszwiebeln",
+        "dashi",
+        "wasser"
+      ]
+    }
+  },
+  {
+    "key": "gyoza::chinakohl|hackfleisch|ingwer|knoblauch|mehl|salz|sesamol|sojasauce|sonnenblumenol|wasser",
+    "id": 563,
+    "title": "Gyoza",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Gyoza",
+      "title_en": "Japanese Pan-Fried Dumplings",
+      "ingredients": [
+        "mehl",
+        "wasser",
+        "hackfleisch",
+        "chinakohl",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "sesamöl",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "tonkatsu::eier|mehl|panko|pfeffer|salz|schweineschnitzel|sonnenblumenol",
+    "id": 564,
+    "title": "Tonkatsu",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Tonkatsu",
+      "title_en": "Japanese Breaded Pork Cutlet",
+      "ingredients": [
+        "schweineschnitzel",
+        "panko",
+        "eier",
+        "mehl",
+        "sonnenblumenöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "oyakodon::eier|hahnchenbrust|huhnerbruhe|mirin|reis|sojasauce|zucker|zwiebeln",
+    "id": 565,
+    "title": "Oyakodon",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Oyakodon",
+      "title_en": "Japanese Chicken and Egg Rice Bowl",
+      "ingredients": [
+        "hähnchenbrust",
+        "eier",
+        "zwiebeln",
+        "sojasauce",
+        "mirin",
+        "hühnerbrühe",
+        "reis",
+        "zucker"
+      ]
+    }
+  },
+  {
+    "key": "yakitori::hahnchenbrust|mirin|sake|sesamol|sojasauce|zucker",
+    "id": 566,
+    "title": "Yakitori",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Yakitori",
+      "title_en": "Japanese Grilled Chicken Skewers",
+      "ingredients": [
+        "hähnchenbrust",
+        "sojasauce",
+        "mirin",
+        "sake",
+        "zucker",
+        "sesamöl"
+      ]
+    }
+  },
+  {
+    "key": "japanischer nudelsalat mit sesam-dressing::gurke|karotten|nudeln|reisessig|salz|sesam|sesamol|sojasauce|zucker",
+    "id": 567,
+    "title": "Japanischer Nudelsalat mit Sesam-Dressing",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Japanischer Nudelsalat mit Sesam-Dressing",
+      "title_en": "Japanese Noodle Salad with Sesame Dressing",
+      "ingredients": [
+        "nudeln",
+        "karotten",
+        "gurke",
+        "sesam",
+        "sojasauce",
+        "reisessig",
+        "sesamöl",
+        "zucker",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "coq au vin::butter|champignons|cognac|hahnchen|knoblauch|lorbeer|mehl|pfeffer|rotwein|salz|speck|thymian|zwiebeln",
+    "id": 568,
+    "title": "Coq au Vin",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Coq au Vin",
+      "title_en": "Chicken Braised in Red Wine",
+      "ingredients": [
+        "hähnchen",
+        "rotwein",
+        "speck",
+        "champignons",
+        "zwiebeln",
+        "knoblauch",
+        "thymian",
+        "lorbeer",
+        "butter",
+        "mehl",
+        "cognac",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "franzosische zwiebelsuppe::baguette|butter|gruyere|lorbeer|mehl|pfeffer|rinderbruhe|salz|thymian|weißwein|zwiebeln",
+    "id": 569,
+    "title": "Französische Zwiebelsuppe",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Französische Zwiebelsuppe",
+      "title_en": "French Onion Soup",
+      "ingredients": [
+        "zwiebeln",
+        "butter",
+        "weißwein",
+        "rinderbrühe",
+        "mehl",
+        "thymian",
+        "lorbeer",
+        "baguette",
+        "gruyère",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "creme brulee::eigelb|sahne|vanilleschote|zucker",
+    "id": 570,
+    "title": "Crème Brûlée",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Crème Brûlée",
+      "title_en": "Crème Brûlée",
+      "ingredients": [
+        "sahne",
+        "eigelb",
+        "zucker",
+        "vanilleschote"
+      ]
+    }
+  },
+  {
+    "key": "ratatouille::aubergine|knoblauch|olivenol|paprika|pfeffer|rosmarin|salz|thymian|tomaten|zucchini|zwiebeln",
+    "id": 571,
+    "title": "Ratatouille",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Ratatouille",
+      "title_en": "Provençal Vegetable Stew",
+      "ingredients": [
+        "aubergine",
+        "zucchini",
+        "paprika",
+        "tomaten",
+        "zwiebeln",
+        "knoblauch",
+        "thymian",
+        "rosmarin",
+        "olivenöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "flammkuchen mit speck und zwiebeln::mehl|olivenol|pfeffer|salz|schmand|speck|wasser|zwiebeln",
+    "id": 572,
+    "title": "Flammkuchen mit Speck und Zwiebeln",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Flammkuchen mit Speck und Zwiebeln",
+      "title_en": "Alsatian Tarte Flambée",
+      "ingredients": [
+        "mehl",
+        "wasser",
+        "olivenöl",
+        "schmand",
+        "speck",
+        "zwiebeln",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "cacio e pepe::parmesan|pecorino|salz|schwarzer pfeffer|spaghetti",
+    "id": 573,
+    "title": "Cacio e Pepe",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Cacio e Pepe",
+      "title_en": "Pasta with Cheese and Black Pepper",
+      "ingredients": [
+        "spaghetti",
+        "parmesan",
+        "pecorino",
+        "schwarzer pfeffer",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "risotto alla milanese::arborio|butter|gemusebruhe|parmesan|safran|salz|weißwein|zwiebeln",
+    "id": 574,
+    "title": "Risotto alla Milanese",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Risotto alla Milanese",
+      "title_en": "Milanese Saffron Risotto",
+      "ingredients": [
+        "arborio",
+        "butter",
+        "parmesan",
+        "zwiebeln",
+        "weißwein",
+        "gemüsebrühe",
+        "safran",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "panzanella::baguette|basilikum|gurke|knoblauch|olivenol|pfeffer|rote paprika|rotweinessig|salz|tomaten",
+    "id": 575,
+    "title": "Panzanella",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Panzanella",
+      "title_en": "Tuscan Bread and Tomato Salad",
+      "ingredients": [
+        "baguette",
+        "tomaten",
+        "gurke",
+        "rote paprika",
+        "rotweinessig",
+        "olivenöl",
+        "basilikum",
+        "knoblauch",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "saltimbocca alla romana::butter|parmaschinken|pfeffer|salbei|salz|schweineschnitzel|weißwein",
+    "id": 576,
+    "title": "Saltimbocca alla Romana",
+    "addedAt": "2026-05-08T14:30:16.908Z",
+    "_snapshot": {
+      "title": "Saltimbocca alla Romana",
+      "title_en": "Roman-Style Veal with Prosciutto and Sage",
+      "ingredients": [
+        "schweineschnitzel",
+        "parmaschinken",
+        "salbei",
+        "butter",
+        "weißwein",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "karntner kasnudeln::butter|eier|kartoffeln|mehl|minze|olivenol|pfeffer|salz|schnittlauch|topfen|wasser|zwiebeln",
+    "id": 577,
+    "title": "Kärntner Kasnudeln",
+    "addedAt": "2026-05-11T23:52:47.789Z",
+    "_snapshot": {
+      "title": "Kärntner Kasnudeln",
+      "title_en": "Carinthian Cheese Dumplings",
+      "ingredients": [
+        "mehl",
+        "eier",
+        "wasser",
+        "olivenöl",
+        "topfen",
+        "kartoffeln",
+        "schnittlauch",
+        "minze",
+        "zwiebeln",
+        "salz",
+        "pfeffer",
+        "butter"
+      ]
+    }
+  },
+  {
+    "key": "wachauer marillenknodel::butter|eier|kartoffeln|marillen|mehl|puderzucker|salz|semmelbrosel|zimt|zucker",
+    "id": 578,
+    "title": "Wachauer Marillenknödel",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Wachauer Marillenknödel",
+      "title_en": "Wachau Apricot Dumplings",
+      "ingredients": [
+        "kartoffeln",
+        "mehl",
+        "eier",
+        "butter",
+        "zucker",
+        "marillen",
+        "semmelbrösel",
+        "zimt",
+        "puderzucker",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "powidltascherln::butter|eier|mehl|powidl|puderzucker|salz|semmelbrosel|topfen|zimt|zucker",
+    "id": 579,
+    "title": "Powidltascherln",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Powidltascherln",
+      "title_en": "Austrian Plum Jam Pockets",
+      "ingredients": [
+        "mehl",
+        "topfen",
+        "eier",
+        "butter",
+        "salz",
+        "zucker",
+        "powidl",
+        "semmelbrösel",
+        "zimt",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "mohnnudeln::butter|eier|kartoffeln|mehl|mohnsamen|puderzucker|salz|zucker",
+    "id": 580,
+    "title": "Mohnnudeln",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Mohnnudeln",
+      "title_en": "Austrian Poppy Seed Noodles",
+      "ingredients": [
+        "kartoffeln",
+        "mehl",
+        "eier",
+        "salz",
+        "butter",
+        "mohnsamen",
+        "zucker",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "erdapfelgulasch::gemusebruhe|kartoffeln|knoblauch|kummel|lorbeer|majoran|ol|paprikapulver|pfeffer|salz|tomatenmark|zwiebeln",
+    "id": 581,
+    "title": "Erdäpfelgulasch",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Erdäpfelgulasch",
+      "title_en": "Austrian Potato Goulash",
+      "ingredients": [
+        "kartoffeln",
+        "zwiebeln",
+        "knoblauch",
+        "tomatenmark",
+        "paprikapulver",
+        "kümmel",
+        "lorbeer",
+        "gemüsebrühe",
+        "öl",
+        "salz",
+        "pfeffer",
+        "majoran"
+      ]
+    }
+  },
+  {
+    "key": "blunzengrostl::blutwurst|kartoffeln|majoran|ol|pfeffer|salz|schnittlauch|speck|zwiebeln",
+    "id": 582,
+    "title": "Blunzengröstl",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Blunzengröstl",
+      "title_en": "Austrian Black Pudding Hash",
+      "ingredients": [
+        "kartoffeln",
+        "blutwurst",
+        "zwiebeln",
+        "speck",
+        "öl",
+        "salz",
+        "pfeffer",
+        "majoran",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "fleischlaberln::eier|hackfleisch|knoblauch|ol|petersilie|pfeffer|salz|semmelbrosel|senf|zwiebeln",
+    "id": 583,
+    "title": "Fleischlaberln",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Fleischlaberln",
+      "title_en": "Austrian Meat Patties",
+      "ingredients": [
+        "hackfleisch",
+        "zwiebeln",
+        "knoblauch",
+        "eier",
+        "semmelbrösel",
+        "senf",
+        "petersilie",
+        "salz",
+        "pfeffer",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "zwetschkenroster::nelken|vanilleschote|wasser|zimtstange|zitrone|zucker|zwetschgen",
+    "id": 584,
+    "title": "Zwetschkenröster",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Zwetschkenröster",
+      "title_en": "Austrian Stewed Plums",
+      "ingredients": [
+        "zwetschgen",
+        "zucker",
+        "zimtstange",
+        "nelken",
+        "zitrone",
+        "wasser",
+        "vanilleschote"
+      ]
+    }
+  },
+  {
+    "key": "porkolt::chilipulver|gemusebruhe|knoblauch|lorbeer|ol|paprikapulver|pfeffer|rindfleisch|salz|tomatenmark|zwiebeln",
+    "id": 585,
+    "title": "Pörkölt",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Pörkölt",
+      "title_en": "Hungarian Beef Ragout",
+      "ingredients": [
+        "rindfleisch",
+        "zwiebeln",
+        "knoblauch",
+        "paprikapulver",
+        "tomatenmark",
+        "öl",
+        "salz",
+        "pfeffer",
+        "lorbeer",
+        "gemüsebrühe",
+        "chilipulver"
+      ]
+    }
+  },
+  {
+    "key": "halaszle::chili|paprikapulver|pfeffer|rosenpaprika|salz|tomaten|wasser|zander|zwiebeln",
+    "id": 586,
+    "title": "Halászlé",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Halászlé",
+      "title_en": "Hungarian Fisherman's Soup",
+      "ingredients": [
+        "zander",
+        "zwiebeln",
+        "paprikapulver",
+        "rosenpaprika",
+        "salz",
+        "pfeffer",
+        "wasser",
+        "tomaten",
+        "chili"
+      ]
+    }
+  },
+  {
+    "key": "dobostorte::backpulver|butter|eier|kakaopulver|mehl|sahne|schokolade|vanilleextrakt|zucker",
+    "id": 587,
+    "title": "Dobostorte",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Dobostorte",
+      "title_en": "Hungarian Dobos Torte",
+      "ingredients": [
+        "mehl",
+        "eier",
+        "zucker",
+        "butter",
+        "kakaopulver",
+        "schokolade",
+        "sahne",
+        "vanilleextrakt",
+        "backpulver"
+      ]
+    }
+  },
+  {
+    "key": "meggyleves::nelken|rotwein|sahne|sauerkirschen|speisestarke|wasser|zimtstange|zucker",
+    "id": 588,
+    "title": "Meggyleves",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Meggyleves",
+      "title_en": "Hungarian Sour Cherry Soup",
+      "ingredients": [
+        "sauerkirschen",
+        "zucker",
+        "sahne",
+        "zimtstange",
+        "nelken",
+        "wasser",
+        "rotwein",
+        "speisestärke"
+      ]
+    }
+  },
+  {
+    "key": "berliner eisbein::gemusebruhe|kummel|lorbeer|pfeffer|salz|sauerkraut|schweinshaxe|senf|zwiebeln",
+    "id": 589,
+    "title": "Berliner Eisbein",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Berliner Eisbein",
+      "title_en": "Berlin Pork Knuckle",
+      "ingredients": [
+        "schweinshaxe",
+        "sauerkraut",
+        "zwiebeln",
+        "kümmel",
+        "lorbeer",
+        "salz",
+        "pfeffer",
+        "senf",
+        "gemüsebrühe"
+      ]
+    }
+  },
+  {
+    "key": "frankische bratwurst mit sauerkraut::bratwurst|kummel|lorbeer|ol|pfeffer|salz|sauerkraut|weißwein|zwiebeln",
+    "id": 590,
+    "title": "Fränkische Bratwurst mit Sauerkraut",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Fränkische Bratwurst mit Sauerkraut",
+      "title_en": "Franconian Bratwurst with Sauerkraut",
+      "ingredients": [
+        "bratwurst",
+        "sauerkraut",
+        "zwiebeln",
+        "weißwein",
+        "lorbeer",
+        "kümmel",
+        "salz",
+        "pfeffer",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "westfalischer pfefferpotthast::bruhe|butter|lorbeer|mehl|petersilie|rindfleisch|salz|schwarzer pfeffer|wacholderbeeren|zitrone|zwiebeln",
+    "id": 591,
+    "title": "Westfälischer Pfefferpotthast",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Westfälischer Pfefferpotthast",
+      "title_en": "Westphalian Pepper Beef Stew",
+      "ingredients": [
+        "rindfleisch",
+        "zwiebeln",
+        "schwarzer pfeffer",
+        "lorbeer",
+        "wacholderbeeren",
+        "brühe",
+        "zitrone",
+        "petersilie",
+        "butter",
+        "mehl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "badische fladlesuppe::butter|eier|huhnerbruhe|mehl|milch|petersilie|pfeffer|salz|schnittlauch",
+    "id": 592,
+    "title": "Badische Flädlesuppe",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Badische Flädlesuppe",
+      "title_en": "Baden Pancake Soup",
+      "ingredients": [
+        "hühnerbrühe",
+        "mehl",
+        "eier",
+        "milch",
+        "petersilie",
+        "schnittlauch",
+        "salz",
+        "pfeffer",
+        "butter"
+      ]
+    }
+  },
+  {
+    "key": "thuringer rostbratel::bier|knoblauch|kummel|pfeffer|salz|schweinefleisch|senf|zwiebeln",
+    "id": 593,
+    "title": "Thüringer Rostbrätel",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Thüringer Rostbrätel",
+      "title_en": "Thuringian Grilled Pork Neck",
+      "ingredients": [
+        "schweinefleisch",
+        "zwiebeln",
+        "bier",
+        "kümmel",
+        "senf",
+        "salz",
+        "pfeffer",
+        "knoblauch"
+      ]
+    }
+  },
+  {
+    "key": "dresdner eierschecke::backpulver|butter|eier|mehl|milch|puderzucker|quark|vanillezucker|zucker",
+    "id": 594,
+    "title": "Dresdner Eierschecke",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Dresdner Eierschecke",
+      "title_en": "Dresden Cheesecake",
+      "ingredients": [
+        "mehl",
+        "butter",
+        "zucker",
+        "eier",
+        "vanillezucker",
+        "quark",
+        "milch",
+        "backpulver",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "schlesisches himmelreich::apfel|bruhe|datteln|essig|lorbeer|pflaumen|rosinen|salz|schweinefleisch|zimtstange|zucker|zwiebeln",
+    "id": 595,
+    "title": "Schlesisches Himmelreich",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Schlesisches Himmelreich",
+      "title_en": "Silesian Heaven",
+      "ingredients": [
+        "schweinefleisch",
+        "datteln",
+        "rosinen",
+        "pflaumen",
+        "äpfel",
+        "zwiebeln",
+        "brühe",
+        "essig",
+        "zucker",
+        "lorbeer",
+        "zimtstange",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "hamburger aalsuppe::aal|aprikosen|birnen|datteln|essig|lorbeer|mohren|petersilie|pfeffer|salz|sellerie|speck|zucker|zwiebeln",
+    "id": 596,
+    "title": "Hamburger Aalsuppe",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Hamburger Aalsuppe",
+      "title_en": "Hamburg Eel Soup",
+      "ingredients": [
+        "aal",
+        "speck",
+        "zwiebeln",
+        "möhren",
+        "sellerie",
+        "petersilie",
+        "datteln",
+        "aprikosen",
+        "birnen",
+        "essig",
+        "zucker",
+        "lorbeer",
+        "pfeffer",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "char siu::funf gewurze|honig|ingwer|knoblauch|reisessig|schweinefilet|sesamol|sojasauce|zucker",
+    "id": 597,
+    "title": "Char Siu",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Char Siu",
+      "title_en": "Cantonese BBQ Pork",
+      "ingredients": [
+        "schweinefilet",
+        "honig",
+        "sojasauce",
+        "reisessig",
+        "fünf gewürze",
+        "ingwer",
+        "knoblauch",
+        "sesamöl",
+        "zucker"
+      ]
+    }
+  },
+  {
+    "key": "dan dan mian::chilibohnenpaste|erdnusse|fruhlingszwiebeln|gemusebruhe|ingwer|knoblauch|nudeln|reisessig|schweinehack|sesamol|sojasauce|szechuan pfeffer",
+    "id": 598,
+    "title": "Dan Dan Mian",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Dan Dan Mian",
+      "title_en": "Sichuan Spicy Noodles",
+      "ingredients": [
+        "nudeln",
+        "schweinehack",
+        "chilibohnenpaste",
+        "sojasauce",
+        "sesamöl",
+        "szechuan pfeffer",
+        "ingwer",
+        "knoblauch",
+        "frühlingszwiebeln",
+        "erdnüsse",
+        "reisessig",
+        "gemüsebrühe"
+      ]
+    }
+  },
+  {
+    "key": "baozi::fruhlingszwiebeln|ingwer|mehl|salz|schweinehack|sesamol|sojasauce|speisestarke|trockenhefe|wasser|zucker",
+    "id": 599,
+    "title": "Baozi",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Baozi",
+      "title_en": "Chinese Steamed Filled Buns",
+      "ingredients": [
+        "mehl",
+        "trockenhefe",
+        "zucker",
+        "wasser",
+        "schweinehack",
+        "frühlingszwiebeln",
+        "sojasauce",
+        "sesamöl",
+        "ingwer",
+        "salz",
+        "speisestärke"
+      ]
+    }
+  },
+  {
+    "key": "yuxiang-auberginen mit hackfleisch::aubergine|chilibohnenpaste|fruhlingszwiebeln|ingwer|knoblauch|ol|reisessig|schweinehack|sojasauce|speisestarke|zucker",
+    "id": 600,
+    "title": "Yuxiang-Auberginen mit Hackfleisch",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Yuxiang-Auberginen mit Hackfleisch",
+      "title_en": "Fish-Fragrant Eggplant with Minced Pork",
+      "ingredients": [
+        "aubergine",
+        "schweinehack",
+        "chilibohnenpaste",
+        "sojasauce",
+        "reisessig",
+        "zucker",
+        "ingwer",
+        "knoblauch",
+        "frühlingszwiebeln",
+        "speisestärke",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "hongshao rou::fruhlingszwiebeln|ingwer|knoblauch|schweinebauch|sojasauce|sternanis|wasser|weißwein|zimtstange|zucker",
+    "id": 601,
+    "title": "Hongshao Rou",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Hongshao Rou",
+      "title_en": "Red-Braised Pork Belly",
+      "ingredients": [
+        "schweinebauch",
+        "sojasauce",
+        "weißwein",
+        "zucker",
+        "ingwer",
+        "knoblauch",
+        "sternanis",
+        "zimtstange",
+        "frühlingszwiebeln",
+        "wasser"
+      ]
+    }
+  },
+  {
+    "key": "chinesisches tomaten-ruhrei::eier|fruhlingszwiebeln|ol|salz|sesamol|tomaten|zucker",
+    "id": 602,
+    "title": "Chinesisches Tomaten-Rührei",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Chinesisches Tomaten-Rührei",
+      "title_en": "Chinese Scrambled Eggs with Tomatoes",
+      "ingredients": [
+        "eier",
+        "tomaten",
+        "frühlingszwiebeln",
+        "salz",
+        "zucker",
+        "sesamöl",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "wonton-suppe::eier|fruhlingszwiebeln|garnelen|huhnerbruhe|ingwer|pak choi|pfeffer|salz|schweinehack|sesamol|sojasauce|weizenmehl",
+    "id": 603,
+    "title": "Wonton-Suppe",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Wonton-Suppe",
+      "title_en": "Wonton Soup",
+      "ingredients": [
+        "schweinehack",
+        "garnelen",
+        "ingwer",
+        "frühlingszwiebeln",
+        "sojasauce",
+        "sesamöl",
+        "weizenmehl",
+        "eier",
+        "hühnerbrühe",
+        "pak choi",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "chinesischer brokkoli mit austernsauce::austernsoße|brokkoli|ingwer|knoblauch|ol|sesamol|sojasauce|speisestarke|wasser",
+    "id": 604,
+    "title": "Chinesischer Brokkoli mit Austernsauce",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Chinesischer Brokkoli mit Austernsauce",
+      "title_en": "Chinese Broccoli with Oyster Sauce",
+      "ingredients": [
+        "brokkoli",
+        "knoblauch",
+        "ingwer",
+        "austernsoße",
+        "sojasauce",
+        "sesamöl",
+        "öl",
+        "speisestärke",
+        "wasser"
+      ]
+    }
+  },
+  {
+    "key": "butter chicken::butter|currypulver|garam masala|hahnchenbrust|ingwer|knoblauch|koriander frisch|paprikapulver|pfeffer|sahne|salz|tomaten|zwiebeln",
+    "id": 605,
+    "title": "Butter Chicken",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Butter Chicken",
+      "title_en": "Indian Butter Chicken",
+      "ingredients": [
+        "hähnchenbrust",
+        "butter",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "garam masala",
+        "paprikapulver",
+        "currypulver",
+        "tomaten",
+        "sahne",
+        "salz",
+        "pfeffer",
+        "koriander frisch"
+      ]
+    }
+  },
+  {
+    "key": "chana masala::chilipulver|currypulver|garam masala|ingwer|kichererbsen|knoblauch|koriander frisch|kreuzkummel|kurkuma|ol|salz|tomaten|zitrone|zwiebeln",
+    "id": 606,
+    "title": "Chana Masala",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Chana Masala",
+      "title_en": "Indian Chickpea Curry",
+      "ingredients": [
+        "kichererbsen",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "tomaten",
+        "garam masala",
+        "currypulver",
+        "kreuzkümmel",
+        "kurkuma",
+        "chilipulver",
+        "öl",
+        "salz",
+        "koriander frisch",
+        "zitrone"
+      ]
+    }
+  },
+  {
+    "key": "saag aloo::chilipulver|garam masala|ingwer|kartoffeln|knoblauch|kreuzkummel|kurkuma|ol|salz|spinat|tomaten|zwiebeln",
+    "id": 607,
+    "title": "Saag Aloo",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Saag Aloo",
+      "title_en": "Indian Spinach and Potato Curry",
+      "ingredients": [
+        "spinat",
+        "kartoffeln",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "kreuzkümmel",
+        "kurkuma",
+        "garam masala",
+        "tomaten",
+        "öl",
+        "salz",
+        "chilipulver"
+      ]
+    }
+  },
+  {
+    "key": "lamb rogan josh::garam masala|ingwer|joghurt|kardamom|knoblauch|koriander frisch|lamm|nelken|ol|paprikapulver|salz|zimtstange|zwiebeln",
+    "id": 608,
+    "title": "Lamb Rogan Josh",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Lamb Rogan Josh",
+      "title_en": "Kashmiri Lamb Curry",
+      "ingredients": [
+        "lamm",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "joghurt",
+        "paprikapulver",
+        "garam masala",
+        "zimtstange",
+        "kardamom",
+        "nelken",
+        "öl",
+        "salz",
+        "koriander frisch"
+      ]
+    }
+  },
+  {
+    "key": "baingan bharta::aubergine|chili|garam masala|ingwer|knoblauch|koriander frisch|kurkuma|ol|salz|tomaten|zwiebeln",
+    "id": 609,
+    "title": "Baingan Bharta",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Baingan Bharta",
+      "title_en": "Indian Smoky Roasted Eggplant",
+      "ingredients": [
+        "aubergine",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "tomaten",
+        "chili",
+        "garam masala",
+        "kurkuma",
+        "öl",
+        "salz",
+        "koriander frisch"
+      ]
+    }
+  },
+  {
+    "key": "kadhi pakora::chili|curryblatter|ingwer|joghurt|kichererbsenmehl|koriander frisch|kreuzkummel|kurkuma|ol|salz|senfkorner|wasser|zwiebeln",
+    "id": 610,
+    "title": "Kadhi Pakora",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Kadhi Pakora",
+      "title_en": "Indian Yogurt Curry with Fritters",
+      "ingredients": [
+        "joghurt",
+        "kichererbsenmehl",
+        "zwiebeln",
+        "ingwer",
+        "kurkuma",
+        "kreuzkümmel",
+        "senfkörner",
+        "curryblätter",
+        "chili",
+        "öl",
+        "salz",
+        "wasser",
+        "koriander frisch"
+      ]
+    }
+  },
+  {
+    "key": "kheer::kardamom|pistazien|reis|rosinen|safran|vanilleschote|vollmilch|zucker",
+    "id": 611,
+    "title": "Kheer",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Kheer",
+      "title_en": "Indian Rice Pudding",
+      "ingredients": [
+        "reis",
+        "vollmilch",
+        "zucker",
+        "kardamom",
+        "safran",
+        "pistazien",
+        "rosinen",
+        "vanilleschote"
+      ]
+    }
+  },
+  {
+    "key": "tonkotsu ramen::bambussprossen|eier|fruhlingszwiebeln|ingwer|knoblauch|mirin|nori|nudeln|sake|salz|schweinefleisch|sesam|sojasauce",
+    "id": 612,
+    "title": "Tonkotsu Ramen",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Tonkotsu Ramen",
+      "title_en": "Japanese Pork Bone Ramen",
+      "ingredients": [
+        "schweinefleisch",
+        "sojasauce",
+        "mirin",
+        "sake",
+        "ingwer",
+        "knoblauch",
+        "frühlingszwiebeln",
+        "eier",
+        "nudeln",
+        "bambussprossen",
+        "nori",
+        "sesam",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "onigiri::lachs|mayonnaise|nori|reis|salz|sesam|sojasauce",
+    "id": 613,
+    "title": "Onigiri",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Onigiri",
+      "title_en": "Japanese Rice Balls",
+      "ingredients": [
+        "reis",
+        "salz",
+        "nori",
+        "lachs",
+        "sojasauce",
+        "sesam",
+        "mayonnaise"
+      ]
+    }
+  },
+  {
+    "key": "tamagoyaki::eier|mirin|ol|salz|sojasauce|zucker",
+    "id": 614,
+    "title": "Tamagoyaki",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Tamagoyaki",
+      "title_en": "Japanese Rolled Omelette",
+      "ingredients": [
+        "eier",
+        "sojasauce",
+        "mirin",
+        "zucker",
+        "salz",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "nikujaga::fruhlingszwiebeln|karotten|kartoffeln|mirin|rindfleisch|sake|sojasauce|wasser|zucker|zwiebeln",
+    "id": 615,
+    "title": "Nikujaga",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Nikujaga",
+      "title_en": "Japanese Meat and Potato Stew",
+      "ingredients": [
+        "rindfleisch",
+        "kartoffeln",
+        "zwiebeln",
+        "karotten",
+        "sojasauce",
+        "mirin",
+        "sake",
+        "zucker",
+        "wasser",
+        "frühlingszwiebeln"
+      ]
+    }
+  },
+  {
+    "key": "chawanmushi::eier|fruhlingszwiebeln|garnelen|huhnerbruhe|mirin|salz|shiitake|sojasauce",
+    "id": 616,
+    "title": "Chawanmushi",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Chawanmushi",
+      "title_en": "Japanese Savory Steamed Egg Custard",
+      "ingredients": [
+        "eier",
+        "hühnerbrühe",
+        "sojasauce",
+        "mirin",
+        "salz",
+        "garnelen",
+        "shiitake",
+        "frühlingszwiebeln"
+      ]
+    }
+  },
+  {
+    "key": "okonomiyaki::dashi|eier|fruhlingszwiebeln|katsuobushi|mayonnaise|ol|sojasauce|speck|weizenmehl|weißkohl|worcestersauce",
+    "id": 617,
+    "title": "Okonomiyaki",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Okonomiyaki",
+      "title_en": "Japanese Savory Pancake",
+      "ingredients": [
+        "weizenmehl",
+        "eier",
+        "weißkohl",
+        "speck",
+        "frühlingszwiebeln",
+        "dashi",
+        "sojasauce",
+        "worcestersauce",
+        "mayonnaise",
+        "katsuobushi",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "bouillabaisse::fenchel|garnelen|jakobsmuscheln|knoblauch|lachsfilet|lorbeer|miesmuscheln|olivenol|orange|pfeffer|safran|salz|thymian|tomaten|weißwein|zwiebeln",
+    "id": 618,
+    "title": "Bouillabaisse",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Bouillabaisse",
+      "title_en": "Provençal Fish Stew",
+      "ingredients": [
+        "lachsfilet",
+        "garnelen",
+        "miesmuscheln",
+        "jakobsmuscheln",
+        "zwiebeln",
+        "knoblauch",
+        "tomaten",
+        "fenchel",
+        "weißwein",
+        "olivenöl",
+        "safran",
+        "thymian",
+        "lorbeer",
+        "orange",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "boeuf bourguignon::butter|champignons|karotten|knoblauch|lorbeer|mehl|pfeffer|rinderbruhe|rindfleisch|rotwein|salz|speck|thymian|tomatenmark|zwiebeln",
+    "id": 619,
+    "title": "Boeuf Bourguignon",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Boeuf Bourguignon",
+      "title_en": "Burgundian Beef Stew",
+      "ingredients": [
+        "rindfleisch",
+        "speck",
+        "champignons",
+        "zwiebeln",
+        "karotten",
+        "knoblauch",
+        "rotwein",
+        "rinderbrühe",
+        "tomatenmark",
+        "thymian",
+        "lorbeer",
+        "butter",
+        "mehl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "tarte tatin::apfel|butter|eier|mehl|sahne|salz|zimtstange|zucker",
+    "id": 620,
+    "title": "Tarte Tatin",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Tarte Tatin",
+      "title_en": "French Upside-Down Apple Tart",
+      "ingredients": [
+        "äpfel",
+        "butter",
+        "zucker",
+        "zimtstange",
+        "mehl",
+        "eier",
+        "salz",
+        "sahne"
+      ]
+    }
+  },
+  {
+    "key": "kasesouffle::butter|eier|gruyere|mehl|milch|muskatnuss|parmesan|pfeffer|salz",
+    "id": 621,
+    "title": "Käsesoufflé",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Käsesoufflé",
+      "title_en": "French Cheese Soufflé",
+      "ingredients": [
+        "butter",
+        "mehl",
+        "milch",
+        "eier",
+        "gruyère",
+        "parmesan",
+        "salz",
+        "pfeffer",
+        "muskatnuss"
+      ]
+    }
+  },
+  {
+    "key": "vichyssoise::butter|gemusebruhe|kartoffeln|lauch|pfeffer|sahne|salz|schnittlauch|zwiebeln",
+    "id": 622,
+    "title": "Vichyssoise",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Vichyssoise",
+      "title_en": "French Cold Leek and Potato Soup",
+      "ingredients": [
+        "lauch",
+        "kartoffeln",
+        "zwiebeln",
+        "butter",
+        "gemüsebrühe",
+        "sahne",
+        "salz",
+        "pfeffer",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "gnocchi alla sorrentina::basilikum|eier|kartoffeln|knoblauch|mozzarella|olivenol|parmesan|salz|tomaten|weizenmehl",
+    "id": 623,
+    "title": "Gnocchi alla Sorrentina",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Gnocchi alla Sorrentina",
+      "title_en": "Baked Gnocchi with Tomato and Mozzarella",
+      "ingredients": [
+        "kartoffeln",
+        "weizenmehl",
+        "eier",
+        "salz",
+        "tomaten",
+        "mozzarella",
+        "basilikum",
+        "olivenöl",
+        "knoblauch",
+        "parmesan"
+      ]
+    }
+  },
+  {
+    "key": "pasta e fagioli::gemusebruhe|karotten|kidneybohnen|knoblauch|lorbeer|nudeln|olivenol|parmesan|pfeffer|rosmarin|salz|sellerie|speck|tomaten|zwiebeln",
+    "id": 624,
+    "title": "Pasta e Fagioli",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Pasta e Fagioli",
+      "title_en": "Italian Pasta and Bean Soup",
+      "ingredients": [
+        "nudeln",
+        "kidneybohnen",
+        "tomaten",
+        "zwiebeln",
+        "knoblauch",
+        "karotten",
+        "sellerie",
+        "speck",
+        "olivenöl",
+        "rosmarin",
+        "lorbeer",
+        "parmesan",
+        "salz",
+        "pfeffer",
+        "gemüsebrühe"
+      ]
+    }
+  },
+  {
+    "key": "osso buco alla milanese::bruhe|butter|kalbshaxe|karotten|knoblauch|mehl|olivenol|petersilie|pfeffer|salz|sellerie|tomaten|weißwein|zitrone|zwiebeln",
+    "id": 625,
+    "title": "Osso Buco alla Milanese",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Osso Buco alla Milanese",
+      "title_en": "Milanese Braised Veal Shin",
+      "ingredients": [
+        "kalbshaxe",
+        "zwiebeln",
+        "karotten",
+        "sellerie",
+        "weißwein",
+        "tomaten",
+        "brühe",
+        "zitrone",
+        "petersilie",
+        "knoblauch",
+        "olivenöl",
+        "mehl",
+        "butter",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "panna cotta mit beerenkompott::erdbeeren|gelatine|himbeeren|milch|sahne|vanilleschote|zitronensaft|zucker",
+    "id": 626,
+    "title": "Panna Cotta mit Beerenkompott",
+    "addedAt": "2026-05-11T23:52:47.790Z",
+    "_snapshot": {
+      "title": "Panna Cotta mit Beerenkompott",
+      "title_en": "Panna Cotta with Berry Compote",
+      "ingredients": [
+        "sahne",
+        "milch",
+        "zucker",
+        "vanilleschote",
+        "gelatine",
+        "himbeeren",
+        "erdbeeren",
+        "zitronensaft"
+      ]
+    }
+  },
+  {
+    "key": "wiener beuschel::butter|kalbslunge|kapern|karotten|majoran|petersilie|pfeffer|sahne|salz|sellerie|weißweinessig|zitronensaft|zwiebeln",
+    "id": 627,
+    "title": "Wiener Beuschel",
+    "addedAt": "2026-05-12T14:40:33.677Z",
+    "_snapshot": {
+      "title": "Wiener Beuschel",
+      "title_en": "Viennese Offal Ragout",
+      "ingredients": [
+        "kalbslunge",
+        "butter",
+        "zwiebeln",
+        "karotten",
+        "sellerie",
+        "majoran",
+        "zitronensaft",
+        "weißweinessig",
+        "sahne",
+        "kapern",
+        "petersilie",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "steirisches wurzelfleisch::karotten|lauch|lorbeer|meerrettich|pfeffer|rindfleisch|salz|schnittlauch|sellerie|zwiebeln",
+    "id": 628,
+    "title": "Steirisches Wurzelfleisch",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Steirisches Wurzelfleisch",
+      "title_en": "Styrian Boiled Beef with Root Vegetables",
+      "ingredients": [
+        "rindfleisch",
+        "karotten",
+        "sellerie",
+        "lauch",
+        "zwiebeln",
+        "lorbeer",
+        "pfeffer",
+        "meerrettich",
+        "salz",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "linzer torte::backpulver|butter|eigelb|haselnusse|konfiture|mehl|puderzucker|salz|zimt|zucker",
+    "id": 629,
+    "title": "Linzer Torte",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Linzer Torte",
+      "title_en": "Linzer Tart",
+      "ingredients": [
+        "mehl",
+        "butter",
+        "zucker",
+        "eigelb",
+        "haselnüsse",
+        "zimt",
+        "backpulver",
+        "konfitüre",
+        "puderzucker",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "topfenstrudel::butter|eier|mehl|paniermehl|puderzucker|rosinen|salz|sonnenblumenol|topfen|vanilleextrakt|wasser|zitronensaft|zucker",
+    "id": 630,
+    "title": "Topfenstrudel",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Topfenstrudel",
+      "title_en": "Austrian Curd Cheese Strudel",
+      "ingredients": [
+        "mehl",
+        "butter",
+        "sonnenblumenöl",
+        "wasser",
+        "topfen",
+        "zucker",
+        "eier",
+        "vanilleextrakt",
+        "zitronensaft",
+        "rosinen",
+        "paniermehl",
+        "puderzucker",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "kurtoskalacs::butter|eier|mehl|milch|salz|trockenhefe|walnusse|zimt|zucker",
+    "id": 631,
+    "title": "Kürtőskalács",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Kürtőskalács",
+      "title_en": "Hungarian Chimney Cake",
+      "ingredients": [
+        "mehl",
+        "trockenhefe",
+        "milch",
+        "zucker",
+        "butter",
+        "eier",
+        "salz",
+        "zimt",
+        "walnüsse"
+      ]
+    }
+  },
+  {
+    "key": "paprikas krumpli::bratwurst|kartoffeln|knoblauch|paprikapulver|pfeffer|rinderbruhe|salz|schmalz|schmand|tomatenmark|zwiebeln",
+    "id": 632,
+    "title": "Paprikás Krumpli",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Paprikás Krumpli",
+      "title_en": "Hungarian Paprika Potato Stew",
+      "ingredients": [
+        "kartoffeln",
+        "zwiebeln",
+        "paprikapulver",
+        "knoblauch",
+        "bratwurst",
+        "tomatenmark",
+        "rinderbrühe",
+        "schmalz",
+        "salz",
+        "pfeffer",
+        "schmand"
+      ]
+    }
+  },
+  {
+    "key": "szegediner gulasch::knoblauch|kummel|lorbeer|paprikapulver|pfeffer|rinderbruhe|salz|sauerkraut|schmalz|schmand|schweinefleisch|zwiebeln",
+    "id": 633,
+    "title": "Szegediner Gulasch",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Szegediner Gulasch",
+      "title_en": "Szeged Goulash with Sauerkraut",
+      "ingredients": [
+        "schweinefleisch",
+        "sauerkraut",
+        "zwiebeln",
+        "paprikapulver",
+        "knoblauch",
+        "schmalz",
+        "kümmel",
+        "lorbeer",
+        "rinderbrühe",
+        "schmand",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "munchner weißwurste mit brezn::brezn|salz|sußer senf|wasser|weißwurste",
+    "id": 634,
+    "title": "Münchner Weißwürste mit Brezn",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Münchner Weißwürste mit Brezn",
+      "title_en": "Munich White Sausages with Pretzels",
+      "ingredients": [
+        "weißwürste",
+        "brezn",
+        "süßer senf",
+        "wasser",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "berliner pfannkuchen::butter|eier|konfiture|mehl|milch|puderzucker|salz|sonnenblumenol|trockenhefe|vanilleextrakt|zucker",
+    "id": 635,
+    "title": "Berliner Pfannkuchen",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Berliner Pfannkuchen",
+      "title_en": "Berlin Jelly Doughnuts",
+      "ingredients": [
+        "mehl",
+        "trockenhefe",
+        "milch",
+        "zucker",
+        "butter",
+        "eier",
+        "salz",
+        "vanilleextrakt",
+        "konfitüre",
+        "puderzucker",
+        "sonnenblumenöl"
+      ]
+    }
+  },
+  {
+    "key": "norddeutscher heringssalat::apfel|gewurzgurken|hering|joghurt|kartoffeln|mayonnaise|pfeffer|rote beete|salz|schnittlauch|weißweinessig|zucker|zwiebeln",
+    "id": 636,
+    "title": "Norddeutscher Heringssalat",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Norddeutscher Heringssalat",
+      "title_en": "North German Herring Salad",
+      "ingredients": [
+        "hering",
+        "rote beete",
+        "kartoffeln",
+        "äpfel",
+        "zwiebeln",
+        "gewürzgurken",
+        "mayonnaise",
+        "joghurt",
+        "weißweinessig",
+        "zucker",
+        "salz",
+        "pfeffer",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "kassler mit sauerkraut und kartoffelpuree::butter|kartoffeln|kassler|kummel|lorbeer|milch|muskatnuss|pfeffer|salz|sauerkraut|zwiebeln",
+    "id": 637,
+    "title": "Kassler mit Sauerkraut und Kartoffelpüree",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Kassler mit Sauerkraut und Kartoffelpüree",
+      "title_en": "Smoked Pork Loin with Sauerkraut and Mashed Potatoes",
+      "ingredients": [
+        "kassler",
+        "sauerkraut",
+        "kartoffeln",
+        "zwiebeln",
+        "kümmel",
+        "lorbeer",
+        "milch",
+        "butter",
+        "muskatnuss",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "bayerischer leberkase mit spiegelei::brezn|butter|eier|leberkase|pfeffer|salz|senf",
+    "id": 638,
+    "title": "Bayerischer Leberkäse mit Spiegelei",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Bayerischer Leberkäse mit Spiegelei",
+      "title_en": "Bavarian Meatloaf with Fried Egg",
+      "ingredients": [
+        "leberkäse",
+        "eier",
+        "butter",
+        "senf",
+        "brezn",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "sachsischer quarkkuchen::backpulver|butter|eier|mehl|milch|puderzucker|quark|salz|vanilleextrakt|zitronensaft|zucker",
+    "id": 639,
+    "title": "Sächsischer Quarkkuchen",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Sächsischer Quarkkuchen",
+      "title_en": "Saxon Curd Cake",
+      "ingredients": [
+        "quark",
+        "mehl",
+        "butter",
+        "zucker",
+        "eier",
+        "backpulver",
+        "vanilleextrakt",
+        "zitronensaft",
+        "milch",
+        "salz",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "jiaozi::chinakohl|fruhlingszwiebeln|ingwer|knoblauch|mehl|pfeffer|reisessig|sake|salz|schweinehack|sesamol|sojasauce|wasser",
+    "id": 640,
+    "title": "Jiaozi",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Jiaozi",
+      "title_en": "Chinese Steamed and Pan-Fried Dumplings",
+      "ingredients": [
+        "mehl",
+        "wasser",
+        "schweinehack",
+        "chinakohl",
+        "frühlingszwiebeln",
+        "ingwer",
+        "knoblauch",
+        "sojasauce",
+        "sesamöl",
+        "sake",
+        "reisessig",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "cong you bing::erdnussol|fruhlingszwiebeln|mehl|salz|sesamol|wasser",
+    "id": 641,
+    "title": "Cong You Bing",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Cong You Bing",
+      "title_en": "Chinese Scallion Pancakes",
+      "ingredients": [
+        "mehl",
+        "wasser",
+        "sesamöl",
+        "frühlingszwiebeln",
+        "salz",
+        "erdnussöl"
+      ]
+    }
+  },
+  {
+    "key": "hui guo rou::chilibohnenpaste|erdnussol|fruhlingszwiebeln|ingwer|knoblauch|pak choi|paprika|sake|schweinebauch|sesamol|sojasauce|zucker",
+    "id": 642,
+    "title": "Hui Guo Rou",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Hui Guo Rou",
+      "title_en": "Twice-Cooked Pork Sichuan Style",
+      "ingredients": [
+        "schweinebauch",
+        "pak choi",
+        "paprika",
+        "frühlingszwiebeln",
+        "knoblauch",
+        "ingwer",
+        "chilibohnenpaste",
+        "sojasauce",
+        "zucker",
+        "sesamöl",
+        "sake",
+        "erdnussöl"
+      ]
+    }
+  },
+  {
+    "key": "zha jiang mian::chilibohnenpaste|erdnussol|fruhlingszwiebeln|gurke|ingwer|karotten|knoblauch|nudeln|schweinehack|sesamol|sojasauce|zucker",
+    "id": 643,
+    "title": "Zha Jiang Mian",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Zha Jiang Mian",
+      "title_en": "Beijing Noodles with Savory Meat Sauce",
+      "ingredients": [
+        "nudeln",
+        "schweinehack",
+        "frühlingszwiebeln",
+        "ingwer",
+        "knoblauch",
+        "sojasauce",
+        "zucker",
+        "sesamöl",
+        "erdnussöl",
+        "gurke",
+        "karotten",
+        "chilibohnenpaste"
+      ]
+    }
+  },
+  {
+    "key": "chinesischer glasnudeleintopf mit tofu und pilzen::chili|fruhlingszwiebeln|gemusebruhe|glasnudeln|ingwer|knoblauch|pak choi|salz|sesamol|shiitake|sojasauce|tofu",
+    "id": 644,
+    "title": "Chinesischer Glasnudeleintopf mit Tofu und Pilzen",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Chinesischer Glasnudeleintopf mit Tofu und Pilzen",
+      "title_en": "Chinese Glass Noodle Hotpot with Tofu and Mushrooms",
+      "ingredients": [
+        "glasnudeln",
+        "tofu",
+        "shiitake",
+        "pak choi",
+        "frühlingszwiebeln",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "sesamöl",
+        "gemüsebrühe",
+        "chili",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "chicken biryani::basmati|currypulver|garam masala|ghee|hahnchenbrust|ingwer|joghurt|knoblauch|kurkuma|milch|minze|safran|salz|zwiebeln",
+    "id": 645,
+    "title": "Chicken Biryani",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Chicken Biryani",
+      "title_en": "Indian Chicken Rice Casserole",
+      "ingredients": [
+        "hähnchenbrust",
+        "basmati",
+        "zwiebeln",
+        "joghurt",
+        "knoblauch",
+        "ingwer",
+        "currypulver",
+        "garam masala",
+        "kurkuma",
+        "safran",
+        "milch",
+        "ghee",
+        "minze",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "pav bhaji::brotchen|butter|chili|currypulver|erbsen|garam masala|ingwer|kartoffeln|knoblauch|koriander frisch|kurkuma|paprika|salz|tomaten|zitronensaft|zwiebeln",
+    "id": 646,
+    "title": "Pav Bhaji",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Pav Bhaji",
+      "title_en": "Indian Spiced Vegetable Mash with Rolls",
+      "ingredients": [
+        "kartoffeln",
+        "erbsen",
+        "tomaten",
+        "paprika",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "butter",
+        "garam masala",
+        "currypulver",
+        "kurkuma",
+        "chili",
+        "zitronensaft",
+        "brötchen",
+        "koriander frisch",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "dal makhani::butter|chili|garam masala|ingwer|kidneybohnen|knoblauch|koriander frisch|koriandersamen|kurkuma|sahne|salz|tomatenmark|urad dal|zwiebeln",
+    "id": 647,
+    "title": "Dal Makhani",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Dal Makhani",
+      "title_en": "Black Lentil Butter Curry",
+      "ingredients": [
+        "urad dal",
+        "kidneybohnen",
+        "butter",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "tomatenmark",
+        "sahne",
+        "garam masala",
+        "koriandersamen",
+        "kurkuma",
+        "chili",
+        "salz",
+        "koriander frisch"
+      ]
+    }
+  },
+  {
+    "key": "matar paneer::chili|currypulver|erbsen|garam masala|ghee|ingwer|knoblauch|koriander frisch|kurkuma|paneer|sahne|salz|tomaten|zwiebeln",
+    "id": 648,
+    "title": "Matar Paneer",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Matar Paneer",
+      "title_en": "Indian Peas and Paneer Curry",
+      "ingredients": [
+        "paneer",
+        "erbsen",
+        "tomaten",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "ghee",
+        "garam masala",
+        "kurkuma",
+        "currypulver",
+        "sahne",
+        "koriander frisch",
+        "salz",
+        "chili"
+      ]
+    }
+  },
+  {
+    "key": "shabu-shabu::chinakohl|dashi|fruhlingszwiebeln|karotten|mirin|rindfleisch|sake|sesam|sesamol|shiitake|sojasauce|tofu|zitronensaft",
+    "id": 649,
+    "title": "Shabu-Shabu",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Shabu-Shabu",
+      "title_en": "Japanese Hot Pot",
+      "ingredients": [
+        "rindfleisch",
+        "chinakohl",
+        "shiitake",
+        "tofu",
+        "frühlingszwiebeln",
+        "karotten",
+        "sojasauce",
+        "sesamöl",
+        "mirin",
+        "dashi",
+        "sake",
+        "sesam",
+        "zitronensaft"
+      ]
+    }
+  },
+  {
+    "key": "crepes suzette::butter|eier|mehl|milch|orangen|orangenlikor|puderzucker|rum|salz|zucker",
+    "id": 650,
+    "title": "Crêpes Suzette",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Crêpes Suzette",
+      "title_en": "French Flambéed Crêpes with Orange Sauce",
+      "ingredients": [
+        "mehl",
+        "milch",
+        "eier",
+        "butter",
+        "zucker",
+        "salz",
+        "orangen",
+        "orangenlikör",
+        "rum",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "arancini di riso::butter|eier|gemusebruhe|mehl|mozzarella|muskatnuss|paniermehl|parmesan|pfeffer|risottoreis|salz|sonnenblumenol|weißwein|zwiebeln",
+    "id": 651,
+    "title": "Arancini di Riso",
+    "addedAt": "2026-05-12T14:40:33.678Z",
+    "_snapshot": {
+      "title": "Arancini di Riso",
+      "title_en": "Italian Fried Risotto Balls",
+      "ingredients": [
+        "risottoreis",
+        "gemüsebrühe",
+        "parmesan",
+        "butter",
+        "zwiebeln",
+        "weißwein",
+        "mozzarella",
+        "paniermehl",
+        "eier",
+        "mehl",
+        "sonnenblumenöl",
+        "salz",
+        "pfeffer",
+        "muskatnuss"
+      ]
+    }
+  },
+  {
+    "key": "grießnockerlsuppe::butter|eier|gemusebruhe|grieß|muskatnuss|salz|schnittlauch",
+    "id": 652,
+    "title": "Grießnockerlsuppe",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Grießnockerlsuppe",
+      "title_en": "Austrian Semolina Dumpling Soup",
+      "ingredients": [
+        "grieß",
+        "eier",
+        "butter",
+        "salz",
+        "muskatnuss",
+        "gemüsebrühe",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "kaiserschmarrn::butter|eier|mehl|milch|puderzucker|rosinen|salz|vanilleextrakt|zucker",
+    "id": 653,
+    "title": "Kaiserschmarrn",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Kaiserschmarrn",
+      "title_en": "Emperor's Torn Pancake",
+      "ingredients": [
+        "mehl",
+        "milch",
+        "eier",
+        "zucker",
+        "butter",
+        "salz",
+        "vanilleextrakt",
+        "rosinen",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "schwabische maultaschen::butter|eier|hackfleisch|huhnerbruhe|majoran|mehl|petersilie|pfeffer|salz|schnittlauch|spinat|wasser|zwiebeln",
+    "id": 654,
+    "title": "Schwäbische Maultaschen",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Schwäbische Maultaschen",
+      "title_en": "Swabian Stuffed Pasta Pockets",
+      "ingredients": [
+        "mehl",
+        "eier",
+        "wasser",
+        "spinat",
+        "hackfleisch",
+        "zwiebeln",
+        "petersilie",
+        "majoran",
+        "hühnerbrühe",
+        "butter",
+        "schnittlauch",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "salzburger nockerln::butter|eier|himbeeren|mehl|puderzucker|salz|vanilleextrakt|zucker",
+    "id": 655,
+    "title": "Salzburger Nockerln",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Salzburger Nockerln",
+      "title_en": "Salzburg Sweet Soufflé Dumplings",
+      "ingredients": [
+        "eier",
+        "zucker",
+        "mehl",
+        "vanilleextrakt",
+        "butter",
+        "puderzucker",
+        "salz",
+        "himbeeren"
+      ]
+    }
+  },
+  {
+    "key": "agedashi tofu::dashi|erdnussol|fruhlingszwiebeln|ingwer|maisstarke|mirin|salz|sesam|sojasauce|tofu",
+    "id": 656,
+    "title": "Agedashi Tofu",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Agedashi Tofu",
+      "title_en": "Japanese Fried Tofu in Dashi Broth",
+      "ingredients": [
+        "tofu",
+        "maisstärke",
+        "dashi",
+        "sojasauce",
+        "mirin",
+        "sesam",
+        "frühlingszwiebeln",
+        "ingwer",
+        "erdnussöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "chhole bhature::backpulver|butter|chili|currypulver|garam masala|ingwer|joghurt|kichererbsen|knoblauch|koriander frisch|kurkuma|mehl|natron|salz|sonnenblumenol|tomaten|zwiebeln",
+    "id": 657,
+    "title": "Chhole Bhature",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Chhole Bhature",
+      "title_en": "Indian Spiced Chickpeas with Fried Bread",
+      "ingredients": [
+        "kichererbsen",
+        "tomaten",
+        "zwiebeln",
+        "knoblauch",
+        "ingwer",
+        "garam masala",
+        "currypulver",
+        "kurkuma",
+        "chili",
+        "butter",
+        "koriander frisch",
+        "mehl",
+        "joghurt",
+        "backpulver",
+        "natron",
+        "sonnenblumenöl",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "mapo tofu::chilibohnenpaste|erdnussol|fruhlingszwiebeln|huhnerbruhe|ingwer|knoblauch|maisstarke|salz|schweinehack|sesamol|sojasauce|szechuan pfeffer|tofu|wasser",
+    "id": 658,
+    "title": "Mapo Tofu",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Mapo Tofu",
+      "title_en": "Sichuan Tofu in Spicy Meat Sauce",
+      "ingredients": [
+        "tofu",
+        "schweinehack",
+        "chilibohnenpaste",
+        "sojasauce",
+        "sesamöl",
+        "szechuan pfeffer",
+        "knoblauch",
+        "ingwer",
+        "hühnerbrühe",
+        "frühlingszwiebeln",
+        "erdnussöl",
+        "maisstärke",
+        "wasser",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "soupe a l'oignon::baguette|butter|cognac|gruyere|lorbeer|pfeffer|rinderbruhe|salz|thymian|weißwein|zucker|zwiebeln",
+    "id": 659,
+    "title": "Soupe à l'Oignon",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Soupe à l'Oignon",
+      "title_en": "French Onion Soup",
+      "ingredients": [
+        "zwiebeln",
+        "butter",
+        "weißwein",
+        "rinderbrühe",
+        "thymian",
+        "lorbeer",
+        "baguette",
+        "gruyère",
+        "cognac",
+        "zucker",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "spanakopita::dill|eier|feta|filoteig|muskatnuss|olivenol|pfeffer|salz|spinat|zwiebeln",
+    "id": 661,
+    "title": "Spanakopita",
+    "addedAt": "2026-05-13T12:59:20.427Z",
+    "_snapshot": {
+      "title": "Spanakopita",
+      "title_en": "Greek Spinach and Feta Pie",
+      "ingredients": [
+        "filoteig",
+        "spinat",
+        "feta",
+        "eier",
+        "zwiebeln",
+        "dill",
+        "olivenöl",
+        "muskatnuss",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "germknodel mit vanillesauce::butter|ei|eigelb|milch|mohn|powidl|puderzucker|salz|speisestarke|trockenhefe|vanillezucker|weizenmehl|zucker",
+    "id": 662,
+    "title": "Germknödel mit Vanillesauce",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Germknödel mit Vanillesauce",
+      "title_en": "Austrian Yeast Dumplings with Vanilla Sauce",
+      "ingredients": [
+        "weizenmehl",
+        "trockenhefe",
+        "milch",
+        "butter",
+        "zucker",
+        "ei",
+        "salz",
+        "powidl",
+        "puderzucker",
+        "mohn",
+        "eigelb",
+        "vanillezucker",
+        "speisestärke"
+      ]
+    }
+  },
+  {
+    "key": "steirische wurzelsuppe::butter|gemusebruhe|karotten|kartoffeln|lauch|pastinaken|petersilie|petersilienwurzel|pfeffer|sahne|salz|sellerie",
+    "id": 663,
+    "title": "Steirische Wurzelsuppe",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Steirische Wurzelsuppe",
+      "title_en": "Styrian Root Vegetable Soup",
+      "ingredients": [
+        "karotten",
+        "pastinaken",
+        "sellerie",
+        "petersilienwurzel",
+        "lauch",
+        "kartoffeln",
+        "butter",
+        "gemüsebrühe",
+        "sahne",
+        "salz",
+        "pfeffer",
+        "petersilie"
+      ]
+    }
+  },
+  {
+    "key": "kaseknodel auf blattsalat::bergkase|brotchen|butter|eier|feldsalat|milch|muskatnuss|olivenol|pfeffer|radieschen|salz|weizenmehl|weißweinessig",
+    "id": 664,
+    "title": "Käseknödel auf Blattsalat",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Käseknödel auf Blattsalat",
+      "title_en": "Cheese Dumplings on Leaf Salad",
+      "ingredients": [
+        "brötchen",
+        "bergkäse",
+        "eier",
+        "milch",
+        "weizenmehl",
+        "butter",
+        "salz",
+        "pfeffer",
+        "muskatnuss",
+        "feldsalat",
+        "radieschen",
+        "weißweinessig",
+        "olivenöl"
+      ]
+    }
+  },
+  {
+    "key": "speckknodel mit krautsalat::brotchen|butter|eier|kummel|milch|muskatnuss|petersilie|pfeffer|salz|sonnenblumenol|speck|weißkohl|weißweinessig|zucker",
+    "id": 665,
+    "title": "Speckknödel mit Krautsalat",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Speckknödel mit Krautsalat",
+      "title_en": "Bacon Dumplings with Coleslaw",
+      "ingredients": [
+        "brötchen",
+        "speck",
+        "eier",
+        "milch",
+        "petersilie",
+        "butter",
+        "salz",
+        "pfeffer",
+        "muskatnuss",
+        "weißkohl",
+        "weißweinessig",
+        "sonnenblumenöl",
+        "kümmel",
+        "zucker"
+      ]
+    }
+  },
+  {
+    "key": "katsudon::dashi|eier|mirin|paniermehl|pfeffer|reis|salz|schweineschnitzel|sojasauce|sonnenblumenol|weizenmehl|zucker|zwiebel",
+    "id": 666,
+    "title": "Katsudon",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Katsudon",
+      "title_en": "Japanese Pork Cutlet Rice Bowl",
+      "ingredients": [
+        "schweineschnitzel",
+        "paniermehl",
+        "eier",
+        "weizenmehl",
+        "dashi",
+        "sojasauce",
+        "mirin",
+        "zucker",
+        "zwiebel",
+        "reis",
+        "sonnenblumenöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "malatang::chili|chilibohnenpaste|fruhlingszwiebeln|glasnudeln|ingwer|knoblauch|pak choi|rinderbruhe|salz|sesam|sesamol|shiitake|sojasauce|szechuan pfeffer|tofu",
+    "id": 667,
+    "title": "Malatang",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Malatang",
+      "title_en": "Chinese Spicy Numbing Hot Pot",
+      "ingredients": [
+        "szechuan pfeffer",
+        "chilibohnenpaste",
+        "rinderbrühe",
+        "knoblauch",
+        "ingwer",
+        "tofu",
+        "glasnudeln",
+        "pak choi",
+        "shiitake",
+        "sojasauce",
+        "sesamöl",
+        "sesam",
+        "frühlingszwiebeln",
+        "salz",
+        "chili"
+      ]
+    }
+  },
+  {
+    "key": "sarson ka saag::chili|ghee|ingwer|knoblauch|kreuzkummel|kurkuma|maismehl|salz|senfblatter|spinat|tomaten|zwiebel",
+    "id": 668,
+    "title": "Sarson ka Saag",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Sarson ka Saag",
+      "title_en": "Indian Mustard Greens Curry",
+      "ingredients": [
+        "senfblätter",
+        "spinat",
+        "knoblauch",
+        "ingwer",
+        "zwiebel",
+        "tomaten",
+        "ghee",
+        "kreuzkümmel",
+        "kurkuma",
+        "chili",
+        "salz",
+        "maismehl"
+      ]
+    }
+  },
+  {
+    "key": "ribollita::bohnen|brot|dosentomaten|gemusebruhe|karotten|knoblauch|olivenol|parmesan|pfeffer|rosmarin|salz|sellerie|thymian|weißkohl|zwiebel",
+    "id": 669,
+    "title": "Ribollita",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Ribollita",
+      "title_en": "Tuscan Bread Soup",
+      "ingredients": [
+        "brot",
+        "bohnen",
+        "weißkohl",
+        "karotten",
+        "sellerie",
+        "zwiebel",
+        "knoblauch",
+        "olivenöl",
+        "dosentomaten",
+        "rosmarin",
+        "thymian",
+        "salz",
+        "pfeffer",
+        "parmesan",
+        "gemüsebrühe"
+      ]
+    }
+  },
+  {
+    "key": "caponata alla siciliana::aubergine|basilikum|grune oliven|kapern|olivenol|pfeffer|pinienkerne|rosinen|salz|sellerie|tomaten|weißweinessig|zucker|zwiebel",
+    "id": 670,
+    "title": "Caponata alla Siciliana",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Caponata alla Siciliana",
+      "title_en": "Sicilian Sweet and Sour Eggplant Stew",
+      "ingredients": [
+        "aubergine",
+        "sellerie",
+        "zwiebel",
+        "tomaten",
+        "grüne oliven",
+        "kapern",
+        "rosinen",
+        "pinienkerne",
+        "weißweinessig",
+        "zucker",
+        "olivenöl",
+        "salz",
+        "pfeffer",
+        "basilikum"
+      ]
+    }
+  },
+  {
+    "key": "pissaladiere::olivenol|pfeffer|salz|sardellen|schwarze oliven|thymian|trockenhefe|wasser|weizenmehl|zucker|zwiebeln",
+    "id": 671,
+    "title": "Pissaladière",
+    "addedAt": "2026-05-16T07:59:50.495Z",
+    "_snapshot": {
+      "title": "Pissaladière",
+      "title_en": "Provençal Onion Tart with Anchovies",
+      "ingredients": [
+        "weizenmehl",
+        "trockenhefe",
+        "wasser",
+        "olivenöl",
+        "salz",
+        "zwiebeln",
+        "sardellen",
+        "schwarze oliven",
+        "thymian",
+        "zucker",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "milchrahmstrudel::butter|eier|puderzucker|rosinen|semmelbrosel|strudelteig|vanilleschote|vollmilch|zucker",
+    "id": 672,
+    "title": "Milchrahmstrudel",
+    "addedAt": "2026-05-17T11:41:54.492Z",
+    "_snapshot": {
+      "title": "Milchrahmstrudel",
+      "title_en": "Austrian Milk Cream Strudel",
+      "ingredients": [
+        "strudelteig",
+        "vollmilch",
+        "eier",
+        "zucker",
+        "butter",
+        "vanilleschote",
+        "rosinen",
+        "semmelbrösel",
+        "puderzucker"
+      ]
+    }
+  },
+  {
+    "key": "rahmschwammerl::butter|eierschwammerl|knoblauch|petersilie|pfeffer|salz|sauerrahm|weißwein|zwiebel",
+    "id": 673,
+    "title": "Rahmschwammerl",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Rahmschwammerl",
+      "title_en": "Creamy Chanterelles in Sour Cream",
+      "ingredients": [
+        "eierschwammerl",
+        "zwiebel",
+        "knoblauch",
+        "sauerrahm",
+        "butter",
+        "petersilie",
+        "salz",
+        "pfeffer",
+        "weißwein"
+      ]
+    }
+  },
+  {
+    "key": "tiroler schlutzkrapfen::blattspinat|butter|eier|muskatnuss|parmesan|pfeffer|ricotta|roggenmehl|salz|weizenmehl|zwiebel",
+    "id": 674,
+    "title": "Tiroler Schlutzkrapfen",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Tiroler Schlutzkrapfen",
+      "title_en": "Tyrolean Spinach and Ricotta Pasta Pockets",
+      "ingredients": [
+        "weizenmehl",
+        "roggenmehl",
+        "eier",
+        "blattspinat",
+        "ricotta",
+        "parmesan",
+        "butter",
+        "zwiebel",
+        "salz",
+        "muskatnuss",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "frankfurter grune soße::borretsch|eier|kerbel|kresse|mayonnaise|petersilie|pfeffer|pimpinelle|salz|sauerampfer|sauerrahm|schnittlauch|zitronensaft",
+    "id": 675,
+    "title": "Frankfurter Grüne Soße",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Frankfurter Grüne Soße",
+      "title_en": "Frankfurt Green Sauce",
+      "ingredients": [
+        "petersilie",
+        "schnittlauch",
+        "sauerampfer",
+        "borretsch",
+        "kresse",
+        "kerbel",
+        "pimpinelle",
+        "sauerrahm",
+        "mayonnaise",
+        "eier",
+        "salz",
+        "pfeffer",
+        "zitronensaft"
+      ]
+    }
+  },
+  {
+    "key": "tempura::brokkoli|dashi|ei|eiswasser|garnelen|mirin|ol|sojasauce|speisestarke|sußkartoffel|weizenmehl",
+    "id": 676,
+    "title": "Tempura",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Tempura",
+      "title_en": "Japanese Tempura",
+      "ingredients": [
+        "garnelen",
+        "süßkartoffel",
+        "brokkoli",
+        "weizenmehl",
+        "speisestärke",
+        "eiswasser",
+        "ei",
+        "öl",
+        "sojasauce",
+        "mirin",
+        "dashi"
+      ]
+    }
+  },
+  {
+    "key": "peking-ente::ente|fruhlingszwiebeln|funf-gewurze-pulver|gurke|hoisinsauce|honig|mandarin-pfannkuchen|salz|shaoxing-wein|sojasauce",
+    "id": 677,
+    "title": "Peking-Ente",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Peking-Ente",
+      "title_en": "Peking Duck",
+      "ingredients": [
+        "ente",
+        "hoisinsauce",
+        "frühlingszwiebeln",
+        "gurke",
+        "honig",
+        "sojasauce",
+        "fünf-gewürze-pulver",
+        "shaoxing-wein",
+        "salz",
+        "mandarin-pfannkuchen"
+      ]
+    }
+  },
+  {
+    "key": "bhindi masala::chilipulver|garam-masala|ingwer|knoblauch|korianderkraut|korianderpulver|kreuzkummel|kurkuma|okraschoten|ol|salz|tomaten|zwiebeln",
+    "id": 678,
+    "title": "Bhindi Masala",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Bhindi Masala",
+      "title_en": "Indian Spiced Okra",
+      "ingredients": [
+        "okraschoten",
+        "zwiebeln",
+        "tomaten",
+        "knoblauch",
+        "ingwer",
+        "kreuzkümmel",
+        "korianderpulver",
+        "kurkuma",
+        "garam-masala",
+        "öl",
+        "salz",
+        "chilipulver",
+        "korianderkraut"
+      ]
+    }
+  },
+  {
+    "key": "melanzane alla parmigiana::auberginen|basilikum|mehl|mozzarella|ol|olivenol|parmesan|pfeffer|salz|tomatensauce",
+    "id": 679,
+    "title": "Melanzane alla Parmigiana",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Melanzane alla Parmigiana",
+      "title_en": "Italian Baked Eggplant with Parmesan",
+      "ingredients": [
+        "auberginen",
+        "tomatensauce",
+        "mozzarella",
+        "parmesan",
+        "basilikum",
+        "olivenöl",
+        "salz",
+        "pfeffer",
+        "mehl",
+        "öl"
+      ]
+    }
+  },
+  {
+    "key": "gratin dauphinois::butter|kartoffeln|knoblauch|milch|muskatnuss|parmesan|pfeffer|sahne|salz",
+    "id": 680,
+    "title": "Gratin Dauphinois",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Gratin Dauphinois",
+      "title_en": "French Potato Gratin",
+      "ingredients": [
+        "kartoffeln",
+        "sahne",
+        "milch",
+        "knoblauch",
+        "parmesan",
+        "butter",
+        "salz",
+        "muskatnuss",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "gazpacho::gurke|knoblauch|olivenol|pfeffer|rote-paprika|rotweinessig|salz|tomaten|wasser|weißbrot|zwiebel",
+    "id": 681,
+    "title": "Gazpacho",
+    "addedAt": "2026-05-17T11:41:54.498Z",
+    "_snapshot": {
+      "title": "Gazpacho",
+      "title_en": "Spanish Cold Tomato Soup",
+      "ingredients": [
+        "tomaten",
+        "gurke",
+        "rote-paprika",
+        "zwiebel",
+        "knoblauch",
+        "olivenöl",
+        "rotweinessig",
+        "weißbrot",
+        "salz",
+        "pfeffer",
+        "wasser"
+      ]
+    }
+  },
+  {
+    "key": "lo mein::austernsoße|eiernudeln|fruhlingszwiebeln|ingwer|karotten|knoblauch|pfeffer|rapsol|salz|sesamol|sojasauce|sojasprossen",
+    "id": 682,
+    "title": "Lo Mein",
+    "addedAt": "2026-05-17T11:44:43.814Z",
+    "_snapshot": {
+      "title": "Lo Mein",
+      "title_en": "Chinese Stir-Fried Egg Noodles",
+      "ingredients": [
+        "eiernudeln",
+        "sojasprossen",
+        "frühlingszwiebeln",
+        "karotten",
+        "knoblauch",
+        "ingwer",
+        "sojasauce",
+        "austernsoße",
+        "sesamöl",
+        "rapsöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "eiernudeln mit speck und ei::butter|eier|eiernudeln|pfeffer|salz|schnittlauch|speck|zwiebel",
+    "id": 683,
+    "title": "Eiernudeln mit Speck und Ei",
+    "addedAt": "2026-05-17T11:44:43.815Z",
+    "_snapshot": {
+      "title": "Eiernudeln mit Speck und Ei",
+      "title_en": "Pan-Fried Egg Noodles with Bacon and Egg",
+      "ingredients": [
+        "eiernudeln",
+        "speck",
+        "eier",
+        "zwiebel",
+        "schnittlauch",
+        "butter",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "rindfleisch-chow-mein::austernsoße|champignons|eiernudeln|fruhlingszwiebeln|ingwer|knoblauch|paprika|rapsol|rindfleisch|sesamol|sojasauce|sojasprossen",
+    "id": 684,
+    "title": "Rindfleisch-Chow-Mein",
+    "addedAt": "2026-05-17T11:44:43.815Z",
+    "_snapshot": {
+      "title": "Rindfleisch-Chow-Mein",
+      "title_en": "Beef Chow Mein",
+      "ingredients": [
+        "eiernudeln",
+        "rindfleisch",
+        "paprika",
+        "champignons",
+        "sojasprossen",
+        "frühlingszwiebeln",
+        "sojasauce",
+        "austernsoße",
+        "sesamöl",
+        "knoblauch",
+        "ingwer",
+        "rapsöl"
+      ]
+    }
+  },
+  {
+    "key": "eiernudeln in pilzrahmsauce::butter|champignons|eiernudeln|knoblauch|parmesan|petersilie|pfeffer|sahne|salz|weißwein|zwiebel",
+    "id": 685,
+    "title": "Eiernudeln in Pilzrahmsauce",
+    "addedAt": "2026-05-17T11:44:43.815Z",
+    "_snapshot": {
+      "title": "Eiernudeln in Pilzrahmsauce",
+      "title_en": "Egg Noodles in Creamy Mushroom Sauce",
+      "ingredients": [
+        "eiernudeln",
+        "champignons",
+        "sahne",
+        "zwiebel",
+        "knoblauch",
+        "butter",
+        "weißwein",
+        "petersilie",
+        "parmesan",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "huhner-eiernudelsuppe::eiernudeln|gemusebruhe|hahnchenbrust|karotten|knoblauch|lorbeer|petersilie|pfeffer|salz|sellerie|zwiebel",
+    "id": 686,
+    "title": "Hühner-Eiernudelsuppe",
+    "addedAt": "2026-05-17T11:44:43.815Z",
+    "_snapshot": {
+      "title": "Hühner-Eiernudelsuppe",
+      "title_en": "Chicken Egg Noodle Soup",
+      "ingredients": [
+        "eiernudeln",
+        "hähnchenbrust",
+        "karotten",
+        "sellerie",
+        "zwiebel",
+        "knoblauch",
+        "gemüsebrühe",
+        "lorbeer",
+        "petersilie",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "grammelknodel::butter|eier|majoran|milch|pfeffer|salz|schnittlauch|schweinebauch|weizenmehl|zwiebel",
+    "id": 687,
+    "title": "Grammelknödel",
+    "addedAt": "2026-05-18T13:01:06.480Z",
+    "_snapshot": {
+      "title": "Grammelknödel",
+      "title_en": "Austrian Pork Crackling Dumplings",
+      "ingredients": [
+        "schweinebauch",
+        "weizenmehl",
+        "eier",
+        "milch",
+        "salz",
+        "pfeffer",
+        "majoran",
+        "zwiebel",
+        "butter",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "vanillekipferl::butter|gemahlene mandeln|puderzucker|salz|vanillezucker|weizenmehl",
+    "id": 688,
+    "title": "Vanillekipferl",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Vanillekipferl",
+      "title_en": "Austrian Vanilla Crescents",
+      "ingredients": [
+        "weizenmehl",
+        "gemahlene mandeln",
+        "puderzucker",
+        "butter",
+        "vanillezucker",
+        "salz"
+      ]
+    }
+  },
+  {
+    "key": "steirische kurbiskernsuppe::butter|gemusebruhe|knoblauch|kurbiskerne|kurbiskernol|pfeffer|sahne|salz|schnittlauch|zwiebel",
+    "id": 689,
+    "title": "Steirische Kürbiskernsuppe",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Steirische Kürbiskernsuppe",
+      "title_en": "Styrian Pumpkin Seed Soup",
+      "ingredients": [
+        "kürbiskerne",
+        "zwiebel",
+        "knoblauch",
+        "gemüsebrühe",
+        "sahne",
+        "butter",
+        "salz",
+        "pfeffer",
+        "kürbiskernöl",
+        "schnittlauch"
+      ]
+    }
+  },
+  {
+    "key": "bauernschmaus::bratwurst|kartoffeln|kassler|kummel|lorbeer|pfeffer|salz|sauerkraut|schweineschmalz|schweineschulter|zwiebel",
+    "id": 690,
+    "title": "Bauernschmaus",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Bauernschmaus",
+      "title_en": "Austrian Farmer's Platter",
+      "ingredients": [
+        "schweineschulter",
+        "kassler",
+        "bratwurst",
+        "sauerkraut",
+        "zwiebel",
+        "lorbeer",
+        "kümmel",
+        "salz",
+        "pfeffer",
+        "kartoffeln",
+        "schweineschmalz"
+      ]
+    }
+  },
+  {
+    "key": "tantanmen ramen::chiliol|fruhlingszwiebeln|huhnerbruhe|ingwer|knoblauch|miso|pak choi|ramen-nudeln|schweinehack|sesam|sesampaste|sojasauce",
+    "id": 691,
+    "title": "Tantanmen Ramen",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Tantanmen Ramen",
+      "title_en": "Japanese Sesame-Chili Ramen",
+      "ingredients": [
+        "ramen-nudeln",
+        "schweinehack",
+        "sesampaste",
+        "chiliöl",
+        "sojasauce",
+        "hühnerbrühe",
+        "knoblauch",
+        "ingwer",
+        "pak choi",
+        "frühlingszwiebeln",
+        "sesam",
+        "miso"
+      ]
+    }
+  },
+  {
+    "key": "san bei ji::basilikum|chili|hahnchen|ingwer|knoblauch|sesamol|shaoxing-wein|sojasauce|zucker",
+    "id": 692,
+    "title": "San Bei Ji",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "San Bei Ji",
+      "title_en": "Three-Cup Chicken",
+      "ingredients": [
+        "hähnchen",
+        "sesamöl",
+        "sojasauce",
+        "shaoxing-wein",
+        "knoblauch",
+        "ingwer",
+        "zucker",
+        "basilikum",
+        "chili"
+      ]
+    }
+  },
+  {
+    "key": "dhokla::chili|joghurt|kichererbsenmehl|kokosraspeln|koriander frisch|natron|salz|senfkorner|sonnenblumenol|wasser|zitronensaft|zucker",
+    "id": 693,
+    "title": "Dhokla",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Dhokla",
+      "title_en": "Indian Steamed Chickpea Cake",
+      "ingredients": [
+        "kichererbsenmehl",
+        "joghurt",
+        "wasser",
+        "zitronensaft",
+        "zucker",
+        "salz",
+        "natron",
+        "senfkörner",
+        "chili",
+        "koriander frisch",
+        "kokosraspeln",
+        "sonnenblumenöl"
+      ]
+    }
+  },
+  {
+    "key": "pasta alla norma::auberginen|basilikum|dosentomaten|knoblauch|olivenol|penne|pfeffer|ricotta|salz|zucker",
+    "id": 694,
+    "title": "Pasta alla Norma",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Pasta alla Norma",
+      "title_en": "Sicilian Pasta with Eggplant",
+      "ingredients": [
+        "penne",
+        "auberginen",
+        "dosentomaten",
+        "knoblauch",
+        "basilikum",
+        "olivenöl",
+        "ricotta",
+        "salz",
+        "pfeffer",
+        "zucker"
+      ]
+    }
+  },
+  {
+    "key": "salade nicoise::eier|grune bohnen|kartoffeln|kirschtomaten|olivenol|pfeffer|romanasalat|salz|sardellen|schwarze oliven|senf|thunfisch|zitronensaft",
+    "id": 695,
+    "title": "Salade Niçoise",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Salade Niçoise",
+      "title_en": "Niçoise Salad",
+      "ingredients": [
+        "thunfisch",
+        "grüne bohnen",
+        "eier",
+        "kirschtomaten",
+        "schwarze oliven",
+        "sardellen",
+        "kartoffeln",
+        "romanasalat",
+        "senf",
+        "zitronensaft",
+        "olivenöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "souvlaki mit tzatziki::dill|fladenbrot|gurke|joghurt|knoblauch|olivenol|oregano|pfeffer|salz|schweinefleisch|zitronensaft",
+    "id": 696,
+    "title": "Souvlaki mit Tzatziki",
+    "addedAt": "2026-05-18T13:01:06.481Z",
+    "_snapshot": {
+      "title": "Souvlaki mit Tzatziki",
+      "title_en": "Greek Pork Skewers with Tzatziki",
+      "ingredients": [
+        "schweinefleisch",
+        "olivenöl",
+        "zitronensaft",
+        "oregano",
+        "knoblauch",
+        "salz",
+        "pfeffer",
+        "joghurt",
+        "gurke",
+        "dill",
+        "fladenbrot"
+      ]
+    }
+  },
+  {
+    "key": "kaspressknodel::bergkase|butter|ei|mehl|milch|muskatnuss|pfeffer|salz|schnittlauch|weißbrot",
+    "id": 697,
+    "title": "Kaspressknödel",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Kaspressknödel",
+      "title_en": "Tyrolean Fried Cheese Dumplings",
+      "ingredients": [
+        "weißbrot",
+        "ei",
+        "bergkäse",
+        "butter",
+        "milch",
+        "mehl",
+        "schnittlauch",
+        "salz",
+        "pfeffer",
+        "muskatnuss"
+      ]
+    }
+  },
+  {
+    "key": "reindling::butter|ei|hefe|milch|rosinen|salz|walnusse|weizenmehl|zimt|zucker",
+    "id": 698,
+    "title": "Reindling",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Reindling",
+      "title_en": "Carinthian Cinnamon Yeast Cake",
+      "ingredients": [
+        "weizenmehl",
+        "hefe",
+        "milch",
+        "butter",
+        "zucker",
+        "ei",
+        "salz",
+        "zimt",
+        "rosinen",
+        "walnüsse"
+      ]
+    }
+  },
+  {
+    "key": "znaimer gulasch::gewurzgurken|kummel|lorbeer|paprikapulver|pfeffer|rinderbruhe|rindfleisch|salz|schmalz|tomatenmark|zwiebel",
+    "id": 699,
+    "title": "Znaimer Gulasch",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Znaimer Gulasch",
+      "title_en": "Znaim-Style Goulash with Pickles",
+      "ingredients": [
+        "rindfleisch",
+        "zwiebel",
+        "gewürzgurken",
+        "tomatenmark",
+        "paprikapulver",
+        "rinderbrühe",
+        "schmalz",
+        "kümmel",
+        "salz",
+        "pfeffer",
+        "lorbeer"
+      ]
+    }
+  },
+  {
+    "key": "pinzgauer kasnocken::bergkase|butter|ei|pfeffer|salz|schnittlauch|wasser|weizenmehl|zwiebel",
+    "id": 700,
+    "title": "Pinzgauer Kasnocken",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Pinzgauer Kasnocken",
+      "title_en": "Salzburg-Style Cheese Noodles",
+      "ingredients": [
+        "weizenmehl",
+        "ei",
+        "salz",
+        "wasser",
+        "bergkäse",
+        "butter",
+        "zwiebel",
+        "schnittlauch",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "pad thai::chilipulver|ei|erdnusse|fischsauce|fruhlingszwiebeln|hahnchenbrust|limette|rapsol|reisnudeln|sesamol|sojasprossen|tamarindenpaste|zucker",
+    "id": 701,
+    "title": "Pad Thai",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Pad Thai",
+      "title_en": "Thai Stir-Fried Rice Noodles",
+      "ingredients": [
+        "reisnudeln",
+        "hähnchenbrust",
+        "ei",
+        "sojasprossen",
+        "frühlingszwiebeln",
+        "erdnüsse",
+        "tamarindenpaste",
+        "fischsauce",
+        "zucker",
+        "sesamöl",
+        "rapsöl",
+        "limette",
+        "chilipulver"
+      ]
+    }
+  },
+  {
+    "key": "gyudon::dashi|ei|fruhlingszwiebeln|ingwer|mirin|reis|rindfleisch|sojasoße|zucker|zwiebel",
+    "id": 702,
+    "title": "Gyudon",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Gyudon",
+      "title_en": "Japanese Beef Rice Bowl",
+      "ingredients": [
+        "reis",
+        "rindfleisch",
+        "zwiebel",
+        "dashi",
+        "sojasoße",
+        "mirin",
+        "zucker",
+        "ingwer",
+        "ei",
+        "frühlingszwiebeln"
+      ]
+    }
+  },
+  {
+    "key": "nasi goreng::ei|fruhlingszwiebeln|gurke|hahnchenbrust|kecap manis|knoblauch|pfeffer|rapsol|reis|salz|sambal oelek|schalotten|sojasoße|tomate",
+    "id": 703,
+    "title": "Nasi Goreng",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Nasi Goreng",
+      "title_en": "Indonesian Fried Rice",
+      "ingredients": [
+        "reis",
+        "ei",
+        "hähnchenbrust",
+        "knoblauch",
+        "schalotten",
+        "sojasoße",
+        "kecap manis",
+        "sambal oelek",
+        "frühlingszwiebeln",
+        "rapsöl",
+        "salz",
+        "pfeffer",
+        "gurke",
+        "tomate"
+      ]
+    }
+  },
+  {
+    "key": "moussaka::aubergine|butter|ei|hackfleisch|knoblauch|mehl|milch|muskatnuss|olivenol|parmesan|pfeffer|rotwein|salz|tomate|tomatenmark|zimt|zwiebel",
+    "id": 704,
+    "title": "Moussaka",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Moussaka",
+      "title_en": "Greek Moussaka",
+      "ingredients": [
+        "aubergine",
+        "hackfleisch",
+        "zwiebel",
+        "knoblauch",
+        "tomate",
+        "tomatenmark",
+        "olivenöl",
+        "zimt",
+        "rotwein",
+        "butter",
+        "mehl",
+        "milch",
+        "ei",
+        "parmesan",
+        "salz",
+        "pfeffer",
+        "muskatnuss"
+      ]
+    }
+  },
+  {
+    "key": "spanische tortilla::ei|kartoffeln|olivenol|pfeffer|salz|zwiebel",
+    "id": 705,
+    "title": "Spanische Tortilla",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Spanische Tortilla",
+      "title_en": "Spanish Potato Omelette",
+      "ingredients": [
+        "kartoffeln",
+        "ei",
+        "zwiebel",
+        "olivenöl",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "falafel::backpulver|kichererbsen|kichererbsenmehl|knoblauch|koriander|kreuzkummel|petersilie|pfeffer|rapsol|salz|zwiebel",
+    "id": 706,
+    "title": "Falafel",
+    "addedAt": "2026-05-18T22:58:20.380Z",
+    "_snapshot": {
+      "title": "Falafel",
+      "title_en": "Middle Eastern Chickpea Fritters",
+      "ingredients": [
+        "kichererbsen",
+        "zwiebel",
+        "knoblauch",
+        "petersilie",
+        "koriander",
+        "kreuzkümmel",
+        "kichererbsenmehl",
+        "backpulver",
+        "salz",
+        "pfeffer",
+        "rapsöl"
+      ]
+    }
+  },
+  {
+    "key": "falscher hase::bruhe|ei|hackfleisch|majoran|ol|pfeffer|salz|semmelbrosel|senf|zwiebel",
+    "id": 707,
+    "title": "Falscher Hase",
+    "addedAt": "2026-05-19T13:47:20.702Z",
+    "_snapshot": {
+      "title": "Falscher Hase",
+      "title_en": "German Meatloaf",
+      "ingredients": [
+        "hackfleisch",
+        "zwiebel",
+        "ei",
+        "semmelbrösel",
+        "senf",
+        "salz",
+        "pfeffer",
+        "majoran",
+        "öl",
+        "brühe"
+      ]
+    }
+  },
+  {
+    "key": "birnen, bohnen und speck::birnen|grune bohnen|kartoffeln|majoran|pfeffer|salz|speck|zwiebel",
+    "id": 708,
+    "title": "Birnen, Bohnen und Speck",
+    "addedAt": "2026-05-19T13:47:20.702Z",
+    "_snapshot": {
+      "title": "Birnen, Bohnen und Speck",
+      "title_en": "Pears, Beans and Bacon",
+      "ingredients": [
+        "grüne bohnen",
+        "birnen",
+        "speck",
+        "kartoffeln",
+        "zwiebel",
+        "salz",
+        "pfeffer",
+        "majoran"
+      ]
+    }
+  },
+  {
+    "key": "topfenpalatschinken::butter|ei|mehl|milch|rosinen|salz|topfen|vanillezucker|zitronensaft|zucker",
+    "id": 709,
+    "title": "Topfenpalatschinken",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Topfenpalatschinken",
+      "title_en": "Austrian Cottage Cheese Pancakes",
+      "ingredients": [
+        "mehl",
+        "ei",
+        "milch",
+        "salz",
+        "butter",
+        "topfen",
+        "zucker",
+        "vanillezucker",
+        "zitronensaft",
+        "rosinen"
+      ]
+    }
+  },
+  {
+    "key": "liptauer::butter|frischkase|kummel|paprikapulver|salz|schnittlauch|senf|zwiebel",
+    "id": 710,
+    "title": "Liptauer",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Liptauer",
+      "title_en": "Liptauer Cheese Spread",
+      "ingredients": [
+        "frischkäse",
+        "butter",
+        "paprikapulver",
+        "kümmel",
+        "schnittlauch",
+        "salz",
+        "senf",
+        "zwiebel"
+      ]
+    }
+  },
+  {
+    "key": "tom yum suppe::champignons|chili|fischsauce|galgant|garnelen|huhnerbruhe|kaffirblatter|kokosmilch|koriander|limettensaft|zitronengras",
+    "id": 711,
+    "title": "Tom Yum Suppe",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Tom Yum Suppe",
+      "title_en": "Tom Yum Soup",
+      "ingredients": [
+        "hühnerbrühe",
+        "garnelen",
+        "champignons",
+        "zitronengras",
+        "galgant",
+        "kaffirblätter",
+        "chili",
+        "fischsauce",
+        "limettensaft",
+        "kokosmilch",
+        "koriander"
+      ]
+    }
+  },
+  {
+    "key": "bibimbap::ei|gochujang|karotten|knoblauch|reis|rindfleisch|sesam|sesamol|sojasauce|sojasprossen|spinat|zucchini|zucker",
+    "id": 712,
+    "title": "Bibimbap",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Bibimbap",
+      "title_en": "Korean Mixed Rice Bowl",
+      "ingredients": [
+        "reis",
+        "rindfleisch",
+        "spinat",
+        "karotten",
+        "zucchini",
+        "sojasprossen",
+        "ei",
+        "gochujang",
+        "sesamöl",
+        "sojasauce",
+        "knoblauch",
+        "zucker",
+        "sesam"
+      ]
+    }
+  },
+  {
+    "key": "chinesisches zitronenhahnchen::hahnchenbrust|huhnerbruhe|ingwer|knoblauch|ol|pfeffer|salz|sojasauce|speisestarke|zitronensaft|zucker",
+    "id": 713,
+    "title": "Chinesisches Zitronenhähnchen",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Chinesisches Zitronenhähnchen",
+      "title_en": "Chinese Lemon Chicken",
+      "ingredients": [
+        "hähnchenbrust",
+        "zitronensaft",
+        "zucker",
+        "speisestärke",
+        "öl",
+        "knoblauch",
+        "ingwer",
+        "hühnerbrühe",
+        "sojasauce",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  },
+  {
+    "key": "pasta all'amatriciana::bucatini|chili|dosentomaten|guanciale|pecorino|salz|weißwein",
+    "id": 714,
+    "title": "Pasta all'Amatriciana",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Pasta all'Amatriciana",
+      "title_en": "Pasta Amatriciana",
+      "ingredients": [
+        "bucatini",
+        "guanciale",
+        "dosentomaten",
+        "pecorino",
+        "salz",
+        "weißwein",
+        "chili"
+      ]
+    }
+  },
+  {
+    "key": "pot-au-feu::karotten|lauch|lorbeer|markknochen|meerrettich|nelken|pastinaken|petersilie|pfeffer|rinderbrust|salz|sellerie|zwiebel",
+    "id": 715,
+    "title": "Pot-au-feu",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Pot-au-feu",
+      "title_en": "French Boiled Beef and Vegetables",
+      "ingredients": [
+        "rinderbrust",
+        "markknochen",
+        "karotten",
+        "sellerie",
+        "lauch",
+        "pastinaken",
+        "zwiebel",
+        "lorbeer",
+        "nelken",
+        "pfeffer",
+        "salz",
+        "petersilie",
+        "meerrettich"
+      ]
+    }
+  },
+  {
+    "key": "vitello tonnato::kalbsrucken|kapern|lorbeer|mayonnaise|pfeffer|rinderbruhe|salz|sardellen|thunfisch aus der dose|weißwein|zitronensaft|zwiebel",
+    "id": 716,
+    "title": "Vitello Tonnato",
+    "addedAt": "2026-05-19T13:47:20.703Z",
+    "_snapshot": {
+      "title": "Vitello Tonnato",
+      "title_en": "Veal with Tuna Sauce",
+      "ingredients": [
+        "kalbsrücken",
+        "thunfisch aus der dose",
+        "kapern",
+        "sardellen",
+        "mayonnaise",
+        "zitronensaft",
+        "weißwein",
+        "rinderbrühe",
+        "lorbeer",
+        "zwiebel",
+        "salz",
+        "pfeffer"
+      ]
+    }
+  }
+]

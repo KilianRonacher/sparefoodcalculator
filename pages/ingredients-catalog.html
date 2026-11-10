@@ -6,16 +6,16 @@
   <title>Zutaten-Katalog — SpareFoodCalculator</title>
   <meta name="description" content="Alle verfügbaren Zutaten nach Kategorien sortiert. Gemüse, Fleisch, Fisch, Milchprodukte und mehr.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sparefoodcalculator.com/pages/ingredients-catalog.html" />
+  <link rel="canonical" href="https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-catalog.html" />
   <meta property="og:title" content="Zutaten-Katalog — SpareFoodCalculator" />
   <meta property="og:description" content="Alle verfügbaren Zutaten nach Kategorien sortiert: Gemüse, Fleisch, Fisch, Milchprodukte." />
-  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta property="og:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sparefoodcalculator.com/pages/ingredients-catalog.html" />
+  <meta property="og:url" content="https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-catalog.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Zutaten-Katalog — SpareFoodCalculator" />
   <meta name="twitter:description" content="Alle verfügbaren Zutaten nach Kategorien sortiert: Gemüse, Fleisch, Fisch, Milchprodukte." />
-  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta name="twitter:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <link rel="manifest" href="../manifest.json" />
   <meta name="theme-color" content="#ffd166" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,17 +218,20 @@
 
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-  <script src="../i18n.js"></script>
-  <script src="../data/sustainability.js"></script>
-  <script src="../js/sustainability.js"></script>
-  <script src="../ingredients.js"></script>
-  <script src="../search.js"></script>
-  <script src="../js/quantities.js"></script>
-  <script src="../recipes.js"></script>
-  <script src="../app.js"></script>
-  <script src="../ui.js"></script>
-  <script src="../js/sustainability-ui.js"></script>
+  <script defer src="../js/safe-dom.js"></script>
+  <script defer src="../i18n.js"></script>
+  <script defer src="../data/sustainability.js"></script>
+  <script defer src="../js/sustainability.js"></script>
+  <script defer src="../ingredients.js"></script>
+  <script defer src="../search.js"></script>
+  <script defer src="../js/quantities.js"></script>
+  <script defer src="../recipes.js"></script>
+  <script defer src="../js/recipe-ui.js"></script>
+  <script defer src="../app.js"></script>
+  <script defer src="../ui.js"></script>
+  <script defer src="../js/sustainability-ui.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
     // Category icons and colors
     const categoryIcons = {
       'gemüse': '🥬',
@@ -272,22 +275,21 @@
       const totalCategories = Object.keys(Ingredients.ingredientsDatabase).length;
       const totalIngredients = Ingredients.allIngredients.length;
 
-      statsBar.innerHTML = `
-        <div class="stat-box">
-          <span class="number">${totalCategories}</span>
-          <span class="label">Kategorien</span>
-        </div>
-        <div class="stat-box">
-          <span class="number">${totalIngredients}</span>
-          <span class="label">Zutaten</span>
-        </div>
-      `;
+      SafeDom.clearChildren(statsBar);
+      statsBar.appendChild(SafeDom.el('div', { className: 'stat-box' },
+        SafeDom.el('span', { className: 'number' }, totalCategories),
+        SafeDom.el('span', { className: 'label' }, 'Kategorien')
+      ));
+      statsBar.appendChild(SafeDom.el('div', { className: 'stat-box' },
+        SafeDom.el('span', { className: 'number' }, totalIngredients),
+        SafeDom.el('span', { className: 'label' }, 'Zutaten')
+      ));
     }
 
     // Render all categories
     function renderCategories(searchTerm = '') {
       const container = document.getElementById('categories-container');
-      container.innerHTML = '';
+      SafeDom.clearChildren(container);
 
       Object.entries(Ingredients.ingredientsDatabase).forEach(([category, ingredients]) => {
         // Filter ingredients if search term provided
@@ -301,23 +303,22 @@
         // Skip if no matches
         if (searchTerm && filteredIngredients.length === 0) return;
 
-        const card = document.createElement('div');
-        card.className = 'category-card';
-
         const icon = categoryIcons[category] || '📦';
         const name = categoryNames[category] || category;
         const count = filteredIngredients.length;
+        const listId = 'list-' + category;
 
-        card.innerHTML = `
-          <h3>${icon} ${name}</h3>
-          <div class="count">${count}</div>
-          <div class="ingredients-list" id="list-${category}"></div>
-        `;
+        const ingList = SafeDom.el('div', { className: 'ingredients-list', id: listId });
+        const card = SafeDom.el('div', { className: 'category-card' },
+          SafeDom.el('h3', {}, icon + ' ' + name),
+          SafeDom.el('div', { className: 'count' }, count),
+          ingList
+        );
 
         container.appendChild(card);
 
         // Render ingredient badges
-        const list = document.getElementById(`list-${category}`);
+        const list = document.getElementById(listId);
         filteredIngredients.slice(0, 30).forEach(ing => {
           const badge = document.createElement('span');
           badge.className = 'ingredient-badge';
@@ -351,6 +352,7 @@
     // Initial render
     renderStats();
     renderCategories();
+    }); // DOMContentLoaded
   </script>
 </body>
 </html>

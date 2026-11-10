@@ -197,9 +197,16 @@ var SustainabilityUI = (function() {
     cookedBtn.type = 'button';
     setText(cookedBtn, '✓ ' + t('sust_cooked'));
 
-    var cookedKey = 'sfc_cooked_' + recipeId;
+    // Reason: if recipeId is undefined, every recipe would share the key
+    // 'sfc_cooked_undefined' — clicking once would disable the button across
+    // every other recipe. Only persist when we actually have an id; otherwise
+    // the button still toggles for the current view but doesn't poison storage.
+    var hasId = recipeId !== undefined && recipeId !== null && recipeId !== '';
+    var cookedKey = hasId ? ('sfc_cooked_' + recipeId) : null;
     var alreadyCooked = false;
-    try { alreadyCooked = sessionStorage.getItem(cookedKey) === '1'; } catch(e) {}
+    if (hasId) {
+      try { alreadyCooked = sessionStorage.getItem(cookedKey) === '1'; } catch(e) {}
+    }
 
     if (alreadyCooked) {
       cookedBtn.disabled = true;
@@ -215,7 +222,9 @@ var SustainabilityUI = (function() {
       cookedBtn.classList.add('sustainability-cooked-done');
       setText(cookedBtn, '✓ ' + t('sust_already_cooked'));
 
-      try { sessionStorage.setItem(cookedKey, '1'); } catch(e) {}
+      if (hasId) {
+        try { sessionStorage.setItem(cookedKey, '1'); } catch(e) {}
+      }
     });
 
     panel.appendChild(cookedBtn);

@@ -1,78 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sparefoodcalculator.com/index.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/index.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/search.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/search.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/ingredients-generator.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-generator.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/ingredients-catalog.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/ingredients-catalog.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/schwein.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/schwein.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/haendl.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/haendl.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/rind.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/rind.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/fisch.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/fisch.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/salat.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/salat.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/suppen.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/suppen.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/dessert.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/dessert.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/kuchen.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/kuchen.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/vorspeisen.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/vorspeisen.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/contact.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/contact.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sparefoodcalculator.com/pages/impressum.html</loc>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/impressum.html</loc>
     <lastmod>2026-04-28</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/hauptgericht.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/pasta.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/beilage.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/snack.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kilianronacher.github.io/sparefoodcalculator/pages/fruehstueck.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>

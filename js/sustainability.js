@@ -196,27 +196,41 @@ var SustainabilityCalc = (function() {
       if (!raw) return defaultBalance;
 
       var parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return defaultBalance;
 
-      var co2 = parseFloat(parsed.co2_kg);
-      var water = parseFloat(parsed.water_l) || 0;
-      var money = parseFloat(parsed.money_eur);
-      var count = parseInt(parsed.recipes_cooked, 10);
-
-      if (isNaN(co2) || isNaN(money) || isNaN(count)) {
-        return defaultBalance;
+      // Reason: parse each field independently and fall back to the default
+      // for that one field only. Previously, NaN in any single field wiped
+      // the whole balance — which is destructive when the schema gains a
+      // new field that older clients haven't saved yet.
+      function num(value, fallback) {
+        var n = parseFloat(value);
+        return isNaN(n) ? fallback : n;
       }
+      function int(value, fallback) {
+        var n = parseInt(value, 10);
+        return isNaN(n) ? fallback : n;
+      }
+
+      var co2   = num(parsed.co2_kg,    defaultBalance.co2_kg);
+      var water = num(parsed.water_l,   defaultBalance.water_l);
+      var money = num(parsed.money_eur, defaultBalance.money_eur);
+      var count = int(parsed.recipes_cooked, defaultBalance.recipes_cooked);
 
       if (count > MAX_RECIPES) count = MAX_RECIPES;
       if (co2 > 100000) co2 = 100000;
       if (water > 10000000) water = 10000000;
       if (money > 500000) money = 500000;
+      if (count < 0) count = 0;
+      if (co2 < 0) co2 = 0;
+      if (water < 0) water = 0;
+      if (money < 0) money = 0;
 
       return {
         co2_kg: Math.round(co2 * 100) / 100,
         water_l: Math.round(water * 100) / 100,
         money_eur: Math.round(money * 100) / 100,
         recipes_cooked: count,
-        last_updated: parsed.last_updated || ''
+        last_updated: typeof parsed.last_updated === 'string' ? parsed.last_updated : ''
       };
     } catch(e) {
       return defaultBalance;

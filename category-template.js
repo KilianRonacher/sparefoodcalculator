@@ -25,8 +25,21 @@
     schwein:    'Schwein Rezepte',
     haendl:     'Hähnchen Rezepte',
     fisch:      'Fisch Rezepte',
-    rind:       'Rind Rezepte'
+    rind:       'Rind Rezepte',
+    hauptgericht: 'Hauptgerichte',
+    pasta: 'Pasta Rezepte',
+    beilage: 'Beilagen',
+    snack: 'Snacks',
+    fruehstueck: 'Frühstück'
   };
+
+  // Menu behind the "Kategorien" button: one link per category page.
+  var menuLabels = { salat: 'Salat', suppen: 'Suppen', vorspeisen: 'Vorspeisen', rind: 'Rind', schwein: 'Schwein',
+    haendl: 'Händl', fisch: 'Fisch', dessert: 'Dessert', kuchen: 'Kuchen',
+    hauptgericht: 'Hauptgerichte', pasta: 'Pasta', beilage: 'Beilagen', snack: 'Snacks', fruehstueck: 'Frühstück' };
+  var menuLinks = Object.keys(menuLabels).map(function (key) {
+    return '          <a href="' + key + '.html" data-i18n="' + key + '"' + (key === cat ? ' aria-current="page"' : '') + '>' + menuLabels[key] + '</a>\n';
+  }).join('');
 
   var h2Text  = titles[cat] || cat;
   var i18nKey = cat + '_rezepte';
@@ -39,7 +52,10 @@
     '    <div class="nav-wrap">\n' +
     '      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Menü">&#9776;</button>\n' +
     '      <nav class="main-nav mobile-hidden" id="main-nav" aria-label="Hauptnavigation">\n' +
-    '        <button id="categories-btn" class="nav-btn" data-i18n="kategorien" aria-label="Kategorien anzeigen">Kategorien</button>\n' +
+    '        <span class="categories-wrap">\n' +
+    '        <button id="categories-btn" class="nav-btn" data-i18n="kategorien" aria-label="Kategorien anzeigen" aria-expanded="false" aria-controls="categories-menu">Kategorien</button>\n' +
+    '        <div id="categories-menu" class="categories-menu" hidden>\n' + menuLinks + '        </div>\n' +
+    '        </span>\n' +
     '        <a href="contact.html" data-i18n="kontakt">Kontakt</a>\n' +
     '        <a href="impressum.html" data-i18n="impressum">Impressum</a>\n' +
     '      </nav>\n' +
@@ -82,6 +98,8 @@
     '../search.js',
     '../js/quantities.js',
     '../recipes.js',
+    '../js/recipe-ui.js',
+    '../js/category-render.js',
     '../app.js',
     '../ui.js',
     '../js/sustainability-ui.js'

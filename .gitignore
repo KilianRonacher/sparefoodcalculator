@@ -11,3 +11,9 @@ CODE_STRUCTURE.md
 server/
 tools/MIGRATION.md
 *.bak
+docs/
+*.docx
+PLAN_*.md
+data/new-ingredients-*.json
+data/recipes-*.json
+tools/generate_effekte_docx.py

@@ -18,7 +18,11 @@
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js')
+    // Reason: './sw.js' is resolved against the PAGE, so from /pages/search.html it
+    // asked for /pages/sw.js (404). sw.js lives next to app.js, so resolve it from there.
+    var appScript = document.querySelector('script[src$="app.js"]');
+    var workerUrl = (appScript && appScript.src) ? new URL('sw.js', appScript.src).href : './sw.js';
+    navigator.serviceWorker.register(workerUrl)
       .catch(function(err) { console.warn('SW registration failed', err); });
   });
 }
@@ -36,7 +40,9 @@ if ('serviceWorker' in navigator) {
     setTimeout(function() {
       if (!deferredPrompt) return;
       var btn = document.createElement('button');
-      btn.textContent = '\u{1F4F1} App installieren';
+      var installLang = typeof getLang === 'function' ? getLang() : 'de';
+      var installText = (typeof i18n !== 'undefined' && i18n[installLang] && i18n[installLang]['pwa_install']) || 'App installieren';
+      btn.textContent = '\u{1F4F1} ' + installText;
       btn.className = 'btn primary';
       btn.style.cssText = 'position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.2);padding:0.75rem 1.25rem;font-size:0.95rem;border-radius:14px;';
       btn.id = 'pwa-install-btn';
@@ -130,11 +136,27 @@ function removeRecipeSchema() {
   var cat = document.body.getAttribute('data-category');
   if (!cat) return;
 
-  document.addEventListener('DOMContentLoaded', function() {
+  function run() {
     if (typeof loadCategoryRecipes === 'function') {
       loadCategoryRecipes(cat);
     }
-  });
+  }
+
+  function runWhenDomReady() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run);
+    } else {
+      run();
+    }
+  }
+
+  // Reason: recipes are now loaded asynchronously via fetch (recipes.js loader).
+  // We must wait for the recipesLoaded event before rendering category cards.
+  if (Array.isArray(window.recipes) && window.recipes.length > 0) {
+    runWhenDomReady();
+  } else {
+    window.addEventListener('recipesLoaded', runWhenDomReady, { once: true });
+  }
 })();
 
 // ==================== INITIALIZATION ====================

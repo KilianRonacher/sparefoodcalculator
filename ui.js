@@ -48,7 +48,8 @@
 
   var navBtns = mainNav.querySelectorAll('button');
   navBtns.forEach(function(btn) {
-    if (btn.id !== 'nav-toggle') {
+    // Reason: the categories button opens a menu inside the nav, so it must not close the nav.
+    if (btn.id !== 'nav-toggle' && btn.id !== 'categories-btn') {
       btn.addEventListener('click', closeNav);
     }
   });
@@ -66,17 +67,50 @@
   var closeBtn = document.getElementById('modal-close');
   var modal    = document.getElementById('modal');
 
+  // Reason: ui.js loads on every page, but closeRecipeModal is defined in
+  // recipes.js which only loads on pages that have a recipe modal. Guard
+  // every call so unrelated pages don't throw ReferenceError on Escape.
+  function safeClose() {
+    if (typeof closeRecipeModal !== 'undefined') {
+      closeRecipeModal();
+    }
+  }
+
   if (closeBtn) {
-    closeBtn.addEventListener('click', closeRecipeModal);
+    closeBtn.addEventListener('click', safeClose);
   }
 
   if (modal) {
     modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeRecipeModal();
+      if (e.target === modal) safeClose();
     });
   }
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeRecipeModal();
+    if (e.key === 'Escape') safeClose();
+  });
+})();
+
+// ==================== CATEGORIES MENU (category pages) ====================
+
+(function initCategoriesMenu() {
+  var button = document.getElementById('categories-btn');
+  var menu   = document.getElementById('categories-menu');
+  if (!button || !menu) return;
+
+  function setOpen(open) {
+    menu.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+  }
+
+  button.addEventListener('click', function(e) {
+    e.stopPropagation();
+    setOpen(menu.hidden);
+  });
+  document.addEventListener('click', function(e) {
+    if (!menu.hidden && !menu.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !menu.hidden) { setOpen(false); button.focus(); }
   });
 })();

@@ -1,668 +1,459 @@
 /**
  * SpareFoodCalculator - Search & Matching Module
  * ================================================
- * Damerau-Levenshtein distance, fuzzy matching, stemming, normalization.
+ * One matching engine for the recipe page, the ingredient generator and the
+ * search worker. No DOM access in this file, so the worker can importScripts it.
+ *
+ * Pipeline per ingredient pair: fold (umlauts, accents) -> tokens -> stems ->
+ * exact / synonym / compound-head / generic group -> typo distance (OSA).
  */
 
-// ==================== ALIASES & LOOKUP ====================
+// ==================== WORD LISTS ====================
 
-const ingredientAliases = {
-  tomaten: ['tomate','tomate','paradeiser','tomato'],
-  brot: ['brot','baguette','brötchen','bread'],
-  fisch: ['fisch','lachs','lachsfilet','salmon','forelle','kabeljau','thunfisch'],
-  fleisch: ['fleisch','rind','rindfleisch','schwein','schweinefleisch','hähnchen','huhn','gefluegel','lamm','kalb','wild'],
-  kraeuter: ['kräuter','kraeuter','kräutermix','kraeutermix','petersilie','schnittlauch','basilikum','dill','thymian','rosmarin','oregano','salbei'],
-  salz: ['salz','meersalz','fleur de sel','grobes salz','steinsalz'],
-  pfeffer: ['pfeffer','schwarzer pfeffer','weisser pfeffer','weißer pfeffer','rosa pfeffer','cayennepfeffer'],
-  vegetarisch: ['vegetarisch','vegetarian','veggie','vegy','vegie'],
-  hahn: ['hähnchen','hendl','haendl','huhn','poultry'],
-  kartoffel: ['kartoffel','kartoffeln','potato'],
-  eier: ['ei','eier','egg','eggs'],
-  milch: ['milch','milk'],
-  parmesan: ['parmesan','parmigiano'],
-  knoblauch: ['knoblauch','garlic'],
-  spargel: ['spargel','grüner spargel','weißer spargel','grüner-spargel','weißer-spargel','asparagus']
+// Same ingredient, different word: counts as a full match.
+const SYNONYM_GROUPS = [
+  ['ei', 'eier'], ['huhn', 'hähnchen', 'hendl', 'hühnchen', 'poulet'], ['karotte', 'möhre', 'gelbe rübe'],
+  ['kartoffel', 'erdäpfel', 'erdapfel'], ['tomate', 'paradeiser'], ['lauch', 'porree'], ['sahne', 'obers', 'schlagobers', 'schlagsahne'],
+  ['quark', 'topfen'], ['hackfleisch', 'faschiertes', 'hack', 'rinderhack', 'schweinehack', 'schweinefaschiertes'],
+  ['rind', 'rindfleisch'], ['schwein', 'schweinefleisch'], ['chili', 'chiliflocken', 'chilipulver'],
+  ['zitrone', 'zitronensaft'], ['limette', 'limettensaft'], ['puderzucker', 'staubzucker'], ['paniermehl', 'semmelbrösel', 'brösel'],
+  ['brötchen', 'semmel'], ['sojasauce', 'sojasoße'], ['pilze', 'schwammerl'], ['pfifferlinge', 'eierschwammerl'], ['blumenkohl', 'karfiol'],
+  ['aprikosen', 'marillen'], ['weißkohl', 'weißkraut'], ['hefe', 'germ'], ['mais', 'kukuruz'], ['meerrettich', 'kren'],
+  ['aubergine', 'melanzani'], ['feldsalat', 'vogerlsalat'], ['grüne bohnen', 'fisolen'], ['johannisbeeren', 'ribisel'],
+  ['speisestärke', 'maisstärke', 'stärke'], ['saure sahne', 'sauerrahm'], ['koriander', 'koriandergrün', 'korianderkraut'],
+  ['curry', 'currypulver'], ['vanille', 'vanilleschote', 'vanilleextrakt'], ['zimt', 'zimtstange'], ['muskat', 'muskatnuss'],
+  ['brühe', 'fond', 'bouillon'], ['nudeln', 'pasta'], ['pflaumen', 'zwetschgen'], ['paprikapulver', 'rosenpaprika'],
+  ['fünf gewürze', 'fünf-gewürze-pulver']
+];
+
+// Generic word <-> specific members. Members never match each other (Rind is not Schwein).
+const GENERIC_GROUPS = {
+  fisch: ['lachs', 'lachsfilet', 'forelle', 'kabeljau', 'zander', 'hering', 'aal', 'seelachs', 'dorsch'],
+  fleisch: ['rind', 'schwein', 'lamm', 'kalb', 'hähnchen', 'ente', 'pute'],
+  kräuter: ['petersilie', 'schnittlauch', 'basilikum', 'dill', 'thymian', 'rosmarin', 'oregano', 'salbei', 'majoran', 'kerbel', 'minze', 'koriander'],
+  käse: ['parmesan', 'mozzarella', 'gouda', 'feta', 'emmentaler', 'cheddar', 'gruyere', 'camembert', 'pecorino'],
+  nudeln: ['spaghetti', 'penne', 'fusilli', 'bucatini'],
+  pilze: ['champignons', 'shiitake', 'pfifferlinge', 'steinpilze'],
+  reis: ['basmati', 'arborio'],
+  ei: ['eigelb', 'eiweiß'],
+  eier: ['eigelb', 'eiweiß']
 };
 
-function buildCanonicalLookup() {
-  const lookup = {};
-  Object.entries(ingredientAliases).forEach(([canonical, variants]) => {
-    variants.forEach(v => {
-      lookup[normalizeString(v)] = canonical;
-    });
-  });
-  return lookup;
-}
+// Animal words: "Rind" covers the cuts ("Rinderbrust"), but never broth, lard or offal.
+const ANIMAL_ROOTS = [['rind'], ['schwein'], ['kalb'], ['lamm'], ['hahn', 'huhn', 'hendl', 'poulet'], ['lachs'], ['ente'], ['pute']];
+const GENERIC_WITH_CUTS = new Set(['fisch', 'fleisch']);
+const NOT_MEAT_PATTERN = /(bruhe|fond|schmalz|leber|lunge|wurst|wurste|schinken|knochen)$/;
 
-const canonicalLookup = buildCanonicalLookup();
+// Looks like "X + head word" but is a different food: never match by word ending.
+const OPAQUE_COMPOUNDS = [
+  ['schwein', 'wein'], ['knoblauch', 'lauch'], ['schnittlauch', 'lauch'], ['barlauch', 'lauch'], ['kokosmilch', 'milch'],
+  ['buttermilch', 'milch'], ['paniermehl', 'mehl'], ['erdnussbutter', 'butter'], ['kreuzkummel', 'kummel'],
+  ['susskartoffel', 'kartoffel'], ['kichererbs', 'erbs'], ['blumenkohl', 'kohl'], ['rosenkohl', 'kohl'], ['muskatnuss', 'nuss'],
+  ['leberkas', 'kas'], ['kirschwasser', 'wasser'], ['tomatenmark', 'mark'], ['erdapfel', 'apfel'], ['rosenpaprika', 'paprika'],
+  ['gewurzgurk', 'gurk'], ['sauresahne', 'sahne']
+];
 
-const highPriorityIngredients = ['eier','brot','fisch','lachs','rindfleisch','hähnchen','huhn','milch'];
+// Multi-word names that are one thing (otherwise "saure sahne" would match "sahne").
+const FIXED_PHRASES = ['saure sahne', 'creme fraiche', 'fleur de sel', 'pak choi', 'garam masala', 'sambal olek', 'kecap manis',
+  'urad dal', 'rote beete', 'teriyaki sauce', 'funf gewurze', 'funf gewurze pulver', 'shaoxing wein', 'szechuan pfeffer'];
 
-const commonStopwords = ['und','mit','oder','der','die','das','ein','eine','in','auf','für','von','zu','als','ist','sind'];
+const STOPWORDS = new Set(['und', 'mit', 'oder', 'der', 'die', 'das', 'ein', 'eine', 'in', 'auf', 'fur', 'von', 'zu', 'als', 'aus', 'dem', 'den']);
+const ADJECTIVE_PATTERN = /^(rot|gelb|grun|schwarz|weiss|frisch|getrocknet|gemahlen|gehackt|gerieben|klein|gross)(e|er|es|en|em)?$/;
+// Reason: the stemmer would turn "kräuter" into "kraut" (cabbage) and "eier" must stay apart from "ei".
+const STEM_EXCEPTIONS = new Set(['krauter', 'eier']);
+// Things almost everyone has at home: missing them should not push a recipe down.
+const PANTRY_STAPLE_WORDS = ['salz', 'pfeffer', 'wasser', 'öl', 'zucker'];
+const MATCH_THRESHOLD = 0.5;
 
 // ==================== NORMALIZATION ====================
 
 /**
- * Normalisiert einen String: Kleinbuchstaben, Umlaute bleiben erhalten,
- * ae/oe/ue werden zu ä/ö/ü konvertiert.
+ * Folds text for comparison: lower case, ß -> ss, umlauts and accents to base
+ * letters, typed ae/oe/ue to a/o/u. "Käse", "Kaese" and "Kase" become equal.
+ * @param {string} text Raw text.
+ * @returns {string} Folded text with single spaces.
  */
+function foldText(text) {
+  if (!text) return '';
+  return String(text).toLowerCase().replace(/ß/g, 'ss')
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u')
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+/** Kept for older callers: lower case and typed ae/oe/ue to umlauts. */
 function normalizeString(inputText) {
   if (!inputText) return '';
-  return inputText
-    .toLowerCase()
-    .trim()
-    .replace(/ae/g, 'ä')
-    .replace(/oe/g, 'ö')
-    .replace(/ue/g, 'ü');
+  return inputText.toLowerCase().trim().replace(/ae/g, 'ä').replace(/oe/g, 'ö').replace(/ue/g, 'ü');
 }
 
-/**
- * Erweiterte Normalisierung für den Vergleich:
- * Konvertiert Umlaute in Basisform und entfernt Sonderzeichen.
- */
-function normalizeForComparison(text) {
-  return normalizeString(text).replace(/[^a-zäöüß0-9\-]/gi, '');
-}
+const PHONETIC_REPLACEMENTS = [[/ck/g, 'k'], [/tz/g, 'z'], [/ph/g, 'f'], [/ai/g, 'ei'], [/th/g, 't'], [/dt/g, 't'], [/ie/g, 'i'], [/y/g, 'i']];
 
-// ==================== PHONETIC EQUIVALENCES ====================
-
-/**
- * Deutsche Laut-Verwechslungen: Paare, die als geringere Distanz behandelt werden.
- * Wird vor dem Damerau-Levenshtein-Vergleich angewendet.
- */
-const PHONETIC_REPLACEMENTS = [
-  [/ck/g, 'k'],
-  [/tz/g, 'z'],
-  [/ph/g, 'f'],
-  [/ai/g, 'ei'],
-  [/ae/g, 'ä'],
-  [/oe/g, 'ö'],
-  [/ue/g, 'ü'],
-  [/ss/g, 'ß'],
-  [/th/g, 't'],
-  [/dt/g, 't'],
-  [/ie(?=[^a-zäöüß]|$)/gi, 'i'],
-];
-
+/** Removes common German sound confusions before the typo comparison. */
 function applyPhoneticNormalization(text) {
-  let result = text;
-  for (const [pattern, replacement] of PHONETIC_REPLACEMENTS) {
-    result = result.replace(pattern, replacement);
-  }
-  return result;
+  return PHONETIC_REPLACEMENTS.reduce((result, pair) => result.replace(pair[0], pair[1]), text);
 }
 
-// ==================== STEMMING ====================
-
+/**
+ * Light German stemmer: strips plural and case endings from a folded word.
+ * @param {string} word Folded single word.
+ * @returns {string} Word stem.
+ */
 function applyStemming(word) {
-  if (!word || word.length < 4) return word;
-
-  const suffixRules = [
-    { suffix: 'chen', minRoot: 4 },
-    { suffix: 'lein', minRoot: 4 },
-    { suffix: 'ern',  minRoot: 4 },
-    { suffix: 'en',   minRoot: 4 },
-    { suffix: 'er',   minRoot: 4 },
-    { suffix: 'es',   minRoot: 4 },
-    { suffix: 'e',    minRoot: 4 },
-    { suffix: 's',    minRoot: 5 },
-  ];
-
-  for (const { suffix, minRoot } of suffixRules) {
-    if (word.endsWith(suffix) && (word.length - suffix.length >= minRoot)) {
-      return word.slice(0, -suffix.length);
-    }
+  if (!word || word.length < 4 || STEM_EXCEPTIONS.has(word)) return word;
+  const rules = [['chen', 4], ['lein', 4], ['ern', 4], ['en', 4], ['er', 4], ['es', 4], ['e', 4], ['s', 5]];
+  for (const [suffix, minRoot] of rules) {
+    if (word.endsWith(suffix) && word.length - suffix.length >= minRoot) return word.slice(0, -suffix.length);
   }
-
+  // Reason: plurals like "zwiebeln", "nudeln", "kapern" only add an "n".
+  if (/[lr]n$/.test(word) && word.length - 1 >= 4) return word.slice(0, -1);
   return word;
 }
 
-const COMPOUND_JOINTS = ['es', 'en', 'er'];
-
-const NEVER_SPLIT = new Set([
-  'petersilie','paradeiser','oregano','basilikum','rosmarin','thymian',
-  'salbei','majoran','kerbel','kapern','olivenöl','oliven','tomate',
-  'tomaten','gurken','gurke','paprika','avocado','sellerie','banane',
-  'bananen','orange','orangen','mandarine','zitrone','zitronen',
-  'aubergine','zucchini','spinat','rucola','champignon','champignons',
-  'erdbeere','erdbeeren','himbeere','himbeeren','heidelbeere','heidelbeeren',
-]);
-
-function splitGermanCompound(word) {
-  if (!word || word.length < 8) return [word];
-  if (NEVER_SPLIT.has(word)) return [word];
-
-  for (const joint of COMPOUND_JOINTS) {
-    let searchFrom = 4;
-    while (searchFrom <= word.length - joint.length - 4) {
-      const idx = word.indexOf(joint, searchFrom);
-      if (idx === -1) break;
-      const left = word.slice(0, idx);
-      const right = word.slice(idx + joint.length);
-      if (left.length >= 4 && right.length >= 4) return [left, right];
-      searchFrom = idx + 1;
-    }
-  }
-  return [word];
-}
-
-function processIngredientToken(rawToken) {
-  const normalized = normalizeForComparison(rawToken);
-  if (commonStopwords.includes(normalized)) return [];
-  return splitGermanCompound(normalized).map(applyStemming).filter(Boolean);
-}
+const _entryCache = new Map();
 
 /**
- * Löst österreichische/deutsche Synonyme auf und gibt alle
- * Varianten des Tokens zurück (nach Normalisierung).
+ * Turns an ingredient name into its comparable form.
+ * @param {string} phrase Ingredient name as typed or stored.
+ * @returns {{folded: string, tokens: string[], stems: string[], key: string}} Comparable entry.
  */
-function resolveTokenSynonyms(rawToken) {
-  if (typeof Ingredients === 'undefined' || typeof Ingredients.resolveSynonyms !== 'function') return [rawToken];
-  const normalized = normalizeString(rawToken);
-  const synonyms = Ingredients.resolveSynonyms(normalized);
-  return synonyms;
+function buildEntry(phrase) {
+  const cached = _entryCache.get(phrase);
+  if (cached) return cached;
+  const folded = foldText(phrase);
+  let tokens;
+  if (FIXED_PHRASES.includes(folded)) {
+    tokens = [folded.replace(/ /g, '')];
+  } else {
+    const words = folded.split(' ').filter(word => word && !STOPWORDS.has(word));
+    const content = words.filter(word => !ADJECTIVE_PATTERN.test(word));
+    tokens = content.length ? content : words;
+  }
+  const stems = tokens.map(applyStemming);
+  const entry = { folded, tokens, stems, key: stems.join(' ') };
+  _entryCache.set(phrase, entry);
+  return entry;
 }
 
-// ==================== DAMERAU-LEVENSHTEIN ====================
+const PANTRY_STAPLES = new Set(PANTRY_STAPLE_WORDS.map(word => buildEntry(word).key));
 
 /**
- * Berechnet die Damerau-Levenshtein-Distanz (echte DL, nicht OSA).
- * Erlaubte Operationen: Einfügen, Löschen, Ersetzen, Transposition.
- * 
- * Implementiert Early-Exit: Bricht ab, sobald die Mindestdistanz den
- * dynamischen Schwellwert überschreitet.
+ * Finds the animal a word belongs to.
+ * @param {string} token Folded word.
+ * @param {string} stem Its stem.
+ * @returns {{id: number, bare: boolean}|null} bare is true for "rind" or "rindfleisch", false for a cut like "rinderbrust".
  */
-function calculateDamerauLevenshtein(source, target, maxAllowed) {
-  if (source === target) return 0;
-
-  const m = source.length;
-  const n = target.length;
-
-  if (m === 0) return n;
-  if (n === 0) return m;
-
-  if (typeof maxAllowed === 'number' && Math.abs(m - n) > maxAllowed) {
-    return maxAllowed + 1;
-  }
-
-  const d = [];
-  for (let i = 0; i <= m; i++) {
-    d[i] = new Array(n + 1);
-    d[i][0] = i;
-  }
-  for (let j = 0; j <= n; j++) {
-    d[0][j] = j;
-  }
-
-  for (let i = 1; i <= m; i++) {
-    let rowMin = Infinity;
-
-    for (let j = 1; j <= n; j++) {
-      const cost = source[i - 1] === target[j - 1] ? 0 : 1;
-
-      d[i][j] = Math.min(
-        d[i - 1][j] + 1,
-        d[i][j - 1] + 1,
-        d[i - 1][j - 1] + cost
-      );
-
-      if (i > 1 && j > 1 &&
-          source[i - 1] === target[j - 2] &&
-          source[i - 2] === target[j - 1]) {
-        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
-      }
-
-      if (d[i][j] < rowMin) rowMin = d[i][j];
+function getAnimalInfo(token, stem) {
+  for (let id = 0; id < ANIMAL_ROOTS.length; id++) {
+    for (const root of ANIMAL_ROOTS[id]) {
+      if (stem === root || (token.startsWith(root) && token.endsWith('fleisch'))) return { id, bare: true };
+      if (token.startsWith(root) && token.length > root.length + 2 && !NOT_MEAT_PATTERN.test(token)) return { id, bare: false };
     }
-
-    if (typeof maxAllowed === 'number' && rowMin > maxAllowed) {
-      return maxAllowed + 1;
-    }
-  }
-
-  return d[m][n];
-}
-
-/**
- * Dynamischer Schwellwert basierend auf Wortlänge:
- * 1-4 Zeichen -> max 1 Fehler
- * 5-8 Zeichen -> max 2 Fehler
- * 9+  Zeichen -> max 3 Fehler
- */
-function getMaxAllowedErrors(length) {
-  if (length <= 4) return 1;
-  if (length <= 8) return 2;
-  return 3;
-}
-
-// ==================== FUZZY MATCHING ====================
-
-const SCORE_BANDS = [
-  { dist: 1, minLen: 4, base: 0.85, cap: 0.94 },
-  { dist: 1, minLen: 0, base: 0.70, cap: 0.94 },
-  { dist: 2, minLen: 6, base: 0.55, cap: 0.70 },
-  { dist: 2, minLen: 5, base: 0.40, cap: 0.55 },
-  { dist: 3, minLen: 9, base: 0.30, cap: 0.45 },
-];
-
-/**
- * Score für ein einzelnes Token-Paar (String vs String).
- */
-function scoreTokenPair(processedInput, processedIngredient) {
-  if (!processedInput || !processedIngredient) return 0;
-
-  if (processedInput === processedIngredient) return 1.0;
-
-  const inputLen = processedInput.length;
-  const ingLen   = processedIngredient.length;
-  const MIN_SUBSTRING_LEN = 3;
-
-  if (ingLen > inputLen &&
-      processedIngredient.startsWith(processedInput) &&
-      inputLen >= MIN_SUBSTRING_LEN) {
-    const coverage = inputLen / ingLen;
-    return 0.70 + coverage * 0.20;
-  }
-
-  if (processedIngredient.includes(processedInput) && inputLen >= MIN_SUBSTRING_LEN) {
-    const coverage = inputLen / ingLen;
-    return 0.50 + coverage * 0.20;
-  }
-
-  if (processedInput.includes(processedIngredient) && ingLen >= MIN_SUBSTRING_LEN) {
-    return 0.65;
-  }
-
-  const phoneticInput = applyPhoneticNormalization(processedInput);
-  const phoneticIng   = applyPhoneticNormalization(processedIngredient);
-
-  if (phoneticInput === phoneticIng) return 0.95;
-
-  const maxLen = Math.max(phoneticInput.length, phoneticIng.length);
-  const maxErrors = getMaxAllowedErrors(maxLen);
-  const distance = calculateDamerauLevenshtein(phoneticInput, phoneticIng, maxErrors);
-
-  if (distance > maxErrors) return 0;
-
-  let prefixBonus = 0;
-  const prefixLen = Math.min(phoneticInput.length, phoneticIng.length, 3);
-  let matchingPrefix = 0;
-  for (let i = 0; i < prefixLen; i++) {
-    if (phoneticInput[i] === phoneticIng[i]) matchingPrefix++;
-    else break;
-  }
-  if (matchingPrefix > 0) {
-    prefixBonus = 0.05 * matchingPrefix;
-  }
-
-  const band = SCORE_BANDS.find(b => distance === b.dist && maxLen >= b.minLen);
-  return band ? Math.min(band.base + prefixBonus, band.cap) : 0;
-}
-
-/**
- * Berechnet einen Ähnlichkeitsscore zwischen Nutzereingabe und Rezeptzutat.
- * Iteriert über alle Compound-Tokens und gibt den besten Score zurück.
- */
-function calculateFuzzyMatchScore(userInput, recipeIngredient) {
-  const inputTokens = processIngredientToken(userInput);
-  const ingredientTokens = processIngredientToken(recipeIngredient);
-
-  if (inputTokens.length === 0 || ingredientTokens.length === 0) return 0;
-
-  let bestScore = 0;
-  for (const pi of inputTokens) {
-    for (const pg of ingredientTokens) {
-      const score = scoreTokenPair(pi, pg);
-      if (score > bestScore) bestScore = score;
-    }
-  }
-  return bestScore;
-}
-
-// ==================== RECIPE SEARCH ====================
-
-function findMatchingRecipes(userProvidedIngredients) {
-  // Set deduplicates O(1); no .includes() scan needed
-  const expandedIngredients = new Set();
-  userProvidedIngredients.forEach(ingredient => {
-    const synonyms = resolveTokenSynonyms(ingredient);
-    synonyms.forEach(syn => {
-      const tokens = processIngredientToken(syn);
-      tokens.forEach(processed => {
-        const resolved = canonicalLookup[processed] || processed;
-        if (resolved) expandedIngredients.add(resolved);
-      });
-    });
-  });
-
-  const expandedArr = Array.from(expandedIngredients);
-
-  const scoredRecipes = recipes.map(recipeEntry => {
-    let totalScore = 0;
-    let totalWeight = 0;
-    let matchedCount = 0;
-    const missingIngredients = [];
-
-    recipeEntry.ingredients.forEach(recipeIngredient => {
-      const pts = processIngredientToken(recipeIngredient);
-      const pt = pts[0] || '';
-      const canonical = canonicalLookup[pt] || pt || normalizeString(recipeIngredient);
-      const isHighValue = highPriorityIngredients.includes(canonical);
-      const weight = isHighValue ? 1.6 : 1.0;
-
-      totalWeight += weight;
-
-      const bestMatch = expandedArr.reduce((maxScore, userToken) => {
-        const matchQuality = calculateFuzzyMatchScore(userToken, canonical);
-        return matchQuality > maxScore ? matchQuality : maxScore;
-      }, 0);
-
-      totalScore += bestMatch * weight;
-
-      if (bestMatch > 0.4) {
-        matchedCount++;
-      } else {
-        missingIngredients.push(recipeIngredient);
-      }
-    });
-
-    const normalizedScore = totalWeight > 0 ? (totalScore / totalWeight) : 0;
-    const coverage = recipeEntry.ingredients.length > 0
-      ? matchedCount / recipeEntry.ingredients.length
-      : 0;
-    const finalScore = normalizedScore * (0.5 + 0.5 * coverage);
-    const approximateMatches = Math.round(totalScore);
-
-    return {
-      ...recipeEntry,
-      matchCount: approximateMatches,
-      score: finalScore,
-      missingIngredients
-    };
-  });
-
-  return scoredRecipes
-    .filter(recipe => recipe.score > 0)
-    .sort((a, b) => {
-      const scoreDiff = b.score - a.score;
-      return scoreDiff !== 0 ? scoreDiff : (b.matchCount - a.matchCount);
-    });
-}
-
-// ==================== DID-YOU-MEAN ====================
-
-/**
- * Findet den nächstgelegenen Treffer aus allIngredients für eine Eingabe.
- * Gibt { suggestion, distance } zurück oder null wenn kein passender Treffer.
- * Threshold: Distanz <= 2, Eingabe-Länge >= 4
- */
-function findDidYouMean(input) {
-  if (!input || input.length < 4) return null;
-
-  const normalizedInput = normalizeForComparison(input);
-  if (!normalizedInput || normalizedInput.length < 4) return null;
-
-  // Prüfe zuerst ob exakter Treffer existiert (inkl. Synonyme)
-  if (typeof Ingredients !== 'undefined' && Ingredients.allIngredients) {
-    const directMatch = Ingredients.allIngredients.some(ing =>
-      normalizeForComparison(ing) === normalizedInput
-    );
-    if (directMatch) return null;
-  }
-
-  // Synonyme prüfen
-  const synonyms = resolveTokenSynonyms(input);
-  for (const syn of synonyms) {
-    if (syn !== normalizedInput && typeof Ingredients !== 'undefined' && Ingredients.allIngredients) {
-      const synMatch = Ingredients.allIngredients.some(ing =>
-        normalizeForComparison(ing) === normalizeForComparison(syn)
-      );
-      if (synMatch) return null;
-    }
-  }
-
-  let bestMatch = null;
-  let bestDistance = Infinity;
-  const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
-
-  const phoneticInput = applyPhoneticNormalization(normalizedInput);
-
-  for (const candidate of candidates) {
-    const phoneticCandidate = applyPhoneticNormalization(normalizeForComparison(candidate));
-    const dist = calculateDamerauLevenshtein(phoneticInput, phoneticCandidate, 2);
-    if (dist < bestDistance && dist > 0 && dist <= 2) {
-      bestDistance = dist;
-      bestMatch = candidate;
-    }
-  }
-
-  if (bestMatch) {
-    return { suggestion: bestMatch, distance: bestDistance };
   }
   return null;
 }
 
-// ==================== AUTOCOMPLETE ====================
+// ==================== LOOKUP TABLES (built on first use) ====================
 
-/**
- * Gibt die Top-N Autocomplete-Vorschläge für eine Eingabe zurück.
- * Ergebnisse basieren auf Prefix-Match, Substring-Match und Fuzzy-Match.
- */
-function getAutocompleteSuggestions(input, maxResults) {
-  maxResults = maxResults || 3;
-  if (!input || input.length < 2) return [];
+let _tables = null;
 
-  const normalizedInput = normalizeForComparison(input);
-  if (!normalizedInput) return [];
-
-  // Compound-aware: split input so "rinderbraten" also matches "rind" candidates
-  const inputTokens = processIngredientToken(input);
-
-  const candidates = typeof Ingredients !== 'undefined' && Ingredients.allIngredients ? Ingredients.allIngredients : [];
-  const scored = [];
-
-  for (const candidate of candidates) {
-    const normalizedCandidate = normalizeForComparison(candidate);
-
-    // Exakter Treffer: ausblenden (Nutzer hat schon richtig getippt)
-    if (normalizedCandidate === normalizedInput) continue;
-
-    let score = 0;
-    let cachedDist = 0;
-
-    // Prefix-Match: höchste Priorität
-    if (normalizedCandidate.startsWith(normalizedInput)) {
-      score = 100 - normalizedCandidate.length;
-    }
-    // Substring-Match
-    else if (normalizedCandidate.includes(normalizedInput) && normalizedInput.length >= 3) {
-      score = 50 - normalizedCandidate.length;
-    }
-    // Fuzzy-Match via Damerau-Levenshtein (nur bei Eingabe >= 4 Zeichen)
-    else if (normalizedInput.length >= 4) {
-      const dist = calculateDamerauLevenshtein(normalizedInput, normalizedCandidate, 2);
-      if (dist <= 2 && dist > 0) {
-        score = 30 - dist * 10;
-        cachedDist = dist;
-      }
-    }
-
-    // Compound-token fallback: match individual split tokens against candidate
-    if (score === 0 && inputTokens.length > 0) {
-      for (const token of inputTokens) {
-        if (token.length >= 3 && normalizedCandidate.startsWith(token)) {
-          score = Math.max(score, 25 - normalizedCandidate.length);
-          break;
-        }
-        if (token.length >= 4) {
-          const dist = calculateDamerauLevenshtein(token, normalizedCandidate, 2);
-          if (dist <= 2 && dist > 0) {
-            score = Math.max(score, 15 - dist * 5);
-            cachedDist = dist;
-          }
-        }
-      }
-    }
-
-    if (score > 0) {
-      scored.push({ text: candidate, score, distance: cachedDist });
-    }
-  }
-
-  scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, maxResults).map(s => ({ text: s.text, distance: s.distance }));
+/** @returns {Array} Loaded recipes or an empty list (page and worker safe). */
+function getLoadedRecipes() {
+  return (typeof recipes !== 'undefined' && Array.isArray(recipes)) ? recipes : [];
 }
 
-// ==================== TESTS ====================
-
 /**
- * Testfunktion: Prüft die Damerau-Levenshtein-Distanz und Fuzzy-Matching.
- * Wird nur in der Entwicklung aufgerufen.
+ * Builds synonym, generic, English and vocabulary lookups. Rebuilt when the
+ * recipe count changes, because recipes arrive asynchronously.
+ * @returns {object} Lookup tables.
  */
-function runSearchTests() {
-  console.log('=== Compound-Splitter Tests ===');
+function getTables() {
+  const recipeList = getLoadedRecipes();
+  if (_tables && _tables.recipeCount === recipeList.length) return _tables;
 
-  const splitPetersilie = splitGermanCompound('petersilie');
-  console.assert(
-    splitPetersilie.length === 1 && splitPetersilie[0] === 'petersilie',
-    'FAIL: petersilie sollte NICHT gesplittet werden, ist: ' + JSON.stringify(splitPetersilie)
-  );
+  const synonymIds = new Map();
+  const groups = SYNONYM_GROUPS.slice();
+  if (typeof Ingredients !== 'undefined' && Ingredients.ingredientSynonyms) {
+    Object.entries(Ingredients.ingredientSynonyms).forEach(pair => groups.push(pair));
+  }
+  groups.forEach((group, index) => group.forEach(word => {
+    const key = buildEntry(word).key;
+    // Reason: a word that is already in a group keeps its first group, so chains stay stable.
+    if (!synonymIds.has(key)) synonymIds.set(key, synonymIds.get(buildEntry(group[0]).key) || 'g' + index);
+  }));
 
-  const splitParadeiser = splitGermanCompound('paradeiser');
-  console.assert(
-    splitParadeiser.length === 1 && splitParadeiser[0] === 'paradeiser',
-    'FAIL: paradeiser sollte NICHT gesplittet werden, ist: ' + JSON.stringify(splitParadeiser)
-  );
+  const genericMembers = new Map();
+  Object.entries(GENERIC_GROUPS).forEach(([generic, members]) => {
+    genericMembers.set(buildEntry(generic).key, members.map(member => buildEntry(member).key));
+  });
 
-  // rinderbraten hat Fuge 'er' → soll splitten
-  const splitRinderbraten = splitGermanCompound('rinderbraten');
-  console.assert(
-    splitRinderbraten.length === 2 && splitRinderbraten[0] === 'rind' && splitRinderbraten[1] === 'braten',
-    'FAIL: rinderbraten sollte in [rind, braten] gesplittet werden, ist: ' + JSON.stringify(splitRinderbraten)
-  );
-
-  // hähnchenschenkel hat Fuge 'en' → soll splitten
-  const splitHaehnchensch = splitGermanCompound('hähnchenschenkel');
-  console.assert(
-    splitHaehnchensch.length === 2,
-    'FAIL: hähnchenschenkel sollte gesplittet werden, ist: ' + JSON.stringify(splitHaehnchensch)
-  );
-
-  console.log('=== Damerau-Levenshtein Tests ===');
-
-  // Transposition: "tmoate" -> "tomate" = Distanz 1
-  console.assert(
-    calculateDamerauLevenshtein('tmoate', 'tomate') === 1,
-    'FAIL: tmoate -> tomate sollte Distanz 1 sein, ist ' + calculateDamerauLevenshtein('tmoate', 'tomate')
-  );
-
-  // Einfügung: "lachss" -> "lachs" = Distanz 1
-  console.assert(
-    calculateDamerauLevenshtein('lachss', 'lachs') === 1,
-    'FAIL: lachss -> lachs sollte Distanz 1 sein'
-  );
-
-  // Einfügung: "karrotte" -> "karotte" = Distanz 1
-  console.assert(
-    calculateDamerauLevenshtein('karrotte', 'karotte') === 1,
-    'FAIL: karrotte -> karotte sollte Distanz 1 sein'
-  );
-
-  // Exakt: "brokkoli" -> "brokkoli" = Distanz 0
-  console.assert(
-    calculateDamerauLevenshtein('brokkoli', 'brokkoli') === 0,
-    'FAIL: brokkoli -> brokkoli sollte Distanz 0 sein'
-  );
-
-  // Kein Treffer: "xyz123" darf nicht matchen
-  const scoreXyz = calculateFuzzyMatchScore('xyz123', 'tomate');
-  console.assert(
-    scoreXyz === 0,
-    'FAIL: xyz123 -> tomate sollte Score 0 sein, ist ' + scoreXyz
-  );
-
-  // Phonetische Ähnlichkeit: "aepfel" -> "äpfel"
-  const phoneticA = applyPhoneticNormalization('aepfel');
-  const phoneticB = applyPhoneticNormalization('äpfel');
-  console.assert(
-    phoneticA === phoneticB || calculateDamerauLevenshtein(phoneticA, phoneticB) <= 1,
-    'FAIL: aepfel und äpfel sollten phonetisch ähnlich sein'
-  );
-
-  // Fuzzy Match Score: "tmoate" -> "tomate" sollte hohen Score haben
-  const scoreTmoate = calculateFuzzyMatchScore('tmoate', 'tomate');
-  console.assert(
-    scoreTmoate >= 0.7,
-    'FAIL: tmoate -> tomate Score zu niedrig: ' + scoreTmoate
-  );
-
-  // Fuzzy Match Score: "lachss" -> "lachs" sollte hohen Score haben
-  const scoreLachss = calculateFuzzyMatchScore('lachss', 'lachs');
-  console.assert(
-    scoreLachss >= 0.7,
-    'FAIL: lachss -> lachs Score zu niedrig: ' + scoreLachss
-  );
-
-  // === Synonym-Tests ===
-  console.log('=== Synonym-Tests ===');
-
-  // "erdäpfel" muss Kartoffel-Treffer liefern
-  const synErdaepfel = resolveTokenSynonyms('erdäpfel');
-  console.assert(
-    synErdaepfel.includes('kartoffeln'),
-    'FAIL: erdäpfel-Synonyme sollten kartoffeln enthalten, sind: ' + synErdaepfel.join(', ')
-  );
-
-  // "paradeiser" muss Tomaten-Treffer liefern
-  const synParadeiser = resolveTokenSynonyms('paradeiser');
-  console.assert(
-    synParadeiser.includes('tomaten'),
-    'FAIL: paradeiser-Synonyme sollten tomaten enthalten, sind: ' + synParadeiser.join(', ')
-  );
-
-  // Rückrichtung: "kartoffeln" muss auch erdäpfel enthalten
-  const synKartoffeln = resolveTokenSynonyms('kartoffeln');
-  console.assert(
-    synKartoffeln.includes('erdäpfel'),
-    'FAIL: kartoffeln-Synonyme sollten erdäpfel enthalten, sind: ' + synKartoffeln.join(', ')
-  );
-
-  // "Did you mean" Test
-  const dymResult = findDidYouMean('tmoate');
-  console.assert(
-    dymResult !== null && dymResult.suggestion === 'tomate',
-    'FAIL: "tmoate" sollte "tomate" vorschlagen, Ergebnis: ' + JSON.stringify(dymResult)
-  );
-
-  // === missingIngredients Test ===
-  console.log('=== missingIngredients Tests ===');
-
-  // Stub für findMatchingRecipes-Test: Rezept mit 2 Zutaten, Nutzer hat nur 1
-  const stubRecipes = [{ name: 'Testrezept', ingredients: ['Tomate', 'Lachs'], url: '#' }];
-  const origRecipes = typeof recipes !== 'undefined' ? recipes : [];
-  // Temporärer Austausch für isolierten Test (nur wenn recipes global ist)
-  if (typeof recipes !== 'undefined') {
-    recipes.length = 0;
-    stubRecipes.forEach(r => recipes.push(r));
-    const missingResult = findMatchingRecipes(['tomate']);
-    if (missingResult.length > 0) {
-      console.assert(
-        Array.isArray(missingResult[0].missingIngredients),
-        'FAIL: missingIngredients sollte ein Array sein'
-      );
-      console.assert(
-        missingResult[0].missingIngredients.includes('Lachs'),
-        'FAIL: missingIngredients sollte "Lachs" enthalten, ist: ' + JSON.stringify(missingResult[0].missingIngredients)
-      );
-    }
-    recipes.length = 0;
-    origRecipes.forEach(r => recipes.push(r));
+  const englishToGerman = new Map();
+  if (typeof ingredientTranslations !== 'undefined' && ingredientTranslations) {
+    Object.entries(ingredientTranslations).forEach(([german, english]) => {
+      const foldedEnglish = foldText(english);
+      if (foldedEnglish && foldedEnglish !== foldText(german) && !englishToGerman.has(foldedEnglish)) englishToGerman.set(foldedEnglish, german);
+    });
   }
 
-  console.log('=== Alle Tests abgeschlossen ===');
+  const recipeIngredients = new Map();
+  recipeList.forEach(recipe => (recipe.ingredients || []).forEach(name => {
+    const entry = buildEntry(name);
+    if (!recipeIngredients.has(entry.key)) recipeIngredients.set(entry.key, String(name).toLowerCase());
+  }));
+
+  const vocabulary = new Set();
+  const addWords = phrase => buildEntry(phrase).stems.forEach(stem => vocabulary.add(stem));
+  recipeIngredients.forEach(name => addWords(name));
+  if (typeof Ingredients !== 'undefined' && Array.isArray(Ingredients.allIngredients)) Ingredients.allIngredients.forEach(addWords);
+  groups.forEach(group => group.forEach(addWords));
+  Object.entries(GENERIC_GROUPS).forEach(([generic, members]) => { addWords(generic); members.forEach(addWords); });
+
+  _tables = { recipeCount: recipeList.length, synonymIds, genericMembers, englishToGerman, recipeIngredients, vocabulary, pool: null };
+  return _tables;
 }
 
-// Tests in Entwicklung automatisch ausführen (nur bei Konsolenaufruf)
-if (typeof window !== 'undefined' && window.location && window.location.search.includes('debug=true')) {
-  runSearchTests();
+// ==================== TYPO DISTANCE ====================
+
+let _distanceBuffer = new Int32Array(1024);
+
+/**
+ * Edit distance with insert, delete, replace and swap of neighbours
+ * (Damerau-Levenshtein in the "optimal string alignment" variant).
+ * Stops early once every value in a row is above maxAllowed.
+ * @param {string} source First word.
+ * @param {string} target Second word.
+ * @param {number} [maxAllowed] Threshold for the early exit.
+ * @returns {number} Distance, or maxAllowed + 1 when it is above the threshold.
+ */
+function calculateDamerauLevenshtein(source, target, maxAllowed) {
+  if (source === target) return 0;
+  const m = source.length;
+  const n = target.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  if (typeof maxAllowed === 'number' && Math.abs(m - n) > maxAllowed) return maxAllowed + 1;
+
+  const stride = n + 1;
+  const size = (m + 1) * stride;
+  if (_distanceBuffer.length < size) _distanceBuffer = new Int32Array(Math.max(size, _distanceBuffer.length * 2));
+  const d = _distanceBuffer;
+  for (let i = 0; i <= m; i++) d[i * stride] = i;
+  for (let j = 0; j <= n; j++) d[j] = j;
+
+  for (let i = 1; i <= m; i++) {
+    const row = i * stride;
+    const previousRow = row - stride;
+    const sourceChar = source.charCodeAt(i - 1);
+    let rowMin = 0x7fffffff;
+    for (let j = 1; j <= n; j++) {
+      const cost = sourceChar === target.charCodeAt(j - 1) ? 0 : 1;
+      let value = Math.min(d[previousRow + j] + 1, d[row + j - 1] + 1, d[previousRow + j - 1] + cost);
+      if (i > 1 && j > 1 && sourceChar === target.charCodeAt(j - 2) && source.charCodeAt(i - 2) === target.charCodeAt(j - 1)) {
+        value = Math.min(value, d[(i - 2) * stride + (j - 2)] + 1);
+      }
+      d[row + j] = value;
+      if (value < rowMin) rowMin = value;
+    }
+    if (typeof maxAllowed === 'number' && rowMin > maxAllowed) return maxAllowed + 1;
+  }
+  return d[m * stride + n];
+}
+
+/** Allowed typos by word length: up to 4 letters 1, up to 8 letters 2, longer 3. */
+function getMaxAllowedErrors(length) {
+  if (length <= 4) return 1;
+  return length <= 8 ? 2 : 3;
+}
+
+// ==================== MATCHING ====================
+
+/** True when "longWord ends with shortWord" is only a coincidence (Knoblauch is no Lauch). */
+function isOpaqueCompound(longWord, shortWord) {
+  return OPAQUE_COMPOUNDS.some(pair => longWord.startsWith(pair[0]) && shortWord.startsWith(pair[1]));
+}
+
+/** Score for two single words: same stem, synonym, or compound head ("Olivenöl" is an "Öl"). */
+function scoreWordPair(tokenA, stemA, tokenB, stemB, tables) {
+  if (stemA === stemB) return 1;
+  const idA = tables.synonymIds.get(stemA);
+  if (idA && idA === tables.synonymIds.get(stemB)) return 1;
+  const aIsLong = tokenA.length >= tokenB.length;
+  const longToken = aIsLong ? tokenA : tokenB;
+  const shortToken = aIsLong ? tokenB : tokenA;
+  const longStem = aIsLong ? stemA : stemB;
+  const shortStem = aIsLong ? stemB : stemA;
+  const headIsLongEnough = shortToken.length >= 3 || shortToken === 'ol';
+  if (headIsLongEnough && longToken.length - shortToken.length >= 3 &&
+      (longToken.endsWith(shortToken) || longStem.endsWith(shortStem)) && !isOpaqueCompound(longToken, shortToken)) return 0.85;
+  const animalA = getAnimalInfo(tokenA, stemA);
+  const animalB = animalA && getAnimalInfo(tokenB, stemB);
+  // Reason: "Rind" covers "Rinderbrust", but two different cuts are not the same thing.
+  if (animalB && animalA.id === animalB.id && (animalA.bare || animalB.bare)) return 0.8;
+  return 0;
+}
+
+/**
+ * Score for two ingredient names without typo tolerance.
+ * @param {object} userEntry Entry of the user's ingredient.
+ * @param {object} recipeEntry Entry of the recipe ingredient.
+ * @param {object} tables Lookup tables.
+ * @returns {number} 0 (different) to 1 (same ingredient).
+ */
+function scoreEntries(userEntry, recipeEntry, tables) {
+  if (!userEntry.key || !recipeEntry.key) return 0;
+  if (userEntry.key === recipeEntry.key) return 1;
+  const userId = tables.synonymIds.get(userEntry.key);
+  if (userId && userId === tables.synonymIds.get(recipeEntry.key)) return 1;
+
+  const userIsShort = userEntry.stems.length <= recipeEntry.stems.length;
+  const shortEntry = userIsShort ? userEntry : recipeEntry;
+  const longEntry = userIsShort ? recipeEntry : userEntry;
+  let weakest = 1;
+  for (let i = 0; i < shortEntry.stems.length && weakest > 0; i++) {
+    let best = 0;
+    for (let j = 0; j < longEntry.stems.length; j++) {
+      best = Math.max(best, scoreWordPair(shortEntry.tokens[i], shortEntry.stems[i], longEntry.tokens[j], longEntry.stems[j], tables));
+    }
+    weakest = Math.min(weakest, best);
+  }
+  if (weakest > 0) return weakest * (shortEntry.stems.length === longEntry.stems.length ? 1 : 0.92);
+
+  // Reason: only animals have cuts ("Lachsfilet" is fish); "Koriandersamen" is not a herb.
+  const isMember = (genericEntry, specificEntry) => (tables.genericMembers.get(genericEntry.key) || [])
+    .some(memberKey => specificEntry.stems.some((stem, index) => stem === memberKey ||
+      (GENERIC_WITH_CUTS.has(genericEntry.key) && stem.startsWith(memberKey) && !NOT_MEAT_PATTERN.test(specificEntry.tokens[index]))));
+  if (isMember(userEntry, recipeEntry)) return 0.75;
+  if (isMember(recipeEntry, userEntry)) return 0.8;
+  return 0;
+}
+
+/**
+ * Prepares one user ingredient: German reading, English reading, known or not.
+ * @param {string} rawInput Ingredient as typed.
+ * @returns {{raw: string, entries: object[], known: boolean}} Query object.
+ */
+function buildQuery(rawInput) {
+  const tables = getTables();
+  const entry = buildEntry(rawInput);
+  const entries = [entry];
+  // Reason: accept "egg" for "eggs" and "tomatoes" for "tomato".
+  const english = [entry.folded, entry.folded.replace(/e?s$/, ''), entry.folded + 's', entry.folded + 'es']
+    .map(form => tables.englishToGerman.get(form)).find(Boolean);
+  if (english) entries.push(buildEntry(english));
+  const known = Boolean(english) || tables.synonymIds.has(entry.key) || tables.genericMembers.has(entry.key) ||
+    (entry.stems.length > 0 && entry.stems.every(stem => tables.vocabulary.has(stem)));
+  return { raw: rawInput, entries, known };
+}
+
+/** Typo and "still typing" score. Only used for words the app does not know. */
+function scoreTypo(userEntry, recipeEntry) {
+  if (userEntry.stems.length !== 1 || userEntry.folded.length < 4) return 0;
+  const typed = applyPhoneticNormalization(userEntry.stems[0]);
+  let best = 0;
+  recipeEntry.stems.forEach((stem, index) => {
+    if (recipeEntry.tokens[index].startsWith(userEntry.tokens[0])) { best = Math.max(best, 0.8); return; }
+    const candidate = applyPhoneticNormalization(stem);
+    if (typed === candidate) { best = Math.max(best, 0.95); return; }
+    const maxLength = Math.max(typed.length, candidate.length);
+    const allowed = getMaxAllowedErrors(maxLength);
+    const distance = calculateDamerauLevenshtein(typed, candidate, allowed);
+    // Reason: short words need a matching first letter, otherwise "mehl" would turn into "mohn".
+    if (distance > allowed || (maxLength <= 5 && typed[0] !== candidate[0])) return;
+    best = Math.max(best, distance === 1 ? 0.88 : distance === 2 ? 0.68 : 0.52);
+  });
+  return best;
+}
+
+/**
+ * How well does one user ingredient cover one recipe ingredient?
+ * @param {string|object} userIngredient Typed name or a prepared query.
+ * @param {string} recipeIngredient Ingredient name from a recipe.
+ * @returns {number} 0 to 1, a match from MATCH_THRESHOLD upwards.
+ */
+function calculateFuzzyMatchScore(userIngredient, recipeIngredient) {
+  const tables = getTables();
+  const query = typeof userIngredient === 'string' ? buildQuery(userIngredient) : userIngredient;
+  const recipeEntry = buildEntry(recipeIngredient);
+  let best = 0;
+  query.entries.forEach(entry => { best = Math.max(best, scoreEntries(entry, recipeEntry, tables)); });
+  if (best === 0 && !query.known) best = scoreTypo(query.entries[0], recipeEntry);
+  return best;
+}
+
+/** True when the user's ingredient counts as the recipe ingredient. */
+function ingredientsMatch(userIngredient, recipeIngredient) {
+  return calculateFuzzyMatchScore(userIngredient, recipeIngredient) >= MATCH_THRESHOLD;
+}
+
+// ==================== VEGETARIAN CHECK ====================
+
+// Reason: animal words need a word start, otherwise "rind" would hit "Zitronenrinde".
+const MEAT_ANYWHERE = 'fleisch|schwein|fisch|lachs|kabeljau|forelle|zander|hering|sardell|anchov|garnel|shrimp|muschel|krabb|speck|schinken|' +
+  'wurst|salami|kassler|guanciale|leberkas|faschiert|gelatine|auster|dashi|katsuobushi|knochen';
+const NON_VEGETARIAN_PATTERN = new RegExp(MEAT_ANYWHERE + '|(^| )(rind|hahn|huhn|hendl|lamm|kalb|ente|pute|gans|hack)|(^| )(aal|wild)( |$)');
+
+/**
+ * True when no ingredient is meat, fish or made from them (broth, gelatine).
+ * @param {{ingredients: string[]}} recipe Recipe to check.
+ * @returns {boolean} Vegetarian or not.
+ */
+function isVegetarianRecipe(recipe) {
+  return !((recipe && recipe.ingredients) || []).some(name => NON_VEGETARIAN_PATTERN.test(foldText(name)));
+}
+
+// ==================== RECIPE SEARCH ====================
+
+/**
+ * Ranks all recipes for the user's ingredients.
+ * @param {string[]} userIngredients Ingredients the user has.
+ * @param {{light?: boolean}} [options] light: return only ids and match data (for the worker).
+ * @returns {object[]} Recipes with at least one hit: complete matches first, then by score.
+ *   Fields: id, title, score, matchCount, isExact, haveIngredients, missingIngredients, unmatchedUserIngredients.
+ */
+function findMatchingRecipes(userIngredients, options) {
+  if (!Array.isArray(userIngredients) || userIngredients.length === 0) return [];
+  const queries = userIngredients.filter(Boolean).map(buildQuery);
+  const pairCache = new Map();
+  const scorePair = (queryIndex, ingredient) => {
+    const cacheKey = queryIndex + '|' + ingredient;
+    if (!pairCache.has(cacheKey)) pairCache.set(cacheKey, calculateFuzzyMatchScore(queries[queryIndex], ingredient));
+    return pairCache.get(cacheKey);
+  };
+
+  const results = [];
+  getLoadedRecipes().forEach(recipe => {
+    const bestPerQuery = queries.map(() => 0);
+    const haveIngredients = [];
+    const missingIngredients = [];
+    let coveredWeight = 0;
+    let totalWeight = 0;
+    (recipe.ingredients || []).forEach(ingredient => {
+      let best = 0;
+      queries.forEach((query, index) => {
+        const score = scorePair(index, ingredient);
+        if (score > best) best = score;
+        if (score > bestPerQuery[index]) bestPerQuery[index] = score;
+      });
+      const weight = PANTRY_STAPLES.has(buildEntry(ingredient).key) ? 0.25 : 1;
+      totalWeight += weight;
+      if (best >= MATCH_THRESHOLD) { haveIngredients.push(ingredient); coveredWeight += weight; } else missingIngredients.push(ingredient);
+    });
+
+    const matchedScores = bestPerQuery.filter(score => score >= MATCH_THRESHOLD);
+    if (matchedScores.length === 0) return;
+    const quality = matchedScores.reduce((sum, score) => sum + score, 0) / matchedScores.length;
+    const userCoverage = matchedScores.length / queries.length;
+    const recipeCoverage = totalWeight > 0 ? coveredWeight / totalWeight : 0;
+    const analysis = {
+      id: recipe.id, title: recipe.title,
+      score: quality * (0.55 * userCoverage + 0.45 * recipeCoverage),
+      matchCount: matchedScores.length, isExact: matchedScores.length === queries.length,
+      haveIngredients, missingIngredients,
+      unmatchedUserIngredients: queries.filter((query, index) => bestPerQuery[index] < MATCH_THRESHOLD).map(query => query.raw)
+    };
+    results.push(options && options.light ? analysis : Object.assign({}, recipe, analysis));
+  });
+
+  return results.sort((a, b) => (Number(b.isExact) - Number(a.isExact)) || (b.score - a.score) ||
+    (a.missingIngredients.length - b.missingIngredients.length) || (a.id - b.id));
 }

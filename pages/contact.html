@@ -6,16 +6,16 @@
   <title>Kontakt — SpareFoodCalculator</title>
   <meta name="description" content="Kontaktiere den Entwickler des SpareFoodCalculator.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sparefoodcalculator.com/pages/contact.html" />
+  <link rel="canonical" href="https://kilianronacher.github.io/sparefoodcalculator/pages/contact.html" />
   <meta property="og:title" content="Kontakt — SpareFoodCalculator" />
   <meta property="og:description" content="Kontaktiere den Entwickler des SpareFoodCalculator." />
-  <meta property="og:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta property="og:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sparefoodcalculator.com/pages/contact.html" />
+  <meta property="og:url" content="https://kilianronacher.github.io/sparefoodcalculator/pages/contact.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Kontakt — SpareFoodCalculator" />
   <meta name="twitter:description" content="Kontaktiere den Entwickler des SpareFoodCalculator." />
-  <meta name="twitter:image" content="https://sparefoodcalculator.com/images/hero-image.webp" />
+  <meta name="twitter:image" content="https://kilianronacher.github.io/sparefoodcalculator/images/hero-image.webp" />
   <link rel="manifest" href="../manifest.json" />
   <meta name="theme-color" content="#ffd166" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,7 +146,7 @@
     </ul>
 
     <h3 data-i18n="contact_form_heading">Feedback / Anfragen</h3>
-    <p data-i18n="contact_form_intro">Schreibe uns direkt — die Nachricht geht ueber unseren Server an mich. Kein externes E-Mail-Programm noetig.</p>
+    <p data-i18n="contact_form_intro">Schreib mir direkt. Beim Absenden öffnet sich dein E-Mail-Programm mit der fertigen Nachricht.</p>
 
     <form id="contact-form" class="contact-form" novalidate>
       <label for="cf-name" class="visually-hidden" data-i18n="contact_name_label">Name</label>
@@ -204,6 +204,7 @@
   <script src="../search.js"></script>
   <script src="../js/quantities.js"></script>
   <script src="../recipes.js"></script>
+  <script src="../js/recipe-ui.js"></script>
   <script src="../app.js"></script>
   <script src="../ui.js"></script>
   <script src="../js/sustainability-ui.js"></script>
@@ -239,13 +240,6 @@
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Endpoint nicht konfiguriert?
-        if (CONTACT_ENDPOINT.indexOf('REPLACE-ME') !== -1) {
-          setStatus('error', t('contact_endpoint_missing',
-            'Das Kontaktformular ist noch nicht aktiviert. Bitte schreibe vorerst direkt an kilianfelbertal@gmail.com.'));
-          return;
-        }
-
         var fd = new FormData(form);
         var payload = {
           name: (fd.get('name') || '').toString().trim(),
@@ -256,6 +250,18 @@
 
         if (!payload.name || !payload.email || !payload.message) {
           setStatus('error', t('contact_err_missing', 'Bitte fuelle alle Felder aus.'));
+          return;
+        }
+
+        // Reason: no mail server is set up. Until CONTACT_ENDPOINT is a real URL the
+        // form hands the finished message to the visitor's own email app.
+        if (CONTACT_ENDPOINT.indexOf('REPLACE-ME') !== -1) {
+          var subject = 'SpareFoodCalculator: Nachricht von ' + payload.name;
+          var body = payload.message + '\n\n' + payload.name + '\n' + payload.email;
+          window.location.href = 'mailto:kilianfelbertal@gmail.com?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(body);
+          setStatus('success', t('contact_mailto_opened',
+            'Dein E-Mail-Programm öffnet sich mit der fertigen Nachricht. Dort nur noch auf Senden klicken.'));
           return;
         }
 

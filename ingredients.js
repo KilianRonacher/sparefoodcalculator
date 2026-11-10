@@ -30,7 +30,24 @@ var Ingredients = (function () {
     'kürbis', 'hokkaido', 'butternut', 'radieschen', 'rettich',
     'rote beete', 'rüben', 'kohlrabi', 'rosenkohl', 'rotkohl',
     'weißkohl', 'wirsing', 'chinakohl', 'pak choi', 'rucola',
-    'feldsalat', 'endivien', 'radicchio', 'chicorée'
+    'feldsalat', 'endivien', 'radicchio', 'chicorée',
+    'frühlingszwiebeln',
+    'wakame',
+    'grünkohl',
+    'bambussprossen',
+    'pastinaken',
+    'petersilienwurzel',
+    'senfblätter',
+    'eierschwammerl',
+    'blattspinat',
+    'süßkartoffel',
+    'okraschoten',
+    'auberginen',
+    'rote-paprika',
+    'sojasprossen',
+    'kirschtomaten',
+    'romanasalat',
+    'schalotten'
   ],
 
   // ==================== FLEISCH & FISCH ====================
@@ -42,7 +59,21 @@ var Ingredients = (function () {
     'hähnchen', 'hähnchenbrust', 'hähnchenkeule', 'hähnchenflügel',
     'huhn', 'hühnerbrust', 'pute', 'putenbrust', 'putenschnitzel',
     'ente', 'entenbrust', 'gans', 'lamm', 'lammkeule', 'lammfilet',
-    'wild', 'reh', 'hirsch', 'wildschwein'
+    'wild', 'reh', 'hirsch', 'wildschwein',
+    'kassler',
+    'blutwurst',
+    'schweinebauch',
+    'schweinshaxe',
+    'bratwurst',
+    'kalbshaxe',
+    'kalbslunge',
+    'weißwürste',
+    'leberkäse',
+    'schweineschulter',
+    'guanciale',
+    'rinderbrust',
+    'markknochen',
+    'kalbsrücken'
   ],
 
   fisch: [
@@ -52,7 +83,8 @@ var Ingredients = (function () {
     'barsch', 'heilbutt', 'seezunge', 'rotbarsch', 'pangasius',
     'garnelen', 'shrimps', 'prawns', 'scampi', 'langusten',
     'hummer', 'krabben', 'muscheln', 'miesmuscheln', 'austern',
-    'jakobsmuscheln', 'tintenfisch', 'calamari', 'oktopus'
+    'jakobsmuscheln', 'tintenfisch', 'calamari', 'oktopus',
+    'aal'
   ],
 
   // ==================== MILCHPRODUKTE ====================
@@ -65,7 +97,10 @@ var Ingredients = (function () {
     'parmesan', 'parmigiano', 'gouda', 'edamer', 'emmentaler',
     'cheddar', 'gruyère', 'bergkäse', 'feta', 'schafskäse',
     'ziegenkäse', 'camembert', 'brie', 'roquefort', 'gorgonzola',
-    'blauschimmelkäse', 'raclette', 'provolone', 'burrata'
+    'blauschimmelkäse', 'raclette', 'provolone', 'burrata',
+    'paneer',
+    'pecorino',
+    'sauerrahm'
   ],
 
   // ==================== GETREIDE & KOHLENHYDRATE ====================
@@ -79,7 +114,21 @@ var Ingredients = (function () {
     'wildreis', 'vollkornreis', 'couscous', 'bulgur', 'quinoa',
     'polenta', 'grieß', 'hartweizengrieß', 'pasta', 'nudeln',
     'spaghetti', 'penne', 'fusilli', 'tagliatelle', 'lasagneplatten',
-    'kartoffeln', 'kartoffel', 'süßkartoffeln', 'batate'
+    'kartoffeln', 'kartoffel', 'süßkartoffeln', 'batate',
+    'panko',
+    'kichererbsenmehl',
+    'brezn',
+    'glasnudeln',
+    'urad dal',
+    'maismehl',
+    'strudelteig',
+    'mandarin-pfannkuchen',
+    'weißbrot',
+    'eiernudeln',
+    'ramen-nudeln',
+    'fladenbrot',
+    'reisnudeln',
+    'bucatini'
   ],
 
   // ==================== ÖLE & FETTE ====================
@@ -88,7 +137,8 @@ var Ingredients = (function () {
     'sonnenblumenöl', 'rapsöl', 'kokosöl', 'sesamöl', 'erdnussöl',
     'walnussöl', 'kürbiskernöl', 'leinöl', 'traubenkernöl',
     'avocadoöl', 'mandelöl', 'palmöl', 'pflanzenfett', 'butterschmalz',
-    'ghee', 'schmalz', 'gänseschmalz', 'schweineschmalz'
+    'ghee', 'schmalz', 'gänseschmalz', 'schweineschmalz',
+    'chiliöl'
   ],
 
   // ==================== GEWÜRZE & KRÄUTER ====================
@@ -105,7 +155,12 @@ var Ingredients = (function () {
     'lorbeer', 'lorbeerblätter', 'wacholderbeeren', 'piment',
     'safran', 'sumach', 'za\'atar', 'ras el hanout', 'garam masala',
     'five spice', 'fünf gewürze', 'vanille', 'vanilleschote',
-    'vanilleextrakt', 'vanillezucker', 'tonkabohne'
+    'vanilleextrakt', 'vanillezucker', 'tonkabohne',
+    'szechuan pfeffer',
+    'fünf-gewürze-pulver',
+    'korianderpulver',
+    'garam-masala',
+    'galgant'
   ],
 
   kräuter: [
@@ -114,7 +169,10 @@ var Ingredients = (function () {
     'salbei', 'minze', 'pfefferminze', 'dill', 'kerbel', 'estragon',
     'bohnenkraut', 'liebstöckel', 'borretsch', 'kresse', 'brunnenkresse',
     'koriander frisch', 'koriandergrün', 'zitronenmelisse', 'zitronengras',
-    'curryblätter', 'kaffirblätter', 'limettenblätter', 'bärlauch'
+    'curryblätter', 'kaffirblätter', 'limettenblätter', 'bärlauch',
+    'sauerampfer',
+    'pimpinelle',
+    'korianderkraut'
   ],
 
   // ==================== SAUCEN & WÜRZMITTEL ====================
@@ -127,7 +185,19 @@ var Ingredients = (function () {
     'mayonnaise', 'mayo', 'ketchup', 'bbq sauce', 'barbecue sauce',
     'senf', 'dijon senf', 'süßer senf', 'meerrettich', 'wasabi',
     'essig', 'weißweinessig', 'rotweinessig', 'balsamico', 'aceto balsamico',
-    'apfelessig', 'reisessig', 'sherryessig', 'zitronensaft', 'limettensaft'
+    'apfelessig', 'reisessig', 'sherryessig', 'zitronensaft', 'limettensaft',
+    'chilibohnenpaste',
+    'fischsauce',
+    'miso',
+    'mirin',
+    'dashi',
+    'austernsoße',
+    'hoisinsauce',
+    'tomatensauce',
+    'sesampaste',
+    'tamarindenpaste',
+    'kecap manis',
+    'gochujang'
   ],
 
   // ==================== OBST ====================
@@ -151,7 +221,8 @@ var Ingredients = (function () {
     'macadamia', 'pekannüsse', 'maronen', 'esskastanien', 'kokosflocken',
     'kokosraspeln', 'sonnenblumenkerne', 'kürbiskerne', 'pinienkerne',
     'sesam', 'sesamkörner', 'schwarzer sesam', 'chiasamen', 'leinsamen',
-    'mohn', 'mohnsamen', 'hanfsamen', 'flohsamen'
+    'mohn', 'mohnsamen', 'hanfsamen', 'flohsamen',
+    'gemahlene mandeln'
   ],
 
   // ==================== SÜSSES & BACKZUTATEN ====================
@@ -179,7 +250,9 @@ var Ingredients = (function () {
     'dunkles bier', 'rum', 'cognac', 'brandy', 'whisky', 'vodka',
     'gin', 'likör', 'orangenlikör', 'grand marnier', 'amaretto', 'kirschwasser',
     'kaffee', 'espresso', 'tee', 'schwarzer tee', 'grüner tee',
-    'kräutertee', 'kamillentee', 'pfefferminztee'
+    'kräutertee', 'kamillentee', 'pfefferminztee',
+    'sake',
+    'shaoxing-wein'
   ],
 
   // ==================== FERTIGPRODUKTE ====================
@@ -187,7 +260,12 @@ var Ingredients = (function () {
     'kokosmilch', 'kondensmilch', 'dosenmais', 'dosentomaten',
     'thunfisch aus der dose', 'sardinen', 'oliven', 'schwarze oliven',
     'grüne oliven', 'kapern', 'cornichons', 'gewürzgurken',
-    'sauerkraut', 'rotkohl eingelegt', 'eingelegte rote beete'
+    'sauerkraut', 'rotkohl eingelegt', 'eingelegte rote beete',
+    'tofu',
+    'nori',
+    'katsuobushi',
+    'gelatine',
+    'filoteig'
   ]
 };
 

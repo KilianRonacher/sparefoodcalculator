@@ -6,8 +6,9 @@ Veröffentlicht als Progressive Web App auf GitHub Pages: https://kilianronacher
 
 ## Was die App kann
 
-- Suche über 406 Rezepte mit Fuzzy-Matching (Damerau-Levenshtein-Distanz)
+- Suche über 587 Rezepte mit Fuzzy-Matching (Damerau-Levenshtein-Distanz)
 - Toleriert Tippfehler: „Tmoate" findet Tomatenrezepte trotzdem
+- Versteht Umlaut-Schreibweisen („Kaese"), österreichische Wörter („Erdäpfel") und englische Eingaben („tomato")
 - Zwei Sprachen: Deutsch und Englisch, umschaltbar per Klick
 - Dark Mode
 - Offline-fähig nach erstem Aufruf (Service Worker cacht alles lokal)
@@ -20,7 +21,7 @@ Veröffentlicht als Progressive Web App auf GitHub Pages: https://kilianronacher
 Reines Frontend. Kein Server, keine Datenbank, keine externen API-Aufrufe.
 
 - HTML5, CSS3, Vanilla JavaScript (ES6)
-- Rezepte liegen als JavaScript-Konstante in `recipes.js` direkt im Browser
+- Rezepte liegen in `data/recipes.json` und werden von `recipes.js` nachgeladen
 - Suche läuft komplett clientseitig
 - Nutzereinstellungen (Sprache, Dark Mode, Portionsgröße) im `localStorage`
 - Service Worker (`sw.js`) cacht alle Dateien für Offline-Betrieb
@@ -32,9 +33,12 @@ Reines Frontend. Kein Server, keine Datenbank, keine externen API-Aufrufe.
 | `index.html` | Startseite mit Suchmaske |
 | `styles.css` | Layout, Farben, Glassmorphismus, Dark Mode |
 | `app.js` | Rezept-Matcher, Modal-Logik, Eingabeverarbeitung |
-| `search.js` | Damerau-Levenshtein-Implementation, Suchpipeline |
+| `search.js` | Suchkern für alle Seiten: Wortvergleich, Synonyme, Damerau-Levenshtein (OSA-Variante) |
+| `js/search-suggest.js` | „Meintest du"-Vorschlag und Autovervollständigung |
+| `js/search-worker-client.js`, `js/workers/search-worker.js` | Suche im Hintergrund, lädt denselben Suchkern |
 | `i18n.js` | Übersetzungen Deutsch/Englisch |
-| `recipes.js` | 406 Rezepte als JS-Konstante |
+| `recipes.js` | Lädt die Rezepte aus `data/recipes.json` (587 Rezepte) |
+| `js/recipe-ui.js`, `js/category-render.js` | Rezeptfenster und Kategorie-Listen |
 | `ingredients.js` | 609 Zutatenbezeichnungen in 15 Kategorien |
 | `sw.js` | Service Worker (Cache-First) |
 | `manifest.json` | PWA-Manifest |
@@ -47,13 +51,22 @@ Reines Frontend. Kein Server, keine Datenbank, keine externen API-Aufrufe.
 
 ## Lokal ausprobieren
 
-Einfach `index.html` im Browser öffnen. Es braucht keinen Webserver.
-
-Optional für saubere Pfade ein lokaler Dev-Server:
+Die Rezepte werden nachgeladen, deshalb braucht es einen kleinen lokalen Webserver:
 ```
 npx http-server .
 ```
 Öffnet die App unter `http://localhost:8080`.
+
+## Tests
+
+```
+npm install
+npm test
+```
+`npm install` holt einmalig die Hilfspakete für die Tests. Die Web-App selbst braucht sie nicht.
+
+Prüft die Übersetzungen, den Suchkern (`tests/search.test.js`) und ob alle Seiten,
+Skripte und Cache-Einträge zusammenpassen (`tests/site-integrity.test.js`).
 
 ## Tools
 
